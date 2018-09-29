@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="x-ua-compatible" content="ie=EmulateIE7" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+    <title>归属地查询</title>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <style type="text/css">
+		body {
+			background-color:#fff;
+		}
+		
+    	form{
+			margin:0px;
+			padding:5px;
+			border-bottom:#666666 1px dotted;
+		}
+		#panelError {
+			display:none;
+			text-align:center;
+			padding:5px;
+			width:340px;
+		}
+		#panelResult {
+			margin-top:10px;
+		}
+		#panelNotice {
+			display:none; 
+		}
+		.rowstable {
+			width:340px;
+		}
+		.rowstable th {
+			text-align:right;
+			width:100px;
+		}
+		.rowstable td {
+			text-align:left;
+		}
+    </style>
+    <script type="text/javascript">
+		function netError(){
+			document.getElementById("isError").value="1";
+		}
+    	function check(){
+			/*if(document.getElementById("isError").value=="1"){  
+				document.getElementById("panelError").style.display="block";
+				document.getElementById("txtError").innerHTML="无法进行查询,请检查您的网络设置";
+				return false;
+			}
+			else{*/
+				return query();
+			//}
+		}
+		window.onload=function(){
+			/*document.getElementById("checkImg").src="http://desktop.google.com/images/gadget_icon.gif?tempid="+Math.random();
+			document.getElementById("checkImg").onerror=function(){
+				netError();
+			}*/
+		}
+
+    </script>
+</head>
+
+<body>
+    <form onSubmit="check();return false;">
+    	<img id="checkImg" style="display:none"/>
+        <span class="middle bold">请输入手机号码</span>
+        <input id="m" maxlength="15" class="inputBoxAlign"/>
+        <input type="hidden" id="isError" value="0"/>
+        <input type="button" value="查询" id="btnQuery" class="butSize1 inputBoxAlign" onClick="check()" />
+    </form>
+    <div id="panelError" class="redWarn">
+        <span id="txtError" class="red">您输入的手机号码有误</span>
+    </div>
+    <div id="panelResult">
+    	<table class="normal rowstable" cellpadding="0" cellspacing="0">
+        	<tr>
+            	<th>手机号码：</th>
+                <td><span id="txtMobile">&nbsp;</span></td>
+            </tr>
+            <tr>
+            	<th>所属省份：</th>
+                <td><span id="txtProvince">&nbsp;</span></td>
+            </tr>
+            <tr>
+            	<th>所属城市：</th>
+                <td><span id="txtCity">&nbsp;</span></td>
+            </tr>
+            <tr>
+            	<th>区&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：</th>
+                <td><span id="txtAreaCode">&nbsp;</span></td>
+            </tr>
+            <tr>
+            	<th>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编：</th>
+                <td><span id="txtPostCode">&nbsp;</span></td>
+            </tr>
+            <tr>
+            	<th>类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：</th>
+                <td><span id="txtCard">&nbsp;</span></td>
+            </tr>
+        </table>
+    </div>
+	<div id="panelNotice"></div>
+	<script type="text/javascript" src="http://api.showji.com/Locating/Query.js"></script>
+
+</body>
+</html>

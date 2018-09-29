@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="SpringContextTool" class="com.psit.struts.util.SpringContextTool"></bean>
+
+	
+	 <bean id="dataSource"
+        class="com.mchange.v2.c3p0.ComboPooledDataSource"
+        destroy-method="close">
+        <property name="driverClass">
+            <value>com.mysql.jdbc.Driver</value>
+        </property>
+        <property name="jdbcUrl">
+            <value>jdbc:mysql://192.168.1.6:3306/xz_hr</value>
+        </property>
+        <property name="user">
+            <value>root</value>
+        </property>
+        <property name="password">
+            <value>hr1324!@#</value>
+        </property>
+ 
+ <!--连接池中保留的最小连接数。-->
+        <property name="minPoolSize">
+            <value>5</value>
+        </property>
+ 
+ <!--连接池中保留的最大连接数。Default: 15 -->
+        <property name="maxPoolSize">
+            <value>30</value>
+        </property>
+ 
+<!--初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
+        <property name="initialPoolSize">
+            <value>10</value>
+        </property>
+ 
+ <!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
+        <property name="maxIdleTime">
+            <value>60</value>
+        </property>
+ 
+ <!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+        <property name="acquireIncrement">
+            <value>5</value>
+        </property>
+ 
+ <!--JDBC的标准参数，用以控制数据源内加载的PreparedStatements数量。但由于预缓存的statements
+  属于单个connection而不是整个连接池。所以设置这个参数需要考虑到多方面的因素。
+  如果maxStatements与maxStatementsPerConnection均为0，则缓存被关闭。Default: 0-->
+        <property name="maxStatements">
+            <value>0</value>
+        </property>
+ 
+ <!--每60秒检查所有连接池中的空闲连接。Default: 0 -->
+        <property name="idleConnectionTestPeriod">
+            <value>60</value>
+        </property>
+ 
+ <!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30
+        <property name="acquireRetryAttempts">
+            <value>30</value>
+        </property> -->
+ 
+ <!--获取连接失败将会引起所有等待连接池来获取连接的线程抛出异常。但是数据源仍有效
+  保留，并在下次调用getConnection()的时候继续尝试获取连接。如果设为true，那么在尝试
+  获取连接失败后该数据源将申明已断开并永久关闭。Default: false
+        <property name="breakAfterAcquireFailure">
+            <value>true</value>
+        </property>-->
+ 
+ <!--因性能消耗大请只在需要的时候使用它。如果设为true那么在每个connection提交的
+  时候都将校验其有效性。建议使用idleConnectionTestPeriod或automaticTestTable
+  等方法来提升连接测试的性能。Default: false -->
+        <property name="testConnectionOnCheckout">
+            <value>true</value>
+        </property>
+    </bean>
+
+	
+	<bean id="hibernateInterceptor"
+    class="org.springframework.orm.hibernate3.HibernateInterceptor">
+    <property name="sessionFactory">
+    <ref bean="sessionFactory" />
+    </property>
+    </bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQL5InnoDBDialect
+					<!-- org.hibernate.dialect.SQLServerDialect  -->
+				</prop>
+				<prop key="hibernate.show_sql">
+					true
+				</prop>
+			</props>
+		</property>
+		<property name="mappingDirectoryLocations">
+			<list>
+				<value>classpath:com/psit/struts/entity</value>
+			</list>
+		</property></bean>
+	
+	<!-- **********  Action ********** -->
+	<bean name="/orderCusAction" class="com.psit.struts.action.OrderCusAction">
+		<property name="orderCusBIZ" ref="orderCusBIZ"></property>
+	</bean>
+	<bean name="/commonAction" class="com.psit.struts.action.CommonAction"></bean>
+	<bean name="/downloadAction" class="com.psit.struts.util.Download">
+		<property name="attBiz" ref="attBIZ"></property>
+	</bean>
+	<bean name="/fileAction" class="com.psit.struts.action.FileAction">
+		<property name="attBiz" ref="attBIZ"></property>
+		<property name="servBiz" ref="cusServBiz"></property>
+		<property name="orderBiz" ref="orderBiz"></property>
+		<property name="empBiz" ref="empBIZ"></property>
+		<property name="wmsManageBiz" ref="WmsManageBIZ"></property>
+		<property name="messageBiz" ref="messageBiz"></property>
+		<property name="salTaskBiz" ref="SalTaskBIZ"></property>
+		<property name="customBiz" ref="customBIZ"></property>
+		<property name="productBiz" ref="ProductBIZ"></property>
+	</bean>
+	<bean name="/customAction" class="com.psit.struts.action.CustomAction">
+		<property name="customBIZ" ref="customBIZ"></property>
+		<property name="modType" ref="modifyType"></property>
+		<property name="userBiz" ref="userBiz"></property>
+		<property name="typeListBiz" ref="TypeListBIZ"></property>
+		<property name="batchOperate" ref="batchOperate"></property>
+		<property name="orderBiz" ref="orderBiz"></property>
+		<property name="empBiz" ref="empBIZ"></property>
+		<property name="paidBiz" ref="paidBiz"></property>
+		<property name="salInvoiceBiz" ref="SalInvoiceBIZ"></property>
+	</bean>
+	<bean name="/cusServAction" class="com.psit.struts.action.CusServAction">
+		<property name="cusServBiz" ref="cusServBiz"></property>
+		<property name="customBIZ" ref="customBIZ"></property>
+		<property name="userBiz" ref="userBiz"></property>
+		<property name="typeListBiz" ref="TypeListBIZ"></property>
+		<property name="batchOperate" ref="batchOperate"></property>
+		<property name="getAccDataDao" ref="getAccDataDAO"></property>
+		<property name="empBiz" ref="empBIZ"></property>
+	</bean>
+	<bean name="/empAction" class="com.psit.struts.action.EmpAction">
+		<property name="empBiz" ref="empBIZ"></property>
+		<property name="userBiz" ref="userBiz"></property>
+	</bean>
+	<bean name="/orderAction" class="com.psit.struts.action.OrderAction">
+		<property name="orderBiz" ref="orderBiz"></property>
+		<property name="empBiz" ref="empBIZ"></property>
+		<property name="userBiz" ref="userBiz"></property>
+		<property name="modType" ref="modifyType"></property>
+		<property name="customBiz" ref="customBIZ"></property>
+		<property name="paidBiz" ref="paidBiz"></property>
+		<property name="wmsManageBiz" ref="WmsManageBIZ"></property>
+		<property name="wwoBIZ" ref="WwoBIZ"></property>
+		<property name="typeListBiz" ref="TypeListBIZ"></property>
+		<property name="batchOperate" ref="batchOperate"></property>
+	</bean>
+	<bean name="/paidAction" class="com.psit.struts.action.PaidAction">
+		<property name="orderBiz" ref="orderBiz"></property>
+		<property name="paidBiz" ref="paidBiz"></property>
+		<property name="userBiz" ref="userBiz"></property>
+		<property name="modType" ref="modifyType"></property>
+		<property name="salTaskBiz" ref="SalTaskBIZ"></property>
+		<property name="customBiz" ref="customBIZ"></property>
+		<property name="typeListBiz" ref="TypeListBIZ"></property>
+		<property name="batchOperate" ref="batchOperate"></property>
+	</bean>
+	<bean name="/prodAction" class="com.psit.struts.action.ProductAction">
+		<property name="prodBiz" ref="ProductBIZ"></property>
+		<property name="empBiz" ref="empBIZ"></property>
+		<property name="typeListBiz" ref="TypeListBIZ"></property>
+		<property name="orderBiz" ref="orderBiz"></property>
+		<property name="userBiz" ref="userBiz"></property>
+		<property name="batchOperate" ref="batchOperate"></property>
+		<property name="customBiz" ref="customBIZ"></property>
+	</bean>
+	<bean name="/messageAction" class="com.psit.struts.action.MessageAction">
+		<property name="messageBiz" ref="messageBiz"></property>
+		<property name="modType" ref="modifyType"></property>
+		<property name="attBiz" ref="attBIZ"></property>
+		<property name="userBiz" ref="userBiz"></property>
+		<property name="batchOperate" ref="batchOperate"></property>
+		<property name="salTaskBiz" ref="SalTaskBIZ"></property>
+		<property name="typeListBiz" ref="TypeListBIZ"></property>
+		<property name="empBiz" ref="empBIZ"></property>
+		<property name="customBiz" ref="customBIZ"></property>
+	</bean>	
+	<bean name="/userAction" class="com.psit.struts.action.UserAction">
+		<property name="userBiz" ref="userBiz"></property>
+		<property name="empBiz" ref="empBIZ"></property>
+		<property name="messageBiz" ref="messageBiz"></property>
+	</bean>	
+	<bean name="/salTaskAction" class="com.psit.struts.action.SalTaskAction">
+		<property name="salTaskBiz" ref="SalTaskBIZ"></property>
+		<property name="empBiz" ref="empBIZ"></property>
+		<property name="modType" ref="modifyType"></property>
+		<property name="userBiz" ref="userBiz"></property>
+		<property name="typeListBiz" ref="TypeListBIZ"></property>
+	</bean>	
+	<bean name="/statAction" class="com.psit.struts.action.StatisticAction">
+		<property name="userBiz" ref="userBiz"></property>
+		<property name="empBiz" ref="empBIZ"></property>
+		<property name="salTaskBiz" ref="SalTaskBIZ"></property>
+		<property name="customBIZ" ref="customBIZ"></property>
+		<property name="typeListBiz" ref="TypeListBIZ"></property>
+		<property name="orderBiz" ref="orderBiz"></property>
+		<property name="paidBiz" ref="paidBiz"></property>
+	</bean>
+	<bean name="/wmsManageAction" class="com.psit.struts.action.WmsManageAction">
+		<property name="wmsManageBiz" ref="WmsManageBIZ"></property>
+		<property name="empBiz" ref="empBIZ"></property>
+		<property name="wwoBIZ" ref="WwoBIZ"></property>
+		<property name="typeListBiz" ref="TypeListBIZ"></property>
+		<property name="orderBiz" ref="orderBiz"></property>
+		<property name="userBiz" ref="userBiz"></property>
+	</bean>
+	<bean name="/wwoAction" class="com.psit.struts.action.WwoAction">
+		<property name="empBiz" ref="empBIZ"></property>
+		<property name="wwoBIZ" ref="WwoBIZ"></property>
+		<property name="wmsManageBiz" ref="WmsManageBIZ"></property>
+		<property name="orderBiz" ref="orderBiz"></property>
+		<property name="modType" ref="modifyType"></property>
+		<property name="userBiz" ref="userBiz"></property>
+	</bean>
+	<bean name="/typeAction" class="com.psit.struts.action.TypeAction">
+		<property name="typeListBiz" ref="TypeListBIZ"></property>
+		<property name="userBiz" ref="userBiz"></property>
+	</bean>
+	<bean name="/supAction" class="com.psit.struts.action.SupAction">
+		<property name="userBIZ" ref="userBiz"></property>
+		<property name="typeListBIZ" ref="TypeListBIZ"></property>
+		<property name="supBIZ" ref="SupBIZ"></property>
+		<property name="customBIZ" ref="customBIZ"></property>
+	</bean>	
+	<!-- ********** BIZ  ********** -->
+	<bean id="orderCusBIZ" class="com.psit.struts.BIZ.impl.OrderCusBIZImpl">
+		<property name="orderCusDAO" ref ="orderCusDAO" ></property>
+	</bean>
+	<bean id="attBIZ" class="com.psit.struts.BIZ.impl.AttBIZImpl">
+		<property name="attDao" ref ="attDAO" ></property>
+	</bean>
+	<bean id="cusServBiz" class="com.psit.struts.BIZ.impl.CusServBIZImpl">
+		<property name="salOppDAO" ref ="SalOppDAO" ></property>
+		<property name="salPraDAO" ref ="SalPraDAO" ></property>
+		<property name="cusServDao" ref ="CusServDAO" ></property>
+		<property name="quoteDao" ref ="QuoteDAO" ></property>
+		<property name="rquoProDao" ref ="RQuoProDAO" ></property>
+	</bean>
+	<bean id="customBIZ" class="com.psit.struts.BIZ.impl.CustomBIZImpl">
+		<property name="cusCorCusDAO" ref ="CusCorCusDAO" ></property>
+		<property name="cusContactDAO" ref ="CusContactDAO" ></property>
+		<property name="cusAreaDAO" ref ="CusAreaDAO" ></property>
+		<property name="cusProvince" ref ="CusProvinceDAO" ></property>
+		<property name="cusCity" ref ="CusCityDAO" ></property>
+		<property name="limUserDAO" ref ="LimUserDAO" ></property>
+		<property name="salOrgDAO" ref ="SalOrgDAO" ></property>
+		<property name="cusProdDAO" ref = "CusProdDAO"></property>
+		<property name="memDateDAO" ref = "MemDateDAO"></property>
+		<property name="empDAO" ref ="SalEmpDAO"></property>
+		<property name="cusAddrDAO" ref ="CusAddrDAO"></property>
+		<property name="salOrderDAO" ref ="SalOrderDAO" ></property>
+		<property name="prodShipmentDAO" ref="ProdShipmentDAO"></property>	
+		<property name="prodOutDAO" ref="ProdOutDAO"></property>
+	</bean>
+	<bean id="empBIZ" class="com.psit.struts.BIZ.impl.EmpBIZImpl">
+		<property name="salOrgDao" ref ="SalOrgDAO" ></property>
+		<property name="limUserDao" ref ="LimUserDAO"></property>
+		<property name="salEmpDao" ref ="SalEmpDAO"></property>
+		<property name="salTaskDao" ref="SalTaskDAO"></property>
+		<property name="limRoleDao" ref="LimRoleDAO"></property>
+	</bean>
+	 <bean id="orderBiz" class="com.psit.struts.BIZ.impl.OrderBIZImpl">
+		<property name="orderDao" ref ="SalOrderDAO" ></property>
+		<property name="rordProDao" ref="ROrdProDAO"></property>
+		<property name="prodShipmentDAO" ref="ProdShipmentDAO"></property>	
+		<property name="rshipProDAO" ref="RShipProDAO"></property>
+		<property name="prodSalBackDAO" ref="ProdSalBackDAO"></property>
+		<property name="cusDao" ref="CusCorCusDAO"></property>
+		<property name="cusProdDAO" ref = "CusProdDAO"></property>
+	</bean>
+	<bean id="paidBiz" class="com.psit.struts.BIZ.impl.PaidBIZImpl">
+		<property name="orderDao" ref ="SalOrderDAO" ></property>
+		<property name="paidPastDao" ref="SalPaidPastDAO"></property>
+		<property name="paidPlanDao" ref="SalPaidPlanDAO"></property>
+	</bean>
+	<bean id="userBiz" class="com.psit.struts.BIZ.impl.UserBIZImpl">
+		<property name="userDao" ref="LimUserDAO"></property>
+		<property name="limRoleDao" ref="LimRoleDAO"></property>
+		<property name="limFunctionDao" ref="LimFunctionDAO"></property>
+		<property name="limRightDao" ref="LimRightDAO"></property>
+		<property name="ruserRigDao" ref="RUserRigDAO"></property>
+	</bean>
+	<bean id="messageBiz" class="com.psit.struts.BIZ.impl.MessageBIZImpl">
+		<property name="messageDAO" ref="MessageDAO" ></property>
+		<property name="rrepLimDAO" ref="RRepLimDAO" ></property>
+		<property name="reportDAO" ref="ReportDAO" ></property>
+		<property name="rmessLimDAO" ref="RMessLimDAO" ></property>
+		<property name="limUserDAO" ref="LimUserDAO" ></property>
+		<property name="rnewLimDAO" ref="RNewLimDAO" ></property>
+		<property name="newsDAO" ref="NewsDAO" ></property>
+		<property name="scheduleDAO" ref="ScheduleDAO" ></property>
+	</bean>
+	<bean id="SalTaskBIZ" class="com.psit.struts.BIZ.impl.SalTaskBIZImpl">
+		<property name="salTaskDao" ref="SalTaskDAO"></property>
+		<property name="taLimDao" ref="TaLimDAO"></property>
+	</bean>
+	<bean id="ProductBIZ" class="com.psit.struts.BIZ.impl.ProductBIZImpl">
+		<property name="userDao" ref="LimUserDAO" ></property>
+		<property name="wmsProTypeDao" ref="WmsProTypeDAO"></property>
+		<property name="wmsProductDao" ref="WmsProductDAO"></property>
+		<property name="limRightDao" ref="LimRightDAO"></property>	
+		<property name="prodTransDAO" ref="ProdTransDAO"></property>
+		<property name="prodSalBackDAO" ref="ProdSalBackDAO"></property>
+	</bean>
+	<bean id="WmsManageBIZ" class="com.psit.struts.BIZ.impl.WmsManageBIZImpl">
+		<property name="userDao" ref="LimUserDAO" ></property>
+		<property name="wmsStroDao" ref="WmsStroDAO"></property>
+		<property name="wmsProTypeDao" ref="WmsProTypeDAO"></property>
+		<property name="wmsProductDao" ref="WmsProductDAO"></property>
+		<property name="wmsWarInDao" ref="WmsWarInDAO"></property>
+		<property name="RWinProDao" ref="RWinProDAO"></property>
+		<property name="RStroProDao" ref="RStroProDAO"></property>
+		<property name="limRightDao" ref="LimRightDAO"></property>	
+	</bean>
+	<bean id="WwoBIZ" class="com.psit.struts.BIZ.impl.WwoBIZImpl">
+		<property name="wmsWarOutDao" ref="WmsWarOutDAO"></property>
+		<property name="rwoutProDao" ref="RWoutProDAO"></property>
+		<property name="rstroProDao" ref="RStroProDAO"></property>
+		<property name="wmsChangeDao" ref="WmsChangeDAO"></property>
+		<property name="rwmsWmsDao" ref="RWmsWmsDAO"></property>
+		<property name="wmsProTypeDao" ref="WmsProTypeDAO"></property>
+		<property name="wmsCheckDao" ref="WmsCheckDAO"></property>
+		<property name="rwmcProDao" ref="RWmsChangeDAO"></property>
+		<property name="wmsLineDao" ref="WmsLineDAO"></property>
+		
+	</bean>
+	<bean id="TypeListBIZ" class="com.psit.struts.BIZ.impl.TypeListBIZImpl">
+		<property name="typeListDao" ref="TypeListDAO"></property>
+		<property name="modType" ref="modifyType"></property>
+		<property name="provDAO" ref ="CusAreaDAO" ></property>
+		<property name="cityDAO" ref ="CusProvinceDAO" ></property>
+		<property name="districtDAO" ref ="CusCityDAO" ></property>
+	</bean>
+	<bean id="SalInvoiceBIZ" class="com.psit.struts.BIZ.impl.SalInvoiceBIZImpl">
+		<property name="salInvoiceDao" ref="SalInvoiceDAO"></property>
+		<property name="cusDao" ref="CusCorCusDAO"></property>
+	</bean> 
+	<bean id="SupBIZ" class="com.psit.struts.BIZ.impl.SupBIZImpl">
+		<property name="supplierDAO" ref="SupplierDAO"></property>
+		<property name="purOrdDAO" ref="PurOrdDAO"></property>
+		<property name="rpuoProDAO" ref="RPuoProDAO"></property>
+		<property name="prodInDAO" ref="ProdInDAO"></property>
+		<property name="prodOutDAO" ref="ProdOutDAO"></property>
+		<property name="prodStoreDAO" ref="ProdStoreDAO"></property>
+		<property name="whRecDAO" ref="WhRecDAO"></property>
+		<property name="supProdDAO" ref="SupProdDAO"></property>
+		<property name="supPaidPastDAO" ref="SupPaidPastDAO"></property>
+		<property name="supInvoiceDAO" ref="SupInvoiceDAO"></property>
+	</bean>
+	<!-- ********** DAO  ********** -->
+	<bean id="attDAO" class="com.psit.struts.DAO.impl.AttachmentDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="modifyType" class="com.psit.struts.util.DAO.ModifyTypeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="batchOperate" class="com.psit.struts.util.DAO.BatchOperateDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="getAccDataDAO" class="com.psit.struts.util.DAO.GetAccDataDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SalOppDAO" class="com.psit.struts.DAO.impl.SalOppDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SalOrgDAO" class="com.psit.struts.DAO.impl.SalOrgDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ROrdProDAO" class="com.psit.struts.DAO.impl.ROrdProDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CusAreaDAO" class="com.psit.struts.DAO.impl.CusAreaDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="WmsProductDAO"
+		class="com.psit.struts.DAO.impl.WmsProductDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="WmsStroDAO" class="com.psit.struts.DAO.impl.WmsStroDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CusCityDAO" class="com.psit.struts.DAO.impl.CusCityDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="LimOperateDAO"
+		class="com.psit.struts.DAO.impl.LimOperateDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="WmsWarOutDAO" class="com.psit.struts.DAO.impl.WmsWarOutDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CusServDAO" class="com.psit.struts.DAO.impl.CusServDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CusProvinceDAO"
+		class="com.psit.struts.DAO.impl.CusProvinceDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="LimUserDAO" class="com.psit.struts.DAO.impl.LimUserDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="LimRightDAO" class="com.psit.struts.DAO.impl.LimRightDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="LimFunctionDAO"
+		class="com.psit.struts.DAO.impl.LimFunctionDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SalPaidPastDAO" class="com.psit.struts.DAO.impl.SalPaidPastDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SalPaidPlanDAO" class="com.psit.struts.DAO.impl.SalPaidPlanDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CusCorCusDAO" class="com.psit.struts.DAO.impl.CusCorCusDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="LimRoleDAO" class="com.psit.struts.DAO.impl.LimRoleDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SalPraDAO" class="com.psit.struts.DAO.impl.SalPraDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RRoleRigDAO" class="com.psit.struts.DAO.impl.RRoleRigDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RUserRigDAO" class="com.psit.struts.DAO.impl.RUserRigDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SalEmpDAO" class="com.psit.struts.DAO.impl.SalEmpDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CusContactDAO"
+		class="com.psit.struts.DAO.impl.CusContactDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RStroProDAO" class="com.psit.struts.DAO.impl.RStroProDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="WmsProTypeDAO"
+		class="com.psit.struts.DAO.impl.WmsProTypeDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SalTaskDAO" class="com.psit.struts.DAO.impl.SalTaskDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SalOrderDAO" class="com.psit.struts.DAO.impl.SalOrderDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RWoutProDAO" class="com.psit.struts.DAO.impl.RWoutProDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="WmsWarInDAO" class="com.psit.struts.DAO.impl.WmsWarInDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RWinProDAO" class="com.psit.struts.DAO.impl.RWinProDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="WmsChangeDAO"
+		class="com.psit.struts.DAO.impl.WmsChangeDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RWmsWmsDAO" class="com.psit.struts.DAO.impl.RWmsWmsDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="MessageDAO" class="com.psit.struts.DAO.impl.MessageDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ReportDAO" class="com.psit.struts.DAO.impl.ReportDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RRepLimDAO" class="com.psit.struts.DAO.impl.RRepLimDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RMessLimDAO" class="com.psit.struts.DAO.impl.RMessLimDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AttachmentDAO"
+		class="com.psit.struts.DAO.impl.AttachmentDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ScheduleDAO" class="com.psit.struts.DAO.impl.ScheduleDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="NewsDAO" class="com.psit.struts.DAO.impl.NewsDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RNewLimDAO" class="com.psit.struts.DAO.impl.RNewLimDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="QuoteDAO" class="com.psit.struts.DAO.impl.QuoteDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TypeListDAO" class="com.psit.struts.DAO.impl.TypeListDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RWmsChangeDAO"
+		class="com.psit.struts.DAO.impl.RWmsChangeDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="WmsCheckDAO"
+		class="com.psit.struts.DAO.impl.WmsCheckDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="WmsLineDAO" class="com.psit.struts.DAO.impl.WmsLineDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TaLimDAO" class="com.psit.struts.DAO.impl.TaLimDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+     <bean id="RQuoProDAO" class="com.psit.struts.DAO.impl.RQuoProDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    <bean id="CusProdDAO" class="com.psit.struts.DAO.impl.CusProdDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    <bean id="ProdTransDAO" class="com.psit.struts.DAO.impl.ProdTransDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    <bean id="ProdShipmentDAO" class="com.psit.struts.DAO.impl.ProdShipmentDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    <bean id="RShipProDAO" class="com.psit.struts.DAO.impl.RShipProDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    <bean id="MemDateDAO" class="com.psit.struts.DAO.impl.MemDateDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+    <bean id="CusAddrDAO" class="com.psit.struts.DAO.impl.CusAddrDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    <bean id="SalInvoiceDAO" class="com.psit.struts.DAO.impl.SalInvoiceDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    <bean id="ProdSalBackDAO" class="com.psit.struts.DAO.impl.ProdSalBackDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    <bean id="SupplierDAO" class="com.psit.struts.DAO.impl.SupplierDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    <bean id="PurOrdDAO" class="com.psit.struts.DAO.impl.PurOrdDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    <bean id="RPuoProDAO" class="com.psit.struts.DAO.impl.RPuoProDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory"/>
+    	</property>
+    </bean>
+    <bean id="ProdOutDAO" class="com.psit.struts.DAO.impl.ProdOutDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory"/>
+    	</property>
+    </bean>
+    
+    <bean id="ProdInDAO" class="com.psit.struts.DAO.impl.ProdInDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory"/>
+    	</property>
+    </bean>
+    <bean id="ProdStoreDAO" class="com.psit.struts.DAO.impl.ProdStoreDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory"/>
+    	</property>
+    </bean>
+    <bean id="WhRecDAO" class="com.psit.struts.DAO.impl.WhRecDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+   <bean id="SupProdDAO" class="com.psit.struts.DAO.impl.SupProdDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+   <bean id="SupPaidPastDAO" class="com.psit.struts.DAO.impl.SupPaidPastDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    <bean id="SupInvoiceDAO" class="com.psit.struts.DAO.impl.SupInvoiceDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    <bean id="orderCusDAO" class="com.psit.struts.DAO.impl.OrderCusDAOImpl">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">  
+        <property name="transactionManager" ref="transactionManager"/>  
+        <!-- 配置事务属性 -->  
+        <property name="transactionAttributes">  
+            <props>
+            <prop key="*">PROPAGATION_NESTED</prop>  
+            </props>  
+        </property>  
+    </bean>
+      
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">  
+        <property name="beanNames">  
+            <list>  
+                <value>*DAO</value>
+            </list>  
+        </property>  
+        <property name="interceptorNames">  
+            <list>  
+                <value>transactionInterceptor</value>  
+            </list>  
+        </property>  
+    </bean>
+</beans>

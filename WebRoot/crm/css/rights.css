@@ -1,0 +1,61 @@
+#listContent {
+	text-align:left;
+}
+
+#leftMenu {
+	width:140px;
+	position:absolute;
+	top:10px;
+	left:10px;
+}
+#leftMenu iframe {
+	width:120px;
+}
+#rightContent {
+	margin-left:140px;
+	padding-top:10px;
+	padding-right:10px;
+}
+
+.blueBorder .grayBack {
+	border:0px;
+	border-bottom:#e2e4e7 1px solid;
+}
+
+#rightsTitle {
+	font-weight:600;
+	font-size:14px;
+	color:#556f93;
+	padding:4px;
+	padding-left:12px;
+	background:url(../images/content/blueArr.gif) no-repeat;
+	background-position:0px 6px;
+}
+
+#rightsList {
+	padding:4px;
+	padding-left:10px;
+}
+#rightsList form{
+	margin:0px;
+	padding:0px;
+}
+#rightsTab {
+	text-align:center;
+}
+#rightsTab table {
+	width:95%;
+}
+#rightsTab th {
+	width:100%;
+	font-weight:600;
+	background-color:#c3ccf3;
+	text-align:left;
+}
+#rightsTab td {
+	padding-left:15px;
+}
+
+.dashTab th{
+	background:none;
+}

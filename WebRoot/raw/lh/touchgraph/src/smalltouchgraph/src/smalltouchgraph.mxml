@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" doubleClick="doWindowClick()" click="doWindowClick()"  backgroundColor="#000000" width="202" height="252"  applicationComplete="createInit()" creationComplete="doInit()" layout="absolute" xmlns:local="*">
+  <mx:Style>
+  .relContainer {
+    backgroundColor:#ffffff;
+    color: #9999ff;
+    borderColor: #666699;
+    borderThickness:1;
+    borderStyle:solid;
+    cornerRadius: 10;
+    backgroundAlpha: 0.9;
+    paddingLeft: 4;
+    paddingBottom: 10;
+  }
+  .label {
+			color:#ffffff
+		}
+  HRule {
+   strokeColor: #ffffff;
+   strokeWidth: 1;
+  }
+  .searchBox {
+     borderColor: #666699;
+     borderThickness:1;
+    borderStyle:solid;
+    cornerRadius: 10;
+     paddingLeft: 4;
+    paddingBottom: 4;
+    paddingRight: 4;
+    paddingTop: 4;
+    backgroundColor:#ff0000;
+  }
+</mx:Style>
+  <mx:Script>
+    <![CDATA[
+      import mx.formatters.DateFormatter;
+      import mx.core.DragSource;
+      import mx.managers.DragManager;
+      import mx.core.IUIComponent;
+      import mx.events.DragEvent;
+      import mx.core.UIComponent;
+      import mx.controls.List;
+      import mx.controls.Alert;
+      import mx.events.FlexEvent;
+      import mx.collections.ArrayCollection;
+      import com.adobe.serialization.json.JSON;
+      import mx.rpc.http.HTTPService;
+      import mx.rpc.events.ResultEvent;
+      [Bindable]
+      private var centerPoint:* = null;
+      [Bindable]
+      private var originPoint:Point = null;
+      private var oldList:Array = new Array();
+      [Bindable]
+      public var searchText:String = "";
+      public var isDebug:Boolean = false;
+      [Bindable]
+      private var toValue:Number = 0.8;
+      [Bindable]
+      private var fromValue:Number = 1;
+      [Bindable]
+      private var bw :Number = 0;
+      [Bindable]
+      private var bh :Number = 0;
+      [Bindable]
+      private var la1 :String = "";
+      [Bindable]
+      private var la2 :String = "";
+      private var Ax:int = 0;
+      private var Ay:int = 0;
+      private var nowDateTime:Number = 0;
+      private var nowPreYear:Number = 0 ;
+      private var nowNextYear:Number = 0 ;
+      private var setDateMethod:String = "setDate";
+      private var dayTime:Number = 24 * 60 * 60 * 1000;
+      [Bindable]
+      private var searchedData:ArrayCollection = new ArrayCollection();
+      public var nowMoveCount = 0;
+      public var moveFinishCount = 0 ;
+      public var startMove = false;
+      
+      public function doInit() {
+        this.addEventListener(FlexEvent.UPDATE_COMPLETE, setNowStage);
+      }
+      private function createInit():void {
+      var info:Object = Application.application.loaderInfo.parameters;
+      if (info != null ) {
+        if (this.isDebug) {
+          searchText = "天气";
+        } else {
+    	    //searchText = info["data"] + "";
+        }
+        this.doSearch(null);
+      }
+      this.doZoom(0);
+      ExternalInterface.addCallback("doSearch" , htmlSearch);
+    }
+    private function htmlSearch(text:String) {
+      if (text != "") {
+        this.searchText = text;
+        this.doSearch(null); 
+      }
+    }
+      private function setNowStage(event:Event):void {
+        var x1:Number = this.stage.stageWidth / 2;
+        var y1:Number = this.stage.stageHeight / 2;
+        centerPoint = {x:(202 -50)/ 2,y:(252-50) / 2};
+        originPoint = canvas.localToContent(new Point(202 / 2,252 / 2));
+      }
+      public function doSearch(e:Event
+       , startStr:String = ""
+        , endStr:String = "" 
+        , searchType:String = "0") {
+        if (searchText == "" ) {
+    		  return ; 
+    		}
+        var http:HTTPService = new HTTPService();
+        if (this.isDebug) {
+          http.url =  "http://192.168.0.126:9000/BjfaoWeb/FullText/GetRelationWords";
+        } else {
+      	  http.url =  "/t9/t9/subsys/inforesouce/act/T9OutURLAct/getRelationWords.act";
+        }
+    		http.addEventListener(ResultEvent.RESULT , addNode);
+    		http.resultFormat = "text";
+    		var obj:* = {q:searchText,start:startStr,end:endStr,type:searchType};
+    		http.send(obj);
+    		var index = -1;
+    		for (var i = 0 ;i < searchedData.length ; i++) {
+    		  var s:String = searchedData.getItemAt(i) as String;
+    		  if (s == searchText) {
+    		    index = i;
+    		    break;
+    		  }
+    		}
+    		if (index == -1) {
+      		searchedData.addItem(searchText);
+    		} 
+      }
+      public function getOutNode(newList:Array):void {
+        newList.push(searchText);
+        for (var i = 0 ;i < oldList.length ;i++ ) {
+          var str = oldList[i] as String;
+          var flag:Boolean = true;
+          for (var j = 0 ;j < newList.length ; j++ ) {
+            var newStr = newList[j] as String;
+            if (newStr == str) {
+              flag = false;
+              break ; 
+            }
+          }
+          //没找到,去掉
+          if (flag) {
+            var node:UIComponent = canvas.getChildByName("node-" + str) as UIComponent;
+      		  var text:UIComponent = canvas.getChildByName("text-" + str) as UIComponent;
+      		  var mask:UIComponent = canvas.getChildByName("mask-" + str) as UIComponent;
+      		 
+      		  if (node != null && canvas.contains(node)) {
+      		    canvas.removeChild(node);
+      		  }
+      		  if (text != null && canvas.contains(text)) {
+      		    canvas.removeChild(text);
+      		  }
+      		  if (mask != null && canvas.contains(mask)) {
+      		    canvas.removeChild(mask);
+      		  }
+          }
+          var line:UIComponent = canvas.getChildByName("line-" + str) as UIComponent;
+          if (line != null && canvas.contains(line)) {
+    		    canvas.removeChild(line);
+    		  }
+        }
+      }
+      public function addNode(event:ResultEvent):void {
+        var data:String = event.result.toString();
+      	var json:Object = JSON.decode(data);
+      	var rtData:Array = json.rtData as Array;
+      	var myArray:ArrayCollection = new ArrayCollection(rtData);
+      	var myArray2:ArrayCollection = new ArrayCollection();
+      	var tmpArray:Array = new Array();
+      	var max = myArray.length;
+      	if ( max > 15) {
+      	  max = 15;
+      	}
+      	for (var i = 0 ;i < max ;i ++ ) {
+      	  var str:String = myArray.getItemAt(i).Term as String;
+      	  //var c:Number = myArray.getItemAt(i).Count as Number;
+      	  var obj:* = {Term:str , Count:i};
+      	  var flag:Boolean = false;
+      	  for (var j = 0 ;j < myArray2.length ;j++) {
+      	    var str2:String = myArray2.getItemAt(j).Term as String;
+      	    if (str2 == str) {
+      	      flag = true;
+      	      break;
+      	    }
+      	  }
+      	  if (!flag) {
+      	    myArray2.addItem(obj);
+      	    tmpArray.push(str);
+            } 
+      	}
+      	myArray = myArray2;
+      	this.getOutNode(tmpArray);
+      	var obj:* =  new Object();
+      	obj.Term = searchText
+      	obj.point = centerPoint;
+        obj.isCenter = true;
+        nowMoveCount = 0;
+        moveFinishCount = 0 ;
+      	canvas.centerNode = new Node(obj , canvas);
+      	oldList = new Array();
+      	oldList.push(obj.Term);
+      	var nowMax = 0 ;
+      	var nowMin = 0;
+      	var b = 0 ;
+      	for (var i = 0 ;i < myArray.length ; i++) {
+          var tmp:* =  myArray.getItemAt(i);
+          if (searchText == tmp.Term) {
+            continue;
+        } else {
+          b++;
+        }
+        if ( b == 1 ) {
+          nowMin = tmp.Count;
+          nowMax = tmp.Count;
+        } else {
+          if (nowMax < tmp.Count) {
+            nowMax = tmp.Count;
+          }
+          if (nowMin > tmp.Count) {
+            nowMin = tmp.Count;
+          }
+        }
+      }
+      if (b % 2 == 1) {
+        b += 1;
+      }
+      var degress:Number = 360 / b;
+    	for (var i = 0 ;i < myArray.length ; i++) {
+    	  var obj:* = myArray.getItemAt(i);
+    	  if (searchText == obj.Term){
+    	    continue;
+    	  }
+    	  var count:Number = obj.Count;
+    	  var countTmp:Number = getCountTmp(nowMin , nowMax ,count);
+    	  var y1:Number = Math.sin(degress * (i + 1)) * countTmp;
+        var x1:Number = Math.cos(degress * (i + 1)) * countTmp;
+        y1 = y1 + centerPoint.y;
+        x1 = x1 +  centerPoint.x;
+        obj.point = {x:x1 , y:y1};
+        obj.isCenter = false;
+    	  var n:Node = new Node( obj , canvas);
+    	  oldList.push(obj.Term);
+    	}
+    }
+    function getCountTmp(minCount:Number , maxCount:Number , countTmp:Number):Number {
+      var y = maxCount - minCount;
+      if (y == 0) {
+        return 200;
+      }
+      var min = 120;
+      var max = centerPoint.x;
+      if (centerPoint.x > centerPoint.y) {
+        max = centerPoint.y;
+      }
+      var x = max - min ;
+      var z = countTmp - minCount;
+      countTmp = (x/y * z) + min ;
+      return countTmp;
+    }
+    public function doZoom(value:Number):void {
+      if (zoomAll.isPlaying) {
+        zoomAll.reverse();
+      }
+      else {
+        toValue += value;
+        if (toValue > 2) {
+          toValue = 2;
+        } 
+        if (toValue < .5) {
+          toValue = .5;
+        } 
+        zoomAll.play([canvas]);
+        fromValue = toValue;
+       }
+     }
+     //拖动初始器  
+private function dragSource(e:MouseEvent, format:String):void  
+{  
+    var iu:IUIComponent = e.currentTarget as IUIComponent;  
+    var ds:DragSource = new DragSource();  
+    Ax = e.localX;
+    Ay = e.localY;
+    ds.addData(iu, format); //设置一个标号format  
+    DragManager.doDrag(iu, ds, e); // 开始拖动这个物体  
+}
+ //当拖进去时  
+     private function onEnter(e:DragEvent, format:String):void  
+    {  
+        if (e.dragSource.hasFormat(format)) //如果标号为format则接受拖来的物体  
+        {  
+            DragManager.acceptDragDrop(IUIComponent(e.target)); // 接受被拖进来的物体        
+        }  
+    }  
+     
+    //当拖完成时  
+    private function onDrop(e:DragEvent, format:String):void  
+    {  
+       var box:HBox=HBox(e.dragInitiator); //如果扩展到其他组件，改这里Box就可以了。  
+       box.x = e.stageX-Ax;
+       box.y = e.stageY-Ay;  
+     }  
+ 
+private function format(value:Number):String {
+	value = value * dayTime;
+	var date:Date = new Date(value);
+	var format:DateFormatter = new DateFormatter();
+	format.formatString = "YYYYMMDD";
+	return format.format(date);
+}
+public function setHSliderValue(value1:Number , value2:Number) {
+	if (value1 != 0 ) {
+		bw = value1 / dayTime;
+	}
+	if (value2 != 0) {
+		bh = value2 / dayTime;
+	}
+}
+ private function typeSearch(type:String):void {
+   this.doSearch(null , null , null , type);
+ }
+ private function doWindowClick() {
+   ExternalInterface.call('window.open','/t9/core/module/touchgraph/main.jsp?data=' +  encodeURIComponent(searchText),'_blank');
+ } 
+    ]]>
+  </mx:Script>
+  <mx:Zoom id="zoomAll"  zoomWidthTo="{toValue}" originX="{originPoint.x}"  originY="{originPoint.y}" zoomHeightTo="{toValue}" zoomWidthFrom="{fromValue}" zoomHeightFrom="{fromValue}" />
+   <mx:Canvas horizontalScrollPolicy="off"   verticalScrollPolicy="off"  width="202" height="252">
+              <mx:HBox >
+              <local:Container  width="100%" height="100%"   id="canvas">
+              </local:Container>
+              </mx:HBox>
+            </mx:Canvas>
+</mx:Application>

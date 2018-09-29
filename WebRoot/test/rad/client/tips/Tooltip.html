@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/prototype.js"></script>
+  <script type="text/javascript" src="js/Tooltip.js"></script>
+  <script type="text/javascript">
+   function test(){
+        var a = $('v');
+        new Tooltip('input',{width:300,backgroundColor:'#FAFCFD', // Default background color
+			borderColor:'#CCEFF5', // Default border color
+			textColor:'#999999', // Default text color (use CSS value)
+			maxWidth:150,	// Default tooltip width
+			mouseFollow:true},'这是一个tesdddd');
+        new Tooltip(a,{width:100,backgroundColor:'red', // Default background color
+    			borderColor:'blue', // Default border color
+    			textColor:'#999999', // Default text color (use CSS value)
+    			maxWidth:500,	// Default tooltip width
+    			mouseFollow:false},'这是一个dddd');
+   }
+  
+  </script>
+ </HEAD>
+ 
+ <BODY onload="test()">
+  <input type="text" id="input" name="" value="" /><br/>
+<a href="#" id="v">dddddd</a>
+</body>
+</html>

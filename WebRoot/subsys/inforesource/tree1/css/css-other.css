@@ -1,0 +1,97 @@
+.down-box-top {
+	background-image: url(../images/relevance-white-tit.jpg);
+	background-repeat: no-repeat;
+	height: 28px;
+	width: 768px;
+}
+.down-box-cen {
+	height: 75px;
+	width: 766px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #D7D6DB;
+	border-bottom-color: #D7D6DB;
+	border-left-color: #D7D6DB;
+}
+.db-up {
+	width: 750px;
+	height: 22px;
+	padding-top: 12px;
+	padding-left: 8px;
+	text-align: center;
+}
+#container #right-box #right-content #r-con-cen #down-box .down-box-cen .db-up ul {
+	margin: 0px;
+	padding: 0px;
+}
+#container #right-box #right-content #r-con-cen #down-box .down-box-cen .db-up li {
+	float: left;
+	width: 145px;
+}
+#container #right-box #right-content #r-con-cen #down-box .down-box-cen .db-up a {
+	font-family: "΢���ź�", "����";
+	font-size: 13px;
+	color: #666666;
+	text-decoration: none;
+}
+#container #right-box #right-content #r-con-cen #down-box .down-box-cen .db-up a:hover {
+	font-family: "΢���ź�", "����";
+	font-size: 13px;
+	color: #0000FF;
+}
+#container #right-box #right-content #r-con-cen #up-box #up-right .up-right-con-a .h3 a {
+	font-family: "΢���ź�", "����";
+	font-size: 15px;
+	color: #0099FF;
+}
+#container #right-box #right-content #r-con-cen #up-box #up-right .up-right-con-a .h3 a:hover {
+	font-family: "΢���ź�", "����";
+	font-size: 15px;
+	color: #666666;
+}
+.up-right-con-a {
+	margin-left: 8px;
+	overflow: hidden;
+	padding-top: 5px;
+	padding-bottom: 25px;
+}
+#container #right-box #right-content #r-con-cen #up-box #up-right .up-right-con-a .block a {
+	font-family: "����";
+	font-size: 13px;
+	color: #999999;
+	line-height: 15px;
+}
+#container #right-box #right-content #r-con-cen #up-box #up-right .up-right-con-a .block a:hover {
+	font-family: "����";
+	font-size: 13px;
+	color: #CCCCCC;
+	line-height: 15px;
+}
+.con-txt2 {
+	line-height: 24px;
+	float: left;
+	display:block;
+}
+.con-dot {
+	font-family: "����";
+	font-size: 13px;
+	color: #0000CC;
+	line-height: 23px;
+	float: left;
+}
+#container #right-box #right-content #r-con-cen #up-box #up-right .up-right-con-a .block .con-txt2 a
+{
+    font-family: "����";
+	font-size: 13px;
+	color: #0000CC;
+	text-decoration: underline;
+}
+#container #right-box #right-content #r-con-cen #up-box #up-right .up-right-con-a .block .con-txt2 a:hover {
+	font-family: "����";
+	font-size: 13px;
+	color: #333333;
+}

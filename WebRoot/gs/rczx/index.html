@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>集团页面演示列表页</title>
+<link rel="stylesheet" type="text/css" href="/yh/gs/css/styel02.css" media="all" />
+<script type="text/javascript">
+function search(){
+  location.href = "/yh/lucene/lucene.jsp?content="+document.getElementById('searchContent').value+"&stationId=14";
+}
+</script>
+</head>
+<body>
+	<div class="wap">
+		<div class="top">
+        	<h2><a href="#" ><img src="/yh/gs/images/logo.jpg" width="325" height="65" alt="" /></a></h2>
+            <li class="soso">
+            <strong><a href="#" >网站地图 |</a><a href="#" >关于我们</a></strong>
+            <span>
+            <input type="text" id="searchContent" name="searchContent" value="站内信息搜索" /> 
+            <a  href="#" id="bottonx"><button type="submit" id="botton" onclick="search()">搜索</button></a>
+            </span>
+            </li>
+        </div>
+		<div class="nav" id="navmenu">
+        	<ul id="navi">
+				<li><a href="/yh/gs/index.html">首页</a></li>
+												<li><a href="/yh/gs/khfw/index.html">客户服务</a></li>
+												<li><a href="/yh/gs/rczx/index.html">人才中心</a></li>
+												<li><a href="/yh/gs/cpxx/index.html">产品信息</a></li>
+												<li><a href="/yh/gs/gyjt/index.html">关于集团</a></li>
+																<li><a href="/yh/gs/xwzx/index.html">新闻中心</a></li>
+				            </ul>
+        </div>
+		<script type="text/javascript" language="javascript">
+		var nav = document.getElementById("navi");
+		var links = nav.getElementsByTagName("li");
+		var lilen = nav.getElementsByTagName("a"); //判断地址
+		var currenturl = document.location.href;
+		var last = 0;
+		for (var i=0;i<links.length;i++){
+			var linkurl = lilen[i].getAttribute("href");
+			if(currenturl.indexOf(linkurl)!=-1){
+				last = i;
+			}
+		}
+		links[last].className = "navon"; //高亮代码样式
+		</script> 
+		<div class="waper">
+		<div class="connet">
+        	<li class="gonggao"><a href="#" >您现在的位置：<a href="../index.html">首页</a> >人才中心</a></li>
+            <div class="col">
+             <div class="cl_lx">
+             <div class="cl_l">
+             	<h3>新闻中心</h3>
+                <ul>
+										<li><a href="/yh/gs/xwzx/116.html">新闻中心002 
+</a></li>
+										<li><a href="/yh/gs/xwzx/115.html">新闻中心001 
+</a></li>
+					                </ul>
+             </div>
+             <div class="cl_c">
+             <h3>服务热线</h3>
+                <ul>
+                <h4>销售公司</h4>
+                <p>010-12345678<br />
+                010-12345678
+                </p>	
+                
+                <h4>进出口公司</h4>
+                <p>010-12345678<br />
+                010-12345678
+                </p>
+                  
+                </ul>
+             </div>
+             </div>
+             <div class="cl_r">
+             	<img src="/yh/gs/images/whimg.jpg" width="739" height="110" alt="企业文化图片加载...." />
+			<ul class="text">
+			<h3>人才中心</h3>
+						<li><span>2012-06-10 12:52:01.0</span><a href="/yh/gs/rczx/111.html">人才中心001 
+ </a></li>
+						</ul>
+            </div>
+            
+        </div>
+        </div>
+        </div>
+        <div class="footer">
+        	<li>
+            	<strong>一恒软件工程有限公司版权所有</strong>
+	            <span>
+	            <a href="#" >联系我们</a>
+                <a href="#" >法律声明</a>
+                <a href="#" >友情链接</a>
+	            </span>
+            </li>
+        </div>
+	
+</body>
+</html>

@@ -1,0 +1,91 @@
+@CHARSET "UTF-8";
+.pgPanel {
+	height:24px;
+	line-height:24px;
+}	
+.pgPanel div {
+	float:left;
+	font-size:12px;
+}
+
+.pgBtn {
+	width: 20px;
+	height: 22px;
+	display: block;
+	cursor: pointer;
+	margin:1px;
+}
+
+.pgPress {
+	margin:2px 0 0 2px;
+}
+
+.pgPrev {
+	background: url(../img/prev.gif) no-repeat center;
+}
+
+.pgPrevDisabled {
+	background: url(../img/prev_disabled.gif) no-repeat center;
+	cursor:auto;
+}
+
+.pgNext {
+	background: url(../img/next.gif) no-repeat center;
+}
+
+.pgNextDisabled{
+	background: url(../img/next_disabled.gif) no-repeat center;
+	cursor:auto;
+}
+
+.pgFirst {
+	background: url(../img/first.gif) no-repeat center;
+}
+
+.pgFirstDisabled {
+	background: url(../img/first_disabled.gif) no-repeat center;
+	cursor:auto;
+}
+
+.pgLast {
+	background: url(../img/last.gif) no-repeat center;
+}
+
+.pgLastDisabled {
+	background: url(../img/last_disabled.gif) no-repeat center;
+	cursor:auto;
+}
+
+.pgRefresh {
+	background: url(../img/nowait.gif) no-repeat center;
+}
+
+.pgLoad {
+	background: url(../img/loading.gif) no-repeat center;
+}
+
+.pgTable {
+	clear:both;
+	table-layout:fixed;
+}
+
+.pgCurrentPage, .pgPerPage {
+	width:24px;
+	text-align:center;
+}
+
+.pgSearchInfo {
+	margin-left:20px;
+}
+
+.cleanFloat {
+	clear:both;
+	display:none;
+}
+
+.separator {
+	width:2px;
+	height:24px;
+	margin:0 5px 0 5px;
+	background: url(../img/separator.gif) no-repeat center;
+}

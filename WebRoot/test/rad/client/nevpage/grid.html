@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="/yh/core/styles/style1/css/views.css" type="text/css" />
+<link rel="stylesheet" href="/yh/core/styles/style1/css/style.css" type="text/css" />
+<script type="text/Javascript" src="/yh/core/js/datastructs.js"></script>
+<script type="text/Javascript" src="/yh/core/js/sys.js" ></script>
+<script type="text/Javascript" src="/yh/core/js/prototype.js" ></script>
+<script type="text/Javascript" src="/yh/core/js/smartclient.js" ></script>
+<script type="text/javascript" src = "/yh/raw/cy/grid/grid.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/yh/raw/cy/grid/grid.css"/>
+<title>数据列表翻页导航</title>
+</head>
+<script type="text/javascript">
+
+ function loads(){
+   
+	var hd =[
+	       	  [
+		       	{header:"hID",name:"id",width:"10%"},
+		       	{header:"hAge",name:"age",width:"20%"},
+		       	{header:"hanme",name:"name",width:"40%"}
+		      ],
+		      {
+	    		header:"操作",
+	    		oprates:[
+		               new YHOprate('增加',true,function(record,index){alert(record.getField('name').value+":"+index)}),
+                       new YHOprate('oprate4',false,function(){alert("oprate4")}),
+                       new YHOprate('删除',true,function(){alert("oprate2")})
+                        ]
+             }
+	];
+	var url = "/yh/raw/cy/act/YHGridAct/jsonTest.act?tabName=tabName";
+	var grid = new YHGrid(hd,url,null);
+	 grid.rendTo('grid');
+	 }
+</script >
+<body onload = "loads()">
+<div id = "grid" style = "width:400px;height:200px;border:1px solid #0000ff;"></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oa.spring.dao.batis.ProductUnitMapper">
+
+	<resultMap type="oa.spring.po.ProductUnit" id="productUnit">
+		<id property="unitId" column="unit_id" />
+		<result property="unitName" column="unit_name" />
+	</resultMap>
+
+	<select id="getProduct" resultMap="productUnit">
+		SELECT * from erp_product_unit where is_del='0'
+	</select>
+	<select id="getProductByIds" resultMap="productUnit"
+		parameterType="String">
+		SELECT * from erp_product_unit where unit_id=#{unitId}
+	</select>
+	<insert id="addProduct" parameterType="oa.spring.po.ProductUnit">
+		insert into erp_product_unit(unit_id,unit_name)
+		values(uuid(),#{unitName})
+	</insert>
+	<update id="productUpdate" parameterType="oa.spring.po.ProductUnit" >
+		update erp_product_unit set unit_name = #{unitName}
+								  where unit_id=#{unitId}
+	</update>
+	<delete id="productDelete" parameterType="String">
+		update  erp_product_unit set is_del='1'  where unit_id=#{unitId};
+	</delete>
+</mapper>

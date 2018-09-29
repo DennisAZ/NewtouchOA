@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"  backgroundColor="#ffffff" width="524" height="138"    layout="absolute">
+<mx:Script>
+  <![CDATA[
+  //creationComplete="init()"
+    import mx.rpc.http.HTTPService;
+    import com.adobe.serialization.json.JSON;
+    import mx.rpc.events.ResultEvent;
+    import mx.charts.series.items.LineSeriesItem;
+    import mx.charts.series.LineSeries;
+    import mx.utils.StringUtil;
+    import mx.charts.series.items.ColumnSeriesItem;
+    import mx.charts.HitData;
+    import mx.collections.ArrayCollection;
+    import mx.managers.ToolTipManager;
+    [Bindable]
+    private var myArray:ArrayCollection = new ArrayCollection([
+      {name:'1月',value:46},
+      {name:'2月',value:32},
+      {name:'3月',value:12},
+      {name:'4月',value:24},
+      {name:'5月',value:36},
+      {name:'6月',value:46},
+      {name:'7月',value:53},
+      {name:'8月',value:12},
+      {name:'9月',value:24},
+      {name:'10月',value:42},
+      {name:'11月',value:12},
+      {name:'12月',value:26}
+    ]);
+    private function columnChart_dataTipFunc(item:HitData):String { 
+                var cSI:LineSeriesItem = item.chartItem as LineSeriesItem; 
+                return "<b>月份/命中率</b><br />月份：" + cSI.item.name + "<br/>命中率："+cSI.item.value; 
+            } 
+   private function init():void {
+       var info:Object = Application.application.loaderInfo.parameters;
+       if (info != null ) {
+    	   var searchText = info["q"] + "";
+    	   if (searchText != "" ) {
+    	      //this.doSearch(searchText); 
+    	   }
+      }
+      ExternalInterface.addCallback("doSearch",doSearch);
+    }
+    private function doResult(event:ResultEvent) {
+      var data:String = event.result.toString();
+      var json:Object = JSON.decode(data);
+      var rtData:Array = json.rtData as Array;
+      var myArray:ArrayCollection = new ArrayCollection(rtData);
+    }
+    private function doSearch(text:String){
+      var http:HTTPService = new HTTPService();
+    	http.url =  "/t9/t9/subsys/inforesouce/act/T9OutURLAct/getLineChartData.act";
+  		http.addEventListener(ResultEvent.RESULT , doResult);
+  		http.resultFormat = "text";
+  		var obj:* = {q:text};
+  		http.send(obj);
+    }
+  ]]>
+</mx:Script>
+  <mx:HBox width="100%" height="100%">
+   
+  	<mx:LineChart dataProvider="{myArray}"   color="0x323232"
+                      showDataTips="true"  dataTipFunction="columnChart_dataTipFunc"  id="linechart1"  width="100%" height="100%" fontSize="12">
+  	  <!-- horizontal axis -->    
+  	  <mx:horizontalAxis>  
+  	           <mx:CategoryAxis categoryField="name" displayName="年度命中率"/>  
+  	   </mx:horizontalAxis>
+  	    <mx:series>
+                <mx:LineSeries yField="value" form="curve" displayName=""/>
+            </mx:series>
+  	</mx:LineChart>
+  </mx:HBox>
+</mx:Application>

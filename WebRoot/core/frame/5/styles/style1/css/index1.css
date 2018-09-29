@@ -1,0 +1,995 @@
+html, body {
+  font: normal 12px verdana;
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+  height: 100%;
+  overflow-y:hidden;
+  overflow-x:hidden;
+}
+
+html {
+	background: url(../img/bg-1.jpg) repeat-x scroll left top #1269b9;
+}
+
+body {
+  background: url(../img/banner/top_bg.jpg) no-repeat scroll left top;
+}
+
+img, button {
+  border:none;
+}
+
+a {
+  outline-style:none;
+}
+
+a:link,a:visited,a:hover,a:active {
+  text-decoration: none;
+}
+
+ol,ul {
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+
+#northContainer {
+	background: url(../img/bg-1.jpg) repeat-x scroll left top #b3d6f2;
+}
+
+.banner_bg {
+  height:78px;
+  background: url(../img/banner/top_bg.jpg) no-repeat scroll left top;
+}
+
+
+.banner_overflow_x_scroll {
+  height: 55px;
+  position: absolute;
+  right: 250px;
+  top: 15px;
+  width: 362px;
+}
+
+.clear{
+  clear:both;
+}
+
+.banner_shortcut_bg {
+	height: 64px;
+	height: 54px\9;
+	padding-bottom: 10px;
+	padding-left: 7px;
+  font-size:13px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+	.banner_shortcut_bg { 
+	  height: 54px;
+	}
+}
+
+.banner_shortcut_bg a:link,.banner_shortcut_bg a:visited,.banner_shortcut_bg a:active{
+  width:76px;
+  color:#c0deff;
+}
+
+.banner_shortcut_bg a:hover{
+  color:#FFF;
+  background: url(../img/banner/button_mouseon_bg.jpg) no-repeat 0 13px;
+}
+
+.banner_shortcut_bg:hover{
+}
+
+#navigation {
+}
+
+.banner_scroll_up{
+  position: absolute;
+  right: 375px;
+  top: 17px;
+}
+
+.statusbar-usercount{
+  heigth:21px;
+}
+
+.statusbar-usercount a:link,.statusbar-usercount a:visited,.statusbar-usercount a:active,.statusbar-usercount a:hover{
+  color:#000;
+}
+
+.statusbar-usercount input{
+  color:#000;
+}
+
+.status-content {
+  background: none repeat scroll 0 0 #E5E5E5;
+  color: #393939;
+  height: 30px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.status-content a:link,.status-content a:visited,.status-content a:active,.status-content a:hover{
+  color:#000;
+}
+
+.banner_scroll_down{
+  position: absolute;
+  right: -44px;
+  top: 17px;
+}
+
+.banner_scroll_down img{
+}
+
+.banner_scroll_up img{
+}
+
+.banner_shortcut_bg a{
+  display: block; 
+  position: relative;
+  text-align: center;
+}
+
+#bannerShortcut {
+  width: 362px;
+}
+
+.banner-shortcutlist-container {
+  position:absolute;
+  overflow:hidden;
+  height:64px;
+  width:480x;
+  right:0px;
+}
+
+/**** 不在tr上放背景,解决ie6/7背景错位问题 ****/
+td.td0, td.td1, td.td2, td.td3 {
+	width: 25%;
+  background-image: url("../img/banner/shortcut_bg.jpg");
+  background-repeat: no-repeat;
+}
+
+td.td0 {
+  background-position: 0 0;
+}
+
+td.td1 {
+  background-position: -90px 0;
+}
+
+td.td2 {
+  background-position: -180px 0;
+}
+
+td.td3 {
+  background-position: -271px 0;
+}
+
+.right-logout{
+  position:absolute;
+  right:57px;
+  top:0;
+}
+
+.right-logout a{
+  display:block;
+  width: 77px;
+  height: 52px;
+  cursor:pointer;
+  background:url(../img/mainframe/logout.jpg) no-repeat left top;
+}
+
+.right-logout a:hover{
+  background:url(../img/mainframe/logout_mouseon.jpg) no-repeat left top;
+}
+
+.right-callright{
+  position:absolute;
+  left:0;
+  top:0;
+}
+
+.right-callright a {
+  display:block;
+  width: 50px;
+  height: 52px;
+  cursor: pointer;
+  background:url(../img/mainframe/call_right.jpg) no-repeat left top;
+}
+
+.right-callright a.hideleft {
+  background: url("../img/mainframe/call_left.jpg") no-repeat scroll left top transparent
+}
+
+.right-control {
+  position:absolute;
+  right:138px;
+  top:0;
+}
+
+.right-control a{
+  display:block;
+  width: 120px;
+  height: 52px;
+  cursor: pointer;
+  background:url(../img/mainframe/control.jpg) no-repeat left top;
+}
+
+.right-control a:hover{
+  cursor: pointer;
+  background:url(../img/mainframe/control_mouseon.jpg) no-repeat left top;
+}
+
+.right-desktop{
+  position:absolute;
+  right:263px;
+  top:0;
+}
+
+.right-desktop a{
+  display:block;
+  width: 81px;
+  height: 52px;
+  cursor: pointer;
+  background: url(../img/mainframe/desktop.jpg) no-repeat left top;
+}
+
+.right-desktop a:hover{
+  cursor: pointer;
+  background: url(../img/mainframe/desktop_mouseon.jpg) no-repeat left top;
+}
+
+.right-username{
+  float:right;
+  text-align:center;
+  width: 100px;
+  height: 52px;
+}
+
+.right-username input{
+  margin: 5px 0;
+  width: 100px;
+  text-align:center;
+  cursor: pointer;
+  font-size: 12px;
+  color: #fff;
+  border:none;
+  background-color:transparent 
+}
+
+.right-userstatus{
+  height: 52px;
+  width: 50px;
+  margin:0 5px;
+  cursor: pointer;
+  float: right;
+  text-align: right;
+  background: url(../img/mainframe/userstatus_bg.png) no-repeat left 10px;
+}
+
+.right-editInfo{
+  margin:0 5px;
+  text-align:center;
+  width: 167px;
+  height: 21px;
+  line-height: 21px;
+	background: url(../img/mainframe/edit_info_bg.jpg) no-repeat left top;
+}
+
+.right-editInfo input{
+	text-align: center;
+  color: white;
+  width:155px;
+  border:none;
+  font-size: 12px;
+  background-color:transparent;
+}
+
+.right-userstatus input{
+  margin-top: 4px;
+  width:38px;
+  color: #C0DEFF;
+  cursor: pointer;
+  text-align:center;
+  border:none;
+  font-size: 12px;
+  background-color:transparent;
+}
+
+.leftmenu-north-lv2 li {
+  float:left;
+}
+
+.menu-lv1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-lv1 li {
+  list-style:none outside none;
+  border:none;
+  border-style:none;
+  height: 40px;
+  width: 184px;
+}
+
+.menu-lv1 li a {
+  display:block;
+  width: 236px;
+  line-height: 40px;
+  font-size:13px;
+  -moz-user-select:none;
+  text-align:left;
+  text-indent:55px;
+  vertical-align:middle;
+  cursor:pointer;
+  background: url(../img/mainframe/menu_lv1_bg.jpg) no-repeat left top;
+}
+
+.menu-lv1 li a:link,.menu-lv1 li a:visited{
+  color:#323232;
+}
+
+.menu-lv1 .menu-selected a{
+  background: url(../img/mainframe/menu_lv1_selected.jpg) no-repeat left top;
+}
+
+.menu-lv1 .menu-selected a:hover{
+  color:#323232;
+  background: url(../img/mainframe/menu_lv1_selected.jpg) no-repeat left top;
+}
+
+.menu-lv2 .menu-selected a{
+  background: url(../img/mainframe/menu_lv2_selected.jpg) no-repeat left top;
+}
+.menu-lv2 .menu-selected a:hover{
+  background: url(../img/mainframe/menu_lv2_selected.jpg) no-repeat left top;
+}
+
+.menu-lv2 .menu-expand a:hover{
+  color:#323232;
+  background: url(../img/mainframe/menu_lv2_expand.jpg) no-repeat left top;
+}
+
+.menu-lv2 .menu-close a:hover{
+  background: url(../img/mainframe/menu_lv2_close_hover.jpg) no-repeat left top;
+}
+
+.menu-lv2 .menu-close a{
+  background: url(../img/mainframe/menu_lv2_close.jpg) no-repeat left top;
+}
+
+.menu-lv3 .menu-selected a{
+  background: url(../img/mainframe/menu_lv3_selected.jpg) no-repeat left top;
+}
+
+.menu-lv3 .menu-selected a:hover{
+  background: url(../img/mainframe/menu_lv3_selected.jpg) no-repeat left top;
+}
+
+.menu-lv1 li a:hover{
+  background: url(../img/mainframe/menu_lv1_mouseon.jpg) no-repeat left top;
+}
+
+.menu-lv2 {
+  list-style:none outside none;
+  border:none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-lv2 li {
+  list-style:none outside none;
+  border:none;
+  border-style:none;
+  height:33px;  
+}
+
+.menu-lv2 li a {
+  display:block;
+  width: 236px;
+  line-height: 33px;
+  vertical-align:middle;
+  font-size:12px;
+  color:#323232;
+  -moz-user-select:none;
+  text-align:left;
+  text-indent:60px;
+  cursor:pointer;
+  background: url(../img/mainframe/menu_lv2_bg.jpg) no-repeat left top;
+}
+
+.menu-lv2 li a:hover{
+  color:#08124e;
+  background: url(../img/mainframe/menu_lv2_mouseon.jpg) no-repeat left top;
+}
+
+.menu-lv3 {
+  list-style:none outside none;
+  border:none;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.menu-lv3 li {
+  list-style:none outside none;
+  border:none;
+  border-style:none;
+  height:28px;
+}
+
+.menu-lv3 li a {
+  display:block;
+  width: 236px;
+  line-height: 28px;
+  vertical-align:middle;
+  font-size:12px;
+  color:#0e1956;
+  -moz-user-select:none;
+  text-align:left;
+  text-indent:75px;
+  cursor:pointer;
+  background: url(../img/mainframe/menu_lv3_bg.jpg) no-repeat left top;
+}
+
+.menu-lv3 li a {
+  background: url(../img/mainframe/menu_lv3_bg.jpg) no-repeat left top;
+}
+
+.leftContent{
+  left:0px;
+}
+
+.menu-lv3 li a:hover{
+  color:#000000;
+  background: url(../img/mainframe/menu_lv3_mouseon.jpg) no-repeat left top;
+}
+
+.left-callLeft{
+	display: none;
+	position:relative;
+	top:10px;
+	left:190px;
+	height:33px;
+  width: 13px;
+  height: 11px;
+  background:url(../img/mainframe/call_left.jpg) no-repeat left top;
+}
+
+.right-timeinfo {
+  position:absolute;
+  right:500px;
+  top:0;
+}
+
+.rightbar-up {
+  position:absolute;
+  right:0px;
+  top:0;
+}
+
+.leftmenu-south{
+  height: 0px;
+}
+
+.leftmenu-north-lv1 {
+  width: 236px;
+  height: 53px;
+}
+
+.leftmenu-west {
+  width:0px;
+}
+
+.leftmenu-east {
+  width:0px;
+}
+
+.right-funcsbar{
+  border: none;
+}
+
+.leftmenu-north-lv2 {
+	position:relative;
+	top:0;
+	left:0;
+  width: 236px;
+  height: 34px;
+  background: url(../img/mainframe/left_bar_lv2_bg.jpg) repeat-x top left;
+}
+
+.leftmenu-north-lv2 ul {
+	margin:0;
+	padding:0;
+}
+
+.leftmenu-north-lv2 ul li {
+  display:block;
+}
+
+.leftmenu-north-lv1 ul li {
+  float:left;
+  display:block;
+}
+
+.leftmenu-north-lv1 ul li a img {
+  position:relative;
+  top:0;
+}
+
+.leftmenu-body {
+	width:236px;
+	position:absolute;
+	top:31px;
+	bottom:0;
+  overflow-y:auto;
+  overflow-x:hidden;
+  background-color: #e5e5e5;
+}
+
+.menu-lv2 .menu-expand a{
+  color:#323232;
+  background: url(../img/mainframe/menu_lv2_expand.jpg) no-repeat left top;
+}
+
+.leftmenu-north-lv1-menu {
+	width:236px;
+  position:absolute;
+  top:0;
+  left: 0;
+}
+
+.leftmenu-north-lv2 .leftbar-sp {
+  float:left;
+  width:0px;
+}
+
+.jq-window-mask {
+  position: absolute;
+  background-color: #CCCCCC;
+  z-index: 9000;
+  opacity: 0.5;
+  filter: alpha(opacity=50);WIDTH: 100%;
+}
+
+.right-switch {
+  position:absolute;
+  right:354px;
+  top:0;
+}
+
+#rightBarUser {
+  width: 40px;
+  height: 40px;
+}
+
+.right-switch a {
+  display: block;
+  width:108px;
+  height: 52px;
+  background:url(../img/mainframe/switch.jpg) no-repeat left top;
+}
+
+.right-switch a:hover {
+  background:url(../img/mainframe/switch_hover.jpg) no-repeat left top;
+}
+
+.tab-btn-active {
+	width: 45px;
+	height: 33px;
+  background:url(../img/mainframe/tab_btn_selected.jpg) no-repeat left top;
+}
+
+.tab-header {
+}
+
+.tab-lv2 .tab-header {
+  background: none #f4f4f4;
+}
+
+.tab-btn-normal {
+	width: 45px;
+	height: 33px;
+  background:url(../img/mainframe/tab_header.jpg) repeat-x left top;
+}
+
+.tab-btn-lv2-active {
+	width: 45px;
+	height: 25px;
+  background:url(../img/mainframe/tab_btn_lv2_selected.jpg) no-repeat left top;
+}
+
+.tab-btn-lv2-normal {
+	width: 45px;
+	height: 25px;
+  background:url(../img/mainframe/tab_bar_lv2_bg.jpg) repeat-x left top;
+}
+
+#cityInfo {
+  display: none;
+  padding-top: 0px;
+}
+
+#cityName {
+  cursor: pointer;
+}
+
+#weatherInfo {
+  color: #fff;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+#wthAndTime {
+  height: 85px;
+  line-height: 50px;
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  width: 150px;
+  vertical-align: middle;
+}
+
+#wthAndTime.timeonly {
+  top: 30px;
+}
+
+#weather {
+	width: 100%;
+  height: 50%;
+}
+
+#rightBarStatus {
+}
+
+.right-user {
+	background:url(../img/mainframe/avatar_box.jpg) no-repeat left top;
+  position:absolute;
+  left: 65px;
+  top:0px;
+  width: 155px;
+}
+
+.right-editInfoCtn {
+	position:absolute;
+	left:120px;
+	top:25px;
+	z-index:10;
+}
+
+.right-status {
+	position:absolute;
+	left:220px;
+	top:0px;
+}
+
+#rightBarUser {
+	float:left;
+	margin:5px 0 0 4px;
+}
+
+#rightBarStatus {
+  float:left;
+  margin:7px 0px;
+}
+
+#westContainer {
+  width: 236px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+#wthAndTime #time {
+  height: 45%;
+  width: 100%;
+  line-height: 20px;
+  font-size: 13px;
+  color: #fff;
+  margin-top:-4px;
+}
+
+#southContainer {
+  height: 30px;
+}
+
+.ui-layout-south #status {
+  text-align:center;
+  line-height:22px;
+  color: #fff;
+  height:30px;
+  overflow:hidden;
+}
+
+#mainContainer .ui-layout-center {
+  border-left: 1px solid #c4c4c4;
+}
+
+.content-tip {
+  display: none;
+}
+
+.content-tip li {
+  line-height: 22px;
+}
+
+.content-tip a {
+  color: #323232;
+}
+
+#rightHeaderBar #taskbar_left {
+    float: left;
+    padding: 0 10px;
+}
+#rightHeaderBar #taskbar_left #start_menu {
+    background: url("../img/start_menu.png") no-repeat scroll center 0 transparent;
+    display: block;
+    height: 40px;
+    width: 97px;
+}
+#rightHeaderBar #taskbar_left #start_menu:hover, #rightHeaderBar #taskbar_left #start_menu.active {
+    background-position: center -40px;
+}
+
+#rightHeaderBar #taskbar_center {
+    float: left;
+    padding-top: 10px;
+}
+#rightHeaderBar #taskbar_center #tabs_container {
+    float: left;
+    height: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: auto;
+}
+#rightHeaderBar #taskbar_center #tabs_container div.selected {
+    background: url("../img/tabs_active.png") no-repeat scroll right -30px transparent;
+}
+#rightHeaderBar #taskbar_center #tabs_container div {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: inline-block !important;
+    margin-right: 3px;
+    padding-right: 5px;
+    white-space: nowrap;
+    float: left;
+}
+#rightHeaderBar #taskbar_center #tabs_container div.selected a.tab {
+    background: url("../img/tabs_active.png") no-repeat scroll left 0 transparent;
+    color: #416AA3;
+    font-size: 14px;
+    font-weight: bold;
+}
+#rightHeaderBar #taskbar_center #tabs_container div a.tab {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #FFFFFF;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    min-width: 64px !important;
+    padding-left: 10px;
+    padding-right: 3px;
+    text-align: center;
+    text-decoration: none;
+    width: auto !important;
+}
+#rightHeaderBar #taskbar_center #tabs_container div.selected a.close {
+    display: inline-block;
+}
+#rightHeaderBar #taskbar_center #tabs_container div a.close {
+    background: url("../img/tabs_close.png") no-repeat scroll 0 center transparent;
+    display: none;
+    height: 16px;
+    margin-bottom: -2px !important;
+    width: 16px;
+}
+#rightHeaderBar #taskbar_center #tabs_container div a.close:hover {
+    background-position: -16px center;
+    cursor: pointer;
+}
+
+#rightHeaderBar #taskbar_right {
+    float: right;
+    padding-left: 10px;
+}
+#rightHeaderBar #taskbar_right #portal {
+    background: url("../img/desktop_icons.png") no-repeat scroll -80px 0 transparent;
+    display: inline-block;
+    height: 25px;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 30px;
+}
+#rightHeaderBar #taskbar_right #portal:hover, #rightHeaderBar #taskbar_right #portal.active {
+    background-position: -80px -25px;
+}
+#rightHeaderBar #taskbar_right #person_info {
+    background: url("../img/desktop_icons.png") no-repeat scroll -254px 0 transparent;
+    display: inline-block;
+    height: 25px;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 30px;
+}
+#rightHeaderBar #taskbar_right #person_info:hover, #rightHeaderBar #taskbar_right #person_info.active {
+    background-position: -254px -25px;
+}
+#rightHeaderBar #taskbar_right #theme {
+    background: url("../img/desktop_icons.png") no-repeat scroll -364px 0 transparent;
+    display: inline-block;
+    height: 25px;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 30px;
+}
+#rightHeaderBar #taskbar_right #theme:hover, #rightHeaderBar #taskbar_right #theme.active {
+    background-position: -364px -25px;
+}
+#rightHeaderBar #taskbar_right #logout {
+    background: url("../img/desktop_icons.png") no-repeat scroll -288px 0 transparent;
+    display: inline-block;
+    height: 25px;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 30px;
+}
+#rightHeaderBar #taskbar_right #logout:hover {
+    background-position: -288px -25px;
+}
+#rightHeaderBar #taskbar_right #rightBarUp {
+    background: url("../img/desktop_icons.png") no-repeat scroll -117px 0 transparent;
+    display: inline-block;
+    height: 25px;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 23px;
+}
+#rightHeaderBar #taskbar_right #rightBarUp.up {
+    background: url("../img/desktop_icons.png") no-repeat scroll -144px 0 transparent;
+}
+
+#funcbar {
+    background: none repeat scroll 0 0 #E5E5E5;
+    height: 30px;
+    left: 0;
+    overflow: hidden;
+    right: 0;
+    top: 40px;
+    z-index: 2;
+}
+#funcbar #funcbar_left {
+    position: relative;
+}
+#funcbar #funcbar_right {
+    float: right;
+    padding: 0 10px;
+}
+#funcbar #funcbar_right .search {
+    background: url("../img/search_bg.png") no-repeat scroll left 0 transparent;
+    display: inline-block !important;
+    float: left;
+    height: 30px;
+    padding-left: 26px;
+    width: 134px !important;
+}
+#funcbar #funcbar_right .search .search-body {
+    background: url("../img/search_bg.png") no-repeat scroll right -60px transparent;
+    padding-right: 26px;
+    position: relative;
+}
+#funcbar #funcbar_right .search .search-body .search-input {
+    background: url("../img/search_bg.png") repeat-x scroll left -30px transparent;
+}
+#funcbar #funcbar_right .search .search-body .search-input input {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    height: 16px;
+    margin-top: 7px;
+    padding-left: 0;
+    width: 100%;
+}
+#funcbar #funcbar_right .search .search-clear {
+    background: url("../img/search_bg.png") no-repeat scroll right -90px transparent;
+    cursor: pointer;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    width: 16px;
+}
+
+
+#southContainer table td.right {
+    padding-right: 10px;
+    text-align: right;
+    width: 140px;
+}
+#southContainer table td.right a.ipanel_tab:link, #southContainer table td.right a.ipanel_tab:hover, #southContainer table td.right a.ipanel_tab:active, #southContainer table td.right a.ipanel_tab:visited {
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    margin-right: 10px;
+    text-align: center;
+    text-decoration: none;
+    width: 30px;
+    z-index: 5;
+}
+#southContainer table td.right #nocbox {
+    background: url("../img/desktop_icons.png") no-repeat scroll -323px 0 transparent;
+}
+#southContainer table td.right #nocbox:hover, #south table td.right #nocbox.active {
+    background: url("../img/desktop_icons.png") no-repeat scroll -323px -25px transparent;
+}
+#southContainer table td.right #smsbox {
+    background: url("../img/desktop_icons.png") no-repeat scroll -174px 0 transparent;
+}
+#southContainer table td.right #smsbox:hover, #south table td.right #smsbox.active {
+    background: url("../img/desktop_icons.png") no-repeat scroll -174px -25px transparent;
+}
+#southContainer table td.right #org {
+    background: url("../img/desktop_icons.png") no-repeat scroll -214px 0 transparent;
+}
+#southContainer table td.right #org:hover, #south table td.right #org.active {
+    background: url("../img/desktop_icons.png") no-repeat scroll -214px -25px transparent;
+}
+
+
+.org-online {
+    background: url("images/org_online.jpg") no-repeat scroll left top transparent;
+    color: gray;
+    font-size: 15px;
+    height: 27px;
+    width: 113px;
+}
+.org-online-active {
+    background: url("images/org_online_selected.jpg") no-repeat scroll left top transparent;
+    color: black;
+    font-size: 15px;
+    height: 27px;
+    width: 113px;
+}
+.org-all {
+    background: url("images/org_all.jpg") no-repeat scroll left top transparent;
+    color: gray;
+    font-size: 15px;
+    height: 27px;
+    width: 113px;
+}
+.org-all-active {
+    background: url("images/org_all_selected.jpg") no-repeat scroll left top transparent;
+    color: black;
+    font-size: 15px;
+    height: 27px;
+    width: 113px;
+}
+
+#start_menu_mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 20;
+	display: none;
+}
+
+#start_menu_panel {
+	z-index: 21;
+}

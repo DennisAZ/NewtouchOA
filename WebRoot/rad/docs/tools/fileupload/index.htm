@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">文件上传</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:</td>
+    <td width="20%">&nbsp;陈懿</td>
+    <td width="15%">创建日期:</td>
+    <td width="20%">&nbsp;2011-01-10</td>
+    <td width="10%">版本:</td>
+    <td width="25%">&nbsp;1.0</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="60%">适用情景描述</th>
+    <th width="35%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+    <td><a href="uploadDemo.jsp">附件上传下载测试</a></td>
+    <td>&nbsp;提供了附件上传和下载的功能，包括附件批量上传(IE6下不兼容).<br>
+        注意：<br>
+    <font color="red"> 1. 附件的命名规则 "附件随机Id_附件名称"<br>
+                 2.附件的存储命名规则   “系统设定的附件存储路径 " + \\ + "当前模块的模块名称" + \\ + “当前年的后两位+月份（共四位）” + \\ + “上传后的附件名”
+     </font></td>
+    <td><p>参见工程 ：<br>1. web页面<a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/tools/fileupload/uploadDemo.jsp">
+    webroot/yh/rad/docs/tools/fileupload</a><br>
+                  2. 后台支持 src/yh/rad/docs/common/file/YHFileUpLoadDemo.java
+               </p>
+ </td>
+  </tr>
+</table>
+
+</body>
+</html>

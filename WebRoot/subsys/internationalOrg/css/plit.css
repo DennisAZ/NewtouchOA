@@ -1,0 +1,235 @@
+#zone-top {
+  margin-left: 20px;
+  margin-top: 10px;
+  text-align: left;
+  width: 800px;
+  height: 30px;
+  background: url(images/title-bg.png) repeat-x 0 -4px;
+}  
+#zone-top h2 {
+  color: #111;
+  font: 13px/27px "微软雅黑","宋体";
+}
+#zone-mid {
+  width: 800px;
+  margin-left:20px;
+  margin-top: 10px; 
+}
+#zone-mid p{
+  color: #333;
+  font: 14px/21px "微软雅黑","宋体";
+  text-align: left;
+  text-indent: 2em;
+}
+#zone-mid img {
+  float: left;
+  width:126px;
+  height: 134px;
+  margin: 5px 15px 5px 0;
+}
+#zone-bot{
+  width: 800px;
+  height: 240px;
+  margin-left:20px;
+  /* background: url(images/xinxi-bg.jpg) no-repeat right bottom; */
+  background: url(images/buildings.png) repeat-x center bottom;
+}
+.frame-top {
+  width:793px;
+  height:22px;
+  background: url(images/frame-top.png) no-repeat center bottom;
+}
+.frame-cen {
+  width:793px;
+  height:auto;
+  height: 150px;
+  background: url(images/frame-cen.png) repeat-y center center;
+}
+.frame-bot {
+  width:793px;
+  height:22px;
+  background: url(images/frame-bot.png) no-repeat center top;
+}
+.frame-cen .left {
+  width: 360px;
+  vertical-align: top;
+  text-align: left;
+  height:100%;
+}
+.frame-cen .right {
+  width: 360px;
+  vertical-align: top;  
+  text-align: left;
+  height: 100%;
+}
+.frame-cen h2 {
+  text-align:center;
+}
+.frame-cen p {
+  color: #111;
+  text-indent: 2em;
+  font: 13px/19px "微软雅黑","宋体";
+}
+.red {
+  color:red;
+}
+.item {
+  width:690px;
+  height:35px;
+  background: url(images/xinxi-item.png) no-repeat;  
+  margin-top:5px;
+  margin-bottom: 5px;
+  margin-left: 65px;
+  *margin-left: 0;
+}
+.search {
+  margin-left: 65px;
+  *margin-left: 0;
+  width:688px;
+  height: 52px;
+  padding-top: 12px;
+  background: url(images/sou-bg.png) no-repeat;
+  vertical-align:middle;
+}
+.name {
+  text-align: left;
+  float: left;
+  display:block;
+  padding-left:55px;
+  width: 240px;
+  font: 13px/35px "微软雅黑","宋体";
+}
+.priv {
+  float: left;
+  display:block;
+  width:327px;
+  font: 13px/35px "微软雅黑","宋体";
+  text-align: left;
+}
+.op {
+  float: left;
+  text-align: left;
+  display:block;  
+  width: 66px;
+  clear: right;
+  font: 13px/35px "微软雅黑","宋体";
+}
+.sou {
+  width:49px;
+  height:27px;
+  border:0 none;
+  background: url(images/so.jpg) no-repeat center center;
+  margin-right: 10px;
+  vertical-align:middle;
+}
+.soutext {
+  margin-left:186px;
+  *margin-left:121px;
+  width: 420px;
+  border: #dcdcdc 1px solid;
+  height:28px;
+  text-align:left;
+  padding-left: 5px;
+  font: 13px/28px "微软雅黑","宋体";
+  vertical-align:middle;
+}
+.blank20 {
+  height: 20px;
+}
+.mainpage {
+  background: url(images/buildings.png) repeat-x center bottom;
+  /*background: url(images/xinxi-bg.jpg) no-repeat right bottom; */
+}
+
+.mainpage .content2 {
+}
+.mainpage .channel {
+  width:397px;
+  height:222px;
+  background:url(images/news-bg.gif) no-repeat;
+  text-align:left;
+  float: left;
+  margin-left:10px;
+}
+.mainpage .channel .title2{
+  width: 370px;
+  height: 30px;
+  padding-left: 25px;
+  background:url(images/title-li.gif) no-repeat 10px center;
+}
+.mainpage .channel h2 {
+  color:#536dde;
+  float:left;
+  font: bold 16px/30px "微软雅黑","宋体";
+}
+.mainpage .channel ul {
+  margin-left: 10px;
+}
+.mainpage .channel li {
+  height:28px;
+  width:350px;
+  vertical-align:middle;
+  text-align:left;
+  zoom:1;
+  padding-left: 15px;
+  background:url(images/list-li.gif) no-repeat left center;  
+}
+.mainpage .channel li a {
+  font: 13px/28px "微软雅黑","宋体";
+}
+/* 参选政团样式 */
+.san {
+  width:809px;
+  height:450px;
+  position:relative;
+  background:url(images/zhengtuan-bg.jpg) no-repeat 110px 40px;
+}
+.san ul {
+  padding: 15px 5px;
+}
+.san li {
+white-space:nowrap;
+  display:inline;
+  float:left;
+  padding: 0 10px;
+  
+}
+#fandui {
+  position:absolute;
+  left: 518px;
+  top: 200px;
+  width:192px;
+  height:124px;
+  overflow:hidden;
+  background:url(images/box-gray.png) no-repeat;
+}
+#fandui a {
+  color:#82867e;
+  font-weight: bold;
+}
+#qita {
+  position:absolute;
+  left: 119px;
+  top: 154px;
+  width:195px;
+  height:83px;
+  overflow:hidden;
+  background:url(images/box-blue.png) no-repeat;
+}
+#qita a {
+  color:#437da6;
+  font-weight: bold;
+}
+#aiguo {
+  position:absolute;
+  left: 420px;
+  top: 40px;
+  width:211px;
+  height:84px;
+  overflow:hidden;
+  background:url(images/box-red.png) no-repeat;
+}
+#aiguo a {
+  color:#974a31;
+  font-weight: bold;
+}

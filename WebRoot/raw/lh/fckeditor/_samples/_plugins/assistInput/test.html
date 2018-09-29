@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+
+<html> 
+
+<head> 
+
+<title>Link Properties</title> 
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+
+<meta content="noindex, nofollow" name="robots"> 
+
+<script language="javascript"> 
+
+var oEditor = window.parent.InnerDialogLoaded() ; 
+
+//var FCK = oEditor.FCK ; 
+
+//var FCKLang = oEditor.FCKLang ; 
+
+var FCKIn = oEditor.FCKIn ;  
+
+window.onload = function () 
+
+{ 
+//loadSelected();
+window.parent.SetOkButton( true ) ; 
+
+} 
+
+function  loadSelected(){
+   var eSelected = oEditor.FCKSelection.GetSelectedElement() ;
+   if(eSelected != null){
+   if ( eSelected.tagName == 'INPUT' && eSelected.type == 'text') { 
+	inputid.value = eSelected.id;
+	inputname.value = eSelected.name;
+        inputvalue.value = eSelected.value;
+    } 
+   else 
+     eSelected = null;
+   }
+}
+
+//点击ok按钮发生的操作
+
+function Ok() 
+
+{ 
+
+if ( document.getElementById('inputId').value.length < 0 ) {
+ return false;
+}
+if ( document.getElementById('address').value.length < 0 ) {
+  return false;
+ }
+if ( document.getElementById('fun').value.length < 0 ) {
+  return false;
+ }
+FCKIn.Add( inputId.value, address.value ,fun.value) ;  
+return true ; 
+
+} 
+
+</script>  
+
+</head> 
+
+ 
+
+<body scroll="no" style="OVERFLOW: hidden"> 
+
+<table height="100%" cellSpacing="0" cellPadding="0" width="100%" border="0"> 
+
+<tr> 
+
+<td> 
+
+<table cellSpacing="0" cellPadding="0" align="center" border="0"> 
+
+<tr> 
+
+<td> 
+输入控件ID<input id="inputId" type="text"/><br/>
+请求地址<input id="address" type="text"/><br/>
+回调函数名<input type="text" id="fun"/>
+</td> 
+
+</tr> 
+
+</table> 
+
+</td> 
+
+</tr> 
+
+</table> 
+
+</body> 
+
+</html> 
+

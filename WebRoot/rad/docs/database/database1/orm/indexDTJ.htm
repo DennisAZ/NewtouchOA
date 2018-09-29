@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">DTJ</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:</td>
+    <td width="20%">&nbsp;陈懿</td>
+    <td width="15%">创建日期:</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:</td>
+    <td width="25%">&nbsp;1.0</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="10%">类名</th>
+    <th width="85%">方法使用</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+    <td>
+      
+    </td>
+    <td>
+    	<table width="100%" border="1">
+    			<tr>
+    			<th width="10%">返回值</th>
+    			<th width="40%">方法</th>
+    			<th width="50%">方法描述</th>
+ 				  <tr>
+ 				 	<td>StringBuffer </td>
+ 				 	<td>StringBuffer toJson(Connection conn,String tableNo,Integer pageNum,Integer pageRows,String[] filters)	<br/>
+					此方法处理<font color="red">分页</font>的数据 </td>
+ 				 	<td>
+ 				 		<LI>参数说明
+    	 		<UL>
+    	 		<LI>conn : 数据库连接</LI>
+					<LI>tableNo : 数据表编码</LI>
+					<LI>pageNum ：分页页码</LI>
+					<LI>pageRows ： 每页显示条数</LI>
+					<LI>filters ： where查询条件:<font color ="red">所对应的值如为  SEQ_ID = 1  则String的值为"SEQ_ID=1",如为  NAME = "SS"  则String的值为"NAME='SS'"</font></LI></UL></LI>
+    			主要实现无对象的数据与数据库的关联。主要用于数据的展示<br />
+    			能够提供小编码数据的展示功能，提供数据库级别的分页功能
+ 				 	</td>
+ 				 </tr>
+ 				  <tr>
+ 				 	<td>StringBuffer </td>
+ 				 	<td>StringBuffer toJson(Connection conn,String tableNo,String[] filters)
+ 				 	<br/>
+					此方法处理<font color="red">不分页</font>的数据 				 	
+ 				 	</td>
+ 				 	<td>
+ 				 		<LI>参数说明
+    	 		<UL>
+    	 		<LI>conn : 数据库连接</LI>
+					<LI>tableNo : 数据表编码</LI>
+					<LI>filters ： where查询条件:<font color ="red"> 所对应的值如为  SEQ_ID = 1  则String的值为"SEQ_ID=1",如为  NAME = "SS"  则String的值为"NAME='SS'"</font></LI></UL></LI>
+    			主要实现无对象的数据与数据库的关联。主要用于数据的展示<br />
+    			能够提供小编码数据的展示功能。
+ 				 	</td>
+ 				 </tr>
+    	</table>
+    </td>
+    <td></a></td>
+  </tr>
+</table>
+
+</body>
+</html>

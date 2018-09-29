@@ -1,0 +1,54 @@
+
+
+	#demo {
+	font: normal 13px verdana;
+	width:auto;
+ }
+ 
+
+
+	#menu { height:30px; overflow:auto; }
+	#text { margin-top:1px; }
+
+	#alog { font-size:9px !important; margin:5px; border:1px solid silver; }
+
+	.node_input {
+	  display:block;
+		height:18px;
+		width:91px;
+		border:none;
+    position:relative;
+    top:1px;
+    left:30px; 
+    /*yh\subsys\inforesource\tree1\_demo\imgs\input_text.jpg
+    http://localhost/yh/subsys/inforesource/tree1/images/button-b.jpg
+    */
+		background: url(../imgs/input_text.jpg) no-repeat left top;
+	}
+	
+	.tree_header {
+		cursor: pointer;
+		height:27px;
+		background: url(../imgs/tree_header.jpg) no-repeat left top;
+	}
+	
+	a {
+	  outline-style:none;
+	}
+	
+	a:link,a:visited,a:active,a:hover {
+		text-decoration: none;
+	}
+	
+	.tree_header span{
+		position:relative;
+		left:30px;
+		top:8px;
+	}
+	
+  .node_input input{
+    width:90px;
+    display:block;
+    border:none;
+    background-color:transparent;
+  }

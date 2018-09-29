@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" 
+   xmlns:viewStackEffects="org.efflex.mx.viewStackEffects.*"  creationComplete="createComplete()"  height="900"  layout="absolute" applicationComplete="doInit()" backgroundColor="#000000" xmlns:local="*">
+   <!-- 定义改变状态时的动画效果 -->  
+   <mx:transitions>  
+       <mx:Transition>  
+            <mx:Parallel    
+              targets="{[mainCanvas,vbox1,tipBox,closeOrOpenImage]}">  
+                <mx:Resize duration="500" easingFunction="Bounce.easeOut"/>
+                <mx:Sequence target="{vbox1}">  
+                   <mx:Blur duration="200" blurYFrom="1.0" blurYTo="20.0"/>  
+                   <mx:Blur duration="200" blurYFrom="20.0" blurYTo="1"/>  
+                </mx:Sequence>  
+            </mx:Parallel>  
+        </mx:Transition>  
+    </mx:transitions>  
+  <mx:states>
+    <mx:State name="noTip">
+      <mx:RemoveChild target="{vbox1}"/>
+    </mx:State>
+  </mx:states>
+  <mx:Style>
+  .bottomBg{
+    backgroundImage: Embed(source="image/bottomBg.jpg"); 
+    border-skin:ClassReference("RepeatBackground");
+  }
+  .background1
+{
+    backgroundImage: Embed(source="image/background1.jpg"); 
+    border-skin:ClassReference("RepeatBackground");
+}
+.background2
+{
+    backgroundImage: Embed(source="image/a.png"); 
+    border-skin:ClassReference("RepeatBackground");
+}
+.background3
+{
+    backgroundImage: Embed(source="image/b.png"); 
+    border-skin:ClassReference("RepeatBackground");
+}
+  ProgressBar {
+   borderColor: #666666;
+   barColor: #6633ff;
+  }
+  ToolTip {
+   backgroundAlpha: 0;
+   backgroundColor: #000000;
+   color: #ffffff;
+   fontSize: 12;
+  }
+  .imageStyle {
+    paddingLeft:0
+  }
+  .myWindTitle {
+    color: #00bfff;
+  }
+  .mySelectedTabs {
+   color: #ffffff;
+  }
+  .ImageBoxStyle{
+    horizontalAlign:center;
+    verticalAlign:top;
+    horizontalGap:0;
+    verticalGap:0;
+  }
+  </mx:Style>
+  <mx:Script>
+    <![CDATA[
+      import mx.effects.easing.Bounce;
+      private function hit(num:String):void {
+        mainBox.styleName = "background" + num;
+      }
+      [Embed(source="image/up.png")]
+      private var arrTop:Class;
+      [Embed(source="image/down.png")]
+      private var arrBottom:Class;
+      [Embed(source="image/up1.png")]
+      private var arrTop1:Class;
+      [Embed(source="image/down1.png")]
+      private var arrBottom1:Class;
+      private function upRollOver(e:Event):void {
+        var image:Image = e.currentTarget as Image;
+        image.source = arrTop1;
+      }
+      private function upRollOut(e:Event):void {
+        var image:Image = e.currentTarget as Image;
+        image.source = arrTop;
+      }
+      private function downRollOver(e:Event):void {
+        var image:Image = e.currentTarget as Image;
+        image.source = arrBottom1;
+      }
+      private function downRollOut(e:Event):void {
+        var image:Image = e.currentTarget as Image;
+        image.source = arrBottom;
+      }
+    ]]>
+  </mx:Script>
+  <mx:Script source="ImageView.as"/>
+   <mx:Resize id="resize1"  widthFrom="{imageWidth}" widthTo="{imageWidth + 10}" duration="500"  />
+   <mx:Resize id="resize2"  widthFrom="{imageWidth + 10}" widthTo="{imageWidth}" duration="500"  />
+  <mx:VBox verticalGap="0" height="100%"  styleName="background1" id="mainBox" width="100%">
+  <mx:VBox  horizontalAlign="center" width="100%">
+    <mx:HRule  strokeColor="#ffffff" width="100%"/>
+    <mx:Text htmlText="{title}" fontSize="20" color="#ffffff" fontWeight="bold"/>
+  </mx:VBox>
+  <mx:HBox  dragEnter="onEnter(event , 'smallImagePal')" dragDrop="onDrop(event , 'smallImagePal')"  horizontalGap="0"  verticalGap="0"   height="100%" width="100%">
+  <mx:Spacer width="5"/>
+     <mx:VBox  id="smallImagePalBox" horizontalGap="0" verticalGap="0"  height="100%">
+     <mx:VBox  horizontalGap="0" verticalGap="0"
+        id="smallImagePal"  height="474"  backgroundColor="#1F1F1F"  borderStyle="solid" borderColor="#999999" width="110">
+     <mx:Image   rollOver="cursorID = CursorManager.setCursor(Icon1)" 
+        rollOut="CursorManager.removeCursor(cursorID)"   mouseDown="dragSource(event, 'smallImagePal')"  source="{titlebg}" width="100%" height="21"/>
+     <mx:HBox  horizontalGap="0" verticalGap="0" width="108" height="34" horizontalAlign="center" verticalAlign="middle">
+       <mx:Image rollOver="upRollOver(event)" rollOut="upRollOut(event)" mouseChildren="true" buttonMode="true"  useHandCursor="true"  click="topPre()" source="{arrTop}"/>
+     </mx:HBox>
+     <mx:VBox id="picContainer"  height="330" width="108" horizontalAlign="center">
+       <mx:Repeater  id="picRepeater" dataProvider="{smallPic}" startingIndex="{startIndex}" count="5">
+         <mx:HBox  alpha="0.7"   horizontalScrollPolicy="off"   verticalScrollPolicy="off" horizontalAlign="center" verticalAlign="middle" click="clickSelectedImage(event.currentTarget as HBox)"  name="{picRepeater.currentItem.id}" width="{imageWidth}"  height="{imageHeight}" mouseChildren="true" buttonMode="true" useHandCursor="true" borderColor="#666666" borderStyle="solid">
+           <mx:Image source="{baseUrl + picRepeater.currentItem.smallPath}"/>
+         </mx:HBox>
+       </mx:Repeater>
+     </mx:VBox>
+     <mx:HBox 
+        horizontalGap="0"
+         verticalGap="0" 
+          width="108" 
+          height="34"
+          horizontalAlign="center" 
+          verticalAlign="middle">
+       <mx:Image  rollOver="downRollOver(event)" rollOut="downRollOut(event)" mouseChildren="true" buttonMode="true"  useHandCursor="true" click="bottomNext()" source="{arrBottom}"/>
+     </mx:HBox>
+     <mx:VBox width="100%"  height="50">
+       <mx:HRule width="100%" strokeColor="#666666" />
+       <mx:HBox width="100%">
+         
+       </mx:HBox>
+     </mx:VBox>
+     </mx:VBox>
+     </mx:VBox>
+     <mx:Spacer width="5"/>
+     <mx:Canvas id="mainCanvas"  height="645"  width="100%">
+      <mx:ViewStack  id="viewStack" width="100%" height="100%">
+      </mx:ViewStack>
+      <mx:HBox x="0"  id="progressBarBox" height="100%"  y="0"  width="100%" verticalAlign="middle"  horizontalAlign="center" >
+       <mx:ProgressBar indeterminate="true" id="loadProgressBar" visible="false"/>
+      </mx:HBox>
+     <mx:HBox x="0" horizontalGap="0" id="rightOrLeftBox"  y="0" height="100%"  width="100%">
+       <mx:HBox toolTip="上一张" width="50%"  visible="{this.selectedIndex > 0}"  rollOver="leftBox.visible = true"  rollOut="leftBox.visible = false"  click="leftClick()"  mouseChildren="true" buttonMode="true"  useHandCursor="true" height="400"  horizontalAlign="left" verticalAlign="middle">
+        <mx:Spacer width="10"/>
+        <mx:Image source="{imgClss1}" id="leftBox"  visible="false" />
+       </mx:HBox>
+       <mx:HBox  toolTip="下一张" width="50%" visible="{(this.smallPic.length - 1) > selectedIndex}"  rollOver="rightBox.visible = true"  rollOut="rightBox.visible = false" click="rightClick()"  mouseChildren="true" buttonMode="true"  useHandCursor="true"   height="400"   horizontalAlign="right"  verticalAlign="middle">
+       <mx:Image source="{imgClss2}" id="rightBox"  visible="false" />
+       <mx:Spacer width="10"/>
+       </mx:HBox>
+     </mx:HBox>
+     </mx:Canvas>
+  <mx:Spacer width="5"/>
+  <mx:HBox id="tipBox"  horizontalGap="0" verticalGap="0" height="100%">
+   <mx:TabNavigator  selectedTabTextStyleName="mySelectedTabs" tabStyleName="myWindTitle"  height="645" width="206" borderColor="#666666" borderStyle="solid" id="vbox1" backgroundColor="#2B2B2B"  >
+        <mx:VBox label="相关信息" width="100%" height="100%">
+           <mx:Text  width="100%"  color="#FFFFFF" htmlText="{title}" fontWeight="bold" fontSize="14" fontFamily="Times New Roman"/>
+           <mx:Text  width="100%"  color="#999999" htmlText="{info}"/>
+           <mx:Text width="100%"   color="#FFFFFF"  htmlText="{message}" fontSize="12" fontFamily="Times New Roman"/>
+        </mx:VBox>
+
+         <mx:VBox label="元数据" width="100%" height="100%">
+          </mx:VBox>
+  </mx:TabNavigator>
+  <mx:VBox width="100%">
+  <mx:Spacer height="16"/>
+  <mx:Image click="closeOrOpen()" id="closeOrOpenImage"  styleName="imageStyle" source="{nowImage}"/>
+  </mx:VBox>
+  </mx:HBox>
+  </mx:HBox>
+  <mx:Spacer height="5"/>
+  <mx:HBox backgroundColor="#333333"  verticalAlign="middle" id="operateBox" height="30" fontSize="12" color="#00bfff"   horizontalAlign="left"  width="100%">
+  <mx:Spacer width="20"/>
+  <mx:Image  mouseChildren="true" buttonMode="true"  useHandCursor="true"  source="image/background1.jpg" click="hit('1')"  width="16" height="12"/>
+  <mx:Spacer width="10"/>
+  <mx:Image  mouseChildren="true" buttonMode="true"  useHandCursor="true"  source="image/a.png" click="hit('2')" width="16" height="12"/>
+  <mx:Spacer width="10"/>
+  <mx:Image  mouseChildren="true" buttonMode="true"  useHandCursor="true"  source="image/b.png" click="hit('3')" width="16" height="12"/>
+  <mx:Spacer width="25"/>
+  <mx:LinkButton label="全屏"  click="fullScr()"/>
+  <mx:Text text="|"/>
+  <mx:LinkButton label="下载"  click="downImage(event)"/>
+  <mx:HBox width="100%" horizontalAlign="right">
+    <mx:LinkButton label="{nextTitle}" click="nextImageView()"/>
+    <mx:Spacer width="115"/>
+  </mx:HBox>
+  </mx:HBox>
+  <mx:HBox styleName="bottomBg" height="148"  horizontalGap="0" id="showList" width="100%" borderColor="#666666" backgroundColor="#151515" verticalAlign="middle">
+    <mx:Spacer width="20"/>
+    <mx:Text  text="更多高清" color="#ffffff" width="20" fontSize="14"/>
+    <mx:Spacer width="20"/>
+    <mx:Repeater dataProvider="{imageList}" id="imageListRep" count="{imageListCount}">
+      <local:ImageList  mouseChildren="true" buttonMode="true"  useHandCursor="true" click="imageListClick(event)" imageUrl="{imageListRep.currentItem.smallpath}" titleStr="{imageListRep.currentItem.title}" idStr="{imageListRep.currentItem.id}"/>
+      <mx:Spacer width="10"/>
+    </mx:Repeater>
+  </mx:HBox>
+  <mx:HBox width="100%" id="rightMessage" horizontalAlign="right">
+    <mx:Text color="#ffffff" text="Copyright © 1998 - 2010 1hsoft.com. All Rights Reserved"/>
+  </mx:HBox>
+  </mx:VBox>
+</mx:Application>

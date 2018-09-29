@@ -1,0 +1,55 @@
+<HTML xmlns:v><STYLE>v\:*{behavior:url(#default#VML);}</STYLE>
+<script type="text/javascript" src="/yh/core/js/datastructs.js"></script>
+
+<script type="text/javascript">
+
+function setSize(isToEnlarge) {
+  var group1= document.getElementById('group1');
+
+  var data = group1.coordsize + "";
+
+  var v = data.split(",");
+  
+  var w = parseInt(v[0]);
+  var h = parseInt(v[1]);
+  //放大是减
+  if (!isToEnlarge) {
+    if (w < 200) {
+      w += 10;
+      h += 10;
+    }   
+  } else {
+    if (w > 40) {
+      w -= 10;
+      h -= 10;
+    } 
+  }
+  data = w + "," + h ;
+  group1.coordsize = data;
+}
+function doInit() {
+  var sOval = '<v:oval style="filter:alpha(opacity=60,style=2);LEFT:200;TOP:100;WIDTH:30;HEIGHT:30" fillcolor="yellow" stroked="f"/>';
+  var oval = document.createElement(sOval);
+
+  var group1 = document.getElementById('group1');
+  group1.appendChild(oval);
+  var sOval2 = '<v:oval style="LEFT:208;TOP:108;WIDTH:15;HEIGHT:15" strokeweight="2px" strokecolor="#808080" fillcolor="yellow" stroked="true"/>';
+  var oval2 = document.createElement(sOval2);
+
+  
+  group1.appendChild(oval2);
+}
+
+</script>
+<BODY onload="doInit()" >
+<div>vml测试<input onclick="setSize(false)" type=button value="放小"/><input onclick="setSize(true)" type=button value="放大"/></div>
+<div id="groupDiv" style="background-color:#000000">
+<v:group id="group1" style='left:0;top:0;z-index:1;width:100;height:100' coordsize="20,20">
+
+<v:rect style="LEFT:100;TOP:200;WIDTH:80;HEIGHT:80" fillcolor="red"/>
+<v:arc style="LEFT:200;TOP:200;WIDTH:80;HEIGHT:80" startangle="360" endangle="167" fillcolor="blue"/>
+ 
+<v:group>
+</div>
+</body>
+</html>

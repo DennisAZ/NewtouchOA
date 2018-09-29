@@ -1,0 +1,38 @@
+#input{
+	text-align:left; 
+	width:420px;
+	padding-top:5px;
+	padding-left:10px;
+} 
+#input iframe{
+	height:62px;
+	width:420px;
+}
+
+#listCon{
+	margin-top:-1px;
+	width:420px;
+	height:250px;
+	border:#999 1px solid;
+}
+#listCon ul{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+#listCon li{
+	padding:4px;
+}
+
+#noAtt{
+	padding-top:15px;
+	text-align:center;
+	color:#666666;
+}
+
+.redInf {
+	padding:4px;
+	border:#FF0000 1px solid;
+	background:#FFE3DD;
+	color:#FF0000;
+}

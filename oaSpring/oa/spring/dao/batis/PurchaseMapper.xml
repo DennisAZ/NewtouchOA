@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oa.spring.dao.batis.PurchaseMapper">
+
+	<resultMap type="oa.spring.po.Purchase" id="purchase">
+		<id property="id" column="id" />
+		<result property="code" column="code" />
+		<result property="title" column="title" />
+		<result property="status" column="status" />
+		<result property="person" column="person" />
+		<result property="signDate" column="sign_date" />
+		<result property="contractId" column="contract_id" />
+		<result property="remark" column="remark" />
+
+	</resultMap>
+	<select id="getPurchaseById" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT purOut.remark AS purOutRemark, purOut.id AS purOutId,pur.person_id,
+		pro.id AS productId, pur.id AS purId,pur.code
+		AS purCode,pur.title AS purTitle,pur.status AS
+		purStatus,pur.person AS purPerson,pur.sign_date AS
+		purSignDate,pur.contract_id AS purContractId,pur.remark AS
+		purRemark, sup.id AS supId,sup.sup_name AS supName,sup.sup_code
+		AS supCode,sup.contact_name AS supContactName,sup.phone AS
+		supPhone,sup.mobile AS supMobile,sup.fex AS supFex,sup.email AS
+		supEmail,sup.address AS supAddress, sup.zip_code AS
+		supZipCode,sup.website AS supWebsite,sup.qq AS
+		supQq,sup.products AS supProducts,sup.bank AS
+		supBank,sup.bank_name AS supBankName,sup.bank_account AS
+		supBankAccount,sup.remark AS supRemark,
+		purOut.ppo_code,purOut.ppo_title,purOut.ppo_status,purOut.remark
+		AS purOutRemark, pro.pro_code,pro.pro_name,pro.pro_type,
+		ppro.purchase_num AS proNum,ppro.pur_price AS
+		proPrice,ppro.total AS proTotal,ppro.date AS proDate, paid.code
+		AS paidCode,paid.title AS paidTitle,paid.status AS
+		paidStatus,paid.already_total AS paidAlreadyTotal,paid.total AS
+		paidTotal,paid.remark AS paidRemark,pt.name AS pt_name,ps.name AS ps_name,pu.unit_name FROM erp_purchase pur LEFT
+		JOIN erp_purchase_supplier sup ON sup.purchase_id=pur.id LEFT
+		JOIN erp_purchase_product_out purOut ON
+		purOut.purchase_id=pur.id  LEFT JOIN erp_ppo_pro ppro ON
+		ppro.ppo_id=purOut.id LEFT JOIN erp_product pro ON pro.id=ppro.pro_id LEFT JOIN erp_purchase_paid_plan paid ON
+		paid.purchase_id=pur.id LEFT JOIN erp_product_style ps ON ps.id=pro.ps_id LEFT JOIN erp_product_type pt ON pt.id=pro.pt_id
+		LEFT JOIN erp_product_unit pu ON pu.unit_id=pro.unit_id WHERE pur.id=#{purchaseId}
+	</select>
+	<select id="getRequestById" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT
+			r.name,
+			r.code,
+			r.remark,
+			r.date,
+			rs.pro_id,
+			p.pro_code,
+			p.pro_name,
+			p.pro_type,
+			u.unit_name
+			FROM erp_purchase_request r
+			LEFT JOIN erp_request_supplier rs
+			ON r.id = rs.request_id
+			LEFT JOIN erp_product p
+			ON rs.pro_id = p.id
+			LEFT JOIN erp_product_unit u
+			ON p.unit_id=u.unit_id
+			WHERE r.id=#{reqId}
+			GROUP BY pro_id
+	</select>
+	<select id="getRequestSupById" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		SELECT sup.sup_id,sup.sup_name,spr.sp_price FROM erp_request_supplier rs 
+		LEFT JOIN crm_supplier sup ON sup.sup_id=rs.sup_id
+		LEFT JOIN crm_sup_prod spr ON (spr.sp_wpr_id=rs.pro_id AND spr.sp_sup_id=rs.sup_id) 
+		WHERE rs.pro_id=#{proId} and  rs.request_id=#{reqId}  
+	</select>
+	<select id="getRequestByProId" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT rs.sup_id AS supId, rs.pro_id, sup.sup_name AS supName,
+		sup.sup_phone AS supPhone,sup.sup_mob AS mobile,sp.sp_price FROM
+		erp_request_supplier rs LEFT JOIN crm_supplier sup ON sup.sup_id
+		= rs.sup_id LEFT JOIN erp_product pro ON pro.id = rs.pro_id LEFT
+		JOIN crm_sup_prod sp ON sp.sp_sup_id=rs.sup_id WHERE
+		pro.pro_name = #{proName} AND rs.request_id = #{reqId} GROUP BY
+		supName
+	</select>
+	<select id="getSupplierByProId" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT supplier.sup_name AS supName,rs.sup_id AS
+		supId,rs.pro_id, pr.id AS reqId,pr.code AS reqCode,pr.name AS
+		reqName,pr.date AS reqDate,pr.status AS reqStatus,pr.remark AS
+		reqRemark ,pro.pro_code AS proCode,pro.pro_name AS
+		proName,pro.pro_type AS proType,pro.pro_price AS
+		proPrice,un.unit_name FROM erp_purchase_request pr LEFT JOIN
+		erp_request_supplier rs ON rs.request_id=pr.id LEFT JOIN
+		erp_product pro ON pro.id=rs.pro_id LEFT JOIN erp_product_unit
+		un ON un.unit_id=pro.unit_id LEFT JOIN crm_supplier supplier ON
+		supplier.sup_id=rs.sup_id WHERE supplier.sup_id=#{supId} AND
+		rs.request_id=#{reqId}
+	</select>
+	<insert id="addPurchase" parameterType="java.util.HashMap">
+		INSERT INTO erp_purchase
+		(id,CODE,title,STATUS,person,sign_date,contract_id,remark,person_id)
+		VALUE(#{purchaseId},#{purCode},#{purTitle},#{purStatus},#{purPerson},#{purSignDate},#{purContractId},#{purRemark},#{personId})
+	</insert>
+	<insert id="addPSupplier" parameterType="java.util.HashMap">
+		INSERT INTO erp_purchase_supplier
+		(id,sup_name,sup_code,purchase_id,contact_name,phone,mobile,fex,email,address,zip_code,website,qq,products,bank,bank_name,bank_account,remark,sup_id)
+		VALUE(#{supId},#{supName},#{supCode},#{purchaseId},#{supContactName},#{supPhone},#{supMobile},#{supFex},#{supEmail},#{supAddress},#{supZipCode},#{supWebsite},#{supQq},#{supProducts},#{supBank},#{supBankName},#{supBankAccount},#{supRemark},#{sup_id})
+	</insert>
+	<insert id="addPpo" parameterType="java.util.HashMap">
+		INSERT INTO erp_purchase_product_out
+		(id,ppo_code,ppo_title,purchase_id,ppo_status,remark)
+		VALUE(#{pppoId},#{ppoCode},#{ppoTitle},#{purchaseId},#{ppoStatus},#{ppoRemark})
+	</insert>
+	<insert id="addPpp" parameterType="java.util.HashMap">
+		INSERT INTO erp_purchase_paid_plan
+		(id,CODE,title,purchase_id,STATUS,total,already_total,remark)
+		VALUE(#{pppId},#{paidCode},#{paidTitle},#{purchaseId},#{paidStatus},#{paidTotal},#{alreadyTotal},#{paidRemark})
+	</insert>
+	<insert id="addPpoPro" parameterType="ArrayList">
+		INSERT INTO erp_ppo_pro
+		(id,ppo_id,pro_id,purchase_num,already_purchase_num,STATUS,pur_price,total,DATE,remark)
+		VALUE
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.ppopId},#{item.pppoId},#{item.proUuId},#{item.ppopoNum},0,#{item.ppopStatus},#{item.ppopPrice},#{item.ppopTotal},#{item.newDate},#{item.ppopRemark})
+		</foreach>
+	</insert>
+	<insert id="addPRequest" parameterType="java.util.HashMap">
+		INSERT INTO erp_purchase_request
+		(id,code,name,person,date,status,remark,person_id)
+		VALUES(#{id},#{code},#{name},#{person},#{date},#{status},#{remark},#{person_id})
+	</insert>
+	<insert id="addOut" parameterType="java.util.HashMap">
+		INSERT INTO erp_finance_out
+		(id,CODE,STATUS,TYPE,type_id,payee,bank_name,open_name,account,paid_total,already_paid_total,remark)
+		VALUE(UUID(),#{paidCode},#{outStatus},#{outType},#{purchaseId},#{supName},#{supBank},#{supBankName},#{supBankAccount},#{paidTotal},#{alreadyTotal},#{paidRemark})
+	</insert>
+	<insert id="addSuppReq" parameterType="ArrayList">
+		INSERT INTO
+		erp_request_supplier(id,pro_id,sup_id,request_id,status,remark)
+		VALUE
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.id},#{item.pro_id},#{item.sup_id},#{item.request_id},#{item.status},#{item.remark})
+		</foreach>
+	</insert>
+	<delete id="deletePpoPro" parameterType="String">
+		DELETE FROM erp_ppo_pro WHERE ppo_id=#{pppoId}
+	</delete>
+	<delete id="deleteProduct" parameterType="String">
+		DELETE FROM erp_cache_product WHERE useful_id=#{purchaseId}
+	</delete>
+	<delete id="deletePSupplier" parameterType="String">
+		DELETE FROM erp_purchase_supplier WHERE
+		purchase_id=#{purchaseId}
+	</delete>
+	<delete id="deletePpp" parameterType="String">
+		DELETE FROM erp_purchase_paid_plan WHERE
+		purchase_id=#{purchaseId}
+	</delete>
+	<delete id="deletePpo" parameterType="String">
+		DELETE FROM erp_purchase_product_out WHERE
+		purchase_id=#{purchaseId}
+	</delete>
+	<delete id="deleteOut" parameterType="String">
+		DELETE FROM erp_finance_out WHERE type_id=#{purchaseId}
+	</delete>
+	<delete id="deletePurchase" parameterType="String">
+		DELETE FROM erp_purchase WHERE id=#{purchaseId}
+	</delete>
+	<update id="updatePurchase" parameterType="java.util.HashMap">
+		UPDATE erp_purchase SET
+		code=#{purCode},title=#{purTitle},person=#{purPerson},sign_date=#{purSignDate},contract_id=#{purContractId},remark=#{purRemark},person_id=#{personId}
+		WHERE id=#{purchaseId}
+	</update>
+	<update id="updatePSupplier" parameterType="java.util.HashMap">
+		UPDATE erp_purchase_supplier SET
+		sup_name=#{supName},sup_code=#{supCode},contact_name=#{supContactName},phone=#{supPhone},
+		mobile=#{supMobile},fex=#{supFex},email=#{supEmail},address=#{supAddress},zip_code=#{supZipCode},website=#{supWebsite},qq=#{supQq},
+		products=#{supProducts},bank=#{supBank},bank_name=#{supBankName},bank_account=#{supBankAccount},remark=#{supRemark},sup_id=#{sup_id}
+		WHERE purchase_id=#{purchaseId}
+	</update>
+	<update id="updatePpo" parameterType="java.util.HashMap">
+		UPDATE erp_purchase_product_out SET
+		ppo_code=#{ppoCode},ppo_title=#{ppoTitle},remark=#{ppoRemark}
+		WHERE purchase_id=#{purchaseId}
+	</update>
+	<update id="updateOut" parameterType="java.util.HashMap">
+		UPDATE erp_finance_out SET
+		CODE=#{paidCode},paid_total=#{paidTotal},already_paid_total=#{alreadyTotal},remark=#{supRemark}
+		WHERE type_id=#{purchaseId}
+	</update>
+	<update id="updatePpp" parameterType="java.util.HashMap">
+		UPDATE erp_purchase_paid_plan SET
+		CODE=#{paidCode},title=#{paidTitle},total=#{paidTotal},already_total=#{alreadyTotal},remark=#{paidRemark}
+		WHERE purchase_id=#{purchaseId}
+	</update>
+	<update id="updatePRequest" parameterType="java.util.HashMap">
+		UPDATE erp_purchase_request SET
+		name=#{name},code=#{code},status=#{status},date=#{date},remark=#{remark},person=#{person},person_id=#{person_id}
+		WHERE id=#{id}
+	</update>
+	<delete id="deleteSuppReq" parameterType="String">
+		DELETE FROM erp_request_supplier WHERE request_id=#{reqId}
+	</delete>
+	<delete id="deletePRequest" parameterType="String">
+		DELETE FROM erp_purchase_request WHERE id=#{reqId}
+	</delete>
+	<update id="openAccount" parameterType="java.util.HashMap">
+		UPDATE erp_purchase_request SET status = #{status} WHERE
+		id=#{reqId}
+	</update>
+	<update id="updatePurchaseStatus"
+		parameterType="java.util.HashMap">
+		UPDATE erp_purchase SET status = #{status} WHERE id=#{purId}
+	</update>
+	<update id="updatePPOStatus" parameterType="java.util.HashMap">
+		UPDATE erp_purchase_product_out SET ppo_status = #{status} WHERE
+		purchase_id=#{purId}
+	</update>
+	<update id="updatePPPStatus" parameterType="java.util.HashMap">
+		UPDATE erp_purchase_paid_plan SET status = #{status} WHERE
+		purchase_id=#{purId}
+	</update>
+	<update id="updateFinanceOutStatus"
+		parameterType="java.util.HashMap">
+		UPDATE erp_finance_out SET status = #{status} WHERE
+		type_id=#{purId}
+	</update>
+</mapper>

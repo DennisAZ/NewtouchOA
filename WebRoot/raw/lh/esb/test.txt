@@ -1,0 +1,2 @@
+localhost,d:\\test\\Screenshot1.png,client2,80
+192.168.0.81,d:\\test\\Screenshot10.png,client,8089

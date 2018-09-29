@@ -1,0 +1,124 @@
+
+.up-left-con-img {
+	width: 535px;
+	margin-left: 8px;
+	margin-top: 10px;
+	overflow: hidden;
+	height: auto;
+}
+
+.con-txt-img {
+	font-family: "宋体";
+	font-size: 13px;
+	color: #333333;
+	line-height: 17px;
+	height: 25px;
+	width: 100%;
+	padding-top: 6px;
+}
+
+.con-box {
+	width: 100%;
+	height: 27px;
+	overflow: hidden;
+}
+.con-box-b {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	clear: both;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.con-img-box {
+	width: 100%;
+	padding-top: 4px;
+	padding-bottom: 15px;
+}
+.con-img {
+	height: 60px;
+	display: block;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 0px;
+}
+#container #right-box #right-content #r-con-cen #up-box #up-left .up-left-con-img .con-img-box .con-img img {
+	height: 60px;
+	width: 50px;
+	display: block;
+	float: left;
+	margin-left: 8px;
+	border: 1px solid #00FFFF;
+}
+
+#container #right-box #right-content #r-con-cen #up-box #up-left .up-left-con-img .con-box .h1 a {
+	font-family: "微软雅黑", "宋体";
+	font-size: 17px;
+	color: #996600;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+#container #right-box #right-content #r-con-cen #up-box #up-left .up-left-con-img .con-box .h1 a:hover {
+	font-family: "微软雅黑", "宋体";
+	font-size: 17px;
+	color: #666666;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+#container #right-box #right-content #r-con-cen #up-box #up-left .up-left-con-img .con-box .h2 a {
+    font-family: "微软雅黑", "宋体";
+	font-size: 17px;
+	color: #0066FF;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+#container #right-box #right-content #r-con-cen #up-box #up-left .up-left-con-img .con-box .h2 a:hover {
+	font-family: "微软雅黑", "宋体";
+	font-size: 17px;
+	color: #666666;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+#container #right-box #right-content #r-con-cen #up-box #up-left .up-left-con-img .con-box-b .con-txt2 a {
+	font-family: "宋体";
+	font-size: 13px;
+	color: #0000CC;
+	text-decoration: underline;
+}
+#container #right-box #right-content #r-con-cen #up-box #up-left .up-left-con-img .con-box-b .con-txt2 a:hover {
+	font-family: "宋体";
+	font-size: 13px;
+	color: #333333;
+}
+
+
+#container #right-box #right-content #r-con-cen #up-box #up-right {
+	float: right;
+	width: 206px;
+	height: auto;
+}
+#container #right-box #right-content #r-con-cen #up-box #up-right #up-right-head {
+	background-image: url(../images/relevance-tit.jpg);
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 205px;
+}
+
+
+
+.up-left-con-a {
+	width: 535px;
+	margin-left: 8px;
+	height: 88px;
+	margin-top: 10px;
+	overflow: hidden;
+}
+.r-h-t {
+	background-image: url(../images/right-head.jpg);
+	background-repeat: no-repeat;
+	width:788px;
+	height:11px;
+	overflow: hidden;
+}

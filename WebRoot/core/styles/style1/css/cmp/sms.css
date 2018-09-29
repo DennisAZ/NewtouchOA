@@ -1,0 +1,18 @@
+.from {
+	COLOR: #42b475
+}
+.to {
+	COLOR: #006efe
+}
+.msg {
+	PADDING-LEFT: 10px
+}
+#body {
+	BORDER-RIGHT: #83accf 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #83accf 1px solid; MARGIN-TOP: 10px; PADDING-LEFT: 5px; FONT-SIZE: 9pt; BACKGROUND: #ffffff; PADDING-BOTTOM: 5px; BORDER-LEFT: #83accf 1px solid; COLOR: #000000; PADDING-TOP: 5px; BORDER-BOTTOM: #83accf 1px solid
+}
+#history_msg {
+	OVERFLOW-Y: auto; HEIGHT: 250px
+}
+#pageArea {
+	COLOR: #000000
+}

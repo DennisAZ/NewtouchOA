@@ -1,0 +1,195 @@
+.dahei {
+	font-family: "宋体";
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+}
+.baizi {
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 20px;
+	font-weight: normal;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.baicu {
+	font-family: "宋体";
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.huibian2 {
+	border: 2px solid #CCCCCC;
+}
+.lvbian {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: #AEDDAD;
+	border-right-color: #AEDDAD;
+	border-bottom-color: #AEDDAD;
+	border-left-color: #AEDDAD;
+}
+.lvzi {
+	font-family: "宋体";
+	font-size: 13px;
+	line-height: 20px;
+	font-weight: normal;
+	color: #014000;
+	text-decoration: underline;
+}
+.lvcu {
+	font-family: "宋体";
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: bold;
+	color: #1E631D;
+	text-decoration: none;
+}
+.huizi {
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 20px;
+	font-weight: normal;
+	color: #747474;
+	text-decoration: none;
+}
+
+
+.lv-sibian {
+	border: 1px solid #AEDDAD;
+}
+
+.biaozhun {
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 20px;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+}
+.more {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 20px;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+}
+
+
+.heicu {
+	font-family: "宋体";
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+}
+.input {
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: normal;
+	color: #013300;
+	text-decoration: none;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+}
+
+.baizida {
+	font-family: "宋体";
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: normal;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+
+.lvbian-cu {
+	border: 2px solid #013300;
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: normal;
+	color: #013300;
+	text-decoration: none;
+}
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	color: #000000;
+	text-decoration: none;
+}
+a:hover {
+	color: #918F00;
+	text-decoration: none;
+}
+
+.lvlj1 a:link {
+	color: #014000;
+	text-decoration: underline;
+}
+.lvlj1 a:visited {
+	color: #014000;
+	text-decoration: underline;
+}
+.lvlj1 a:hover {
+	color: #918F00;
+	text-decoration: none;
+}
+.heilj a:link {
+	color: #000000;
+	text-decoration: none;
+}
+.heilj a:visited {
+	color: #000000;
+	text-decoration: none;
+}
+.heilj a:hover {
+	color: #000000;
+	text-decoration: underline;
+}
+.bailj a:link {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.bailj a:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.bailj a:hover {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+.huilj a:link {
+	color: #747474;
+	text-decoration: none;
+}
+.huilj a:visited {
+	color: #747474;
+	text-decoration: none;
+}
+.huilj a:hover {
+	color: #000000;
+	text-decoration: underline;
+}

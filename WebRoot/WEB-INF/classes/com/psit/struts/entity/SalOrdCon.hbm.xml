@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.psit.struts.entity.SalOrdCon" table="crm_sal_ord_con" >
+        <id name="sodCode" type="java.lang.String">
+            <column name="sod_code"/>
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cusCorCus" class="com.psit.struts.entity.CusCorCus" fetch="select" not-null="false">
+            <column name="sod_cus_code"/>
+        </many-to-one>
+        <many-to-one name="salOrderType" class="com.psit.struts.entity.TypeList" fetch="select" not-null="false">
+            <column name="sod_type_id" />
+        </many-to-one>
+        <many-to-one name="salOrderSou" class="com.psit.struts.entity.TypeList" fetch="select" not-null="false">
+            <column name="sod_sou_id" />
+        </many-to-one>
+        <many-to-one name="salEmp" class="com.psit.struts.entity.SalEmp" fetch="select" not-null="false">
+            <column name="sod_se_no" />
+        </many-to-one>
+        <many-to-one name="sodShipState" class="com.psit.struts.entity.TypeList" fetch="select" not-null="false" >
+	        <column name="sod_state_id"/>
+	    </many-to-one>
+        <property name="sodTil" type="java.lang.String">
+            <column name="sod_til" length="300" />
+        </property>
+        <property name="sodNum" type="java.lang.String">
+            <column name="sod_num" length="300" />
+        </property>
+        <property name="sodSumMon" type="java.lang.Double">
+            <column name="sod_sum_mon" precision="18" />
+        </property>
+        <property name="sodPaidMon" type="java.lang.Double">
+            <column name="sod_paid_mon" precision="18" />
+        </property>
+        <property name="sodInpDate" type="java.util.Date">
+            <column name="sod_inp_date" length="23" />
+        </property>
+        <property name="sodComiteDate" type="java.util.Date">
+            <column name="sod_comite_date" length="23" />
+        </property>
+        <property name="sodIsfail" type="java.lang.String">
+            <column name="sod_isfail" length="1" />
+        </property>
+        <property name="sodRemark" type="java.lang.String">
+            <column name="sod_remark" length="1073741823" />
+        </property>
+        <property name="sodContent" type="java.lang.String">
+        	<column name="sod_content" length="1073741823" />
+        </property>
+        <property name="sodChangeDate" type="java.util.Date">
+            <column name="sod_change_date" length="23" />
+        </property>
+        <property name="sodPaidMethod" type="java.lang.String">
+            <column name="sod_paid_method" length="20" />
+        </property>
+        
+        <property name="sodConDate" type="java.util.Date">
+            <column name="sod_con_date" length="23" />
+        </property>
+        <property name="sodInpCode" type="java.lang.String">
+            <column name="sod_inp_code" length="50" />
+        </property>
+        <property name="sodChangeUser" type="java.lang.String">
+            <column name="sod_change_user" length="50" />
+        </property>
+        
+        <property name="sodAppDate" type="java.util.Date">
+            <column name="sod_app_date" length="23" />
+        </property>
+        <property name="sodAppMan" type="java.lang.String">
+            <column name="sod_app_man" length="50" />
+        </property>
+        <property name="sodAppDesc" type="java.lang.String">
+            <column name="sod_app_desc" length="1073741823" />
+        </property>
+        <property name="sodAppIsok" type="java.lang.String">
+            <column name="sod_app_isok" length="1" />
+        </property>
+        <set name="wmsWarOuts" inverse="true"  order-by="wwo_id" cascade="all">
+            <key>
+                <column name="wwo_ord_code"/>
+            </key>
+            <one-to-many class="com.psit.struts.entity.WmsWarOut" />
+        </set>
+        <set name="salPaidPasts" inverse="true"  order-by="sps_cre_date desc" cascade="all">
+            <key>
+                <column name="sps_ord_code"/>
+            </key>
+            <one-to-many class="com.psit.struts.entity.SalPaidPast" />
+        </set>
+        <set name="salPaidPlans" inverse="true"  order-by="spd_cre_date desc" cascade="all">
+            <key>
+                <column name="spd_ord_code"/>
+            </key>
+            <one-to-many class="com.psit.struts.entity.SalPaidPlan" />
+        </set>
+        <set name="attachments" inverse="true"  order-by="att_date desc"  cascade="all" where="att_type='ord'">
+            <key>
+                <column name="att_fk_id" />
+            </key>
+            <one-to-many class="com.psit.struts.entity.Attachment" />
+        </set>
+
+	        <property name="sodDeadline" type="java.util.Date">
+	            <column name="sod_deadline" length="23" />
+	        </property>
+	        <set name="ROrdPros" inverse="true" order-by="rop_id" cascade="all">
+	            <key>
+	                <column name="rop_ord_code"/>
+	            </key>
+            <one-to-many class="com.psit.struts.entity.ROrdPro" />
+        	</set>
+        	<property name="sodEndDate" type="java.util.Date">
+	            <column name="sod_end_date" length="23" />
+	        </property>
+	        <property name="sodOrdDate" type="java.util.Date">
+	            <column name="sod_ord_date" length="23" />
+	        </property>
+        	<property name="sodCusCon" type="java.lang.String">
+	            <column name="sod_cus_con" length="100" />
+	        </property>
+    </class>
+</hibernate-mapping>

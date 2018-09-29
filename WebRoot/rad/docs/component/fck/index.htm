@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">FCK Demo及说明</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:刘涵</td>
+    <td width="20%">&nbsp;</td>
+    <td width="15%">创建日期:2011-01-11</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:1</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+   <tr>
+    <th width="30%">适用情景描述</th>
+    <th width="65%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+
+ 
+  <tr>
+    <td><a href="_samples/html/sample01.jsp" target="_blank">简单调用</a>
+    </td>
+    <td>
+    <!-- content start -->
+ 引用js:<%=contextPath %>/core/js/cmp/fck/fckeditor/fckeditor.js<br/>
+ 创建：<br/>
+<div style="text-indent:0pt;"><div style="text-indent:0pt;"><div style="text-indent:0pt;"><div style="text-indent:0pt;"><div style="text-indent:0pt;"><font color="#7F0055" face="'Courier New'"><span style="font-size: 13px;"><b><span style="font-family: Courier New; font-size: 10pt; color: #3f7f5f;">// fck所在目录.</span></b></span></font></div>
+<div style="text-indent:0pt;"><font color="#7F0055" face="'Courier New'"><span style="font-size: 13px;"><span style="font-family: Courier New; font-size: 10pt; color: #7f0055;"><b>var</b></span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">sBasePath = contextPath +</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">&quot;/core/js/cmp/fck/fckeditor/&quot;</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">;</span></span></font></div>
+<div style="text-indent:0pt;"><font color="#7F0055" face="'Courier New'"><span style="font-family: Courier New; font-size: 10pt; color: #3f7f5f;">//实例化一个fck</span></font></div>
+<div style="text-indent:0pt;"><font color="#7F0055" face="'Courier New'"><span style="font-family: Courier New; font-size: 10pt; color: #7f0055;"><b>var</b></span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">oFCKeditor =</span> <span style="font-family: Courier New; font-size: 10pt; color: #7f0055;"><b>new</b></span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">FCKeditor(</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">'FCKeditor1'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">) ;</span></font></div>
+<div style="text-indent:0pt;"><font color="#7F0055" face="'Courier New'"><span style="font-family: Courier New; font-size: 10pt; color: #000000;">oFCKeditor.BasePath = sBasePath ;</span></font></div>
+<div style="text-indent:0pt;"><font color="#7F0055" face="'Courier New'"><span style="font-family: Courier New; font-size: 10pt; color: #3f7f5f;">//设置fck高度</span></font></div>
+<div style="text-indent:0pt;"><font color="#7F0055" face="'Courier New'"><span style="font-family: Courier New; font-size: 10pt; color: #000000;">oFCKeditor.Height = 300 ;</span></font></div>
+<div style="text-indent:0pt;"><font color="#7F0055" face="'Courier New'"><span style="font-family: Courier New; font-size: 10pt; color: #3f7f5f;">//设置fck默认值</span></font></div>
+<div style="text-indent:0pt;"><font color="#7F0055" face="'Courier New'"><span style="font-family: Courier New; font-size: 10pt; color: #000000;">oFCKeditor.Value  =</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">'&lt;p&gt;This is some &lt;strong&gt;sample text&lt;\/strong&gt;. You are using &lt;a href=&quot;<a href="http://www.fckeditor.net/">http://www.fckeditor.net/&quot;</a>&gt;FCKeditor&lt;\/a&gt;.&lt;\/p&gt;'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">;</span></font></div>
+<div style="text-indent:0pt;"><font color="#7F0055" face="'Courier New'"><span style="font-family: Courier New; font-size: 10pt; color: #000000;">oFCKeditor.Create() ;</span></font></div>
+</div></div></div></div>
+<!-- content end -->
+    </td>
+    <td>具体代码请参见：<br/><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/fck/_samples/html/sample01.jsp">rad/docs/component/fck/_samples/html/sample01.jsp</a></td>
+  </tr>
+   <tr>
+    <td><a href="_samples/html/sample04.jsp" target="_blank">配置工具栏</a>
+    </td>
+    <td>
+    <!-- content start -->
+ 配置fckconfig.js:<br/>
+以增加自定义"feedback"工具栏为例。在fckconfig.js中加入:FCKConfig.ToolbarSets["feedback"] = [['FontName','FontSize','Bold','Italic','TextColor','BGColor','-','OrderedList','UnorderedList','-','Link','Unlink','-','Smiley','clearEdit']] ;<br/>
+ 设置工具栏：<br/>
+ oFCKeditor.ToolbarSet = "feedback";<br/>
+ 取得fck工具栏名称：<br/>
+ oFCKeditor.ToolbarSet.Name
+    </td>
+    <td>具体代码请参见：<br/><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/fck/_samples/html/sample04.jsp">rad/docs/component/fck/_samples/html/sample04.jsp</a></td>
+  </tr>
+  <tr>
+    <td>其它相关配置
+    </td>
+    <td>
+    <!-- content start -->
+<a href="_samples/html/sample05.html" target="_blank">配置皮肤</a>:<br/>
+<!-- content start -->
+
+<div style="text-indent:0pt;"><div style="text-indent:0pt;"><div style="text-indent:0pt;"><div style="text-indent:0pt;"><div style="text-indent:0pt;"><div style="text-indent:0pt;"><font color="#7F0055" face="'Courier New'"><span style="font-size: 13px;"><b><font color="#3F7F5F"><span style="font-family: Courier New; font-size: 10pt; color: #7f0055;"><b>//</b></span><span style="color: rgb(0, 0, 0); font-family: Arial; font-weight: normal; font-size: 14pt;"><b><font color="#3F7F5F"><span style="font-family: 'Courier New'; font-size: 10pt; color: rgb(0, 0, 0);">sSkin<span> 为相应的皮肤名,目前只提供两种皮肤&quot;</span></span></font></b></span><span style="color: rgb(0, 0, 0); font-family: Arial; font-weight: normal; font-size: 14pt;"><b><font color="#3F7F5F"><span style="font-family: 'Courier New'; font-size: 10pt; color: rgb(42, 0, 255);">office2003</span></font></b></span><span style="color: rgb(0, 0, 0); font-family: Arial; font-weight: normal; font-size: 14pt;"><b><font color="#3F7F5F"><span style="font-family: 'Courier New'; font-size: 10pt; color: rgb(0, 0, 0);"><span>&quot;,&quot;silver&quot;</span></span></font></b></span></font></b></span></font></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #7f0055;"><b>var</b></span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">sSkinPath = sBasePath +</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">'editor/skins/'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">+ sSkin +</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">'/'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">;</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #000000;">oFCKeditor.Config[</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">'SkinPath'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">] = sSkinPath ;</span></div>
+<div style="text-indent:0pt;"> </div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #3f7f5f;">// The following switch is optional. It is done to enhance the loading</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #3f7f5f;">// time of the toolbar, by preloading the images used on it.</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #7f0055;"><b>switch</b></span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">( sSkin )</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #000000;">{</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #7f0055;"><b>case</b></span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">'office2003'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">:</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #000000;">oFCKeditor.Config[</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">'PreloadImages'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">] =</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #000000;">sSkinPath +</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">'images/toolbar.start.gif'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">+</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">';'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">+</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #000000;">sSkinPath +</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">'images/toolbar.end.gif'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">+</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">';'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">+</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #000000;">sSkinPath +</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">'images/toolbar.bg.gif'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">+</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">';'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">+</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #000000;">sSkinPath +</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">'images/toolbar.buttonarrow.gif'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">;</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #7f0055;"><b>break</b></span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">;</span></div>
+<div style="text-indent:0pt;"> </div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #7f0055;"><b>case</b></span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">'silver'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">:</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #000000;">oFCKeditor.Config[</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">'PreloadImages'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">] =</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #000000;">sSkinPath +</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">'images/toolbar.start.gif'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">+</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">';'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">+</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #000000;">sSkinPath +</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">'images/toolbar.end.gif'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">+</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">';'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">+</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #000000;">sSkinPath +</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">'images/toolbar.buttonbg.gif'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">+</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">';'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">+</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #000000;">sSkinPath +</span> <span style="font-family: Courier New; font-size: 10pt; color: #2a00ff;">'images/toolbar.buttonarrow.gif'</span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">;</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #7f0055;"><b>break</b></span> <span style="font-family: Courier New; font-size: 10pt; color: #000000;">;</span></div>
+<div style="text-indent:0pt;"><span style="font-family: Courier New; font-size: 10pt; color: #000000;">}</span></div>
+</div></div></div></div></div>
+<!-- content end -->
+ 设置内容为整个页面：<br/>
+oFCKeditor.Config['FullPage'] = true ;<br/>
+设置fck语言：<br/>
+ oFCKeditor.ToolbarSet.Name<br/>
+ 设置fck插件：</br>
+ oFCKeditor.Config['CustomConfigurationsPath'] = sBasePath + '_samples/html/assets/sample06.config.js' ;<br/>
+ 设置工具栏是否展开:<br/>
+ oFCKeditor.Config['ToolbarStartExpanded'] = false ;
+    </td>
+    <td>具体 配置皮肤代码请参见：<br/><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/fck/_samples/html/sample05.html">rad/docs/component/fck/_samples/html/sample05.html</a></td>
+  </tr>
+  
+  <tr>
+    <td><a href="_samples/html/sample08.html" target="_blank">相关接口调用</a>
+    </td>
+    <td>
+    取得fck:<br/>
+    var oEditor = FCKeditorAPI.GetInstance('FCKeditor1') ;<br/>
+    插入html:<br/>
+  if ( oEditor.EditMode == FCK_EDITMODE_WYSIWYG )<br/>
+  {<br/>
+    &nbsp;&nbsp;oEditor.InsertHtml( '- This is som HTML -') ;<br/>
+  }<br/>
+  取得内容：<br/>
+  oEditor.GetXHTML( true )<br/>
+  设置内容：<br/>
+  oEditor.SetData( 'in the editor.' )<br/>
+  执行命令：</br/>
+  oEditor.Commands.GetCommand( commandName ).Execute();
+    </td>
+    <td>具体代码请参见：<br/><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/fck/_samples/html/sample08.html">rad/docs/component/fck/_samples/html/sample08.html</a></td>
+  </tr>
+</table>
+</body>
+</html>

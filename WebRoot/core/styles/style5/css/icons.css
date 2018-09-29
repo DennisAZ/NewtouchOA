@@ -1,0 +1,18 @@
+.icon-expand-all{
+  background-image:url(../img/expand-all.gif) !important;
+}
+.icon-fav{
+  background-image:url(../img/fav.gif) !important;
+}
+.icon-collapse-all{
+  background-image:url(../img/collapse-all.gif) !important;
+}
+.icon-node-dept{
+  background-image:url(../img/dtree/node_dept.gif) !important;
+}
+.icon-send{
+  background-image:url(../img/send1.gif) !important;
+}
+.icon-recive{
+  background-image:url(../img/unRd2.gif) !important;
+}

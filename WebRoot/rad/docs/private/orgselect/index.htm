@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">权限选择控制选择</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:</td>
+    <td width="20%">&nbsp;</td>
+    <td width="15%">创建日期:</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="60%">适用情景描述</th>
+    <th width="35%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+    <td><a href="orgselect.jsp">权限选择控制选择</a></td>
+    <td>部门用户角色的选择</td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/private/orgselect/orgselect.jsp">代码</a></td>
+  </tr>
+  <tr>
+    <td>后台权限处理</td>
+    <td>YHMyPriv mp = YHPrivUtil.getMyPriv(conn, loginPerson ,moduleId,  privNoFlag);<br>
+     * 取得当前用户的权限信息<br>
+ * @param conn<br>
+ * @param userId 当前用户的ID<br>
+ * @param postPriv 当前用户的管理范围<br>
+ * @param postDept 管理范围--指定部门<br>
+ * @param moduleId 模块Id<br>
+ * @param loginUserPriv 登录用户的角色权限<br>
+ * @param privNoFlag 权限设定<br>
+ <br><br>
+           判断此当前用户是否具有此userId的管理权限<br>
+   <font color="green">YHPrivUtil.isUserPriv(Connection conn,int userId,YHMyPriv mp
+      ,String postPriv,String postDept,int LoginUserId,int loginUserDept);</font><br>
+   * 判断此用户是否合法<br>
+   * @param conn <br>
+   * @param userId 需要验证的userId<br>
+   * @param mp 模块权限<br>
+   * @param postPriv 当前用户的postPriv<br>
+   * @param postDept 当前用户的postPriv<br>
+   * @param LoginUserId 当前用户的Id<br>
+   * @param loginUserDept 当前用户的部门Id<br>
+          <br>
+    
+     <font color="green">YHPrivUtil.isUserPriv(Connection conn,int userId,YHMyPriv mp
+      ,YHPerson person)</font><br>
+    * 判断此用户是否合法<br>
+   * @param conn <br>
+   * @param userId 需要验证的userId<br>
+   * @param mp 模块权限<br>
+   * @param person 当前用户<br>
+      <br>
+      <br>
+        判断此当前用户是否具有此deptId的管理权限<br>
+       <font color="green">YHPrivUtil.isDeptPriv(Connection conn,int deptId,YHMyPriv mp
+      ,String postPriv,String postDept,int LoginUserId,int loginUserDept)</font><br>
+   * @param conn<br>
+   * @param deptId 需要验证的部门Id<br>
+   * @param mp 模块权限<br>
+   * @param postPriv 当前用户的postPriv<br>
+   * @param postDept 当前用户的postDept<br>
+   * @param LoginUserId  当前用户的Id<br>
+   * @param loginUserDept 当前用户的部门Id<br>
+      <br>
+      <font color="green"> YHPrivUtil.isDeptPriv(Connection conn,int deptId,YHMyPriv mp
+      ,YHPerson person)</font><br>
+       * @param conn<br>
+    * @param conn <br>
+   * @param deptId 需要验证的deptId<br>
+   * @param mp 模块权限<br>
+   * @param person 当前用户<br>
+       </td>
+    <td></td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>集团页面演示首页</title>
+<link rel="stylesheet" type="text/css" href="/yh/gs/css/styel01.css" media="all" />
+<script type="text/javascript" src="/yh/gs/js/jquery.min.js"></script>
+<script type="text/javascript">
+function search(){
+  location.href = "/yh/lucene/lucene.jsp?content="+document.getElementById('searchContent').value+"&stationId=14";
+}
+</script>
+</head>
+<body>
+	<div class="wap">
+		<div class="top">
+        	<h2><a href="#" ><img src="/yh/gs/images/logo.jpg" width="325" height="65" alt="" /></a></h2>
+            <li class="soso">
+            <strong><a href="#" >网站地图 |</a><a href="#" >关于我们</a></strong>
+            <span>
+            <input type="text" id="searchContent" name="searchContent" value="站内信息搜索" /> 
+            <a  href="#" id="bottonx"><button type="submit" id="botton" onclick="search()">搜索</button></a>
+            </span>
+            </li>
+        </div>
+		<div class="nav" id="navmenu">
+        	<ul id="navi">
+				<li><a href="/yh/gs/index.html">首页</a></li>
+												<li><a href="/yh/gs/khfw/index.html">客户服务</a></li>
+												<li><a href="/yh/gs/rczx/index.html">人才中心</a></li>
+												<li><a href="/yh/gs/cpxx/index.html">产品信息</a></li>
+												<li><a href="/yh/gs/gyjt/index.html">关于集团</a></li>
+																<li><a href="/yh/gs/xwzx/index.html">新闻中心</a></li>
+				            </ul>
+        </div>
+		<script type="text/javascript" language="javascript">
+		var nav = document.getElementById("navi");
+		var links = nav.getElementsByTagName("li");
+		var lilen = nav.getElementsByTagName("a"); //判断地址
+		var currenturl = document.location.href;
+		var last = 0;
+		for (var i=0;i<links.length;i++){
+			var linkurl = lilen[i].getAttribute("href");
+			if(currenturl.indexOf(linkurl)!=-1){
+				last = i;
+			}
+		}
+		links[last].className = "navon"; //高亮代码样式
+		</script> 
+		<div class="waper">
+        <div class="foucs" id="focus">
+		<ul>
+			<li><a href="#" ><img src="/yh/gs/images/foucs.jpg" alt="扬帆起航" /></a></li>
+			<li><a href="#" ><img src="/yh/gs/images/foucs.jpg" alt="引领行业" /></a></li>
+		</ul>
+	</div>
+        <script type="text/javascript">
+$(function() {
+	var sWidth = $("#focus").width(); //获取焦点图的宽度（显示面积）
+	var len = $("#focus ul li").length; //获取焦点图个数
+	var index = 0;
+	var picTimer;
+	
+	//以下代码添加数字按钮和按钮后的半透明条，还有上一页、下一页两个按钮
+	var btn = "<div class='btnBg'></div><div class='btn'>";
+	for(var i=0; i < len; i++) {
+		btn += "<span></span>";
+	}
+	
+	$("#focus").append(btn);
+	$("#focus .btnBg").css("opacity",0.5);
+
+	//为小按钮添加鼠标滑入事件，以显示相应的内容
+	$("#focus .btn span").css("opacity",0.4).mouseenter(function() {
+		index = $("#focus .btn span").index(this);
+		showPics(index);
+	}).eq(0).trigger("mouseenter");
+
+	
+
+
+
+	//本例为左右滚动，即所有li元素都是在同一排向左浮动，所以这里需要计算出外围ul元素的宽度
+	$("#focus ul").css("width",sWidth * (len));
+	
+	//鼠标滑上焦点图时停止自动播放，滑出时开始自动播放
+	$("#focus").hover(function() {
+		clearInterval(picTimer);
+	},function() {
+		picTimer = setInterval(function() {
+			showPics(index);
+			index++;
+			if(index == len) {index = 0;}
+		},4000); //此4000代表自动播放的间隔，单位：毫秒
+	}).trigger("mouseleave");
+	
+	//显示图片函数，根据接收的index值显示相应的内容
+	function showPics(index) { //普通切换
+		var nowLeft = -index*sWidth; //根据index值计算ul元素的left值
+		$("#focus ul").stop(true,false).animate({"left":nowLeft},300); //通过animate()调整ul元素滚动到计算出的position
+		//$("#focus .btn span").removeClass("on").eq(index).addClass("on"); //为当前的按钮切换到选中的效果
+		$("#focus .btn span").stop(true,false).animate({"opacity":"0.4"},300).eq(index).stop(true,false).animate({"opacity":"1"},300); //为当前的按钮切换到选中的效果
+	}
+});
+
+</script>
+		<div class="connet">
+        	<li class="gonggao"><a href="#" >集团公司关于国庆节、中秋节放假的通知。</a></li>
+            <div class="col">
+             <div class="cl_l">
+             	<h3>新闻中心</h3>
+                <ul>
+                	<li class="li_one"><a href="#"><img src="/yh/gs/images/img01.jpg" width="99" height="69" alt="" /></a><p>推荐文字简介摘要推荐文字简介摘要推荐文字简介摘要推荐文字简介摘要推荐文字简介摘要推荐文字简介摘要<strong><a href="/yh/gs/xwzx/index.html">MORE>></a></strong></p></li>
+										<li><span>2012-06-10 12:56:17.0</span><a href="/yh/gs/xwzx/116.html">新闻中心002 
+</a></li>
+										<li><span>2012-06-10 12:53:21.0</span><a href="/yh/gs/xwzx/115.html">新闻中心001 
+</a></li>
+					                </ul>
+             </div>
+             <div class="cl_c">
+             <h3>集团动态</h3>
+                <ul>
+                	<li class="li_one"><a href="#"><img src="/yh/gs/images/img01.jpg" width="99" height="69" alt="" /></a><p>推荐文字简介摘要推荐文字简介摘要推荐文字简介摘要推荐文字简介摘要推荐文字简介摘要推荐文字简介摘要<strong><a href="/yh/gs/jtdt/index.html">MORE>></a></strong></p></li>
+										<li><span>2012-06-10 12:57:04.0</span><a href="/yh/gs/jtdt/117.html">集团动态002 
+</a></li>
+										<li><span>2012-06-10 12:52:55.0</span><a href="/yh/gs/jtdt/114.html">集团动态001 
+</a></li>
+					                </ul>
+             </div>
+             <div class="cl_r">
+             	<a href="#" ><img src="/yh/gs/images/telme.jpg" width="254" height="79" alt="" /></a>
+                <a href="#" ><img src="/yh/gs/images/video.jpg" width="254" height="79" alt="" /></a>
+                <a href="#" ><img src="/yh/gs/images/feedback.jpg" width="254" height="79" alt="" /></a>
+             </div>
+            </div>
+        </div>
+        </div>
+        <div class="footer">
+        	<li>
+            	<strong>一恒软件工程有限公司版权所有</strong>
+	            <span>
+	            <a href="#" >联系我们</a>
+                <a href="#" >法律声明</a>
+                <a href="#" >友情链接</a>
+	            </span>
+            </li>
+        </div>
+	</div>
+</body>
+</html>

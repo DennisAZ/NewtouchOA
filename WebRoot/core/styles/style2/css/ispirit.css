@@ -1,0 +1,34 @@
+.leftmenu-north-lv1 {
+  position:relative;
+  top:0;
+  left:0;
+  width: 100%;
+  background: url(../img/mainframe/tab_header_bg1.png) repeat-x;
+}
+
+.leftmenu-north-lv2 {
+  position:relative;
+  top:0;
+  left:0;
+  width: 100%;
+  background: url(../img/mainframe/tab_header_lv2_bg1.png) repeat-x ;
+}
+
+.statusbar-usercount{
+  height:30px;
+  line-height: 30px;
+  background: url(../img/statusbar/bg.jpg) repeat-x left top;
+}
+
+.leftmenu-south{
+  height: 100%;
+  background: url(../img/mainframe/tab_bottom_lv2.jpg) repeat-x left top;
+}
+
+.leftmenu-body {
+  width: 100%;
+}
+
+.leftContent {
+  background: none rgb(253, 254, 224);
+}

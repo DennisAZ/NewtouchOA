@@ -1,0 +1,244 @@
+.navTab{
+	position : absolute;
+	list-style-type : none;
+	margin : 0px;
+	height : 45px;
+	top : -5px;
+	left : 0px;
+}
+
+.navTab li{
+	text-align : center;
+	padding-left : 3px;
+	float : left;
+	height : 50px;
+	font-size : 14px;
+	cursor : pointer;
+	font-weight : bold;
+	margin-right : -20px;
+}
+
+.tab_1{
+	width : 90px;
+  background : url(../images/bd.png) no-repeat;
+}
+
+.tab_on_1{
+	width : 90px;
+	background : url(../images/bd.png) no-repeat 0px -48px;
+}
+
+.tab_2{
+	width : 90px;
+  background : url(../images/zw.png) no-repeat;
+}
+
+.tab_on_2{
+	width : 90px;
+  background : url(../images/zw.png) no-repeat 0px -48px;
+}
+
+.tab_3{
+	width: 136px; 
+  background : url(../images/dykz.png) no-repeat;
+}
+
+.tab_on_3{
+	width: 136px; 
+  background : url(../images/dykz.png) no-repeat 0px -48px;
+}
+
+.tab_4{
+	width : 90px;
+  background : url(../images/fj.png) no-repeat;
+}
+
+.tab_on_4{
+	width : 90px;
+  background : url(../images/fj.png) no-repeat 0px -48px;
+}
+
+
+#formControl{
+	position : absolute;
+	height : 30px;
+	top : -8px;
+	right : 80px;
+}
+
+.newButton{
+	border-bottom : 0px;
+	border-left : 0px;
+	paddin-bottom : 3px;
+	width : 81px;
+	height : 39px !important;
+	color : #000000;
+	font-size : 12px;
+	border-top : 0px;
+	cursor : pointer;
+	margin-right : -14px;
+	border-right : 0px;
+}
+
+.newButtonB{
+  border-bottom : 0px;
+  border-left : 0px;
+  paddin-bottom : 3px;
+  width : 95px;
+  height : 39px !important;
+  color : #000000;
+  font-size : 12px;
+  border-top : 0px;
+  cursor : pointer;
+  margin-right : -14px;
+  border-right : 0px;
+}
+.newButtonSaveHover{
+	width : 72px !important;
+  background : url(../images/bc.png) no-repeat 0px -37px;
+}
+
+.newButtonSave{
+	width : 72px !important;
+	background : url(../images/bc.png) no-repeat 0px 0px;
+}
+
+.newButtonSendHover{
+  width : 72px !important;
+  background : url(../images/fs.png) no-repeat 0px -37px;
+}
+
+.newButtonSend{
+  width : 72px !important;
+  background : url(../images/fs.png) no-repeat 0px 0px;
+}
+
+.newButtonReturnHover{
+  width : 72px !important;
+  background : url(../images/fh.png) no-repeat 0px -37px;
+}
+
+.newButtonReturn{
+  width : 72px !important;
+  background : url(../images/fh.png) no-repeat 0px 0px;
+}
+
+.newButtonGetHover{
+  width : 96px !important;
+  background : url(../images/hqyz.png) no-repeat 0px -37px;
+}
+
+.newButtonGet{
+  width : 96px !important;
+  background : url(../images/hqyz.png) no-repeat 0px 0px;
+}
+
+.newButtonConfirmHover{
+  width : 96px !important;
+  background : url(../images/gzqr.png) no-repeat 0px -37px;
+}
+
+.newButtonConfirm{
+  width : 96px !important;
+  background : url(../images/gzqr.png) no-repeat 0px 0px;
+}
+
+#tableForm{
+	padding-top : 40px;
+}
+
+#tableWord{
+	padding-top : 40px;
+}
+
+#tablePrint{
+	padding-top : 40px;
+}
+
+#tableAttachment{
+	padding-top : 40px;
+}
+
+#confirmDiv{
+	padding-top : 30px;
+}
+
+.label{
+	font-size:15.0pt;
+	font-family:方正小标宋简体;
+	color:red;
+}
+
+.tabcls{
+	margin-left:14.4pt;
+	border-collapse:collapse;
+	border:none;
+}
+
+.tabtd1{
+	width:411.7pt;
+	border-top:solid red 1.0pt;
+	border-left:none;
+	border-bottom:solid red 1.0pt;
+	border-right:none;
+	padding:0cm 5.4pt 0cm 5.4pt;
+	height:85.3pt;
+}
+.tabtd2{
+	width:550.7pt;
+	border:none;
+	border-bottom:solid red 1.0pt;
+	padding:0cm 5.4pt 0cm 5.4pt;
+	height:45.9pt
+}
+.tabtd3{
+	width:161.85pt;
+	border-top:none;
+	border-left: none;
+	border-bottom:solid red 1.0pt;
+	border-right:solid red 1.0pt;
+	padding:0cm 5.4pt 0cm 5.4pt;
+	height:45.9pt
+}
+
+.tabtd4{
+	width:44.85pt;
+	border-top:none;
+	border-left:none;
+	border-bottom:solid red 1.0pt;
+	border-right:solid red 1.0pt;
+	padding:0cm 5.4pt 0cm 5.4pt;
+	height:45.9pt;
+}
+.tabtd5{
+	width:70.9pt;border-top:none;border-left:none;border-bottom:solid red 1.0pt;border-right:solid red 1.0pt;padding:0cm 5.4pt 0cm 5.4pt; height:45.9pt;
+}
+.tabtd6{
+	width:551.7pt;border:none;border-bottom:solid red 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:78.3pt;
+}
+
+.tabtd7{
+	width:90.0pt;border-top:none;border-left: none;border-bottom:solid red 1.0pt;border-right:solid red 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:5.0pt;
+}
+.tabtd8{
+	width:36.75pt;border-top:none;border-left: none;border-bottom:solid red 1.0pt;border-right:solid red 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:5.0pt;
+}
+.tabtd9{
+	width:78.0pt;border-top:none;border-left:none;border-bottom:solid red 1.0pt;border-right:solid red 1.0pt; padding:0cm 5.4pt 0cm 5.4pt;height:5.0pt;
+}
+.tabtd10{
+	width:45.0pt;border-top:none; border-left:none;border-bottom:solid red 1.0pt;border-right:solid red 1.0pt; padding:0cm 5.4pt 0cm 5.4pt;height:5.0pt;
+}
+.tabtd11{
+	width:107.25pt;border-top:none;border-left:none;border-bottom:solid red 1.0pt;border-right:solid red 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:5.0pt;
+}
+.tabtd12{
+	width:60.7pt;border:none;border-bottom:solid red 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:5.0pt;
+}
+.tabtd13{
+	width:411.7pt;border:none;border-bottom:solid red 1.0pt; padding:0cm 5.4pt 0cm 5.4pt;height:54.55pt;
+}
+
+.inputcls{
+	font-size:15.0pt;color:red;
+}

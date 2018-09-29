@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+  	<form-bean name="Userform"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="cusArea"
+				type="com.psit.struts.entity.CusArea">
+			</form-property>
+			<form-property name="cusCity"
+				type="com.psit.struts.entity.CusCity">
+			</form-property>
+			<form-property name="cusContact"
+				type="com.psit.struts.entity.CusContact">
+			</form-property>
+			<form-property name="cusCorCus"
+				type="com.psit.struts.entity.CusCorCus">
+			</form-property>
+			<form-property name="cusProvince"
+				type="com.psit.struts.entity.CusProvince">
+			</form-property>
+			<form-property name="cusServ"
+				type="com.psit.struts.entity.CusServ">
+			</form-property>
+			<form-property name="message"
+				type="com.psit.struts.entity.Message">
+			</form-property>
+			<form-property name="report"
+				type="com.psit.struts.entity.Report">
+			</form-property>
+			<form-property name="RMessLim"
+				type="com.psit.struts.entity.RMessLim">
+			</form-property>
+			<form-property name="RRepLim"
+				type="com.psit.struts.entity.RRepLim">
+			</form-property>
+			<form-property name="limFunction"
+				type="com.psit.struts.entity.LimFunction">
+			</form-property>
+			<form-property name="limOperate"
+				type="com.psit.struts.entity.LimOperate">
+			</form-property>
+			<form-property name="limRight"
+				type="com.psit.struts.entity.LimRight">
+			</form-property>
+			<form-property name="limRole"
+				type="com.psit.struts.entity.LimRole">
+			</form-property>
+			<form-property name="limUser"
+				type="com.psit.struts.entity.LimUser">
+			</form-property>
+			<form-property name="rOrdPro"
+				type="com.psit.struts.entity.ROrdPro">
+			</form-property>
+			<form-property name="rRoleRig"
+				type="com.psit.struts.entity.RRoleRig">
+			</form-property>
+			<form-property name="rUserRig"
+				type="com.psit.struts.entity.RUserRig">
+			</form-property>
+			<form-property name="rStroPro"
+				type="com.psit.struts.entity.RStroPro">
+			</form-property>
+			<form-property name="rWoutPro"
+				type="com.psit.struts.entity.RWoutPro">
+			</form-property>
+			<form-property name="salEmp"
+				type="com.psit.struts.entity.SalEmp">
+			</form-property>
+			<form-property name="salOpp"
+				type="com.psit.struts.entity.SalOpp">
+			</form-property>
+			<form-property name="SalOrdCon"
+				type="com.psit.struts.entity.SalOrdCon">
+			</form-property>
+
+			<form-property name="salOrg"
+				type="com.psit.struts.entity.SalOrg">
+			</form-property>
+			<form-property name="comOrg"
+				type="com.psit.struts.entity.SalOrg">
+			</form-property>
+			<form-property name="salPaidPast"
+				type="com.psit.struts.entity.SalPaidPast">
+			</form-property>
+			<form-property name="salPaidPlan"
+				type="com.psit.struts.entity.SalPaidPlan">
+			</form-property>
+			<form-property name="paidPlanSForm"
+				type="com.psit.struts.form.PaidPlanSForm">
+			</form-property>
+			<form-property name="salPra"
+				type="com.psit.struts.entity.SalPra">
+			</form-property>
+			<form-property name="salTask"
+				type="com.psit.struts.entity.SalTask">
+			</form-property>
+			<form-property name="salInvoice"
+				type="com.psit.struts.entity.SalInvoice">
+			</form-property>
+			<form-property name="wmsProduct"
+				type="com.psit.struts.entity.WmsProduct">
+			</form-property>
+			<form-property name="wmsProType"
+				type="com.psit.struts.entity.WmsProType">
+			</form-property>
+			<form-property name="wmsStro"
+				type="com.psit.struts.entity.WmsStro">
+			</form-property>
+			<form-property name="wmsWarIn"
+				type="com.psit.struts.entity.WmsWarIn">
+			</form-property>
+			<form-property name="wmsWarOut"
+				type="com.psit.struts.entity.WmsWarOut">
+			</form-property>
+			<form-property name="rWinPro"
+				type="com.psit.struts.entity.RWinPro">
+			</form-property>
+			<form-property name="rwmsWms"
+				type="com.psit.struts.entity.RWmsWms">
+			</form-property>
+			<form-property name="wmsChange"
+				type="com.psit.struts.entity.WmsChange">
+			</form-property>
+			<form-property name="rnewLim"
+				type="com.psit.struts.entity.RNewLim">
+			</form-property>
+			<form-property name="news"
+				type="com.psit.struts.entity.News">
+			</form-property>
+			<form-property name="schedule"
+				type="com.psit.struts.entity.Schedule">
+			</form-property>
+			<form-property name="quote"
+				type="com.psit.struts.entity.Quote">
+			</form-property>
+			<form-property name="typeList"
+				type="com.psit.struts.entity.TypeList">
+			</form-property>
+			<form-property name="wmsCheck"
+				type="com.psit.struts.entity.WmsCheck">
+			</form-property>
+			<form-property name="rwmsChange"
+				type="com.psit.struts.entity.RWmsChange">
+			</form-property>
+			<form-property name="rquoPro"
+				type="com.psit.struts.entity.RQuoPro">
+			</form-property>
+			<form-property name="cusProd" type="com.psit.struts.entity.CusProd">
+			</form-property>
+			<form-property name="prodTrans" type="com.psit.struts.entity.ProdTrans">
+			</form-property>
+			<form-property name="prodShipment" type="com.psit.struts.entity.ProdShipment">
+			</form-property>
+			<form-property name="memDate" type="com.psit.struts.entity.MemDate">
+			</form-property>
+			<form-property name="cusAddr" type="com.psit.struts.entity.CusAddr">
+			</form-property>
+			<form-property name="prodSalBack" type="com.psit.struts.entity.ProdSalBack">
+			</form-property>
+			<form-property name="supplier" type="com.psit.struts.entity.Supplier">
+			</form-property>
+			<form-property name="purOrd" type="com.psit.struts.entity.PurOrd">
+			</form-property>
+			<form-property name="rPuoPro" type="com.psit.struts.entity.RPuoPro">
+			</form-property>
+			<form-property name="prodIn" type="com.psit.struts.entity.ProdIn">
+			</form-property>
+			<form-property name="prodOut" type="com.psit.struts.entity.ProdOut">
+			</form-property>
+			<form-property name="prodStore" type="com.psit.struts.entity.ProdStore">
+			</form-property>
+			<form-property name="whRec" type="com.psit.struts.entity.WhRec">
+			</form-property>
+			<form-property name="supProd" type="com.psit.struts.entity.SupProd">
+			</form-property>
+			<form-property name="supPaidPast" type="com.psit.struts.entity.SupPaidPast">
+			</form-property>
+			<form-property name="supInvoice" type="com.psit.struts.entity.SupInvoice">
+			</form-property>
+		</form-bean>
+  </form-beans>
+  <!--  <global-exceptions>
+  <exception key="exceptionMess" type="java.lang.Exception" scope="request" path="/common/exceptionError.jsp"></exception>
+  </global-exceptions>-->
+  <global-forwards />
+  <action-mappings >
+  	<action path="/supAction" parameter="op" name="Userform" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+  		<forward name="popDivSuc" path="/crm/common/popDivSuc.jsp"></forward>
+    	<forward name="limError" path="/crm/common/limError.jsp"></forward>
+    	<forward name="error" path="/crm/common/error.jsp"></forward>
+    	<forward name="listSup" path="/crm/sup/listSup.jsp"></forward>
+    	<forward name="listPurOrd" path="/crm/sup/listPurOrd.jsp"></forward>
+    	<forward name="saveSup" path="/crm/sup/saveSup.jsp"></forward>
+    	<forward name="descSup" path="/crm/sup/descSup.jsp"></forward>
+    	<forward name="savePurOrd" path="/crm/sup/savePurOrd.jsp"></forward>
+    	<forward name="selectSupplier" path="/crm/common/browChoose/selectSupplier.jsp" ></forward>
+    	<forward name="descPurOrd" path="/crm/sup/descPurOrd.jsp"></forward>
+    	<forward name="updState" path="/crm/sup/updState.jsp"></forward>
+    	<forward name="listRPuoPro" path="/crm/sup/listRPuoPro.jsp"></forward>
+     	<forward name="listProdIn" path="/crm/sup/listProdIn.jsp"></forward>
+     	<forward name="listProdStore" path="/crm/sup/listProdStore.jsp"></forward>
+     	<forward name="saveProdStore" path="/crm/sup/saveProdStore.jsp"></forward>
+     	<forward name="listProdOut" path="/crm/sup/listProdOut.jsp"></forward>
+     	<forward name="listProductStore" path="/crm/sup/listProductStore.jsp"></forward>
+     	<forward name="listWhRec" path="/crm/sup/listWhRec.jsp"></forward>
+     	<forward name="saveProdIn" path="/crm/sup/saveProdIn.jsp"></forward>
+     	<forward name="selectProdStore" path="/crm/common/browChoose/selectProdStore.jsp"></forward>
+     	<forward name="saveProdOut" path="/crm/sup/saveProdOut.jsp"></forward>
+     	<forward name="descProdIn" path="/crm/sup/descProdIn.jsp"></forward>
+     	<forward name="descProdOut" path="/crm/sup/descProdOut.jsp"></forward>
+     	<forward name="updRpp" path="/crm/sup/updRpp.jsp"></forward>
+     	<forward name="empty" path="/crm/common/empty.jsp"></forward>
+     	<forward name="listSupProd" path="/crm/sup/listSupProd.jsp"></forward>
+     	<forward name="saveSupProd" path="/crm/sup/saveSupProd.jsp"></forward>
+     	<forward name="listSupPaidPast" path="/crm/sup/listSupPaidPast.jsp"></forward>
+     	<forward name="saveSupPaidPast" path="/crm/sup/saveSupPaidPast.jsp"></forward>
+     	<forward name="listSupInvoice" path="/crm/sup/listSupInvoice.jsp"></forward>
+     	<forward name="saveSupInvoice" path="/crm/sup/saveSupInvoice.jsp"></forward>
+     	<forward name="selectPurOrd" path="/crm/common/browChoose/selectPurOrd.jsp"></forward>
+  	</action>
+  	<action path="/commonAction" parameter="op" name="" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+  		<forward name="delConfirm" path="/crm/common/delConfirm.jsp"></forward>
+  		<forward name="comConfirm" path="/crm/common/comConfirm.jsp"></forward>
+  		<forward name="cancleConfirm" path="/crm/common/cancleConfirm.jsp"></forward>
+  		<forward name="limError" path="/crm/common/limError.jsp"></forward>
+  	</action>
+  	<action path="/downloadAction" parameter="op" name="" scope="request" type="org.springframework.web.struts.DelegatingActionProxy"/>
+  	<action path="/fileAction" parameter="op" name="" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+  		<forward name="uploadSuc" path="/crm/common/uploadSuc.jsp"></forward>
+  		<forward name="uploadFail" path="/crm/common/uploadFail.jsp"></forward>
+  		<forward name="attList" path="/crm/common/attList.jsp"></forward>
+  		<forward name="picUploadImg" path="/crm/common/picUploadImg.jsp"></forward>
+  		<forward name="simplePicUpload" path="/crm/common/simplePicUpload.jsp"></forward>
+  		<forward name="popDivSuc" path="/crm/common/popDivSuc.jsp"></forward>
+  		<forward name="error" path="/crm/common/error.jsp"></forward>
+  		<forward name="limError" path="/crm/common/limError.jsp"></forward>
+  		<forward name="importCus" path="/crm/customer/importCus.jsp"></forward>
+  	</action>
+  	<action path="/orderCusAction" parameter="op" name="Userform" scope="request" type="org.springframework.web.struts.DelegatingActionProxy" >
+    	    <forward name="selectOrd" path="/crm/common/browChoose/selectOrd.jsp"></forward>
+  	</action>
+    <action path="/orderAction" parameter="op" name="Userform" scope="request" type="org.springframework.web.struts.DelegatingActionProxy" >
+    	<forward name="showOrdType" path="/crm/typeManage/showOrderType.jsp"></forward>
+    	<forward name="newOrd" path="/crm/sal/newOrder.jsp"></forward>
+    	<forward name="updOrder" path="/crm/sal/updOrder.jsp"></forward>
+    	<forward name="showOrdDesc" path="/crm/sal/showOrdDesc.jsp"></forward>
+    	<forward name="updRop" path="/crm/sal/updRop.jsp"></forward>
+    	<forward name="popDivSuc" path="/crm/common/popDivSuc.jsp"></forward>
+    	<forward name="wmsProOut" path="/crm/order/wmsProOut.jsp"></forward>
+    	<forward name="empty" path="/crm/common/empty.jsp"></forward>
+    	<forward name="limError" path="/crm/common/limError.jsp"></forward>
+    	<forward name="recOrder" path="/crm/recycle/recOrder.jsp"></forward>
+        <forward name="error" path="/crm/common/error.jsp"></forward>
+        <forward name="appOrd" path="/crm/order/appOrd.jsp"></forward>
+        <forward name="sodState" path="/crm/order/sodState.jsp"></forward>
+        <forward name="statOrdList" path="/crm/salStat/statOrdList.jsp"></forward>
+        <forward name="ordSupSearch" path="/crm/order/ordSupSearch.jsp"></forward>
+        <forward name="showUnAppOrder" path="/crm/order/showUnAppOrder.jsp"></forward>
+        <forward name="selectOrd" path="/crm/common/browChoose/selectOrd.jsp"></forward>
+        <forward name="wwoList" path="/crm/order/wwoList.jsp"></forward>
+        <forward name="listOrder" path="/crm/sal/listOrder.jsp"></forward>
+        <forward name="recBatchDelConfirm" path="/crm/common/recBatchDelConfirm.jsp"></forward>
+        <forward name="printOrd" path="/crm/sal/printOrd.jsp"></forward>
+        <forward name="listCusPro" path="/crm/customer/listCusPro.jsp"></forward>
+        <forward name="listProdShipment" path="/crm/sal/listProdShipment.jsp"></forward>
+        <forward name="listOrdPShipment" path="/crm/sal/listOrdPShipment.jsp"></forward>
+        <forward name="saveProdShipment" path="/crm/sal/saveProdShipment.jsp"></forward>
+        <forward name="showShipmentDesc" path="/crm/sal/showShipmentDesc.jsp"></forward>
+        <forward name="prodTip" path="/crm/deskTop/listProdTip.jsp"></forward>
+        <forward name="listCusProdShipment" path="/crm/customer/listCusProdShipment.jsp"></forward>
+    </action>
+    
+    <action path="/paidAction" parameter="op" name="Userform" scope="request" type="org.springframework.web.struts.DelegatingActionProxy" >
+    	<forward name="formPaidPlan" path="/crm/sal/formPaidPlan.jsp"></forward>
+    	<forward name="formPaidPast" path="/crm/sal/formPaidPast.jsp"></forward>
+    	<forward name="createPaidPast" path="/crm/order/createPaidPast.jsp"></forward>
+    	<!-- <forward name="modPaidPlan" path="/order/modifyPaidPlan.jsp"></forward>  -->
+    	<forward name="modPaidPast" path="/crm/order/modifyPaidPast.jsp"></forward>
+    	<forward name="showPaidType" path="/crm/typeManage/showPaidType.jsp"></forward>
+    	<forward name="popDivSuc" path="/crm/common/popDivSuc.jsp"></forward>
+    	<forward name="limError" path="/crm/common/limError.jsp"></forward>
+    	<forward name="recPaidPlan" path="/crm/recycle/recPaidPlan.jsp"></forward>
+    	<forward name="recPaidPast" path="/crm/recycle/recPaidPast.jsp"></forward>
+    	<forward name="lastPaid" path="/crm/deskTop/lastPaid.jsp"></forward>
+    	<forward name="lastPaidPlan" path="/crm/order/lastPaidPlan.jsp"></forward>
+    	<forward name="error" path="/crm/common/error.jsp"></forward>
+    	<forward name="showDescPlan" path="/crm/order/showDescPlan.jsp"></forward>
+    	<forward name="showDescPast" path="/crm/order/showDescPast.jsp"></forward>
+    	<forward name="statPaidSumByDate" path="/crm/salStat/statPaidSumByDate.jsp"></forward>
+    	<forward name="statPaidList" path="/crm/salStat/statPaidList.jsp"></forward>
+    	<forward name="statPaidMonByDate" path="/crm/salStat/statPaidMonByDate.jsp"></forward>
+    	<forward name="statPaidPlanSum" path="/crm/salStat/statPaidPlanSum.jsp"></forward>
+    	<forward name="statSpdList" path="/crm/salStat/statSpdList.jsp"></forward>
+    	<forward name="listPaidPlan" path="/crm/sal/listPaidPlan.jsp"></forward>
+    	<forward name="listPaidPast" path="/crm/sal/listPaidPast.jsp"></forward>
+    	<forward name="listOrdSpp" path="/crm/sal/listOrdSpp.jsp"></forward>
+		<forward name="listOrdSps" path="/crm/sal/listOrdSps.jsp"></forward>
+		<forward name="recBatchDelConfirm" path="/crm/common/recBatchDelConfirm.jsp"></forward>
+		<forward name="listCusPaidPast" path="/crm/sal/listCusPaidPast.jsp"></forward>
+    </action>
+    <action path="/prodAction" parameter="op" name="Userform" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+    	<forward name="popDivSuc" path="/crm/common/popDivSuc.jsp"></forward>
+    	<forward name="limError" path="/crm/common/limError.jsp"></forward>
+    	<forward name="error" path="/crm/common/error.jsp"></forward>
+		<forward name="listProduct" path="/crm/sal/listProduct.jsp"></forward>
+		<forward name="newProduct" path="/crm/sal/newProduct.jsp"></forward>
+		<forward name="showProDesc" path="/crm/sal/showProDesc.jsp"></forward>
+		<forward name="updProduct" path="/crm/sal/updProduct.jsp"></forward>
+		<forward name="prodTree" path="/crm/common/trees/prodTree.jsp"></forward>
+		<forward name="wmsPro1" path="/crm/wms/wmsPro1.jsp"></forward>
+		<forward name="wmsPro2" path="/crm/wms/wmsPro2.jsp"></forward>
+		<forward name="empty" path="/crm/common/empty.jsp"></forward>
+		<forward name="wprOrdHistory" path="/crm/wms/wprOrdHistory.jsp"></forward>
+		<forward name="selProType" path="/crm/typeManage/selProType.jsp"></forward>
+      	<forward name="wptTree" path="/crm/typeManage/wptTree.jsp"></forward>
+      	<forward name="recProduct" path="/crm/recycle/recProduct.jsp"></forward>
+      	<forward name="recBatchDelConfirm" path="/crm/common/recBatchDelConfirm.jsp"></forward>
+      	<forward name="selectProduct" path="/crm/common/browChoose/selectProduct.jsp"></forward>
+      	<forward name="listProdTrans" path="/crm/sal/listProdTrans.jsp"></forward>
+      	<forward name="formProdTrans" path="/crm/sal/formProdTrans.jsp"></forward>
+      	<forward name="listProdSalBack" path="/crm/sal/listProdSalBack.jsp"></forward>
+      	<forward name="formProdSalBack" path="/crm/sal/formProdSalBack.jsp"></forward>
+      	<forward name="prodSalHistory" path="/crm/sal/prodSalHistory.jsp"></forward>
+    </action>
+    
+    <action path="/empAction" parameter="op" name="Userform" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+	     <forward name="orgList" path="/crm/sal/hrOrgList.jsp"></forward>
+	     <forward name="newSalOrg" path="/crm/sal/newSalOrg.jsp"></forward>
+	     <forward name="newSalEmp" path="/crm/hr/newSalEmp.jsp"></forward>
+	     <forward name="salEmpDesc" path="/crm/hr/salEmpDesc.jsp"></forward>
+	     <forward name="updateSalEmp" path="/crm/hr/updateSalEmp.jsp"></forward>
+	     <forward name="popDivSuc" path="/crm/common/popDivSuc.jsp"></forward>
+	     <forward name="error" path="/crm/common/error.jsp"></forward>
+	     <forward name="orgTree" path="/crm/common/trees/orgTree.jsp"></forward>
+	     <forward name="orgStruts" path="/crm/sal/orgStruts.jsp"></forward>
+	     <forward name="picUploadImg" path="/crm/common/picUploadImg.jsp"></forward>
+	     <forward name="limError" path="/crm/common/limError.jsp"></forward>
+	     <forward name="recSalEmp" path="/crm/recycle/recSalEmp.jsp"></forward>
+	     <forward name="showOrg" path="/crm/sal/showOrg.jsp"></forward>
+	     <forward name="empContacts" path="/crm/deskTop/empContacts.jsp"></forward>
+	     <forward name="simplePicUpload" path="/crm/common/simplePicUpload.jsp"></forward>
+	     <forward name="empTree" path="/crm/common/trees/empTree.jsp"></forward>
+	     <forward name="quickAddEmp" path="/crm/system/quickAddEmp.jsp"></forward>
+	     <forward name="listEmp" path="/crm/hr/listEmp.jsp"></forward>
+    </action>
+    
+    <action path="/salTaskAction" parameter="op" name="Userform" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+     	<forward name="salTask" path="/crm/oa/salTask.jsp"></forward>
+     	<forward name="newSalTask" path="/crm/oa/newSalTask.jsp"></forward>
+     	<forward name="salTaskDesc" path="/crm/oa/salTaskDesc.jsp"></forward>
+     	<forward name="updateSalTask" path="/crm/oa/updateSalTask.jsp"></forward>
+    	<forward name="showSalTaskType" path="/crm/typeManage/showSalTaskType.jsp"></forward> 
+    	<forward name="popDivSuc" path="/crm/common/popDivSuc.jsp"></forward>
+    	<forward name="mySalTask" path="/crm/oa/mySalTask.jsp"></forward>
+    	<forward name="showMyTask" path="/crm/oa/showMyTask.jsp"></forward>
+    	<forward name="limError" path="/crm/common/limError.jsp"></forward>
+    	<forward name="lastTask" path="/crm/deskTop/lastTask.jsp"></forward>
+    	<forward name="lastMyTask" path="/crm/deskTop/lastMyTask.jsp"></forward>
+    	<forward name="recSalTask" path="/crm/recycle/recSalTask.jsp"></forward>
+    </action>
+    
+    <action path="/customAction" parameter="op" name="Userform" scope="request" type="org.springframework.web.struts.DelegatingActionProxy"  >
+    	<forward name="listCustomer" path="/crm/customer/listCustomer.jsp"></forward>
+    	<forward name="companyCus" path="/crm/customer/companyCus.jsp"></forward>
+	    <forward name="showCompanyCusInfo" path="/crm/customer/showCompanyCusInfo.jsp"></forward>
+	    <forward name="showCompanyCusDesc" path="/crm/customer/showCompanyCusDes.jsp"></forward>
+    	<!--  管理自己管辖区域下的客户信息 -->
+    	<forward name="myCompanyCus" path="/crm/customer/myCompanyCus.jsp"></forward>
+    	<forward name="showMyCompanyCusInfo" path="/crm/customer/showMyCompanyCusInfo.jsp"></forward>
+	    <forward name="showMyCompanyCusDesc" path="/crm/customer/showMyCompanyCusDes.jsp"></forward>
+	    <forward name="showEditContact" path="/crm/customer/showEditContact.jsp"></forward>
+	    <forward name="listContact" path="/crm/customer/listContact.jsp"></forward>
+	    <forward name="contact" path="/crm/customer/contact.jsp"></forward>
+	    <forward name="showCountry" path="/crm/typeManage/showCountry.jsp"></forward>
+	    <forward name="showProvince" path="/crm/typeManage/showProvince.jsp"></forward>
+	    <forward name="showCity" path="/crm/typeManage/showCity.jsp"></forward>
+	    <forward name="repCus" path="/crm/customer/repCus.jsp"></forward>
+	    <forward name="supSearch" path="/crm/customer/supSearch.jsp"></forward>
+	    <forward name="popDivSuc" path="/crm/common/popDivSuc.jsp"></forward>
+	    <forward name="limError" path="/crm/common/limError.jsp"></forward>
+	    <forward name="selectCus" path="/crm/common/browChoose/selectCus.jsp"></forward>
+	    <forward name="selectContacts" path="/crm/common/browChoose/selectContacts.jsp"></forward>
+	   	<forward name="delConfirm" path="/crm/customer/delCusConfirm.jsp"></forward>
+	   	<forward name="modifyExeDate" path="/crm/customer/modifyExeDate.jsp"></forward>
+	   	<forward name="showDescContact" path="/crm/customer/showDescContact.jsp"></forward>
+	   	<forward name="showDescCusProd" path="/crm/customer/showDescCusProd.jsp"></forward>
+	   	<forward name="lastConBirList" path="/crm/customer/lastConBirList.jsp"></forward>
+	   	<forward name="addCity" path="/crm/typeManage/addCity.jsp"></forward>
+	   	<forward name="addProvince" path="/crm/typeManage/addProvince.jsp"></forward>
+	   	<forward name="batchDelConfirm" path="/crm/common/batchDelConfirm.jsp"></forward>
+	   	<forward name="recConfirm" path="/crm/common/recConfirm.jsp"></forward>
+	   	<forward name="recCus" path="/crm/recycle/recCus.jsp"></forward>
+	   	<forward name="recContact" path="/crm/recycle/recContact.jsp"></forward>
+	   	<forward name="conSupSearch" path="/crm/customer/conSupSearch.jsp"></forward>
+	   	<forward name="oppSupSearch" path="/crm/customer/oppSupSearch.jsp"></forward>
+	   	<forward name="praSupSearch" path="/crm/customer/praSupSearch.jsp"></forward>
+	   	<forward name="showCusOrder" path="/crm/customer/showCusOrder.jsp"></forward>
+	   	<forward name="showCusCon" path="/crm/customer/showCusCon.jsp"></forward>
+	   	<forward name="error" path="/crm/common/error.jsp"></forward>
+	   	<forward name="recBatchDelConfirm" path="/crm/common/recBatchDelConfirm.jsp"></forward>
+	   	<forward name="batchAssign" path="/crm/customer/batchAssign.jsp"></forward>
+	    <forward name="listCustomers" path="/crm/customer/listCustomer.jsp"></forward>
+	    <!-- 查询某人员所负责的客户 -->
+	    <forward name="listCustomersByPerson" path="/crm/customer/managePerson/listCustomerByPerson.jsp"></forward>
+	    <!-- 根据区域查询客户带有checkbox -->
+	    <forward name="listCustomersByArea" path="/crm/customer/customersByArea/listCustomerByArea.jsp"></forward>
+	    <!-- 根据区域查询客户不带有checkbox -->
+	    <forward name="listCustomersByOnlyArea" path="/crm/customer/customersByOnlyArea/listCustomerByOnlyArea.jsp"></forward>
+	    <!-- 管理当前登录人员的管辖区域 -->
+	    <forward name="myListCustomers" path="/crm/customer/myListCustomer.jsp"></forward>
+	    <forward name="listContact" path="/crm/customer/listContact.jsp"></forward>
+	    <forward name="batchColor" path="/crm/customer/batchColor.jsp"></forward>
+	    <forward name="empty" path="/crm/common/empty.jsp"></forward>
+	    <forward name="listCusProd" path="/crm/customer/listCusProd.jsp"></forward>
+	    <forward name="showCusProdDesc" path="/crm/customer/showCusProdDesc.jsp"></forward>
+	    <forward name="formCusProd" path="/crm/customer/formCusProd.jsp"></forward>
+	    <forward name="updCorSalNum" path="/crm/customer/updCorSalNum.jsp"></forward>
+	    <forward name="updCorBeginBal" path="/crm/customer/updCorBeginBal.jsp"></forward>
+	    <forward name="showCusSalStat" path="/crm/customer/showCusSalStat.jsp"></forward>
+	    <forward name="outData" path="/crm/common/outData.jsp"></forward>
+	    <forward name="listConMemDate" path="/crm/customer/listConMemDate.jsp"></forward>
+	    <forward name="formMemDate" path="/crm/customer/formMemDate.jsp"></forward>
+	    <forward name="listCusAddr" path="/crm/customer/listCusAddr.jsp"></forward>
+	    <forward name="formCusAddr" path="/crm/customer/formCusAddr.jsp"></forward>
+	    <forward name="showCusState" path="/crm/deskTop/showStateTip.jsp"></forward>
+	    <forward name="listCusSalInvoice" path="/crm/customer/listCusSalInvoice.jsp"></forward>
+	    <forward name="formSalInvoice" path="/crm/customer/formSalInvoice.jsp"></forward>
+	    <forward name="showRecvAmt" path="/crm/deskTop/showRecvAmtTip.jsp"></forward>
+	    <forward name="updCorTicketBal" path="/crm/customer/updCorTicketBal.jsp"></forward>
+	    <forward name="getDeskCusProd" path="/crm/deskTop/listCusProdTip.jsp"></forward>
+    </action>
+    
+    <action path="/cusServAction" parameter="op" name="Userform" scope="request" type="org.springframework.web.struts.DelegatingActionProxy" >
+	    <forward name="cusServs" path="/crm/customer/cusServs.jsp"></forward>
+	    <forward name="showEditSalOpp" path="/crm/customer/showEditSalOpp.jsp"></forward>
+	    <forward name="showEditSalPras" path="/crm/customer/showEditSalPras.jsp"></forward>
+	    <forward name="showEditCusServs" path="/crm/customer/showEditCusServs.jsp"></forward>
+	    <forward name="listSalPra" path="/crm/customer/listSalPra.jsp"></forward>
+	    <forward name="cusServList" path="/crm/customer/cusServList.jsp"></forward>
+	    <forward name="salOpps" path="/crm/customer/salOpps.jsp"></forward>
+	    <forward name="salPras" path="/crm/customer/salPras.jsp"></forward>
+	    <forward name="popDivSuc" path="/crm/common/popDivSuc.jsp"></forward>
+	    <forward name="error" path="/crm/common/error.jsp"></forward>
+	    <forward name="limError" path="/crm/common/limError.jsp"></forward>
+	    <forward name="showDescSalOpp" path="/crm/customer/showDescSalOpp.jsp"></forward>
+	    <forward name="showDescSalPras" path="/crm/customer/showDescSalPras.jsp"></forward>
+	    <forward name="showDescCusServs" path="/crm/customer/showDescCusServs.jsp"></forward>
+	    <forward name="searOpp" path="/crm/customer/searOpp.jsp"></forward>
+	    <forward name="searPra" path="/crm/customer/searPra.jsp"></forward>
+	    <forward name="searServ" path="/crm/customer/searServ.jsp"></forward>
+	    <forward name="readyExeOpp" path="/crm/customer/readyExeOpp.jsp"></forward>
+	    <forward name="readyExePra" path="/crm/customer/readyExePra.jsp"></forward>
+	    <forward name="expiredPra" path="/crm/customer/expiredPra.jsp"></forward>
+	    <forward name="createQuote" path="/crm/customer/createQuote.jsp"></forward>
+	    <forward name="showDescQuote" path="/crm/customer/showDescQuote.jsp"></forward>
+	    <forward name="showEditQuote" path="/crm/customer/showEditQuote.jsp"></forward>
+	    <forward name="recOpp" path="/crm/recycle/recOpp.jsp"></forward>
+	    <forward name="recPra" path="/crm/recycle/recPra.jsp"></forward>
+	    <forward name="recQuote" path="/crm/system/recQuote.jsp"></forward>
+	    <forward name="recServ" path="/crm/recycle/recServ.jsp"></forward>
+	    <forward name="lastPra" path="/crm/deskTop/lastPra.jsp"></forward>
+	    <forward name="lastOpp" path="/crm/deskTop/lastOpp.jsp"></forward>
+	    <forward name="oppSupSearch" path="/crm/customer/oppSupSearch.jsp"></forward>
+	   	<forward name="praSupSearch" path="/crm/customer/praSupSearch.jsp"></forward>
+	   	<forward name="showOppStage" path="/crm/typeManage/showOppStage.jsp"></forward>
+	   	<forward name="statPraMethod" path="/crm/salStat/statPraMethod.jsp"></forward>
+	   	<forward name="statPraList" path="/crm/salStat/statPraList.jsp"></forward>
+	   	<forward name="statOppList" path="/crm/salStat/statOppList.jsp"></forward>
+	   	<forward name="statPraExeDate" path="/crm/salStat/statPraExeDate.jsp"></forward>
+	   	<forward name="statOppStage" path="/crm/salStat/statOppStage.jsp"></forward>
+	   	<forward name="statOppFindDate" path="/crm/salStat/statOppFindDate.jsp"></forward>
+	   	<forward name="statOppHot" path="/crm/salStat/statOppHot.jsp"></forward>
+	   	<forward name="statOppPossible" path="/crm/salStat/statOppPossible.jsp"></forward>
+	   	<forward name="statOppState" path="/crm/salStat/statOppState.jsp"></forward>
+	   	<forward name="newRup" path="/crm/customer/newRup.jsp"></forward>
+	   	<forward name="empty" path="/crm/common/empty.jsp"></forward>
+	   	<forward name="showCusOpp" path="/crm/customer/showCusOpp.jsp"></forward>
+	   	<forward name="listCusPra" path="/crm/customer/listCusPra.jsp"></forward>
+	   	<forward name="showCusServ" path="/crm/customer/showCusServ.jsp"></forward>
+	   	<forward name="showOppQuo" path="/crm/customer/showOppQuo.jsp"></forward>
+	   	<forward name="listSalOpp" path="/crm/customer/listSalOpp.jsp"></forward>
+	   	<forward name="listCusServ" path="/crm/server/listCusServ.jsp"></forward>
+	   	<forward name="exeServ" path="/crm/server/exeServ.jsp"></forward>
+	   	<forward name="listSalOpp" path="/crm/customer/listSalOpp.jsp"></forward>
+	    <forward name="listSalPra" path="/crm/customer/listSalPra.jsp"></forward>
+	    <forward name="listContactPra" path="/crm/customer/listContactPra.jsp"></forward>
+    </action>
+    
+    <action path="/statAction" parameter="op" name="Userform" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+    	<forward name="salTarget" path="/crm/order/salTarget.jsp"></forward>
+    	<forward name="targetTb" path="/crm/sal/targetTb.jsp"></forward>
+    	<forward name="showSalTarget" path="/crm/order/showSalTarget.jsp"></forward>
+    	<forward name="empty" path="/crm/common/empty.jsp"></forward>
+    	<forward name="target" path="/crm/order/target.jsp"></forward>
+    	<forward name="statIsCusSuc" path="/crm/salStat/statIsCusSuc.jsp"></forward>
+    	<forward name="statMonthCus" path="/crm/salStat/statMonthCus.jsp"></forward>
+    	<forward name="statCusHot" path="/crm/salStat/statCusHot.jsp"></forward>
+    	<forward name="statCusSou" path="/crm/salStat/statCusSou.jsp"></forward>
+    	<forward name="statCusInd" path="/crm/salStat/statCusInd.jsp"></forward>
+    	<forward name="statCusList" path="/crm/salStat/statCusList.jsp"></forward>
+    	<forward name="statConList" path="/crm/salStat/statConList.jsp"></forward>
+    	<forward name="statConLev" path="/crm/salStat/statConLev.jsp"></forward>
+    	<forward name="statConCreDate" path="/crm/salStat/statConCreDate.jsp"></forward>
+    	<forward name="lastTarget" path="/crm/deskTop/lastTarget.jsp"></forward>
+    	<forward name="limError" path="/crm/common/limError.jsp"></forward>
+    	<forward name="statOrdSatu" path="/crm/salStat/statOrdSatu.jsp"></forward>
+    	<forward name="statOrdMonByDate" path="/crm/salStat/statOrdMonByDate.jsp"></forward>
+    	<forward name="statOrdCountByDate" path="/crm/salStat/statOrdCountByDate.jsp"></forward>
+    	<forward name="statOrdSumByDate" path="/crm/salStat/statOrdSumByDate.jsp"></forward>
+    	<forward name="statOrdSumByType" path="/crm/salStat/statOrdSumByType.jsp"></forward>
+    	<forward name="statTopSalCus" path="/crm/salStat/statTopSalCus.jsp"></forward>
+    	<forward name="lastSalStat" path="/crm/deskTop/lastSalStat.jsp"></forward>
+    	<forward name="listStatCus" path="/crm/salStat/listStatCus.jsp"></forward>
+    	<forward name="statCus" path="/crm/salStat/statCus.jsp"></forward>
+    	<forward name="statOrdSimple" path="/crm/salStat/statOrdSimple.jsp"></forward>
+    	<forward name="statOrdDCol" path="/crm/salStat/statOrdDCol.jsp"></forward>
+    	<forward name="statOrdDyn" path="/crm/salStat/statOrdDyn.jsp"></forward>
+    	<forward name="listStatOrd" path="/crm/salStat/listStatOrd.jsp"></forward>
+    	<forward name="listStatPaid" path="/crm/salStat/listStatPaid.jsp"></forward>
+    	<forward name="statOrdDSum" path="/crm/salStat/statOrdDSum.jsp"></forward>
+    	<forward name="statSal" path="/crm/salStat/statSal.jsp"></forward>
+    	<forward name="toListLTsals" path="/crm/deskTop/listLTsals.jsp"></forward>
+    	<forward name="listStatSalPast" path="/crm/salStat/listStatSalPast.jsp"></forward>
+     	<forward name="listStatPsalBack" path="/crm/salStat/listStatPsalBack.jsp"></forward>
+     	<forward name="listStatProd" path="/crm/salStat/listStatProd.jsp"></forward>
+    </action>
+    
+	<action path="/wmsManageAction" parameter="op" name="Userform" scope="request" type="org.springframework.web.struts.DelegatingActionProxy" >
+		<forward name="newWms" path="/crm/wms/newWms.jsp"></forward>
+		<forward name="wmsManage" path="/crm/wms/wmsManage.jsp"></forward>
+		<forward name="wmsStroDesc" path="/crm/wms/wmsStroDesc.jsp"></forward>
+		<forward name="wmsStroUpdate" path="/crm/wms/wmsStroUpdate.jsp"></forward>
+		<forward name="newWmsProduct" path="/crm/wms/newWmsProduct.jsp"></forward>
+		<forward name="wmsProduct" path="/crm/wms/wmsProduct.jsp"></forward>
+		<forward name="wmsProDesc" path="/crm/wms/wmsProDesc.jsp"></forward>
+		<forward name="wmsProUpdate" path="/crm/wms/wmsProUpdate.jsp"></forward>
+		<forward name="newWarIn" path="/crm/wms/newWarIn.jsp"></forward>
+		<forward name="wmsWarIn" path="/crm/wms/wmsWarIn.jsp"></forward>
+		<forward name="RWarPro" path="/crm/wms/RWarPro.jsp"></forward>
+		<forward name="wmsPro" path="/crm/wms/wmsPro.jsp"></forward>
+		<forward name="wmsPro1" path="/crm/wms/wmsPro1.jsp"></forward>
+		<forward name="wmsPro2" path="/crm/wms/wmsPro2.jsp"></forward>
+		<forward name="newRWarPro" path="/crm/wms/newRWarPro.jsp"></forward>
+		<forward name="updateRWarPro" path="/crm/wms/updateRWarPro.jsp"></forward>
+		<forward name="updateWwi" path="/crm/wms/updateWwi.jsp"></forward>
+		<forward name="rwpSearch" path="/crm/wms/rwpSearch.jsp"></forward>
+		<forward name="popDivSuc" path="/crm/common/popDivSuc.jsp"></forward>
+		<forward name="showProUnitType" path="/crm/typeManage/showProUintType.jsp"></forward>
+		<forward name="delWwi" path="/crm/wms/delWwi.jsp"></forward>
+		<forward name="empty" path="/crm/common/empty.jsp"></forward>
+		<forward name="newRip" path="/crm/wms/newRip.jsp"></forward>
+		<forward name="limError" path="/crm/common/limError.jsp"></forward>
+		<forward name="recWarIn" path="/crm/system/recWarIn.jsp"></forward>
+		<forward name="wmsStroList" path="/crm/wms/wmsStroList.jsp"></forward>
+		<forward name="error" path="/crm/common/error.jsp"></forward>
+		<forward name="wprOrdHistory" path="/crm/wms/wprOrdHistory.jsp"></forward>
+	</action>
+	
+	<action path="/wwoAction" parameter="op" name="Userform" scope="request" type="org.springframework.web.struts.DelegatingActionProxy" >
+		<forward name="newWwo" path="/crm/wms/newWwo.jsp"></forward>
+		<forward name="wwoManage" path="/crm/wms/wwoManage.jsp"></forward>
+		<forward name="rwoutPro" path="/crm/wms/rwoutPro.jsp"></forward>
+		<forward name="newRwoutPro" path="/crm/wms/newRwoutPro.jsp"></forward>
+		<forward name="updateRWoutPro" path="/crm/wms/updateRWoutPro.jsp"></forward>
+		<forward name="wmsStro" path="/crm/wms/wmsStro.jsp"></forward>
+		<forward name="updateWwo" path="/crm/wms/updateWwo.jsp"></forward>
+		<forward name="newWmsChange" path="/crm/wms/newWmsChange.jsp"></forward>
+		<forward name="wmsChange" path="/crm/wms/wmsChange.jsp"></forward>
+		<forward name="rwmsWms" path="/crm/wms/rwmsWms.jsp"></forward>
+		<forward name="newRww" path="/crm/wms/newRww.jsp"></forward>
+		<forward name="updateRww" path="/crm/wms/updateRww.jsp"></forward>
+		<forward name="updateWch" path="/crm/wms/updateWch.jsp"></forward>
+		<forward name="showProType" path="/crm/typeManage/showProType.jsp"></forward> 
+		<forward name="popDivSuc" path="/crm/common/popDivSuc.jsp"></forward>
+		<forward name="cancelWwo" path="/crm/wms/delWwi.jsp"></forward>
+		<forward name="newWmsCheck" path="/crm/wms/newWmsCheck.jsp"></forward>
+        <forward name="wmsCheck" path="/crm/wms/wmsCheck.jsp"></forward>
+        <forward name="rwmcPro" path="/crm/wms/rwmcPro.jsp"></forward>
+      	<forward name="newRwmcPro" path="/crm/wms/newRwmcPro.jsp"></forward>
+      	<forward name="updateRwmc" path="/crm/wms/updateRwmc.jsp"></forward>
+      	<forward name="empty" path="/crm/common/empty.jsp"></forward>
+      	<forward name="updateWmc" path="/crm/wms/updateWmc.jsp"></forward>
+      	<forward name="wliLine" path="/crm/wms/wliLine.jsp"></forward>
+      	<forward name="wprHistory" path="/crm/wms/wprHistory.jsp"></forward>
+      	<forward name="limError" path="/crm/common/limError.jsp"></forward>
+      	<forward name="proTypeTree" path="/crm/typeManage/proTypeTree.jsp"></forward>
+      	<forward name="recWarOut" path="/crm/system/recWarOut.jsp"></forward>
+      	<forward name="recWmsChange" path="/crm/system/recWmsChange.jsp"></forward>
+      	<forward name="recWmsCheck" path="/crm/system/recWmsCheck.jsp"></forward>
+      	<forward name="recWmsLine" path="/crm/system/recWmsLine.jsp"></forward>
+      	<forward name="error" path="/crm/common/error.jsp"></forward>
+      	
+	</action>
+	
+	<action path="/userAction" parameter="op" name="Userform" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+		<forward name="login" path="/crm/login1.jsp"></forward>
+		<forward name="cooperate" path="/crm/customer/cooperate.jsp"></forward>
+		<forward name="index" path="/crm/index.jsp"></forward>
+		<forward name="limUser" path="/crm/system/limUser.jsp"></forward>
+		<forward name="addUser" path="/crm/system/addUser.jsp"></forward>
+		<forward name="updateAddEmp" path="/crm/system/updateAddEmp.jsp"></forward>
+		<forward name="updatePwd" path="/crm/system/updatePwd.jsp"></forward>
+		<forward name="popDivSuc" path="/crm/common/popDivSuc.jsp"></forward>
+		<forward name="addSameEmp" path="/crm/system/addSameEmp.jsp"></forward>
+		<forward name="updateBoss" path="/crm/system/updateBoss.jsp"></forward>
+		<forward name="delConfirm" path="/crm/system/delConfirm.jsp"></forward>
+		<forward name="userRole" path="/crm/system/userRole.jsp"></forward>
+		<forward name="updateRole" path="/crm/system/updateRole.jsp"></forward>
+		<forward name="faileDel" path="/crm/system/faileDel.jsp"></forward>
+		<forward name="roleLev" path="/crm/system/roleLev.jsp"></forward>
+		<forward name="cusLimSetting" path="/crm/lim/cusLimSetting.jsp"></forward>
+		<forward name="servLimSetting" path="/crm/lim/servLimSetting.jsp"></forward>
+		<forward name="salLimSetting" path="/crm/lim/salLimSetting.jsp"></forward>
+		<forward name="wmsLimSetting" path="/crm/lim/wmsLimSetting.jsp"></forward>
+		<forward name="proLimSetting" path="/crm/lim/proLimSetting.jsp"></forward>
+		<forward name="copLimSetting" path="/crm/lim/copLimSetting.jsp"></forward>
+		<forward name="hrLimSetting" path="/crm/lim/hrLimSetting.jsp"></forward>
+		<forward name="purLimSetting" path="/crm/lim/purLimSetting.jsp"></forward>
+		<forward name="accLimSetting" path="/crm/lim/accLimSetting.jsp"></forward>
+		<forward name="sysLimSetting" path="/crm/lim/sysLimSetting.jsp"></forward>
+		<forward name="staLimSetting" path="/crm/lim/staLimSetting.jsp"></forward>
+		<forward name="empty" path="/crm/common/empty.jsp"></forward>
+		<forward name="iniSuc" path="/crm/system/iniSuc.jsp"></forward>
+		<forward name="iniSystem" path="/crm/system/iniSystem.jsp"></forward>
+		<forward name="error" path="/crm/common/error.jsp"></forward>
+		<forward name="limError" path="/crm/common/limError.jsp"></forward>
+		<forward name="limUserTree" path="/crm/common/trees/limUserTree.jsp"></forward>
+		<forward name="deskTop" path="/crm/deskTop.jsp"></forward>
+	</action>
+	
+    <action path="/messageAction" parameter="op" name="Userform" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+	    <forward name="report" path="/crm/oa/report.jsp"></forward>
+	    <forward name="reportOrder" path="/crm/oa/reportOrder.jsp"></forward>
+    	<forward name="haveSenRep" path="/crm/oa/haveSenRep.jsp"></forward>
+    	<forward name="approvalRep" path="/crm/oa/approvalRep.jsp"></forward>
+    	<forward name="showAppRepInfo" path="/crm/oa/showAppRepInfo.jsp"></forward>
+    	<forward name="message" path="/crm/oa/message.jsp"></forward>
+    	<forward name="haveSenMess" path="/crm/oa/haveSenMess.jsp"></forward>
+    	<forward name="showMessageInfo" path="/crm/oa/showMessageInfo.jsp"></forward>
+    	<forward name="haveAllMess" path="/crm/oa/haveAllMess.jsp"></forward>
+    	<forward name="schedule" path="/crm/oa/schedule.jsp"></forward>
+    	<forward name="readyExeSch" path="/crm/oa/readyExeSch.jsp"></forward>
+    	<forward name="showDescSchedule" path="/crm/oa/showDescSchedule.jsp"></forward>
+    	<forward name="showEditSchedule" path="/crm/oa/showEditSchedule.jsp"></forward>
+    	<forward name="popDivSuc" path="/crm/common/popDivSuc.jsp"></forward>
+    	<forward name="delConfirm" path="/crm/customer/delCusConfirm.jsp"></forward>
+    	<forward name="news" path="/crm/oa/news.jsp"></forward>
+    	<forward name="lastNews" path="/crm/oa/lastNews.jsp"></forward>
+    	<forward name="showDescNews" path="/crm/oa/showDescNews.jsp"></forward>
+    	<forward name="showAllNews" path="/crm/oa/showAllNews.jsp"></forward>
+    	<forward name="showAllSendNews" path="/crm/oa/showAllSendNews.jsp"></forward>
+    	<forward name="showEditNews" path="/crm/oa/showEditNews.jsp"></forward>
+    	<forward name="readySenRep" path="/crm/oa/readySenRep.jsp"></forward>
+    	<forward name="readySenMess" path="/crm/oa/readySenMess.jsp"></forward>
+    	<forward name="showAllSchedule" path="/crm/oa/showAllSchedule.jsp"></forward>
+    	<forward name="showSchType" path="/crm/typeManage/showSchType.jsp"></forward>
+    	<forward name="limError" path="/crm/common/limError.jsp"></forward>
+    	<forward name="lastSch" path="/crm/deskTop/lastSch.jsp"></forward>
+    	<forward name="lastRep" path="/crm/deskTop/lastRep.jsp"></forward>
+    	<forward name="lastNewsNotice" path="/crm/deskTop/lastNewsNotice.jsp"></forward>
+    	<forward name="recReport" path="/crm/recycle/recReport.jsp"></forward>
+    	<forward name="recMail" path="/crm/system/recMail.jsp"></forward>
+    	<forward name="listCusSch" path="/crm/oa/listCusSch.jsp"></forward>
+    </action>
+    <action path="/download" parameter="op" name="Userform" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+    </action>
+    <action path="/crm/typeAction" parameter="op" name="Userform" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+    	<forward name="showTypeList" path="/crm/typeManage/showTypeList.jsp"></forward>
+    	<forward name="popDivSuc" path="/crm/common/popDivSuc.jsp"></forward>
+    	<forward name="limError" path="/crm/common/limError.jsp"></forward>
+    </action>
+  </action-mappings>
+	
+  <message-resources parameter="com.psit.struts.ApplicationResources" />
+  <message-resources parameter="com.psit.struts.messResource" />
+</struts-config>
+

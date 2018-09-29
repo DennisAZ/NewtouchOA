@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Eclipse 工程选择</title>
+</head>
+<script type="text/javascript">
+//Var fso=new ActiveXObject(Scripting.FileSystemObject)； 
+function GetHeader(src) { 
+  var ForReading=1; 
+  var fso=new ActiveXObject("Scripting.FileSystemObject"); 
+  var f=fso.OpenTextFile(src,ForReading); 
+  return(f.ReadAll()); 
+} 
+function dos(){
+  var xml = new ActiveXObject("MSXML2.DOMDocument");
+  xml.async = false;
+	var xmlRes = GetHeader("D:\\project\\yh\\.project");
+	//var xmlObj = eval(xmlRes);
+	xml.loadXML(xmlRes);
+	var node = xml.getElementsByTagName("projectDescription");//
+	var list = xml.selectNodes("//projectDescription/name");
+	var elem = node[0];
+	var proName =  elem.getElementsByTagName("name")[0].textContent != undefined ? elem.getElementsByTagName("name")[0].textContent : elem.getElementsByTagName("name")[0].text;
+	proUrl = "D:\\project\\"+proName;
+	alert(proUrl);
+}
+</script>
+<body>
+<input type="button" onclick="dos()">
+</body>
+</html>

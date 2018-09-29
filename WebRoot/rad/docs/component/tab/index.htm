@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">多标签页</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:刘涵</td>
+    <td width="20%">&nbsp;</td>
+    <td width="15%">创建日期:2011-01-12</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:1</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="15%">适用情景描述</th>
+    <th width="65%">特别强调</th>
+    <th width="20%">代码</th>
+  </tr>
+  <tr>
+    <td><a href="/yh/rad/docs/component/tab/tab1.jsp">同步加载多标签</a>
+    </td>
+    <td><pre>
+  样式表：[cssPath]/cmp/tab.css
+  Js文件：[contextPath]/core/js/cmp/tab.js
+  接口函数：buildTab
+  接口参数[{title:, contentUrl:, content: ,imgUrl:,isShow:,useIframe:,useTextContent:}, ...]
+            ,container,divHeight,rigthContent
+  接口参数说明：
+    title: 标签的标题
+    contentUrl: 同步加载情况下，不使用
+    content: 标签的内容，可以是Html标签，如果定义了此项其它内容项将不起作用。优先级最高
+    imgUrl: 标签的修饰图片
+    isShow:通过此属性，可以指定标签页默认打开那个页面。
+    useIframe:设置Tab为同步加载。如果为false，将异步加载内容。
+    useTextContent：如果设置为true，且useIframe为false,则加载指定地址的文本内容
+    onload:设置该标签页面打开后执行的函数。
+    
+    container：指定标签页显示在什么容器里面。
+    divHeight:已废弃
+    rigthContent:指定标签页，标题栏右边的内容，可以是html标签。
+    
+    这时只需设置每个标签页地址(contentUrl)及useIframe为true
+    </pre></td>
+    <td>具体代码请参见：<br/><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/tab/tab1.jsp">/rad/docs/component/tab/tab1.jsp</a></td>
+  </tr>
+  <tr>
+    <td><a href="/yh/rad/docs/component/tab/tab2.jsp">异步加载多标签，不刷新</a>
+    </td>
+    <td> <pre>
+     样式表：[cssPath]/cmp/tab.css
+  Js文件：[contextPath]/core/js/cmp/tab.js
+  接口函数：buildTab
+  接口参数[{title:, contentUrl:, content: ,imgUrl:,isShow:,useIframe:,useTextContent:}, ...]
+            ,container,divHeight,rigthContent
+  接口参数说明：
+    title: 标签的标题
+    contentUrl: 同步加载情况下，不使用
+    content: 标签的内容，可以是Html标签，如果定义了此项其它内容项将不起作用。优先级最高
+    imgUrl: 标签的修饰图片
+    isShow:通过此属性，可以指定标签页默认打开那个页面。
+    useIframe:设置Tab为同步加载。如果为false，将异步加载内容。
+    useTextContent：如果设置为true，且useIframe为false,则加载指定地址的文本内容
+    
+    container：指定标签页显示在什么容器里面。
+    divHeight:已废弃
+    rigthContent:指定标签页，标题栏右边的内容，可以是html标签。
+    
+    这时设置每个标签页地址(contentUrl)，<font color="red">如果加载的内容不是json则设置useTextContent为true</font>
+    </pre></td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/tab/tab2.jsp">/rad/docs/component/tab/tab2.jsp</a></td>
+  </tr>
+  <tr>
+    <td><a href="/yh/rad/docs/component/tab/tab3.jsp">同步异步混合加载多标签，不刷新</a>
+    </td>
+    <td> <pre>
+     样式表：[cssPath]/cmp/tab.css
+  Js文件：[contextPath]/core/js/cmp/tab.js
+  接口函数：buildTab
+  接口参数[{title:, contentUrl:, content: ,imgUrl:,isShow:,useIframe:,useTextContent:}, ...]
+            ,container,divHeight,rigthContent
+  接口参数说明：
+    title: 标签的标题
+    contentUrl: 同步加载情况下，不使用
+    content: 标签的内容，可以是Html标签，如果定义了此项其它内容项将不起作用。优先级最高
+    imgUrl: 标签的修饰图片
+    isShow:通过此属性，可以指定标签页默认打开那个页面。
+    useIframe:设置Tab为同步加载。如果为false，将异步加载内容。
+    useTextContent：如果设置为true，且useIframe为false,则加载指定地址的文本内容
+     onload:设置该标签页面打开后执行的函数。
+    
+    container：指定标签页显示在什么容器里面。
+    divHeight:已废弃
+    rigthContent:指定标签页，标题栏右边的内容，可以是html标签。
+    
+    这时设置每个标签页地址(contentUrl)，以及不同的参数</font>
+    </pre></td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/tab/tab3.jsp">/rad/docs/component/tab/tab3</a></td>
+  </tr>
+  <tr>
+    <td><a href="/yh/rad/docs/component/tab/tab4.jsp">其它一些接口的应用</a></td>
+    <td> <pre>
+    isShow:通过此属性，可以指定标签页打开时默认打开页面。
+    useTextContent：如果设置为true，且useIframe为false,则加载指定地址的文本内容
+    rigthContent:指定标签页，标题栏右边的内容，可以是html标签。
+    onload:设置该标签页面打开后执行的函数。
+    </pre></td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/tab/tab4.jsp">/rad/docs/component/tab/tab4.jsp</a></td>
+  </tr>
+</table>
+</body>
+</html>

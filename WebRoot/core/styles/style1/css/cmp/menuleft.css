@@ -1,0 +1,71 @@
+img {border: none; vertical-align: middle;}
+a:link{color: #0066cc; text-decoration: none;}
+a:visited{color: #0066cc; text-decoration: none;}
+a:hover {color: #333333; text-decoration: underline;}
+a:active{color: #0066cc; text-decoration: underline;}
+
+.head{font-size: 12pt;color: #124164;font-weight: bold;padding-left:5px;padding-top:5px;}
+
+.menuLeftUl {
+   list-style: none;
+   margin: 0px;
+   padding: 0px;
+   width:99%;
+   height:100%;
+   line-height:20px;
+   border-right:1px #4a8bc3 solid;
+}
+
+.menuLeftLi a:link, .menuLeftLi a:visited{
+   color: #275175;
+   font-size:9pt;
+   display: block;
+   text-decoration: none;
+   height: 24px;
+   background: url("../../img/menu_left_bg.png") repeat-x;
+}
+
+.menuLeftLi a:link span, .menuLeftLi a:visited span{
+  background: url("../../img/ar.png") no-repeat left center;
+  display:block;
+  padding-top:3px;
+  padding-left:16px;
+  cursor:pointer;
+}
+.menuLeftLi a:hover{
+   color: #000000;
+   font-weight:bold;
+   background:  url("../../img/menu_left_bg.png") repeat-x;
+   background-position: 0 -24px;
+}
+/*  一级菜单 active 效果  */
+.menuLeftLi a.active, .menuLeftLi a:hover.active, .menuLeftLi a:active.active, .menuLeftLi a:visited.active{
+   background:  url("../../img/menu_left_bg.png") repeat-x;
+   background-position: 0 -24px;
+}
+.menuLeftLi a:link.active span, .menuLeftLi a:hover.active span, .menuLeftLi a:active.active span, .menuLeftLi a:visited.active span{
+   color: #000000;
+   font-weight:bold;
+   background: url("../../img/arrow_d.png") no-repeat left center;
+}
+
+.moduleContainer{background:#FFFFFF;overflow-x:auto;overflow-y:hidden;}
+.treeList{border-bottom:1px #83ACCF solid;padding-bottom:15px;}
+.moduleContainer .blank{line-height:30px;padding-left: 5px;}
+
+.moduleContainer a:link,
+.moduleContainer a:hover,
+.moduleContainer a:active,
+.moduleContainer a:visited{
+   color: #0066cc;
+   text-decoration: none;
+   background:none;
+   display: inline;
+   font-weight:normal;
+}
+
+.moduleContainer a:hover,
+.moduleContainer a:active{
+   color: #333333;
+   text-decoration: underline;
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oa.spring.dao.batis.ProductTypeMapper">
+
+	<resultMap type="oa.spring.po.ProductType" id="productType">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="parentId" column="parent_id" />
+		<result property="treeCode" column="tree_code" />
+		<result property="treeName" column="tree_name" />
+		<result property="parentName" column="parent_name" />
+		<result property="remark" column="remark" />
+	</resultMap>
+
+	<select id="getProduct" resultMap="productType">
+		SELECT * from
+		erp_product_type where is_del='0'
+	</select>
+	<select id="getProductByIds" resultMap="productType"
+		parameterType="String">
+		SELECT * from erp_product_type where id=#{id}
+	</select>
+		<select id="getTypeId" resultType="java.util.HashMap" parameterType="String">
+			SELECT  id FROM erp_product_type where tree_code like  CONCAT('%',#{id},'%')
+
+	</select>
+	<insert id="addProduct" parameterType="oa.spring.po.ProductType" >
+		insert into
+		erp_product_type(id,name,tree_code,tree_name,remark,parent_id,parent_name)
+		values(uuid(),#{name},#{treeCode},#{treeName},#{remark},#{parentId},#{parentName})
+	</insert>
+	<update id="productUpdate" parameterType="oa.spring.po.ProductType">
+		update erp_product_type set name = #{name},
+		tree_code=#{treeCode},
+		tree_name=#{treeName},
+		remark=#{remark},
+		parent_id=#{parentId},
+		parent_name=#{parentName}
+		where id=#{id}
+	</update>
+	<select id="getAllParent" resultMap="productType">
+		SELECT
+		tree_code,tree_name from erp_product_type where parent_id=#{parentId}
+	</select>
+	<update id="treeCodeUpdate" parameterType="oa.spring.po.ProductType">
+		update erp_product_type set tree_code =#{treeCode} where id=#{id}
+	</update>
+	<select id="getByName" resultMap="productType">
+		SELECT id from erp_product_type where name=#{name}
+	</select>
+	<delete id="productDelete" parameterType="String">
+		update 
+		erp_product_type set is_del='1' where id=#{id};
+	</delete>
+</mapper>

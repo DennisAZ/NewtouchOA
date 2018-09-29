@@ -1,0 +1,200 @@
+.yh-panel {
+}
+
+.yh-panel .x-panel-body {
+    border:0px solid;
+    border-top:0 none;
+    overflow:hidden;
+    position: relative; /* added for item scroll positioning */
+}
+
+.yh-panel .x-panel-body-noheader,.yh-panel .x-panel-mc .x-panel-body {
+    border-top:0px solid;
+}
+
+.yh-panel .x-panel-tl {
+   border-bottom:0px solid;
+}
+
+.yh-panel .x-panel-bc {
+  background: none transparent repeat-x 0 bottom;
+  zoom:1;
+}
+
+.yh-panel .x-html-editor-wrap {
+    border:0px solid;
+}
+
+.yh-panel .x-toolbar{
+  border-color:#a9bfd3;
+  background-image:url(../images/yhtheme/toolbar/bg.jpg);
+}
+
+.yh-panel .x-panel-header {
+  color:#15428b;
+  font-weight:bold; 
+  font-size: 11px;
+  font-family: tahoma,arial,verdana,sans-serif;
+  background-image: url(../images/yhtheme/panel/white-top-bottom.jpg);
+}
+
+.x-panel-body {
+  background-color:#ebe9e9;
+  border: none;
+}
+.yh-panel .x-panel-tc {
+  background-image: url(../images/yhtheme/panel/top-bottom.jpg);
+  height:35px;
+}
+
+.yh-panel .x-panel-tl {
+  padding-left:14px;
+  background-image: url(../images/yhtheme/panel/corners-sprite-tl.jpg);
+  border-bottom-color:#99bbe8;
+}
+
+.yh-panel .x-panel-tr {
+  padding-right:14px;
+  background-image: url(../images/yhtheme/panel/corners-sprite-tr.jpg);
+    border-bottom-color:#99bbe8;
+}
+
+.yh-panel .x-panel-bl {
+  padding-left:12px;
+  height:42px;
+  background: url(../images/yhtheme/panel/corners-sprite-bl.jpg) no-repeat left top;
+  border-bottom-color:#99bbe8;
+}
+
+.yh-panel .x-panel-br {
+  padding-right:12px;
+  height:42px;
+  background: url(../images/yhtheme/panel/corners-sprite-br.jpg) no-repeat right top;
+  border-bottom-color:#99bbe8;
+}
+
+.yh-panel .x-panel-bc {
+  background: url(../images/yhtheme/panel/corners-sprite-bc.jpg) repeat-x left top;
+  width:100%;
+}
+
+.yh-panel .x-panel-mc {
+    font: normal 11px tahoma,arial,helvetica,sans-serif;
+    background-color:white;
+}
+
+.yh-panel .x-panel-ml {
+  padding-left:10px;
+  background:url(../images/yhtheme/panel/left-right-ml.jpg)  repeat-y left top;
+}
+
+.yh-panel .x-panel-mr {
+  padding-right:14px;
+  background:url(../images/yhtheme/panel/left-right-mr.jpg) repeat-y right top;
+}
+
+.yh-panel .x-tool {
+    background-image:url(../images/yhtheme/panel/tool-sprites.gif);
+}
+
+.yh-panel .x-panel-noborder .x-panel-header-noborder {
+    border-bottom-color:white;
+}
+
+.yh-panel .x-border-layout-ct {
+    background-color:white;
+}
+
+.yh-panel .x-panel-nofooter .x-panel-bc {
+	  height:32px;
+}
+
+
+#moduleWindow .x-window-tl {
+  padding-left:14px;
+  background-image: url(../images/yhtheme/panel/corners-sprite-tl.jpg);
+    border-bottom-color:#99bbe8;
+}
+
+#moduleWindow .x-window-tc {
+  background-image: url(../images/yhtheme/panel/top-bottom.jpg);
+  height:35px;
+}
+
+#moduleWindow .x-window-tr {
+  padding-right:14px;
+  background-image: url(../images/yhtheme/panel/corners-sprite-tr.jpg);
+  border-bottom-color:#99bbe8;
+}
+
+#moduleWindow .x-tool {
+    background-image:url(../images/yhtheme/panel/tool-sprites.gif);
+}
+
+
+#moduleWindow .x-window-bl {
+  padding-left:12px;
+  height:42px;
+  background: url(../images/yhtheme/panel/corners-sprite-bl.jpg) no-repeat left top;
+  border-bottom-color:#99bbe8;
+}
+
+#moduleWindow .x-window-br {
+  padding-right:12px;
+  height:42px;
+  background: url(../images/yhtheme/panel/corners-sprite-br.jpg) no-repeat right top;
+  border-bottom-color:#99bbe8;
+}
+
+#moduleWindow .x-window-bc {
+  background:url(../images/yhtheme/panel/corners-sprite-bc.jpg) repeat-x left top;
+  height:42px;
+  width:100%;
+}
+
+#moduleWindow .x-window-mc {
+    font: normal 11px tahoma,arial,helvetica,sans-serif;
+    background-color:white;
+}
+
+#moduleWindow .x-window-ml {
+  padding-left:10px;
+  background:url(../images/yhtheme/panel/left-right-ml.jpg)  repeat-y left top;
+}
+
+#moduleWindow .x-window-mr {
+  padding-right:14px;
+  background:url(../images/yhtheme/panel/left-right-mr.jpg) repeat-y right top;
+}
+
+#moduleWindow .x-window-plain .x-window-mc {
+	border:0px solid;
+}
+
+#moduleWindow .x-window-plain .x-window-body {
+	border:0px solid;
+}
+
+#moduleWindow .x-panel-ml {
+	background: none transparent;
+}
+
+#moduleWindow .x-panel-mr {
+	background: none transparent;
+}
+
+#moduleWindow .x-panel-mc {
+	background: none transparent;
+}
+
+#moduleWindow .x-panel-bl {
+	background: none transparent;
+}
+
+#moduleWindow .x-panel-br {
+	background: none transparent;
+}
+
+#moduleWindow .x-panel-bc {
+	background: none transparent;
+}

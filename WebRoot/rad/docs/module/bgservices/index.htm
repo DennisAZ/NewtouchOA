@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">文件相关操作</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:</td>
+    <td width="20%">&nbsp;</td>
+    <td width="15%">创建日期:</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="15%">适用情景描述</th>
+    <th width="30%">特别强调</th>
+    <th width="55%">代码</th>
+  </tr>
+  <tr>
+    <td>后台服务接口</td>
+    <td>后台服务接口主要是支撑系统的一些后台服务。<br>
+          如果要实现某一个后台服务，则需要实现后台服务结构。
+          <br>
+          自定义的后台服务实现的步骤：<br>1.需要继承 yh.core.autorun.YHAutoRun类
+          重写doTask() 方法<br>
+          <font color="red">注意：通过Connection conn = getRequestDbConn().getSysDbConn();能得到数据库的连接</font><br>
+          2.在系统设置中配置自定义的系统服务<br>
+          </td>
+    <td>java代码:<br>
+    public class YHWebmailAutoService extends YHAutoRun {<br>
+    &nbsp;&nbsp;public void doTask() {<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("YHWebmailAutoService doTask Run" + YHUtility.getCurDateTimeStr());<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;try {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Connection conn = getRequestDbConn().getSysDbConn();<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;} catch (Exception e) {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("YHWebmailAutoService doTask Run END " + YHUtility.getCurDateTimeStr());<br>
+  &nbsp;&nbsp;}<br>
+}</td>
+  </tr>
+</table>
+
+</body>
+</html>

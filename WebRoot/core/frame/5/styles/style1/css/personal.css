@@ -1,0 +1,212 @@
+html {
+	overflow: hidden;
+}
+.screen {
+	padding-top: 20px;
+}
+
+#container {
+	z-index: 1;
+}
+
+
+.background {
+    background: url("images/portal_bg.jpg") repeat-x scroll left top #fff;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1920px;
+}
+
+#control table {
+  display: inline-block;
+}
+.control-r {
+    background: url("images/slidebox/slide_bar_r.png") no-repeat scroll right top transparent;
+    height: 26px;
+    padding-right: 15px;
+    width: 26px;
+}
+.control-l {
+    background: url("images/slidebox/slide_bar_l.png") no-repeat scroll left top transparent;
+    height: 26px;
+    width: 15px;
+}
+#control a {
+    background: url("images/slidebox/btn.png") no-repeat scroll center top transparent;
+    display: block;
+    float: left;
+    height: 26px;
+    top: 0;
+    width: 26px;
+}
+#control a.active {
+    background: url("images/slidebox/btn_active.png") no-repeat scroll center top transparent;
+}
+#control a.cfg {
+    background: url("images/slidebox/btn_cfg.png") no-repeat scroll center top transparent;
+    float: right;
+    height: 26px;
+}
+#control a.cfg:hover {
+    background: url("images/slidebox/btn_cfg_hover.png") no-repeat scroll center top transparent;
+}
+.screen ul li {
+    width: 120px;
+}
+
+
+ul.blocks {
+  position: relative;
+  *top: 25px;
+}
+
+.icon-text span {
+	font-size: 13px;
+}
+
+.block {
+    display: block;
+    float: left;
+    height: 125px;
+    overflow: hidden;
+    text-align: center;
+}
+.block .count {
+    background-image: url("images/count_bg.png");
+    background-repeat: no-repeat;
+    height: 40px;
+    position: absolute;
+    right: -20px;
+    top: 0;
+    width: 44px;
+}
+.icon-text {
+    background: url("images/icon_text_l.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    margin-top: 3px;
+    padding-left: 10px;
+}
+.icon-text span {
+    background: url("images/icon_text_r.png") no-repeat scroll right center transparent;
+    color: #FFFFFF;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 10px 0 0;
+}
+li.block .img {
+    cursor: pointer;
+    height: 86px;
+    line-height: 86px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 86px;
+}
+li.block .img p {
+    position: static;
+    top: 50%;
+}
+li.block .img p img {
+    left: -50%;
+    position: static;
+    top: -50%;
+    vertical-align: middle;
+}
+li.block .img p:after {
+    content: ".";
+    font-size: 1px;
+    visibility: hidden;
+}
+.block .count1 {
+    background-position: -16px -41px;
+}
+.block .count2 {
+    background-position: -16px -84px;
+}
+.block .count3 {
+    background-position: -16px -126px;
+}
+.block .count4 {
+    background-position: -16px -168px;
+}
+.block .count5 {
+    background-position: -16px -210px;
+}
+.block .count6 {
+    background-position: -16px -252px;
+}
+.block .count7 {
+    background-position: -16px -294px;
+}
+.block .count8 {
+    background-position: -16px -336px;
+}
+.block .counyh {
+    background-position: -16px -378px;
+}
+.block .count10 {
+    background-position: -16px -420px;
+}
+
+.tab-header {
+	background: none repeat scroll 0 0 #F3F3F3;
+}
+
+.app-set {
+	 background: url("images/appbox/bar_btn_appset.png") repeat scroll center center transparent;
+   cursor: pointer;
+   float: left;
+   height: 22px;
+   margin-left: 10px;
+   margin-top: 4px;
+   width: 102px;
+}
+
+.app-set span {
+	display: none;
+}
+
+.screen-set {
+	 background: url("images/appbox/bar_btn_screenset.png") repeat scroll center center transparent;
+   cursor: pointer;
+   float: left;
+   height: 22px;
+   margin-left: 10px;
+   margin-top: 4px;
+   margin-bottom: 4px;
+   width: 102px;
+}
+
+.screen-set span {
+	display: none;
+}
+
+#portalSettingMsg {
+  color: Green;
+  display: none;
+  height: 38px;
+  line-height: 38px;
+  margin-left: 100px;
+  width: auto;
+}
+
+#trash {
+    background: url("images/slidebox/trash.png") no-repeat scroll center top transparent;
+    bottom: 10px;
+    display: none;
+    height: 128px;
+    left: 50%;
+    position: absolute;
+    width: 128px;
+    z-index: 1;
+    margin-left: -64px;
+}
+
+#trash.hover {
+    background: url("images/slidebox/trash_hover.png") no-repeat scroll center top transparent;
+}

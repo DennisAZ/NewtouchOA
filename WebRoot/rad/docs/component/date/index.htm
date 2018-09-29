@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">日期选择</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:刘涵</td>
+    <td width="20%">&nbsp;</td>
+    <td width="15%">创建日期:2011-01-13</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:1</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="20%">适用情景描述</th>
+    <th width="75%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+    <td>
+    <a href="calendar1.jsp" target="_blank">点击按钮弹出日期选择</a>
+    </td>
+    <td>
+<pre>
+<font color="red">样式表：[cssPath]/cmp/Calendar.css
+Js文件：[contextPath]/core/js/cmp/Calendarfy.js</font>
+//配置参数
+  var beginParameters = {
+      //时间接收input框的id
+      inputId:'timeInput'
+      //设置点击那个按钮(id)弹出
+      ,bindToBtn:'imgBtn'
+  };
+  new Calendar(beginParameters);
+</pre>  
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/date/calendar1.jsp">/rad/docs/component/date/calendar1.jsp</a></td>
+  </tr>
+  <tr>
+    <td>
+    <a href="time.jsp" target="_blank">单时间选择</a>
+    </td>
+    <td>
+<pre>
+<font color="red">Js文件：[contextPath]/core/js/cmp/Calendarfy.js</font>
+调用方法：showTime
+参数说明：timeInput, isHaveDate, callbackFunPar
+    timeInput:时间的输入框的id
+    isHaveDate:时间输入框中是否有日期
+    callbackFunPar:当选择好时间后的回调函数
+
+</pre>  
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/date/time.jsp">/rad/docs/component/date/time.jsp</a></td>
+  </tr>
+  <tr>
+    <td>
+    <a href="calendar2.jsp" target="_blank">输入框弹下面弹出日期选择</a>
+    </td>
+    <td>
+<pre>
+<font color="red">样式表：[cssPath]/cmp/Calendar.css
+Js文件：[contextPath]/core/js/cmp/Calendarfy.js</font>
+//配置参数
+  var beginParameters = {
+      //时间接收input框的id
+      inputId:'timeInput'
+  };
+  new Calendar(beginParameters);
+<font color="red">相对点击按钮弹出日期选择方式，只需去掉配置参数中的bindToBtn项即可</font>
+</pre>  
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/date/calendar2.jsp">/rad/docs/component/date/calendar2.jsp</a></td>
+  </tr>
+  
+  <tr>
+    <td>
+    <a href="calendar3.jsp" target="_blank">弹出时间日期选择</a>
+    </td>
+    <td>
+<pre>
+<font color="red">样式表：[cssPath]/cmp/Calendar.css
+Js文件：[contextPath]/core/js/cmp/Calendarfy.js</font>
+//配置参数
+  var beginParameters = {
+      //时间接收input框的id
+      inputId:'timeInput',
+      //isHaveTime是否有时间
+      property:{isHaveTime:true}
+      ,bindToBtn:'imgBtn'
+  };
+  new Calendar(beginParameters);
+<font color="red">加入property参数,并设置其中的isHaveTime为true</font>
+</pre>  
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/date/calendar3.jsp">/rad/docs/component/date/calendar3.jsp</a></td>
+  </tr>
+  
+   <tr>
+    <td>
+    <a href="calendar4.jsp" target="_blank">自定义时间日期格式</a>
+    </td>
+    <td>
+<pre>
+<font color="red">样式表：[cssPath]/cmp/Calendar.css
+Js文件：[contextPath]/core/js/cmp/Calendarfy.js</font>
+//配置参数
+  var beginParameters = {
+      //时间接收input框的id
+      inputId:'timeInput',
+      //isHaveTime是否有时间
+      property:{isHaveTime:true,format:'yy年M月d日'}
+      ,bindToBtn:'imgBtn'
+  };
+  new Calendar(beginParameters);
+<font color="red">
+加入property参数,并设置其中的format
+format:带时间时默认为"yyyy-MM-dd hh:mm:ss",不带时间:"yyyy-MM-dd"
+</font>
+</pre>  
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/date/calendar4.jsp">/rad/docs/component/date/calendar4.jsp</a></td>
+  </tr>
+  <tr>
+    <td>
+    <a href="calendar5.jsp" target="_blank">时间日期选择其它配置</a>
+    </td>
+    <td>
+<pre>
+<font color="red">样式表：[cssPath]/cmp/Calendar.css
+Js文件：[contextPath]/core/js/cmp/Calendarfy.js</font>
+//配置参数
+  var beginParameters = {
+      //时间接收input框的id
+      inputId:'timeInput',
+      //isHaveTime是否有时间
+      property:{yearRange:[2005,2015]
+                  ,month:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec']
+                  ,week:['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']}
+      ,bindToBtn:'imgBtn'
+  };
+  new Calendar(beginParameters);
+<font color="red">
+加入property参数
+设置其中的yearRange,可以设置日期选择的范围如这时只能选择2005年到2010年
+设置其中的month,可以自定义显示月的名称默认为
+  ['一月','二月','三月','四月','五月','六月','七月','八月'
+        ,'九月','十月','十一月','十二月']
+设置其中的week,可以自定义显示周的名称默认为
+  ['日','一','二','三','四','五','六']
+</font>
+</pre>  
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/date/calendar5.jsp">/rad/docs/component/date/calendar5.jsp</a></td>
+  </tr>
+  <tr>
+    <td>
+    引入文件及参数说明
+    </td>
+    <td>
+<pre>
+样式表：[cssPath]/cmp/Calendar.css
+Js文件：[contextPath]/core/js/cmp/Calendarfy.js
+接口函数：Calendar
+接口参数:{bindToBtn,inputId,property:{week,yearRange,month,format,ishaveTime}}
+    bindToBtn 字符串 绑定的按钮id,不指定日历会默认显示在输入框下面
+    inputId 字符串 日历输入框的id
+    property 对象 主要设置日历的一些属性
+      week 字符串数组 指定日历显示星期的格式
+      month 字符串数组 指定日历显示月份的格式
+      yearRange 整型数组 指定年的显示范围
+      format 字符串 日期的输出格式
+      ishaveTime boolean 是否显示时间\
+
+</pre>  
+    </td>
+    <td></td>
+  </tr>
+</table>
+
+</body>
+</html>

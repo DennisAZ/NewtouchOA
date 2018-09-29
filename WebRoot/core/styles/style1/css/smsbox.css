@@ -1,0 +1,154 @@
+
+
+/*  群对话  */
+#container .user_time span{
+color:#999900;
+font-family:"宋体";
+
+	
+}
+
+
+
+/* 历史对话 */
+#control_div   
+{
+padding-top:0px;
+float:inherit;     
+position:fixed;
+bottom:0px;    
+z-index:200;     
+width:100%;   
+background-color:#E6EEE7;
+font-family:"微软雅黑";   
+}    
+
+#page_bar #page_buttton{
+padding-left:7px;
+float:left;
+  
+}
+#page_bar #page_buttton img{
+margin-top:3px;
+}
+/*
+#page_bar #page_buttton input{
+margin-left:80px;
+height:12px;
+width:13px;
+}
+*/
+#page_bar #page_icon{
+float:right;
+}
+#show_history_content{
+padding-left:5px;
+}
+#show_history_content .user_time{
+color:#00CC66;
+font-family:"微软雅黑";
+}
+
+#page_bar #page_icon span{
+font: 12px/20px "微软雅黑","宋体";
+padding-right:8px;
+}
+
+#page_bar #page_icon img{
+
+margin-top:3px;
+}
+
+#page_bar #page_icon #present_page{
+padding-bottom:5px;
+}
+
+#page_bar #page_icon #present_page input{
+text-align:center;
+margin-bottom:0px;
+margin-top:0px;
+
+height:12px;
+width:16px;
+}
+
+
+
+/* 群列表 */
+#data table tr td{
+color:#333333;
+font-family:"微软雅黑";
+font-size:13px;
+cursor:pointer;
+padding-left:15px;
+} 
+
+#data table tr:hover{
+background-color:#FFCC99;
+}
+
+#data table tr td span{
+color:#BBBBBB;
+font-family:"微软雅黑";
+font-size:12px;
+cursor:pointer;
+padding-left:10px;
+}
+
+#data table tr{
+padding-top:18px;
+background-color:#DAEAF2;
+}
+#data{
+padding-top:12px;
+}
+#data table tr td img{
+width:20px;
+height:20px;
+padding-right:8px;
+
+}
+
+/* 最近联系人 */
+#recent_data table tr td{
+color:#333333;
+font-family:"微软雅黑";
+font-size:13px;
+cursor:pointer;
+padding-left:15px;
+} 
+
+#recent_data table tr:hover{
+background-color:#FFCCCC;
+}
+
+#recent_data table tr td span{
+color:#BBBBBB;
+font-family:"微软雅黑";
+font-size:12px;
+cursor:pointer;
+padding-left:18px;
+}
+
+#recent_data table tr{
+border-bottom:1px outset;
+border-bottom-color:#EEEEEE;
+padding-top:18px;
+height:20px;
+background-color:#DAEAF2;
+}
+#recent_data{
+padding-top:12px;
+}
+#recent_data table tr td img{
+width:20px;
+height:20px;
+padding-right:8px;
+
+}
+
+
+/*微讯发讯*/
+.head2 .user_time {
+	BACKGROUND: url(../../img/sms/module_head_bg_right.png) no-repeat top right;padding-top:8px;border-left:0px solid #9EC6E8;HEIGHT: 30px;
+}

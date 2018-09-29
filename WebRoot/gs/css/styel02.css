@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+body{ margin:0; padding:0;}
+li,a{ list-style:none; text-decoration:none;}
+*{font-family:"Microsoft YaHei",微软雅黑,"Microsoft JhengHei",华文细黑,STHeiti,MingLiu;}
+.wap{ overflow:hidden;}
+.top{ width:980px;height: 105px;  margin:0 auto; overflow:hidden;}
+.top h2{ overflow:hidden; display:block; width:325px; float:left;margin: 20px auto;}
+.top h2 img{border:0;}
+.soso{ overflow:hidden; float:right; margin-top:30px;height: 25px;line-height: 25px; width: 340px;}
+.soso a{ color:#9A9699;}
+.soso strong{ font-size:12px; font-weight:normal; float:left; float: left;display: block;width: 110px;}
+.soso span{ background:url(../images/so_bg.jpg) left center no-repeat; width:221px; height:25px; display:block;display: block; overflow: hidden;}
+#searchContent{ background:none; border:none; padding-left:20px; line-height:22px;float: left;width: 178px;}
+#botton{ background:none; width:23px; border:none;padding: 0;margin: 0;}
+#bottonx{ width:23px; height:22px; display:block; text-indent:-999em; float: right;}
+.nav{overflow:hidden; background:url(../images/nav_bg.jpg) left center repeat-x; border-top:#EBEBEB 1px solid; height:37px;}
+.nav ul{ width:980px; margin:0 auto;}
+.nav ul li{ float:left; line-height:37px;  margin-left:10px; text-align:center;}
+.nav ul li a{ color:#008BCF; font-size:14px; font-weight:bold; border-right: 1px solid #ECECEC;  padding-right:10px; display:block; height:30px;}
+.waper{ overflow:hidden; width:980px; margin:0 auto;}
+.connet{}
+.gonggao{  border:1px solid #D7D7D7; background:#FFF8E2 url(../images/li_g.jpg) 6px center no-repeat;  line-height:32px; margin:10px 0; padding-left:20px;}
+.gonggao a{  display:block;   float:left; font-size:12px;}
+
+.col{ overflow:hidden;}
+.cl_lx{ float:left; width:237px;}
+.cl_l{ width:230px; border:1px solid #B0B0B0; border-radius:3px; margin-right:10px; height:200px; margin-bottom:5px;}
+.cl_l ul{ margin:0; padding:0 5px;}
+.cl_l ul li{ line-height:22px; background:url(../images/u_lb.jpg) left center no-repeat; padding-left:10px; border-bottom:1px dotted #CCCCCC; padding-bottom:5px;}
+.cl_l ul li a{ font-size:14px;}
+.cl_l ul li span{ float:right; font-size:12px; color:#CCC;}
+.cl_l h3{ background:url(../images/news_h.jpg) left center no-repeat; margin:0; height:33px; text-indent:-999em;}
+
+.cl_c{  width:230px; border:1px solid #B0B0B0; border-radius:3px; margin-right:10px; margin-bottom:5px;}
+.cl_c ul{ margin:0; padding:0 5px;}
+.cl_c ul p{ margin:5px 0;}
+.cl_c ul li{ line-height:22px; background:url(../images/ul_bg.jpg) left center no-repeat; padding-left:10px;}
+.cl_c ul li a{ font-size:14px;}
+.cl_c ul li span{ float:right; font-size:12px; color:#CCC;}
+.cl_c h3{ background:url(../images/service_h.jpg) left center no-repeat; margin:0; height:33px; text-indent:-999em;}
+.cl_c h4{ margin:3px 0;}
+
+.cl_r{ float:right; overflow:hidden; width:739px;}
+.cl_r a{ overflow:hidden; display:block; }
+
+.text{ margin:0; padding:0; border:#999999 1px solid; padding:0 10px; margin:5px 0;}
+.text h3{ border-bottom:1px solid #999; padding-bottom:10px; font-size:18px;}
+.text li{ line-height:22px; background:url(../images/ul_bg.jpg) left center no-repeat; padding-left:10px;}
+.text li a{ font-size:12px; color:#666666;}
+.text li a:hover{ color:#FF9900;}
+.text li span{ float:right; font-size:12px; color:#999999;}
+
+.li_one{ overflow:hidden; background:none !important; margin:10px 0;}
+.li_one p{ margin:0; font-size:12px;}
+.li_one img{ float:left; background:#FFFFFF; border:1px solid #CCC; padding:5px; margin-right:10px;}
+
+.footer{ background:#E1E1E1; height:30px;}
+.footer div{ overflow:hidden; width:980px; margin:0 auto; line-height:30px; font-size:14px;}
+.footer div span{ padding-left:550px;}
+/*导航样式*/
+#navmenu{ }
+#navmenu ul{ padding:0px; margin:0 auto;}
+#navmenu ul li{ float:left; width:80px; list-style:none; text-align:center; height:37px; line-height:37px;}
+.navon{ background:url(../images/nav_a.jpg) left center repeat-x; height:37px; margin:0 !important;}
+.navon a{ color:#FFF !important; border:none !important; margin-left: 10px;}

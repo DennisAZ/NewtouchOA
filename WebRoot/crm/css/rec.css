@@ -1,0 +1,16 @@
+#recMenu {
+	width:130px;
+	vertical-align:top;
+}
+#recMenu iframe {
+	height:550px;
+	width:120px;
+	margin-right:10px;
+}
+#recTil {
+	padding:8px 0 8px 10px;
+	background:#999;
+	color:#fff;
+	font-size:14px;
+	font-weight:bold;
+}

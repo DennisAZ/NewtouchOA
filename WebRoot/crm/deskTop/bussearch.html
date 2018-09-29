@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="x-ua-compatible" content="ie=EmulateIE7" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>公交查询</title>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <style type="text/css">
+    	#error {
+			display:none; 
+			padding:5px; 
+			text-align:center; 
+			font-size:14px; 
+			font-weight:600;
+			font-family:'宋体';
+		}
+		#error span{
+			font-size:12px;
+			font-weight:500;
+			color:#999999; 
+		}
+    </style>
+     <script type="text/javascript">
+		function toClose(){
+			var count=parseInt(document.getElementById("count").innerText);
+			if(count<=0)
+				window.close();
+			else{
+				count-=1;
+				document.getElementById("count").innerText=count.toString();
+			}
+		}
+  	</script>
+	
+</head>
+
+<body>
+    <div id="error">
+        无法打开公交查询页面,请检查您的网络设置<br/>
+        <span>该窗口将在<span id="count"></span>秒内关闭</span>
+    </div>
+    <script language='javascript'>
+	if(window.navigator.onLine==false){  
+		document.getElementById("error").style.display="block";
+		document.getElementById("count").innerText="2";//设置等待时间（秒）
+		setInterval(toClose,1000);
+	}
+	else{
+		var SearchBox_8684_fa=2;
+		var SearchBox_8684_disptitle=1;
+		var SearchBox_8684_titleplace='t';
+		var SearchBox_8684_href='http:\/\/8684.com\/';
+		var SearchBox_8684_stype='1|2|3';
+		var SearchBox_8684_provinceid=15;
+		var SearchBox_8684_cityname='nanjing';
+		var SearchBox_8684_autocity=1;
+		var SearchBox_8684_inputwidth=150;
+		var SearchBox_8684_pwidth=380;
+		var SearchBox_8684_pheight=210;
+		var SearchBox_8684_dispp=0;
+		var js = document.createElement("script");
+		js.src = "http://8684.com/js/searchbox_8684.js";    
+		document.body.appendChild(js);
+	}
+	</script>
+</body>
+</html>

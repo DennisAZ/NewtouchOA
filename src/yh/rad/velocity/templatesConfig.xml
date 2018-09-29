@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templatesConf>
+  <uri>D:\\project\\yh\\templates\\</uri>
+  <templates>
+    <templte>
+      <name>signTemp</name>
+      <desc>单表查询模板</desc>
+    </templte>
+  </templates>
+</templatesConf>

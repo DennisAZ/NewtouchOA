@@ -1,0 +1,16 @@
+ALTER TABLE flow_form_type MODIFY COLUMN PRINT_MODEL MEDIUMTEXT CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+ MODIFY COLUMN PRINT_MODEL_SHORT MEDIUMTEXT CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL;
+ALTER TABLE email_body MODIFY COLUMN WEBMAIL_CONTENT MEDIUMTEXT CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL;
+
+CREATE TABLE email_name (
+  SEQ_ID int(11) NOT NULL auto_increment,
+  USER_ID int NOT NULL,
+  NAME mediumtext NOT NULL,
+  IS_USE char(1) NOT NULL default '1',
+  PRIMARY KEY  (SEQ_ID)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+delete from code_item where CLASS_DESC = '图片新闻';
+INSERT INTO code_item (CLASS_NO,CLASS_CODE,CLASS_DESC,SORT_NO,CODE) VALUES ('NEWS','11','图片新闻','1',NULL);
+insert into port (FILE_NAME, DEPT_ID, STATUS, VIEW_TYPE, MODULE_LINES, MODULE_SCROLL)
+values ('图片新闻.js', 0, 0, 1, 5, 0);
+delete from sys_function where func_name = '机要文件夹'

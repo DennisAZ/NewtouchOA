@@ -1,0 +1,117 @@
+img {border: none; vertical-align: middle;}
+
+a:link{color: #0066cc; text-decoration: none;}
+a:visited{color: #0066cc; text-decoration: none;}
+a:hover {color: #333333; text-decoration: underline;}
+a:active{color: #0066cc; text-decoration: underline;}
+
+ul {
+   list-style: none;
+   margin: 0px;
+   padding: 0px;
+   line-height:20px;
+}
+
+ul li a:link, ul li a:visited{
+   color: #275175;
+   font-size:9pt;
+   display: block;
+   text-decoration: none;
+   height: 24px;
+}
+li a:link span, li a:visited span{
+	text-align: center;
+	padding:2px 30px;
+  background: url("../img/subpages/ar.png") no-repeat 8px center;
+  display:block;
+  cursor:pointer;
+  text-align: left;
+  font-weight: bold;
+}
+li a:hover{
+   color: #000000;
+   font-weight:bold;
+   background-position: 0 -24px;
+}
+li a.active, li a:hover.active, li a:active.active, li a:visited.active{
+   background-position: 0 -24px;
+}
+li a:link.active span, li a:hover.active span, li a:active.active span, li a:visited.active span{
+   font-weight:bold;
+   background: url("../img/subpages/arrow_d.png") no-repeat 8px center;
+   text-align: left;
+}
+
+div.moduleContainer {
+  border-left: 1px solid #85b6df;
+  border-right: 1px solid #85b6df;
+}
+
+.moduleContainer ul li div{
+	border-bottom:1px #83ACCF solid;
+	cursor:pointer;
+}
+.moduleContainer ul{
+	border:none;
+}
+
+.moduleContainer .blank{
+	line-height:30px;
+	padding-left: 5px;
+}
+
+.moduleContainer a:link,
+.moduleContainer a:hover,
+.moduleContainer a:active,
+.moduleContainer a:visited{
+   color: #0066cc;
+   text-decoration: none;
+   background:none;
+   display: inline;
+   font-weight:normal;
+   white-space: normal;
+}
+
+.moduleContainer a:hover,
+.moduleContainer a:active{
+   color: #333333;
+   text-decoration: underline;
+}
+.mouseoverDiv{
+   font-weight:bold;
+
+   font-size:9pt;
+
+   color: #000;
+
+   background: url("../img/menu2_bg.png") no-repeat top left;
+}
+
+table.LeftMenu {
+  border: none;
+}
+
+.TableBlock.LeftMenu .TableData td, .TableBlock.LeftMenu td.TableData {
+  background: url("../img/subpages/dot.png") no-repeat 12px center;
+	padding-left: 25px;
+  text-align: left;
+  border-left: none;
+  border-right: none;
+  border-color: #85b6df;
+  height: 25px;
+  line-height: 25px;
+}
+
+.head {
+  background: none repeat scroll 0 0 #C0EFFF;
+  border-left: 1px solid #85b6df;
+  border-right: 1px solid #85b6df;
+  border-bottom: 1px solid #85b6df;
+  padding-left: 5px;
+  line-height: 32px;
+  height: 32px;
+}
+
+ul.dtree-rootul {
+  border-bottom: 1px solid #85b6df;
+}

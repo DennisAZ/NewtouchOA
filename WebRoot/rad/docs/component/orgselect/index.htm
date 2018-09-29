@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">组织机构选择</div>
+<br/>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:刘涵</td>
+    <td width="20%">&nbsp;</td>
+    <td width="15%">创建日期:2011-01-13</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:1</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="20%">适用情景描述</th>
+    <th width="75%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+    <td>
+    <a href="person1.jsp" target="_blank">人员选择</a>
+    </td>
+    <td>
+<pre>
+<font color="red">
+Js文件：[contextPath]/core/js/orgselect.js</font>
+方法:selectUser
+配置参数:retArray,moduleId,privNoFlag
+  retArray:数组 接收人员选择的控件id数组[userId , userName]
+  moduleId:模块id,默认为全部,1:在线人员,2:全部人员, 3:日程安排查询,4:工作日志查询
+     5:公告通知发布,6:新闻发布,7:投票发布, 8:管理简报,9:人事档案管理,10:人事档案查询
+  privNoFlag:  0; 全体部门、全体角色
+               1; 自己的管理范围、全体角色
+               2; 自己的管理范围、低角色
+               3; 自己的管理范围、低角色，OA管理员除外的用户
+                                      不指定默主为0
+支持textarea
+</pre>  
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/orgselect/person1.jsp">/rad/docs/component/orgselect/person1.jsp</a></td>
+  </tr>
+  <tr>
+    <td>
+    <a href="person2.jsp" target="_blank">单人员选择</a>
+    </td>
+    <td>
+<pre>
+<font color="red">
+Js文件：[contextPath]/core/js/orgselect.js</font>
+方法:selectSingleUser
+配置参数:retArray,moduleId,privNoFlag
+  retArray:数组 接收人员选择的控件id数组[userId , userName],默认为:["user","userDesc"]
+  moduleId:模块id,默认为全部,1:在线人员,2:全部人员, 3:日程安排查询,4:工作日志查询
+     5:公告通知发布,6:新闻发布,7:投票发布, 8:管理简报,9:人事档案管理,10:人事档案查询
+  privNoFlag:  0; 全体部门、全体角色
+               1; 自己的管理范围、全体角色
+               2; 自己的管理范围、低角色
+               3; 自己的管理范围、低角色，OA管理员除外的用户
+                                      不指定默主为0
+</pre>   
+    </td>
+      <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/orgselect/person2.jsp">/rad/docs/component/orgselect/person2.jsp</a></td>
+  </tr>
+  <tr>
+    <td>
+    <a href="dept1.jsp" target="_blank">部门选择</a>
+    </td>
+    <td>
+<pre>
+<font color="red">
+Js文件：[contextPath]/core/js/orgselect.js</font>
+方法:selectDept
+配置参数:retArray , moduleId,privNoFlag , noAllDept
+  retArray:数组 接收部门选择的控件id数组[deptId , deptName],默认为:["dept","deptDesc"]
+  moduleId:模块id,默认为全部,1:在线人员,2:全部人员, 3:日程安排查询,4:工作日志查询
+     5:公告通知发布,6:新闻发布,7:投票发布, 8:管理简报,9:人事档案管理,10:人事档案查询
+  privNoFlag:  0; 全体部门、全体角色
+               1; 自己的管理范围、全体角色
+               2; 自己的管理范围、低角色
+               3; 自己的管理范围、低角色，OA管理员除外的用户
+                                      不指定默主为0
+  noAllDept:true,不能选择全体部门,默认为false可以选择全体部门
+</pre>  
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/orgselect/dept1.jsp">/rad/docs/component/orgselect/dept1.jsp</a></td>
+  </tr>
+  
+  <tr>
+    <td>
+    <a href="role1.jsp" target="_blank">角色选择</a>
+    </td>
+    <td>
+<pre>
+<font color="red">
+Js文件：[contextPath]/core/js/orgselect.js</font>
+方法:selectRole
+配置参数:retArray , moduleId,privNoFlag ,privOp
+  retArray:数组 接收部门选择的控件id数组[roleId , roleName],默认为:["role","roleDesc"]
+  moduleId:模块id,默认为全部,1:在线人员,2:全部人员, 3:日程安排查询,4:工作日志查询
+     5:公告通知发布,6:新闻发布,7:投票发布, 8:管理简报,9:人事档案管理,10:人事档案查询
+  privNoFlag:  0; 全体部门、全体角色
+               1; 自己的管理范围、全体角色
+               2; 自己的管理范围、低角色
+               3; 自己的管理范围、低角色，OA管理员除外的用户
+                                      不指定默主为0
+  privOp:true,只能选比自己权限低的角色,默认为不限制           
+<font color="red">角色名控件只支持textarea不支持input框</font>                         
+</pre>  
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/orgselect/role1.jsp">/rad/docs/component/orgselect/role1.jsp</a></td>
+  </tr>
+</table>
+
+</body>
+</html>

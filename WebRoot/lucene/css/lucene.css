@@ -1,0 +1,255 @@
+#container #container_back{
+background-image:url(images/ss_02.png);
+background-repeat:repeat-x;
+height:auto;
+width:1024px;
+}
+#container #foot{
+ height:80px;
+}
+
+#container #container_back #user_info{
+text-align:right;
+padding-right:20px;
+margin-bottom:30px;
+padding-top:5px;
+}
+#container #container_back #user_info a{
+font: 15px/20px "微软雅黑","宋体";
+}
+
+#container #container_back #service #quanx{
+font: 14px/20px "微软雅黑","宋体";
+padding-left:140px;
+padding-top:20px;
+}
+
+#container #container_back #service #quanx #merge{
+background-image:url(images/button_bg.png);
+border:none;
+width:130px;
+height:38px;
+margin-right:120px;
+float:right;
+}
+
+#container #container_back #service #page{
+ padding-top:40px;
+}
+
+
+#container #container_back #service #tuijian{
+	background-color:#cccccc;
+	width:90%;
+	height:70px;
+	margin-top:30px;
+	
+}
+
+
+#container #container_back #service #tuijian #tj-title{
+ font: 16px/20px "微软雅黑","宋体";
+	width:80px;
+	height:60px;
+	float:left;
+	padding-top:10px;
+	
+}
+#container #container_back #service #tuijian #tj-span{
+padding-left:40px;
+    text-align:left;
+	float:right;
+    font: 14px/20px "微软雅黑","宋体";
+	width:800px;
+	height:70px;
+	
+}
+
+#container #container_back #service #tuijian #tj-span span{
+	float:left;
+    font: 14px/20px "宋体";
+	width:auto;
+	height:25px;
+	padding-right:120px;
+	padding-top:10px;
+	white-space:nowrap;
+}
+
+#container #container_back #service #page span{
+ font: 18px/20px "微软雅黑","宋体";
+ margin-left:20px;
+}
+
+.clear {
+clear:both;
+}
+
+#container #container_back #head #top{
+width:736px;
+height:105px;
+background-image:url(images/search_bg.png);
+background-repeat:no-repeat;
+
+}
+#container #container_back #input_div{
+padding-left:170px;
+padding-top:25px;
+}
+
+#container #container_back #input_div #input_button{
+width:68px;
+height:40px;
+float:left;
+background-image:url(images/search_button1.png);
+background-repeat:no-repeat;
+
+}
+#container #container_back{
+background-image:url(images/ss_02.png);
+background-repeat:repeat-x;
+height:auto;
+width:1024px;
+}
+
+#container #container_back #user_info{
+text-align:right;
+padding-right:20px;
+margin-bottom:30px;
+padding-top:5px;
+}
+#container #container_back #user_info a{
+color:#333333;
+}
+.clear {
+clear:both;
+}
+
+#container #container_back #head #top{
+width:736px;
+height:105px;
+background-image:url(images/search_bg.png);
+background-repeat:no-repeat;
+
+}
+#container #container_back #input_div{
+padding-left:170px;
+padding-top:25px;
+}
+
+#container #container_back #input_div #input_button{
+width:68px;
+height:40px;
+float:left;
+background-image:url(images/search_button1.png);
+background-repeat:no-repeat;
+cursor:pointer;
+
+}
+
+
+
+#container #container_back #service #search_result{
+padding-top:20px;
+padding-left:100px;
+ text-align:left;
+ font:16px/25px "宋体";
+ color:#0099FF;
+}
+
+#container #container_back #service #search_result font{
+width:20px;
+color:#FF6600;
+}
+
+#container #container_back #bookmark .box-center{
+padding-left:100px;
+text-align:left;
+}
+
+
+#container #container_back #result{
+margin-top:0px;
+min-height:200px;
+}
+
+#container #container_back #input_radio input{
+font-size:20px;
+background-image:url(images/iunput_bg.png);
+background-repeat:no-repeat;
+float:left;
+padding-left:5px;
+padding-top:11px;
+width:425px;
+border:none;
+height:31px;
+}
+
+#container #container_back #service #search_result{
+padding-left:100px;
+ text-align:left;
+ font:16px/25px "微软雅黑";
+ color:#0099FF;
+ letter-spacing:3px;
+}
+
+#container #container_back #service #search_result font{
+width:20px;
+color:#FF6600;
+}
+
+#container #container_back #bookmark .box-center{
+text-align:left;
+}
+
+#container #container_back #bookmark .box-center p{
+  font:14px/25px "微软雅黑";
+  width:90%;
+  margin-top:0px;
+  
+  
+}
+
+#container #container_back #service #result #bookmark{
+padding-top:10px;
+
+}
+
+#container #container_back #bookmark .box-center #links_time{
+margin-top:-15px;
+
+}
+
+#container #container_back #bookmark .box-center #links_time #url{
+   font:14px/25px "微软雅黑";
+   color:#666666;
+}
+#container #container_back #bookmark .box-center #links_time #time{
+     font:16px/25px "微软雅黑";
+   color:#666666;
+}
+
+#container #container_back #input_div #show_log{
+position:absolute;
+z-index:999;
+    margin-top:40px;
+  float:left;
+  width:430px;
+  height:auto;
+  background-color:#FFFFFF;
+    border-left:#a7d0e6 1px solid ;  
+  border-button:#a7d0e6 1px solid ;  
+  border-right:#a7d0e6 1px solid ;  
+}
+
+#container #container_back #input_div #show_log ul{
+padding-left:2px;
+list-style-type:none;
+}
+#container #container_back #input_div #show_log ul li{
+font: 15px/20px "微软雅黑","宋体";
+text-align:left;
+color:#CCCCCC;
+cursor:pointer;
+
+}
+

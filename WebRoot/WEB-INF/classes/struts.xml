@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <package name="default" extends="struts-default">
+        <interceptors>
+		<interceptor name="greetingin" class="example.GreetingInterceptor"></interceptor>
+        </interceptors>
+		<default-interceptor-ref name="completeStack"></default-interceptor-ref>
+		
+		<action name="greeting" class="example.GreetingAction">
+			<result name="success" type="dispatcher">/struts/name.jsp</result>
+			<interceptor-ref name="greetingin"></interceptor-ref>
+		</action>
+		
+	 <action name="randomCode" class="example.validateCode">
+      <result name="success"></result>
+   </action>   
+ 
+  </package>
+    
+</struts>

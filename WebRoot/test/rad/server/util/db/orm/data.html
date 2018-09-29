@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<a name="a0" id="a0"></a>
+<pre>
+	<font color="green">saveSingle(Connection dbConn, Object obj)核心代码</font>:<br>
+		    Connection dbConn = null;
+		    try {
+		      dbConn = TestDbUtil.getConnection(false, "TEST");
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+		    YHDsTable tab = new YHDsTable();
+		    tab.setTableNo("10079");
+		    tab.setTableName("USER_INFO");
+		    tab.setDbNo("101");
+		    YHORM t = new YHORM();
+		    try {
+		      <font color="red">t.saveSingle(dbConn, tab);</font>
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a1" id="a1"/></a>
+<pre>
+	<font color="green">saveComplex(Connection dbConn, Object obj)核心代码</font>:<br>
+		    Connection dbConn = null;
+		    try {
+		      dbConn = TestDbUtil.getConnection(false, "TEST");
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+		    YHDsTable tab = new YHDsTable();
+		    tab.setTableNo("10079");
+		    tab.setTableName("USER_INFO");
+		    tab.setDbNo("101");
+		    ArrayList< YHDsField > fieldList = new ArrayList< YHDsField >();
+		    YHDsField dsField = new YHDsField();
+		    dsField.setFieldName("city");
+		    dsField.setTableNo("10079");
+		    dsField.setFieldNo("10079001");
+		    fieldList.add(dsField);
+		    tab.setFieldList(fieldList);
+		    YHORM t = new YHORM();
+		    try {
+		      <font color="red">t.saveComplex(dbConn, tab);</font>
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a2" id="a2"/></a>
+<pre>
+	<font color="green">saveSingle(Connection dbConn, String tableName, Map formInfo)核心代码</font>:<br>
+			 Connection dbConn = null;
+		    try {
+		      dbConn = TestDbUtil.getConnection(false, "TEST");
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+		    Map m =new HashMap();
+		    m.put("tableNo", "10081");
+		    m.put("tableName", "CHEN_YI");
+		    m.put("className", "YHChenYi");
+		    m.put("tableDesc", "yyyy");
+		    m.put("dbNo", "101");
+		    m.put("categoryNo", "1");
+	
+		    YHORM t = new YHORM();
+		    try {
+		      <font color="red">t.saveSingle(dbConn, "dsTable", m);</font>
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a3" id="a3"/></a>
+<pre>
+	<font color="green">saveComplex(Connection dbConn, String tableName, Map formInfo)核心代码</font>:<br>
+			 Connection dbConn = null;
+		    try {
+		      dbConn = TestDbUtil.getConnection(false, "TEST");
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+		    Map m =new HashMap();
+		    m.put("tableNo", "10081");
+		    m.put("tableName", "CHEN_YI");
+		    m.put("className", "YHChenYi");
+		    m.put("tableDesc", "yyyy");
+		    m.put("dbNo", "101");
+		    m.put("categoryNo", "1");
+		    ArrayList fieldList = new ArrayList();
+		    Map m2 =new HashMap();
+		    m2.put("fieldNo", "10081001");
+		    m2.put("fieldName", "cc");
+		    m2.put("tableNo", "10081");
+		    <font color="green">//加载从表信息</font>
+		    fieldList.add(m2);
+		    m.put("dsField", fieldList);
+		    
+		    YHORM t = new YHORM();
+		    try {
+		      <font color="red">t.saveComplex(dbConn, "dsTable", m);</font>
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a4" id="a4"/></a>
+<pre>
+	<font color="green">updateSingle(Connection dbConn, Object obj)核心代码</font>:<br>
+			try {
+		      YHORM t = new YHORM();
+		      Connection dbConn = TestDbUtil.getConnection(false, "TEST");
+		
+		      YHDsTable dsTable = (YHDsTable) t.loadObjComplex(dbConn, YHDsTable.class, 134);
+		      dsTable.setTableNo("10115");
+		   
+		      <font color="red">t.updateComplex(dbConn, dsTable);</font>
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a5" id="a5"/></a>
+<pre>
+	<font color="green">updateComplex(Connection dbConn, Object obj)核心代码</font>:<br>
+			try {
+		      YHORM t = new YHORM();
+		      Connection dbConn = TestDbUtil.getConnection(false, "TEST");
+		
+		      YHDsTable dsTable = (YHDsTable) t.loadObjComplex(dbConn, YHDsTable.class, 134);
+		      dsTable.setTableNo("10115");
+		      ArrayList< YHDsField > list = dsTable.getFieldList();
+		      for (YHDsField yhDsField : list) {
+		        yhDsField.setTableNo("10115");
+		      }
+		      dsTable.setFieldList(list);
+		      <font color="red">t.updateComplex(dbConn, dsTable);</font>
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a6" id="a6"/></a>
+<pre>
+	<font color="green">updateSingle(Connection dbConn, String tableName, Map formInfo)核心代码</font>:<br>
+			 Connection dbConn = null;
+			 try {
+		      dbConn = TestDbUtil.getConnection(false, "TEST");
+		    } catch (Exception e) {
+		      // TODO Auto-generated catch block
+		      e.printStackTrace();
+		    }
+		    Map m =new HashMap();
+		    m.put("seqId",123);
+		    m.put("tableNo", "10081");
+		    m.put("tableName", "CHEN_YI");
+		    m.put("className", "YHChenYi");
+		    m.put("tableDesc", "yyyy");
+		    m.put("dbNo", "101");
+		    m.put("categoryNo", "1");
+	   
+		    
+		    YHORM t = new YHORM();
+		    try {
+		      <font color="red">t.updateSingle(dbConn, "dsTable", m);</font>
+		      System.out.println("m : "+m);
+		    } catch (Exception e) {
+		      // TODO Auto-generated catch block
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a7" id="a19"/></a>
+<pre>
+	<font color="green">updateComplex(Connection dbConn, String tableName, Map formInfo)核心代码</font>:<br>
+		    Connection dbConn = null;
+		    try {
+		      dbConn = TestDbUtil.getConnection(false, "TEST");
+		    } catch (Exception e) {
+		      // TODO Auto-generated catch block
+		      e.printStackTrace();
+		    }
+		    Map m =new HashMap();
+		    m.put("seqId",123);
+		    m.put("tableNo", "10081");
+		    m.put("tableName", "CHEN_YI");
+		    m.put("className", "YHChenYi");
+		    m.put("tableDesc", "yyyy");
+		    m.put("dbNo", "101");
+		    m.put("categoryNo", "1");
+		    ArrayList fieldList = new ArrayList();
+		    Map m2 =new HashMap();
+		   
+		    m2.put("fieldNo", "10081001");
+		    m2.put("fieldName", "cc");
+		    m2.put("tableNo", "10081");
+		    fieldList.add(m2);
+		    m.put("dsField", fieldList);
+		    
+		    YHORM t = new YHORM();
+		    try {
+		      <font color="red">t.updateComplex(dbConn, "dsTable", m);</font>
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a7" id="a7"/></a>
+<pre>
+	<font color="green">deleteSingle(Connection dbConn, Class cls, int objId))核心代码</font>:<br>
+			try {
+		      YHORM t = new YHORM();
+		      Connection dbConn = TestDbUtil.getConnection(false, "TEST");
+			  int seqId = 123;
+		       <font color="red">t.deleteSingle(dbConn,YHDsTable.class, seqId);</font>
+		    } catch (Exception e) {
+		      // TODO Auto-generated catch block
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a8" id="a8"/></a>
+<pre>
+	<font color="green">deleteSingle(Connection conn, String tableName,Map formInfo)核心代码</font>:<br>
+		    Connection dbConn = null;
+		    try {
+		      dbConn = TestDbUtil.getConnection(false, "TEST");
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+		    YHORM t = new YHORM();
+		    Map m =new HashMap();
+		    m.put("seqId", "257");
+		    try {
+		       <font color="red">t.deleteSingle(dbConn, "dsTable", m);</font>
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a9" id="a9"/></a>
+<pre>
+	<font color="green">deleteComplex(Connection conn, String tableName,Map formInfo)核心代码</font>:<br>
+		    Connection dbConn = null;
+		    try {
+		      dbConn = TestDbUtil.getConnection(false, "TEST");
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+		    YHORM t = new YHORM();
+		    Map m =new HashMap();
+		    m.put("seqId", 257);
+		    Map sub =new HashMap();
+		    sub.put("seqId", 123);
+		    m.put("dsField", sub);
+		    try {
+		       <font color="red">t.deleteComplex(dbConn, "dsTable", m);</font>
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a10" id="a10"/></a>
+<pre>
+	<font color="green">deleteSingle(Connection dbConn, Object obj)核心代码</font>:<br>
+			try {
+		      YHORM t = new YHORM();
+		      Connection dbConn = TestDbUtil.getConnection(false, "TEST");
+		
+		      YHDsTable dsTable = (YHDsTable) t.loadObjSingle(dbConn, YHDsTable.class, 134);
+		       <font color="red">t.deleteComplex(dbConn, dsTable);</font>
+		    } catch (Exception e) {
+		      // TODO Auto-generated catch block
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a11" id="a11"/></a>
+<pre>
+	<font color="green">deleteComplex(Connection dbConn, Object obj)核心代码</font>:<br>
+			try {
+		      YHORM t = new YHORM();
+		      Connection dbConn = TestDbUtil.getConnection(false, "TEST");
+		
+		      YHDsTable dsTable = (YHDsTable) t.loadObjComplex(dbConn, YHDsTable.class, 134);
+		       <font color="red">t.deleteComplex(dbConn, dsTable);</font>
+		    } catch (Exception e) {
+		      // TODO Auto-generated catch block
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a12" id="a12"/></a>
+<pre>
+	<font color="green">loadDataSingle(Connection dbConn, List< Object> formInfo,Map filters)核心代码</font>:<br>
+		   Connection dbConn = null;
+		    try {
+		      dbConn = TestDbUtil.getConnection(false, "TEST");
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+		    List formInfo = new ArrayList();
+		    formInfo.add("dsTable");
+		    YHORM t = new YHORM();
+		    Map m =new HashMap();
+		    m.put("TABLE_NO", "10003");
+		    
+		    try {
+		       <font color="red">Map te = t.loadDataSingle(dbConn, formInfo, m);</font>
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a13" id="a13"/></a>
+<pre>
+	<font color="green">loadDataComplex(Connection dbConn, List< Object> formInfo, Map filters)核心代码</font>:<br>
+     		Connection dbConn = null;
+		    try {
+		      dbConn = TestDbUtil.getConnection(false, "TEST");
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+		    List formInfo = new ArrayList();
+		    List subInfo = new ArrayList();
+		    subInfo.add("dsField");
+		    formInfo.add("dsTable");
+		    formInfo.add(subInfo);
+		    YHORM t = new YHORM();
+		    Map m =new HashMap();
+		    m.put("TABLE_NO", "10003");
+		    
+		    try {
+		      <font color="red"> Map te = t.loadDataSingle(dbConn, formInfo, m);</font>
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a14" id="a14"/></a>
+<pre>
+	<font color="green">loadObjComplex(Connection dbConn, Class cls, int objId)核心代码</font>:<br>
+		 	try {
+		      YHORM t = new YHORM();
+		      Connection dbConn = TestDbUtil.getConnection(false, "TEST");
+		
+		       <font color="red">YHDsTable dsTable = (YHDsTable) t.loadObjComplex(dbConn, YHDsTable.class, 261);</font>
+		      System.out.println("dsTable 主子表 : " + dsTable);
+		    } catch (Exception e) {
+		      // TODO Auto-generated catch block
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a15" id="a15"/></a>
+<pre>
+	<font color="green">loadObjSingle(Connection dbConn, Class cls, Map filters)核心代码</font>:<br>
+			try {
+		      YHORM t = new YHORM();
+		      Connection dbConn = TestDbUtil.getConnection(false, "TEST");
+		  	  Map filters = new HashMap();
+		      filters.put("SEQ_ID", 123);
+		       <font color="red">YHDsTable dsTable2 = (YHDsTable) t.loadObjSingle(dbConn, YHDsTable.class, filters);</font>
+		      System.out.println("dsTable 单表 : " + dsTable2);
+		    } catch (Exception e) {
+		      // TODO Auto-generated catch block
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a16" id="a16"/></a>
+<pre>
+	<font color="green">loadObjComplex(Connection dbConn, Class cls,Map filters)核心代码</font>:<br>
+			 try {
+		      YHORM t = new YHORM();
+		      Connection dbConn = TestDbUtil.getConnection(false, "TEST");
+		      Map filters = new HashMap();
+		      filters.put("SEQ_ID", 123);
+		      <font color="red"> YHDsTable dsTable2 = (YHDsTable) t.loadObjComplex(dbConn, YHDsTable.class, filters);</font>
+		    } catch (Exception e) {
+		      // TODO Auto-generated catch block
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a17" id="a17"/></a>
+<pre>
+	<font color="green">loadListSingle(Connection dbConn, Class cls, Map filters)核心代码</font>:<br>
+		   try {
+		      YHORM t = new YHORM();
+		      Connection dbConn = TestDbUtil.getConnection(false, "TEST");
+		      Map filters = new HashMap();
+		      filters.put("TABLE_NO", "10006");
+		       <font color="red">List< YHDsField> dsField = t.loadListSingle(dbConn, YHDsField.class, filters);</font>
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="a18" id="a18"/></a>
+<pre>
+	<font color="green">loadListComplex(Connection dbConn, Class cls, Map filters)核心代码</font>:<br>
+		  try {
+		      YHORM t = new YHORM();
+		      Connection dbConn = TestDbUtil.getConnection(false, "TEST");
+		      Map filters = new HashMap();
+		      filters.put("TABLE_NO", "10006");
+		       <font color="red">List< YHDsField> dsField = t.loadListComplex(dbConn, YHDsField.class, filters);</font>
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+</pre>
+<hr></hr>
+<a name="filters" id="filters"/></a>
+<pre>
+	<font color="green">filters结构</font>:<br>
+			 filters是一个map，是访问数据库是的查询条件，只支持'='连接的条件，
+			              其格式如：有查询条件SEQ_ID = 1
+			                                       则对应的filter中的加入的条件为 filters.put("SEQ_ID",1);
+			                   
+</pre>
+<hr></hr>
+<a name="map" id="map"/></a>
+<pre>
+	<font color="green">基于form的ORM 返回值Map的结构</font>:<br>
+				此Map的结构为：
+				        1.单表的情况: <font color="red"> Map< java.lang.String,java.util.List< java.util.Map>></font>
+                          如例：{DS_TABLE=[
+                       			{tableDesc=null, tableName=CODE_ITEM, dbNo=null, className=null, seqId=10, categoryNo=null, tableNo=10003}
+                     			]
+		          	 }
+				                                
+				        2.主从表的情况: <font color="red">Map< java.lang.String,java.util.List< Map< java.lang.String,java.util.List< java.util.Map>> >></font>
+                            如例： {DS_TABLE=[
+                                       {tableDesc=null, tableName=CODE_ITEM, dbNo=null, className=null, seqId=10, categoryNo=null, 
+                                            DS_FIELD=[{fieldNo=10003001, fieldName=seq_id, seqId=14, tableNo=10003},
+                                                      {fieldNo=10003002, fieldName=CLASS_no, seqId=15, tableNo=10003}, 
+                                                      {fieldNo=10003004, fieldName=CLASS_DESC, seqId=17, tableNo=10003}, 
+                                                      {fieldNo=10003005, fieldName=SORT_NO, seqId=18, tableNo=10003}, 
+                                                      {fieldNo=10003003, fieldName=CLASS_CODE, seqId=25, tableNo=10003},
+                                                      {fieldNo=10003006, fieldName=CODE, seqId=57, tableNo=10003}
+                                                      ],
+                                          tableNo=10003}
+                                   ]
+                             }
+                   <font color="red">注 ：DS_TABLE为主表,DS_FIELD为从表 ,[]表示的结构为 java.util.List, {}表示的结构为java.util.Map</font>
+</pre>
+<hr></hr>
+<a name="list" id="list"/></a>
+<pre>
+	<font color="green">基于form的ORM传参 formInfo（java.util.List）的结构</font>:<font color="red">List< Object></font><br>
+		  此list的结构为：
+				        1.单表的情况: <font color="red"> List< String tableName ></font>
+                                                    如例：[tableName]
+				                                
+				        2.主从表的情况: <font color="red">List< Object >[tableName,List< Oobject>] </font>
+                                                     如例：[tableName,[subTableName]]
+                  <font color="red">注 ：tableName为主表,subTableName为从表 ,[]表示的结构为 java.util.List</font>
+
+</pre>
+<hr></hr>
+<a name="formInfo" id="formInfo"/></a>
+<pre>
+	<font color="green">基于form的ORM传参formInfo(java.util.Map)结构</font>:<font color="red">Map</font><br>
+		 此formInfo的结构为：
+	 			1.单表的情况: <font color="red"> Map< String,Object ></font>
+	 				{sex=1, userNo=10065, province=101, userName=asd, isPolitical=1, 	city=101}
+	 			2.主从表的情况: <font color="red">Map< String,Object > 如果又从表则Object为java.util.Map </font>
+				{sex=1, userNo=10065, province=101, userName=asd, isPolitical=1,
+				 	userIntreest=[
+				 		{intreestName=werew, userNo=10065, intreestNo=10453}
+				 	], 
+				 	city=101}
+				 <font color="red">注 : 	userIntrees代表的是从表的信息，既从表的表名(java命名，对应数据库中的表明为'USER_INTRESST'),
+				        []表示的结构为 java.util.List, {}表示的结构为java.util.Map</font>
+</pre>
+</body>
+</html>

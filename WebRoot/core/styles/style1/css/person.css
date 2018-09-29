@@ -1,0 +1,190 @@
+*{padding:0px; margin:0px;}
+body{
+   margin:15px;
+   background:#68a1e4;
+}
+table{
+   border:0px #fff solid;
+}
+
+.card{
+   width:594px;
+   height:200px;
+   background:url('/yh/core/styles/userinfo/card_bg.png') left top no-repeat;
+   position:relative;
+}
+.card .photo{
+   width:120px;
+   height:168px;
+   position:absolute;
+   left:15px;
+   top:16px;
+   font-size:12px;
+   overflow:hidden;
+}
+.card .photo img{
+   width:120px;
+}
+.card .photo_cover{
+   width:120px;
+   height:168px;
+   position:absolute;
+   left:15px;
+   top:16px;
+   background:url('/yh/core/styles/userinfo/photo_cover.png') left top no-repeat;
+}
+.card .card_detail{
+   position:absolute;
+   left:150px;
+   top:16px;
+}
+.card .card_detail .name{
+   color:#176cc9;
+   font-size:16px;
+}
+.card .card_detail .priv{
+   font-size:12px;
+   padding-top:5px;
+}
+.card .card_detail .table{
+   font-size:12px;
+   margin-top:15px;
+}
+.card .card_detail .table tr{
+   height:18px;
+}
+.card .card_detail .table td.content{
+   color:#176cc9;
+}
+.card .concact{
+   position:absolute;
+   right:15px;
+   top:10px;
+   color:#518cd0;
+   font-size:18px;
+}
+.card .concact .sms{
+   display:inline-block;
+   width:100px;
+   height:30px;
+   background:url('/yh/core/styles/userinfo/write_sms.png') center center no-repeat;
+   margin-right:10px;
+}
+.card .concact .email{
+   display:inline-block;
+   width:100px;
+   height:30px;
+   background:url('/yh/core/styles/userinfo/write_email.png') center center no-repeat;
+}
+
+.detail{
+   width:594px;
+   height:302px;
+   background:url('/yh/core/styles/userinfo/detail_bg.png') left 0px no-repeat;
+   margin-top:18px;
+}
+.detail .detail_table{
+   font-size:14px;
+   position:absolute;
+     margin-top:42px;
+   margin-left:35px;
+
+}
+
+
+
+.detail .detail_table tr{
+   height:23px;
+}
+.detail .detail_table td.content{
+   color:#176cc9;
+}
+
+.other{
+   width:269px;
+   height:520px;
+   background:url('/yh/core/styles/userinfo/other_bg.png') left top no-repeat;
+   position:relative;
+}
+.other .online_time{
+   width:100%;
+   position:absolute;
+   left:0px;
+   top:120px;
+   text-align:center;
+}
+.other .online_time img{
+   margin-right:5px;
+}
+.other .online_status{
+   width:100%;
+   position:absolute;
+   left:0px;
+   top:164px;
+   text-align:center;
+   font-size:16px;
+   font-family:΢���ź�;
+   color:#5f5e5e;
+}
+.other .online_status span{
+   height:30px;
+   line-height:30px;
+   margin-right:20px;
+}
+.other .online_status .oa_status_1{
+   color:#407ec3;
+   padding-left:20px;
+   background:url('/yh/core/styles/userinfo/online_status.png') left -6px no-repeat;
+}
+.other .online_status .oa_status_2{
+   color:#d0523a;
+   padding-left:20px;
+   background:url('/yh/core/styles/userinfo/online_status.png') left -36px no-repeat;
+}
+.other .online_status .oa_status_3{
+   color:#3467a0;
+   padding-left:20px;
+   background:url('i/yh/core/styles/userinfo/online_status.png') left -96px no-repeat;
+}
+.other .online_status .oa_status_0{
+   padding-left:20px;
+   background:url('/yh/core/styles/userinfo/online_status.png') left -126px no-repeat;
+}
+.other .remark{
+   width:100%;
+   position:absolute;
+   left:0px;
+   top:210px;
+   text-align:left;
+   padding:20px;
+}
+.other .remark .remark_table{
+   font-size:12px;
+}
+.other .remark .remark_table tr{
+   height:23px;
+}
+.other .remark .remark_table td.content{
+   color:#676767;
+}
+.other .bottom{
+   width:100%;
+   position:absolute;
+   left:0px;
+   top:475px;
+   text-align:center;
+}
+.other .bottom .close{
+   display:inline-block;
+   width:112px;
+   height:36px;
+   background:url('/yh/core/styles/userinfo/btn_close.png') center center no-repeat;
+   
+}
+.other .bottom .back{
+   display:inline-block;
+   width:112px;
+   height:36px;
+   background:url('/yh/core/styles/userinfo/btn_back.png') center center no-repeat;
+   
+}

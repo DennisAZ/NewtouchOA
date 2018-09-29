@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    cursor: default;
+    font-size: 12px;
+    font-family: "Î¢ÈíÑÅºÚ";
+    overflow: hidden;
+}
+a:link {
+    text-decoration: none;
+}
+#app_cate_list {
+    background-color: #F3F3F3;
+    border-right: 1px solid #D0D0D0;
+    float: left;
+    height: 100%;
+    overflow: hidden;
+    padding: 3px;
+    text-align: left;
+    width: 120px;
+}
+#app_list_box{
+	top: 0px; 
+	height: 334px; 
+	width: 667px; 
+	right: 0; 
+	position: absolute; 
+	z-index: 2;
+	overflow: auto;
+}
+#app_cate_list .scroll-up, #app_cate_list .scroll-down {
+    background: url("images/scroll_arrow.png") no-repeat scroll center 0 transparent;
+    cursor: pointer;
+    height: 10px;
+    overflow: hidden;
+}
+#app_cate_list .scroll-up {
+    background-position: center 0;
+}
+#app_cate_list .scroll-down {
+    background-position: center -10px;
+}
+#app_cate_list .scroll-up-hover {
+    background-position: center -20px;
+}
+#app_cate_list .scroll-down-hover {
+    background-position: center -30px;
+}
+#app_cate_list ul {
+    height: 300px;
+    list-style-type: none;
+    overflow: hidden;
+    width: 100%;
+}
+#app_cate_list ul li {
+    border-bottom: 1px solid #D8D8D8;
+    float: left;
+    height: 27px;
+    line-height: 27px;
+    text-indent: 10px;
+    width: 100%;
+}
+#app_cate_list ul li a {
+    color: #000000;
+    display: block;
+    height: 27px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+#app_cate_list ul li a:hover {
+    background: url("images/appbox/app_cate_list_bg.gif") repeat scroll 0 -27px transparent;
+}
+#app_cate_list ul li a.current {
+    background: url("images/appbox/app_cate_list_bg.gif") repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+}
+
+
+#app_list_box ul {
+    list-style-type: none;
+    padding: 10px;
+}
+#app_list_box ul li {
+    cursor: pointer;
+    float: left;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    text-align: center;
+    width: 85px;
+    height:69px;
+}
+#app_list_box ul li a img {
+    display: block;
+    margin: 0 auto;
+}
+#app_list_box ul li a {
+    color: #000000;
+}

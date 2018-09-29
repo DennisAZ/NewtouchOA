@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">数据列表翻页导航</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:</td>
+    <td width="20%">陈懿</td>
+    <td width="15%">创建日期:</td>
+    <td width="20%">2009-09-23</td>
+    <td width="10%">版本:</td>
+    <td width="25%">1.0</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="60%">适用情景描述</th>
+    <th width="35%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+    <td><a href="/yh/test/rad/client/nevpage/grid.html">数据列表无分页</a>
+    <p>
+    JS文件：rad/grid/grid.js<br>
+    css文件:rad/grid/grid.css<br>
+          构造函数：YHGrid(hdarray,url,isSynchronous,numOfPage);<br>
+          hdarray:列表的头信息<br>
+          url：数据请求的地址<br>
+          isSynchronous：是否异步（暂未实现） 值为null就行。<br>
+          numOfPage：每页显示的数据条数<br>
+    hdarray的结构：var hd =[<br>
+	       	  								[<br>
+												       	{header:"hID",name:"id",width:"10%",hidden:true},<br>
+												       	{header:"hAge",name:"age",width:"20%"},<br>
+												       	{header:"hanme",name:"name",width:"40%"}<br>
+									     			 ],<br>
+									      		{<br>
+									    				header:"操作",<br>
+									    				oprates:[<br>
+										               new YHOprate('增加',true,function(record,index){alert(record.getField('name').value+":"+index)}),<br>
+								                       new YHOprate('oprate4',false,function(){alert("oprate4")}),<br>
+								                       new YHOprate('删除',true,function(){alert("oprate2")})<br>
+								                        ]<br>
+	            				 				}<br>
+													];<br>
+				       hdarray说明：name 数据中是所对应的每列的列明，header是name的别名（用于显示），width 每列的款度，hidden为TRUE则表示此为隐藏字段<br>
+				                                                    操作区： YHOprate(name,isDefault,oprate) name操作名称，isDefault是否为默认操作，非默认操作将显示在select中，同时请<br>
+				                                                    最多设置两个默认操作，oprate操作所要执行的函数，此函数默认大有两个参数record 当前行的纪录，index当前行号。<br>
+				 grid.rendTo（dom）；将grid加载到指定的html容器中，dom为所要容纳grid的html组件的ID                    <br>                               
+				 grid.reShow（url）；重新加载数据 url为数据获得的地址<br>
+				 grid.records : 本次请求的数据 Array[] record数据.<br>
+				 </p>
+    </td>
+    <td><pre>
+    		调用grid的rendTo方法是必须在页面元素加载完之后。
+    		grid.records只在数据加载完成后才存在，在rendTo或者
+    		reShow方法之后才有效
+    </pre></td>
+    <td><a href="#">代码</a></td>
+  </tr>
+  <tr>
+    <td><a href="/yh/test/rad/client/nevpage/grid2.html">带有隐藏字段的数据列表无分页</a><br>
+            将hdarray的字段属性hidden设为true则为隐藏字段，不加hidden属性或设置为false则表明此字段需要在列表中显示
+    </td>
+    <td><pre>
+    		调用grid的rendTo方法是必须在页面元素加载完之后。
+    		grid.records只在数据加载完成后才存在，在rendTo或者
+    		reShow方法之后才有效
+    </pre></td>
+    <td><a href="#">代码</a></td>
+  </tr>
+  <tr>
+    <td><a href="/yh/test/rad/client/nevpage/grid3.html">有操作的数据列表无分页</a><br>
+    	 hdarray的结构：var hd =[<br>
+	       	  								[<br>
+												       	{header:"hID",name:"id",width:"10%",hidden:true},<br>
+												       	{header:"hAge",name:"age",width:"20%"},<br>
+												       	{header:"hanme",name:"name",width:"40%"}<br>
+									     			 ],<br>
+									      		[]<br>
+													];<br>
+						当是此结构的hdarray时，表示不带操作栏。
+    </td>
+    <td><pre>
+    		调用grid的rendTo方法是必须在页面元素加载完之后。
+    		grid.records只在数据加载完成后才存在，在rendTo或者
+    		reShow方法之后才有效
+    </pre></td>
+    <td><a href="#">代码</a></td>
+  </tr>
+   <tr>
+    <td><a href="/yh/test/rad/client/nevpage/testquery.jsp">数据列表查询操作</a><br>
+    	 hdarray的结构：var hd =[<br>
+	       	  								[<br>
+												       	{header:"hID",name:"id",width:"10%",hidden:true},<br>
+												       	{header:"hAge",name:"age",width:"20%"},<br>
+												       	{header:"hanme",name:"name",width:"40%"}<br>
+									     			 ],<br>
+									      		[]<br>
+													];<br>
+						当是此结构的hdarray时，表示不带操作栏。
+    </td>
+    <td><pre>
+    		调用grid的rendTo方法是必须在页面元素加载完之后。
+    		grid.records只在数据加载完成后才存在，在rendTo或者
+    		reShow方法之后才有效
+    </pre></td>
+    <td><a href="#">代码</a></td>
+  </tr>
+</table>
+
+</body>
+</html>

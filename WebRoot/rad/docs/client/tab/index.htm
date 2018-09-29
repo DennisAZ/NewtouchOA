@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">多标签页</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:李剑锋</td>
+    <td width="20%">&nbsp;</td>
+    <td width="15%">创建日期:2009-9-23</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:1</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="60%">适用情景描述</th>
+    <th width="35%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+    <td><a href="/yh/test/rad/client/tab/jsp/go2.jsp">同步加载多标签</a>
+    <pre>
+     样式表：../css/tab.css
+    Js文件：../js/tab.js
+    接口函数：buildTab
+    接口参数[{title:, contentUrl:, content: imgUrl}, ...]
+    接口参数说明：
+        title: 标签的标题
+        contentUrl: 同步加载情况下，不使用
+        content: 标签的内容，可以是Html标签
+        imgUrl: 标签的修饰图片
+
+
+    </pre>
+    </td>
+    <td>&nbsp;</td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=test/rad/client/tab/jsp/go2.jsp">代码</a></td>
+  </tr>
+  <tr>
+    <td><a href="/yh/test/rad/client/tab/jsp/go1.jsp">异步加载多标签，不刷新</a>
+    <pre>
+     样式表：../css/tab.css
+    Js文件：../js/tab.js
+    接口函数：buildTab
+    接口参数[{title:, contentUrl:, content: imgUrl}, ...]
+        title: 标签的标题
+         contentUrl: 标签的内容的url地址
+         content: 异步加载情况下，不使用
+         imgUrl: 标签的修饰图片
+
+
+    </pre>
+    </td>
+    <td>&nbsp;</td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=test/rad/client/tab/jsp/go1.jsp">代码</a></td>
+  </tr>
+  <tr>
+    <td><a href="/yh/test/rad/client/tab/jsp/go.jsp">同步异步混合加载多标签，不刷新</a>
+    <pre>
+     样式表：../css/tab.css
+    Js文件：../js/tab.js
+    接口函数：buildTab
+    接口参数[{title:, contentUrl:, content: imgUrl}, ...]
+        title: 标签的标题
+         contentUrl: 标签的内容的url地址
+         content: 标签的内容，可以是Html标签
+         imgUrl: 标签的修饰图片   
+    </pre>
+    </td>
+    <td>&nbsp;</td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=test/rad/client/tab/jsp/go.jsp">代码</a></td>
+  </tr>
+  <tr>
+    <td><a href=>刷新页面多标签</a></td>
+    <td>&nbsp;</td>
+    <td><a href="#">代码</a></td>
+  </tr>
+  <tr>
+    <td><a href=>多标签栏目很多，栏目滚动</a></td>
+    <td>&nbsp;</td>
+    <td><a href="#">代码</a></td>
+  </tr>
+</table>
+</body>
+</html>

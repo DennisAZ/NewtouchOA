@@ -1,0 +1,88 @@
+ {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+IMG {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; VERTICAL-ALIGN: middle; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none
+}
+A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #333333; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+.module_sms {
+	MARGIN-BOTTOM: 10px
+}
+.moduleHeader {
+	BACKGROUND: url(../../img/sms/module_head_bg_right.png) no-repeat top right;padding-top:8px;border-left:0px solid #9EC6E8;
+}
+.module_body {
+	PADDING-RIGHT: 3px;
+	PADDING-LEFT: 3px;
+	FONT-SIZE: 9pt;
+	PADDING-BOTTOM: 2px; 
+	overflow-x: hidden;
+	overflow-y: auto;
+	PADDING-TOP: 2px
+}
+.module_body .time {
+	LINE-HEIGHT: 20px
+}
+.module_page_sms {
+	
+}
+.module_page_sms .listColor {
+	margin:0px;
+	padding-bottom:0px;
+	padding-left :0px;
+	padding-right:0px;
+	padding-top:0px;
+}
+
+.module_page_sms .listColor .head {
+	float:left;PADDING-LEFT: 6px ; BACKGROUND: url(../../img/sms/module_head_bg_left.png) no-repeat top left ; HEIGHT: 30px;border-rigth:0px solid #9EC6E8;
+}
+.module_page_sms .listColor .moduleHeader {
+	BACKGROUND: url(../../img/sms/module_head_bg_right.png) no-repeat top right;padding-top:8px;border-left:0px solid #9EC6E8;
+}
+
+.module_page_sms .listColor .module_body2 {
+	float:bottom;BORDER-RIGHT: #99c5ee 2px solid; BORDER-TOP: medium none; BACKGROUND: url(../../img/sms/white_bg.png) no-repeat top right; BORDER-LEFT: #99c5ee 2px solid; COLOR: #000000; BORDER-BOTTOM: #99c5ee 2px solid
+}
+.module_page_sms .listColor2 {
+	width:160px;
+    margin:0px;
+	padding-bottom:0px;
+	padding-left :0px;
+	padding-right:0px;
+	padding-top:0px;
+}
+.listColor2 .head2 {
+	PADDING-LEFT: 6px ; BACKGROUND: url(../../img/sms/module_head_bg_left.png) no-repeat top left ; HEIGHT: 30px;border-rigth:0px solid #9EC6E8;
+}
+.listColor2 .moduleHeader2 {
+	BACKGROUND: url(../../img/sms/module_head_bg_right.png) no-repeat top right;padding-top:8px;border-left:0px solid #9EC6E8;HEIGHT: 30px;
+}
+.listColor2 .module_body3 {
+	BORDER-RIGHT: #99c5ee 1px solid; BORDER-TOP: medium none; BACKGROUND: url(../../img/sms/white_bg.png) top left; BORDER-LEFT: #99c5ee 1px solid; COLOR: #000000; BORDER-BOTTOM: #99c5ee 1px solid
+}
+
+.content {
+  width: 190px;
+  word-wrap: break-word;
+}
+
+.sms-box {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sms-box td {
+  width: 100%;
+}

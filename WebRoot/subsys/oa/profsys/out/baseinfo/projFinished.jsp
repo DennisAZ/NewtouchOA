@@ -1,0 +1,414 @@
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/core/inc/header.jsp"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>出访团队信息</title>
+<link rel="stylesheet" href="<%=cssPath %>/page.css">
+<link rel="stylesheet" href="<%=cssPath%>/cmp/Calendar.css">
+<link rel="stylesheet" href="<%=cssPath%>/style.css">
+<link rel="stylesheet" href="<%=cssPath%>/cmp/tree.css">
+<link rel="stylesheet" href = "<%=cssPath%>/diary.css">
+<script type="text/javascript" src="<%=contextPath%>/core/funcs/diary/js/diaryUtil.js"></script>
+<script type="text/javascript" src="<%=contextPath%>/core/funcs/diary/js/diaryLogic.js"></script>
+<script type="text/javascript" src="<%=contextPath%>/core/js/prototype.js"></script>
+<script type="text/javascript" src="<%=contextPath%>/core/js/cmp/tab.js"></script>
+<script type="text/javascript" src="<%=contextPath%>/core/js/datastructs.js"></script>
+<script type="text/javascript" src="<%=contextPath%>/core/js/sys.js"></script>
+<script type="text/javascript" src="<%=contextPath%>/core/js/smartclient.js"></script>
+<script type="text/javascript" src="<%=contextPath%>/core/js/cmp/Calendarfy.js"></script>
+<script type="text/Javascript" src="<%=contextPath%>/core/js/cmp/select.js"></script>
+<script type="text/Javascript" src="<%=contextPath%>/core/js/orgselect.js" ></script>
+<script type="text/javascript" src="<%=contextPath %>/core/js/cmp/page.js"></script>
+<script type="text/Javascript" src="<%=contextPath%>/subsys/oa/profsys/js/profsys.js" ></script>
+<script type="text/javascript">
+var pageMgr = null;
+var cfgs = null;
+var pYxTotal = 0;
+var pAllTotal = 0;
+function doInit(){
+  pYxTotal = 0;
+  pAllTotal = 0;
+  var timestamps = new Date().valueOf();
+  var url = "<%=contextPath%>/yh/subsys/oa/profsys/act/out/YHProjectAct/profsysHistory.act";
+   cfgs = {
+    dataAction: url,
+    container: "giftList",
+    paramFunc: getParam,
+    afterShow:getTotal2,
+    colums: [
+       {type:"hidden", name:"seqId", text:"ID",align:"center", width:"1%"},
+       {type:"selfdef", name:"Id", text:"选择",align:"center", width:"3%",render:toMing},
+       {type:"text", name:"PROJ_NUM", text:"项目编号", width: "7%",align:"center",sortDef:{type:0, direct:"asc"}},
+       {type:"text", name:"PROJ_GROUP_NAME", text:"团组名称", width: "7%",align:"center",sortDef:{type:0, direct:"asc"}},
+       {type:"text", name:"DEPT_ID", text:"所属部门", width: "7%",align:"center",sortDef:{type:0, direct:"asc"}},
+       {type:"text", name:"PROJ_VISIT_TYPE", text:"出访类别", width: "7%",align:"center",render:toProjVisit,sortDef:{type:0, direct:"asc"}},
+       {type:"text", name:"PROJ_LEADER", text:"负责人",align:"center", width: "6%",sortDef:{type:0, direct:"asc"}},
+       {type:"text", name:"PROJ_ACTIVE_TYPE", text:"项目类别",align:"center", width: "7%",render:toProjActive,sortDef:{type:0, direct:"asc"}},
+       {type:"text", name:"PROJ_START_TIME", text:"起始时间",align:"center",width:"8%",render:toStatrTime,sortDef:{type:0, direct:"asc"}},
+       {type:"text", name:"PROJ_END_TIME", text:"结束时间", width:"8%",align:"center",render:toEndTime,sortDef:{type:0, direct:"asc"}},
+       {type:"text", name:"P_YX", text:"参与外办人数",width:"10%",align:"center",render:toPyx,sortDef:{type:0, direct:"asc"}},
+       {type:"text", name:"P_TOTAL",text:"参与总人数", width:"9%",align:"center",render:toPtotal,sortDef:{type:0, direct:"asc"}},
+       {type:"text", name:"PRINT_STATUS",text:"打印状态", width:"7%",align:"center",render:toPrintStatus,sortDef:{type:0, direct:"asc"}},
+       {type:"text", name:"caozuo",text:"操作", width:"7%",align:"center",render:toCaoZuo}]
+  };
+  pageMgr = new YHJsPage(cfgs);
+  pageMgr.show();
+  var total = pageMgr.pageInfo.totalRecord;//是否有数据
+  if(total <= 0){
+    var table = new Element('table',{ "class":"MessageBox" ,"align":"center","width":"340" }).update("<tr>"
+        + "<td class='msg info'><div class='content' style='font-size:12pt'>无合条件出访历史项目!</div></td></tr>"
+        );
+    $('giftList').style.display="none";
+    $('returnNull').update(table); 
+  }else {
+    //var table = new Element('table',{"class":"TableList","width":"100%"}).update("<tr class='TableControl'><td width='100%' colspan='3'>&nbsp;<input type='checkbox' name='allbox' id='allbox' onClick='checkAll();'>"
+       // + "&nbsp;全选&nbsp;<input type='button'  value=' 汇总打印  ' class='BigButton' onClick='printMail();' title='汇总打印'></td></tr>");
+    //$('giftList').appendChild(table);
+  }
+  doTime();
+}
+
+//返回出访类别
+function toProjVisit(cellData, recordIndex,columInde){
+  var projVisitType =  this.getCellData(recordIndex,"PROJ_VISIT_TYPE");
+  if (projVisitType == "") {
+    return "无";
+  } else {
+    return projVisitType;
+  }
+}
+//返回项目类别
+function toProjActive(cellData, recordIndex,columInde){
+var projActiveType =  this.getCellData(recordIndex,"PROJ_ACTIVE_TYPE");
+if (projActiveType == "") {
+  return "无";
+} else {
+  return projActiveType;
+}
+}
+//返回外事办人数
+function toPyx(cellData, recordIndex,columInde){
+  var pYx =  this.getCellData(recordIndex,"P_YX");
+  pYxTotal = parseInt(pYxTotal) + parseInt(pYx);
+  return pYx;
+}
+//返回总人数
+function toPtotal(cellData,recordIndex,columInde){
+  var pTotal =  this.getCellData(recordIndex,"P_TOTAL");
+  pAllTotal = parseInt(pAllTotal) + parseInt(pTotal);
+  return pTotal;
+}
+//返回操作 项
+function toMing(cellData, recordIndex,columInde){
+  var seqId =  this.getCellData(recordIndex,"seqId");
+  return "<input type='checkbox' name='outSelect' value='" + seqId +"' onClick='javscript:checkOne(self);'>";
+}
+//返回开始时间
+function toStatrTime(cellData, recordIndex,columInde){
+  var projStartTime =  this.getCellData(recordIndex,"PROJ_START_TIME");
+  return projStartTime.substr(0,10);
+}
+//返回结束时间
+function toEndTime(cellData, recordIndex,columInde){
+  var projEndTime =  this.getCellData(recordIndex,"PROJ_END_TIME");
+  return projEndTime.substr(0,10);
+}
+//返回打印状态
+function toPrintStatus(cellData, recordIndex,columInde){
+  var printStatus =  this.getCellData(recordIndex,"PRINT_STATUS");
+  if (printStatus == "0") {
+    return "<font color='#FF0000'><b>未打印</b></font>";
+  }
+  if (printStatus == "1") {
+    return "<font color='blue'><b>已打印</b></font>";
+  }
+}
+
+//返回操作项
+function toCaoZuo(cellData, recordIndex,columInde) {
+  var seqId = this.getCellData(recordIndex,"seqId");
+  return "<a href='#' onClick=javascript:openShowDetilIndex(" + seqId + ")>详细信息</a>"
+  + "&nbsp;<a href='#' onClick=javascript:updateStatus(" + seqId + ")>恢复执行</a>&nbsp;<a href='#' onClick=javascript:delProj(" + seqId + ")> 删除 </a>";
+}
+
+function getParam(){
+  queryParam = $("form1").serialize();
+  return queryParam;
+}
+//查询
+function queryGift(){
+  if(!isValidDateStr($("projStartTime").value) && $("projStartTime").value != ""){
+    alert("日期格式不对，应形如 1999-01-01"); 
+    $("projStartTime").focus(); 
+    $("projStartTime").select(); 
+    return ; 
+  }
+  if(!isValidDateStr($("projStartTime1").value)  && $("projStartTime1").value != ""){
+    alert("日期格式不对，应形如 1999-01-01"); 
+    $("projStartTime1").focus(); 
+    $("projStartTime1").select(); 
+    return ; 
+  }
+  if(!isValidDateStr($("projEndTime").value)  && $("projEndTime").value != ""){
+    alert("日期格式不对，应形如 1999-01-01"); 
+    $("projEndTime").focus(); 
+    $("projEndTime").select(); 
+    return ; 
+  }
+  if(!isValidDateStr($("projEndTime1").value)  && $("projEndTime1").value != ""){
+    alert("日期格式不对，应形如 1999-01-01"); 
+    $("projEndTime1").focus(); 
+    $("projEndTime1").select(); 
+    return ; 
+  }
+  pYxNum = 0;
+  pTotalNum = 0;
+  if(!pageMgr){
+    pageMgr = new YHJsPage(cfgs);
+    pageMgr.show();
+  }else{
+    pageMgr.search();
+  }
+  var total = pageMgr.pageInfo.totalRecord;
+  if(total){
+    $('giftList').style.display="";
+    $('returnNull').style.display="none"; 
+  }else{
+    var table = new Element('table',{ "class":"MessageBox" ,"align":"center","width":"340" }).update("<tr>"
+        + "<td class='msg info'><div class='content' style='font-size:12pt'>无合条件出访历史项目!</div></td></tr>"
+        );
+    $('giftList').style.display="none";
+    $('returnNull').style.display=""; 
+    $('returnNull').update(table);  
+  }
+}
+function doTime() {
+  getActiveType();
+  getVisitType();
+  //时间
+  var parameters = {
+      inputId:'projStartTime',
+      property:{isHaveTime:false}
+      ,bindToBtn:'date1'
+  };
+  new Calendar(parameters);
+  
+  var parameters = {
+      inputId:'projStartTime1',
+      property:{isHaveTime:false}
+      ,bindToBtn:'date2'
+  };
+  new Calendar(parameters);
+  
+  var parameters = {
+      inputId:'projEndTime',
+      property:{isHaveTime:false}
+      ,bindToBtn:'date3'
+  };
+  new Calendar(parameters);
+  
+  var parameters = {
+      inputId:'projEndTime1',
+      property:{isHaveTime:false}
+      ,bindToBtn:'date4'
+  };
+  new Calendar(parameters);
+}
+//申请
+function openNewsIndex(seqId) {
+  var myleft = (screen.availWidth - 800)/2;
+  window.open("<%=contextPath%>/subsys/oa/profsys/out/baseinfo/news/index.jsp","","status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes,width=950,height=700,left=" + myleft + ",top=50");
+}
+//打印数据
+function openPrint(seqStr) {
+  var myleft = (screen.availWidth - 800)/2
+  window.open("<%=contextPath%>/subsys/oa/profsys/out/baseinfo/news/print.jsp","","status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes,width=800,height=600,left=" + myleft + ",top=50");
+}
+//详细信息
+function openShowDetilIndex(seqId) {
+  var myleft = (screen.availWidth - 800)/2;
+  var url = "<%=contextPath%>/subsys/oa/profsys/out/baseinfo/showdetail/index.jsp?seqId=" + seqId;
+  window.open(url,"","status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes,width=950,height=700,left=" + myleft + ",top=50");
+}
+//删除记录
+function delProj(seqId) {
+  URL = "<%=contextPath%>/yh/subsys/oa/profsys/act/out/YHProjectAct/delProj.act?seqId=" + seqId;
+  if (window.confirm("确认要删除该记录吗？")) {
+    window.location = URL;
+    location.reload();
+  }
+}
+//结束记录
+function updateStatus(seqId) {
+  URL = "<%=contextPath%>/yh/subsys/oa/profsys/act/out/YHProjectAct/updateStatus.act?seqId=" + seqId + "&status=0";
+  if (window.confirm("确认要恢复该记录吗？")) {
+    window.location = URL;
+    location.reload();
+  }
+}
+//批量打印
+function printMail() {
+  var printStr = "";
+  for(var i = 0; i < document.getElementsByName("outSelect").length;i++) {
+    var el = document.getElementsByName("outSelect").item(i);
+    if (el.checked) {
+      var val = el.value;
+      printStr += val + ",";
+    }
+  }
+  //当没有数据时
+  if(i == 0) {
+    var el = document.getElementsByName("outSelect");
+    if (el.checked) {
+      var val = el.value;
+      printStr += val + ",";
+    }
+  }
+  if(printStr == "") {
+    alert("请至少选择其中一条记录。");
+    return;
+  }
+  msg = '确认要打印所选记录？';
+  if(window.confirm(msg)) {
+    URL = "<%=contextPath%>/yh/subsys/oa/profsys/act/out/YHProjectAct/printOut.act?printStr=" + printStr
+    window.open(URL);
+  }
+}
+
+//有一个不选中就不是全选
+
+function checkOne(el) {
+  if (!el.checked) {
+     document.getElementById("allbox").checked = false;
+  }
+}
+
+//全部选中
+function checkAll() {
+  for (var i = 0;i < document.getElementsByName("outSelect").length;i++) {
+    if (document.getElementsByName("allbox")[0].checked) {
+      document.getElementsByName("outSelect").item(i).checked=true;
+    }else {
+      document.getElementsByName("outSelect").item(i).checked=false;
+    }
+  }
+  if (i == 0) {
+    if (document.getElementsByName("allbox")[0].checked) {
+      document.getElementsByName("outSelect").checked = true;
+    }else {
+      document.getElementsByName("outSelect").checked = false;
+    }
+  }
+}
+//出访类别
+function getVisitType(){
+  var requestURL = "<%=contextPath%>/yh/subsys/oa/profsys/act/YHProjectAct/getCodeItem.act?classNo=PROJ_VISIT_TYPE1"; 
+  var json=getJsonRs(requestURL); 
+  if(json.rtState == '1'){ 
+    alert(json.rtMsrg); 
+    return ; 
+  } 
+  var prcs = json.rtData; 
+  var selectObj = $("projVisitType");
+  for(var i = 0 ; i < prcs.length ; i++){
+    var prc = prcs[i];
+    var seqId = prc.sqlId;
+    var classNO = prc.classNo;
+    var calssDesc = prc.classDesc;
+    var myOption = document.createElement("option");
+    myOption.value = seqId;
+    myOption.text = calssDesc;
+    selectObj.options.add(myOption, selectObj.options ? selectObj.options.length : 0);
+  }
+}
+//项目类别
+function getActiveType() {
+  var requestURL = "<%=contextPath%>/yh/subsys/oa/profsys/act/YHProjectAct/getCodeItem.act?classNo=PROJ_ACTIVE_TYPE1"; 
+  var json=getJsonRs(requestURL); 
+  if(json.rtState == '1'){ 
+    alert(json.rtMsrg); 
+    return ; 
+  } 
+  var prcs = json.rtData; 
+  var selectObj = $("projActiveType");
+  for(var i = 0 ; i < prcs.length ; i++){
+    var prc = prcs[i];
+    var seqId = prc.sqlId;
+    var classNO = prc.classNo;
+    var calssDesc = prc.classDesc;
+    var myOption = document.createElement("option");
+    myOption.value = seqId;
+    myOption.text = calssDesc;
+    selectObj.options.add(myOption, selectObj.options ? selectObj.options.length : 0);
+  }
+}
+//团组名称
+var budgetIdField = null;
+var budgetNameField = null;
+function toBudget(budgetId,budgetName){
+  budgetIdField = budgetId;
+  budgetNameField = budgetName;
+  var URL= contextPath + "/subsys/oa/profsys/budgetlist.jsp";
+  openDialogResize(URL , 650, 500);
+ // window.open(URL,this,"height=355px,width=320px,directories=no,menubar=no,toolbar=no,status=no,scrollbars=yes,location=no,top="+loc_y+",left="+loc_x+"");
+}
+function getTotal2(){
+  var table = pageMgr.getDataTableDom();
+  getTotal(table,pYxTotal,pAllTotal);
+  pYxTotal = 0;
+  pAllTotal = 0;
+  insertOutTr(table);
+}
+</script>
+</head>
+<body class="bodycolor" topmargin="5px" onLoad="doInit()">
+<br>
+<form id="form1" name="form1">
+<table class="TableList" align="center">
+  <tr class="TableContent">
+        <td nowrap style="padding:3px">
+         &nbsp;项目编号：
+          <INPUT type="text"  name="projNum" id="projNum" size="10" value="" class="BigInput">
+         &nbsp;项目类别：
+        <select name="projActiveType" id="projActiveType">
+          <option value="">--请选择--</option>
+        </select>
+      &nbsp;起始时间：
+       <INPUT type="text" class="BigInput" name="projStartTime" id="projStartTime" size="10" value="">
+       <img id="date1" src="<%=imgPath%>/calendar.gif" align="absMiddle" border="0" style="cursor: hand">
+       &nbsp;至
+       <INPUT type="text" class="BigInput" name="projStartTime1" id="projStartTime1" size="10" value="">
+       <img id="date2" src="<%=imgPath%>/calendar.gif" align="absMiddle" border="0" style="cursor: hand"> 
+    </td>
+  </tr>
+  <tr class="TableContent">
+    <td nowrap>&nbsp;团组名称：
+    <INPUT type="hidden"  name="budgetId" id="budgetId" size="10" value="" class="BigInput">
+      <input type="text" class="BigStatic" name="projGroup" id="projGroup" value="" size="10" readonly>
+      <a href="javascript:toBudget('budgetId','projGroup');">选择数据</a> 
+    &nbsp;出访类别：
+     <select name="projVisitType" id="projVisitType" >
+     <option value="">--请选择--</option>
+     </select>
+    &nbsp;结束时间：
+     <INPUT type="text" class="BigInput" name="projEndTime" id="projEndTime" size="10" value="">
+     <img id="date3" src="<%=imgPath%>/calendar.gif" align="absMiddle" border="0" style="cursor: hand">
+     &nbsp;至
+     <INPUT type="text" class="BigInput" name="projEndTime1" id="projEndTime1" size="10" value="">
+     <img id="date4" src="<%=imgPath%>/calendar.gif" align="absMiddle" border="0" style="cursor: hand">
+    </td>
+  </tr>
+  <tr class="TableControl">
+    <td rowspan=2 align="center">
+      <input value="查询" type="button" class="BigButton" title="   查询    " name="button" onClick="queryGift()">&nbsp;&nbsp;
+    </td>
+  </tr>   
+</table>
+</form>
+<br>
+<div id="giftList" style="padding-left: 10px; padding-right: 10px"></div>
+<div id="returnNull">
+</div>
+</body>
+</html>

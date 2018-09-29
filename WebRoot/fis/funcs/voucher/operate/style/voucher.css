@@ -1,0 +1,54 @@
+.voucher-header {
+	position: relative;
+	border: 1px solid black;
+	height: 25px;
+	padding: 3px;
+}
+
+.voucher-header .opt {
+	position: absolute;
+	right: 5px;
+	top: 3px;
+}
+
+.voucher-center {
+	width: 800px;
+	margin: 0 auto;
+}
+
+.voucher-center .opt-range {
+	border: 1px solid black;
+	margin-top: 5px;
+	padding: 3px;
+}
+
+.voucher-center label {
+	padding-left: 10px;
+	padding-right: 20px;
+}
+
+.voucher-view {
+	width: 100%;
+}
+
+.voucher-view td {
+	border: 1px solid black;
+	height: 25px;
+}
+
+.form-element-cmp {
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+tr.active {
+	background-color: #e9e9e9;
+}
+
+#grid .opt a {
+	padding-left: 5px;
+	padding-right: 5px;
+}

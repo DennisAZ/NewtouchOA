@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" applicationComplete="doInit()" backgroundColor="#000000" layout="absolute">
+   <!-- 定义改变状态时的动画效果 -->  
+   <mx:transitions>  
+       <mx:Transition>  
+            <mx:Parallel    
+              targets="{[mainCanvas,vbox1,tipBox,closeOrOpenImage]}">  
+                <mx:Resize duration="500" easingFunction="Bounce.easeOut"/>
+                <mx:Sequence target="{vbox1}">  
+                   <mx:Blur duration="200" blurYFrom="1.0" blurYTo="20.0"/>  
+                   <mx:Blur duration="200" blurYFrom="20.0" blurYTo="1"/>  
+                </mx:Sequence>  
+            </mx:Parallel>  
+        </mx:Transition>  
+    </mx:transitions>  
+  <mx:states>
+    <mx:State name="noTip">
+      <mx:RemoveChild target="{vbox1}"/>
+    </mx:State>
+  </mx:states>
+  <mx:Style>
+  .imageStyle {
+    paddingLeft:0
+  }
+  </mx:Style>
+  <mx:Script>
+    <![CDATA[
+      import mx.effects.easing.Bounce; 
+      import mx.managers.DragManager;
+      import mx.core.DragSource;
+      import com.adobe.serialization.json.JSON;
+      import mx.rpc.events.ResultEvent;
+      import mx.rpc.http.HTTPService;
+      import mx.events.ItemClickEvent;
+      import mx.events.IndexChangedEvent;
+      import mx.managers.CursorManager;
+      import mx.controls.Alert;
+      import mx.effects.Resize;
+      import mx.effects.Zoom;
+      import mx.containers.HBox;
+      import mx.collections.ArrayCollection;
+      [Embed(source="image/arrowTop.png")]
+      private var arrTop:Class;
+      [Embed(source="image/arrowBottom.png")]
+      private var arrBottom:Class;
+      [Embed(source="image/gb.png")]
+      private var closeTip:Class;
+      [Embed(source="image/ck.png")]
+      private var openTip:Class;
+      [Bindable]
+      private var nowImage:Class = closeTip;
+      [Bindable]
+      private var isOpened:Boolean = true;
+      
+      private var baseUrl:String = "http://localhost/t9/raw/lh/album/smallImage" ;
+      private var bigUrl:String = "http://localhost/t9/raw/lh/album/";
+      private var isDebug = true;
+      [Bindable]
+      private var startIndex = 0;
+      [Bindable]
+      private var imageWidth = 88;
+      [Bindable]
+      private var imageHeight = 58;
+      [Bindable]
+      private var smallPic:ArrayCollection = new ArrayCollection(); 
+      private var selectedPic:String = "";
+      [Bindable]
+      private var selectedIndex:int = -1;
+      [Bindable]
+      private var maxLength = 0;
+      [Embed(source="image/《.png")]
+      public var imgClss1:Class;
+      [Embed(source="image/》.png")]
+      public var imgClss2:Class;
+      [Embed(source="image/titlebg.png")]
+      public var titlebg:Class;
+      
+      private function doInit():void{
+        getSmallPic("");
+      }
+      private function addSmallPic(event:ResultEvent):void {
+        var data:String = event.result.toString();
+      	var json:Object = JSON.decode(data);
+      	var rtData:Array = json.images as Array;
+      	smallPic = new ArrayCollection(rtData);
+      	maxLength = smallPic.length;
+        selectedPic = smallPic.getItemAt(0).id;
+        if (selectedPic != "") {
+          var selectedBox:HBox = picContainer.getChildByName(selectedPic) as HBox;
+          this.selectedImage(selectedBox , null , true);
+          this.selectedIndex = 0;
+        }
+      }
+      private function getSmallPic(subjectIdStr:String):void{
+        var http:HTTPService = new HTTPService();
+        if (this.isDebug) {
+          http.url = "http://localhost/t9/raw/lh/T9ImageViewAct/getSmallImage.act";
+        } else {
+          http.url = "/t9/raw/lh/T9ImageViewAct/getSmallImage.act";
+        }
+        http.addEventListener(ResultEvent.RESULT , addSmallPic);
+    		var obj:* = {subjectId:subjectIdStr};
+    		http.send(obj);
+      }
+      private function topPre():void{
+        if (startIndex > 0) {
+          startIndex--;
+        }
+        if (selectedPic != "") {
+          var selectedBox:HBox = picContainer.getChildByName(selectedPic) as HBox;
+          this.selectedImage(selectedBox , null , false);
+        } 
+      }
+      private function bottomNext():void{
+        if (startIndex + 4 >=  smallPic.length) {
+          return;
+        }
+        startIndex++;
+        if (selectedPic != "") {
+          var selectedBox:HBox = picContainer.getChildByName(selectedPic) as HBox;
+          this.selectedImage(selectedBox , null , false);
+        } 
+      }
+      
+      private function selectedImage(nowSelected:HBox, oldSelected:HBox , isLoadBigPic:Boolean):void{
+        if (oldSelected != null) {
+         // var imageNode:Image = nowSelected.getChildAt(0) as Image;
+          resize2.play([oldSelected] , false);
+          oldSelected.setStyle("borderColor" , 0x666666);
+        }
+        if (nowSelected != null) {
+          nowSelected.setStyle("borderColor" , 0xcccccc);
+          //var imageNode:Image = nowSelected.getChildAt(0) as Image;
+          resize1.play([nowSelected ] , false);
+          if (isLoadBigPic) {
+            this.loadBigPic();
+          }
+        } 
+      }
+      private function loadBigPic():void {
+        //CursorManager.setBusyCursor();
+        imageBox.visible = false;
+        progressBarBox.visible = true;
+      }
+      private function getNowIndex(str:String):int {
+        var index = -1;
+        for (var i = 0 ;i < smallPic.length ;i++ ) {
+          var tmp:Object = smallPic.getItemAt(i) as Object;
+          if (str == tmp.id) {
+            index = i;
+            break;
+          }
+        }
+        return index
+      }
+      private function clickSelectedImage(nowSelected:HBox ):void{
+        var nowSelectedName:String = nowSelected.name;
+        //Alert.show(nowSelectedName);
+        var index = this.getNowIndex(nowSelectedName);
+        if (nowSelectedName == selectedPic) {
+          return ; 
+        }
+        if (selectedPic == "") {
+          selectedImage(nowSelected, null , true);
+        } else {
+          if (index  - 1  >= 0) {
+            startIndex = index - 1;
+          } 
+          var oldSelected:HBox = picContainer.getChildByName(selectedPic) as HBox;
+          var newSelected:HBox = picContainer.getChildByName(nowSelectedName) as HBox;
+          selectedImage(newSelected, oldSelected , true);
+        }
+        selectedPic = nowSelectedName; 
+        this.selectedIndex = index;
+      }
+      private function progressBarComplete():void {
+        //CursorManager.removeBusyCursor();
+        imageBox.visible = true;
+        progressBarBox.visible = false;
+      }
+      private function getImageByUrl() {
+        if (selectedPic != "") {
+          var url = this.bigUrl + "/" + selectedPic + ".jpg";
+          image1.load(url);
+        }
+      }
+      private function leftClick():void {
+        if (selectedIndex == 0) {
+          return ;
+        } 
+        selectedIndex--;
+        if (selectedIndex  - 1  >= 0) {
+           startIndex = selectedIndex - 1;
+         } 
+        var nowSelectedName = smallPic.getItemAt(selectedIndex).id as String;
+        var oldSelected:HBox = picContainer.getChildByName(selectedPic) as HBox;
+        var newSelected:HBox = picContainer.getChildByName(nowSelectedName) as HBox;
+        selectedImage(newSelected, oldSelected , true);
+        selectedPic = nowSelectedName; 
+        this.selectedIndex = selectedIndex;
+      }
+      private function rightClick():void {
+        if (selectedIndex >= this.smallPic.length - 1) {
+          return ;
+        } 
+        selectedIndex++;
+        if (selectedIndex  - 1  >= 0) {
+           startIndex = selectedIndex - 1;
+         } 
+        var nowSelectedName = smallPic.getItemAt(selectedIndex).id as String;
+        var oldSelected:HBox = picContainer.getChildByName(selectedPic) as HBox;
+        var newSelected:HBox = picContainer.getChildByName(nowSelectedName) as HBox;
+        selectedImage(newSelected, oldSelected , true);
+        selectedPic = nowSelectedName; 
+        this.selectedIndex = selectedIndex;
+      }
+      private function closeOrOpen():void {
+        if (this.isOpened) {
+          this.isOpened = false;
+          this.nowImage = openTip;
+          this.currentState = "noTip";
+        } else { 
+          this.isOpened = true;
+          this.nowImage = closeTip;
+          this.currentState = ""; 
+        }
+      }
+      private function changeImage():void {
+        var image2:Image = image1;
+        this.imageBox.removeChild(image1);
+        this.imageBox.addChild(image2);
+      }
+      import mx.managers.CursorManagerPriority;
+      import mx.managers.CursorManager;
+      
+      [Bindable]
+      [Embed(source="image/move.png")]
+      private var Icon1:Class;            
+      private var cursorID:int;
+       //拖动初始器  
+      private function dragSource(e:MouseEvent, format:String):void  
+      {  
+          var ds:DragSource = new DragSource();  
+          ds.addData(smallImagePal, format); //设置一个标号format  
+          DragManager.doDrag(smallImagePal, ds, e); // 开始拖动这个物体  
+      }
+      [Bindable]
+      private var title:String = "深圳机场举行反恐应急演习";
+      [Bindable]
+      private var info:String = "发表日期：2010年09月17日07:45";
+      [Bindable]
+      private var message:String = "9月16日，深圳宝安国际机场举行反恐应急演习，模拟一架客机被歹徒劫持后，特警、防爆、消防、医疗救护等各方面展开营救，在短时间内解救人质处理事故。中新社记者 陈文 摄";
+    ]]>
+  </mx:Script>
+  <mx:Fade id="dissolve"   alphaFrom="1" alphaTo="0" effectEnd="getImageByUrl()"/>
+  <mx:Fade id="fadeIn"   alphaFrom="0" alphaTo="1"/>
+    <mx:Resize id="resize1"  widthFrom="{imageWidth}" widthTo="{imageWidth + 10}" duration="500"  />
+    <mx:Resize id="resize2"  widthFrom="{imageWidth + 10}" widthTo="{imageWidth}" duration="500"  />
+   <mx:Glow id="glowImage" duration="1000"    
+        alphaFrom="1.0" alphaTo="0.5"    
+        blurXFrom="0.0" blurXTo="50.0"    
+        blurYFrom="0.0" blurYTo="50.0"    
+        color="#cafef5"/>  
+   <mx:Glow id="unglowImage" duration="1000"    
+        alphaFrom="0.5" alphaTo="0.0"    
+        blurXFrom="50" blurXTo="0.0"    
+        blurYFrom="50.0" blurYTo="0.0"    
+        color="#cafef5"/>
+  <mx:HBox height="100%" width="100%">
+  <mx:Spacer width="10"/>
+     <mx:VBox horizontalGap="0" verticalGap="0"  height="100%">
+     <mx:VBox  horizontalGap="0" verticalGap="0" id="smallImagePal"  height="423"  backgroundColor="#1F1F1F"  borderStyle="solid" borderColor="#FFFFFF" width="110">
+     <mx:Image  mouseDown="dragSource(event, 'smallImagePal')" toolTip="拖动到另一侧"   rollOver="cursorID = CursorManager.setCursor(Icon1)" 
+        rollOut="CursorManager.removeCursor(cursorID)"  source="{titlebg}" width="100%" height="21"/>
+     <mx:HBox  horizontalGap="0" verticalGap="0" width="108" height="34" horizontalAlign="center" verticalAlign="middle">
+       <mx:Image mouseChildren="true" buttonMode="true"  useHandCursor="true"  click="topPre()" source="{arrTop}"/>
+     </mx:HBox>
+     <mx:VBox id="picContainer"  height="330" width="108" horizontalAlign="center">
+       <mx:Repeater  id="picRepeater" dataProvider="{smallPic}" startingIndex="{startIndex}" count="5">
+         <mx:HBox  horizontalScrollPolicy="off"   verticalScrollPolicy="off" horizontalAlign="center" verticalAlign="middle" click="clickSelectedImage(event.currentTarget as HBox)"  name="{picRepeater.currentItem.id}" width="{imageWidth}"  height="{imageHeight}" mouseChildren="true" buttonMode="true" useHandCursor="true" borderColor="#666666" borderStyle="solid">
+           <mx:Image  rollOutEffect="unglowImage" rollOverEffect="glowImage"   source="{baseUrl + '/' +picRepeater.currentItem.name}"/>
+         </mx:HBox>
+       </mx:Repeater>
+     </mx:VBox>
+     <mx:HBox  horizontalGap="0" verticalGap="0"  width="108" height="34" horizontalAlign="center" verticalAlign="middle">
+       <mx:Image   mouseChildren="true" buttonMode="true"  useHandCursor="true" click="bottomNext()" source="{arrBottom}"/>
+     </mx:HBox>
+     </mx:VBox>
+     </mx:VBox>
+     <mx:Spacer width="5"/>
+     <mx:Canvas id="mainCanvas" height="100%" width="100%">
+     <mx:HBox  id="imageBox"
+        showEffect="fadeIn"
+        hideEffect="dissolve" x="0"
+          y="0"  height="100%"
+           width="100%" horizontalAlign="center" verticalAlign="middle">
+         <mx:Image id="image1"  height="100%"
+           width="100%" autoLoad="false"/>
+     </mx:HBox>
+     <mx:HBox x="0" id="progressBarBox" height="100%"  y="0"  width="100%" verticalAlign="middle"  horizontalAlign="center" >
+       <mx:ProgressBar source="image1" complete="progressBarComplete()"/>
+     </mx:HBox>
+     <mx:HBox x="0"  y="0"  height="100%"  width="100%">
+       <mx:HBox width="50%"  visible="{this.selectedIndex > 0}"  rollOver="leftBox.visible = true"  rollOut="leftBox.visible = false"  click="leftClick()"  mouseChildren="true" buttonMode="true"  useHandCursor="true" height="400"  horizontalAlign="left" verticalAlign="middle">
+        <mx:Spacer width="10"/>
+        <mx:Image source="{imgClss1}" id="leftBox"  visible="false" />
+       </mx:HBox>
+       <mx:HBox width="50%" visible="{(this.smallPic.length - 1) > selectedIndex}"  rollOver="rightBox.visible = true"  rollOut="rightBox.visible = false" click="rightClick()"  mouseChildren="true" buttonMode="true"  useHandCursor="true"   height="400"   horizontalAlign="right"  verticalAlign="middle">
+       <mx:Image source="{imgClss2}" id="rightBox"  visible="false" />
+       <mx:Spacer width="10"/>
+       </mx:HBox>
+     </mx:HBox>
+  </mx:Canvas>
+  
+  <mx:Spacer width="5"/>
+  <mx:HBox id="tipBox"  horizontalGap="0" verticalGap="0" height="100%">
+    <mx:VBox  height="445" width="206" borderColor="#666666" borderStyle="solid" id="vbox1" backgroundColor="#2B2B2B">
+    <mx:Text  width="100%"  color="#FFFFFF" htmlText="{title}" fontWeight="bold" fontSize="14" fontFamily="Times New Roman"/>
+    <mx:Text  width="100%"  color="#999999" htmlText="{info}"/>
+    <mx:Text width="100%"   color="#FFFFFF"  htmlText="{message}" fontSize="12" fontFamily="Times New Roman"/>
+  </mx:VBox>
+  <mx:Image click="closeOrOpen()" id="closeOrOpenImage"  styleName="imageStyle" source="{nowImage}"/>
+  </mx:HBox>
+  </mx:HBox>
+  
+</mx:Application>

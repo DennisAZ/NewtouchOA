@@ -1,0 +1,1102 @@
+html, body {
+  font-family: "微软雅黑","宋体";
+}
+
+html.noscrollX,
+body.noscrollX {
+  overflow: auto;
+  overflow-x:hidden;
+  _overflow-x:hidden;
+}
+
+body {
+	background-color:#fff;
+	background-attachment:fixed !important;
+    color: #393939;
+	font-size:12px;
+}
+
+body.nocolor {
+  background-color: transparent;
+}
+
+button, img {
+  border: none;
+}
+a {
+  outline: none;
+}
+
+a:link, a:visited, a:hover, a:active {
+	text-decoration: none
+}
+
+
+Table{
+	border-spacing:0px;
+	border-collapse:collapse;
+}
+
+a.addfile {
+   color:#207BD6;
+   text-decoration:none;
+   padding-left:12px;
+   background:url("../img/org_select.png") no-repeat;
+   background-position:0px 3px;
+   position: relative;
+}
+a.addfile:hover {
+   color:#9AA9B8;
+   text-decoration:underline;
+   background-position:0px -17px;
+}
+
+input.addfile {
+   cursor:pointer;
+   left:-5px;
+   opacity:0;
+   filter:alpha(opacity=0);
+   position:absolute;
+   width:65px;
+}
+
+a.selfile:link, a.selfile:visited {
+   color:#207BD6;
+   text-decoration:none;
+}
+a.selfile:hover, a.selfile:active {
+   color:#9AA9B8;
+   text-decoration:underline;
+}
+a.addimage {
+   color:#207BD6;
+   text-decoration:none;
+   padding-left:12px;
+   position: relative;
+   background:url("../img/org_select.png") no-repeat;
+   background-position:0px 3px;
+}
+a.addimage:hover {
+   color:#9AA9B8;
+   text-decoration:underline;
+   background-position:0px -17px;
+}
+
+.small { 
+	font-size: 12px;
+}
+
+.big, .big1, .big2, .big3, .big4 {
+	padding-left: 5px;
+	font-weight: bold;
+	font-size: 15px;
+	color: #666666;
+}
+
+.Big img, .Big1 img, .Big2 img, .Big3 img,.Big4 img {
+  width: auto;
+  height: auto;
+}
+
+.verybig {
+	font-size: 24pt
+}
+input.ArrowButton, 
+input.SmallButton,
+input.SmallButtonA,
+input.SmallButtonB,
+input.SmallButtonC,
+input.SmallButtonD,
+input.SmallButtonW,
+input.SmallButtonE {
+	font-size: 12px;
+	margin: 0;
+	height: 21px; 
+	text-decoration: none; 
+	vertical-align: middle; 
+	cursor: pointer;
+	border: none;
+	width: 50px;
+	color: #36434E;
+	background: transparent url('../img/subpages/btn_a.png') no-repeat top left;
+}
+input.SmallButton, input.SmallButtonW {
+	width: 72px;
+  background: transparent url('../img/subpages/btn_b.png') no-repeat top left;
+}
+
+input.SmallButtonA {
+	width: 50px;
+	background: transparent url('../img/subpages/btn_a.png') no-repeat top left;
+}
+
+input.SmallButtonB {
+	width: 72px;
+	background: transparent url('../img/subpages/btn_b.png') no-repeat top left;
+}
+
+input.SmallButtonC, input.ArrowButton {
+	width: 105px;
+	background: transparent url('../img/subpages/btn_c.png') no-repeat top left;
+}
+
+input.SmallButtonD {
+	width: 160px;
+	background: transparent url('../img/subpages/btn_d.png') no-repeat top left;
+}
+
+input.SmallButtonE {
+	width: 246px;
+	background: transparent url('../img/subpages/btn_e.png') no-repeat top left;
+}
+
+input.SmallButton:hover, 
+input.SmallButtonA:hover, 
+input.SmallButtonB:hover, 
+input.SmallButtonC:hover,
+input.SmallButtonD:hover,
+input.SmallButtonW:hover,
+input.SmallButtonE:hover {
+	background-position: 0 -21px;
+}
+
+input.BigButton,
+input.BigButtonA,
+input.BigButtonB,
+input.BigButtonC,
+input.BigButtonD,
+input.BigButtonW,
+input.BigButtonE {
+	border: none;
+	color: #36434E;
+	font-size: 13px;
+	margin: 0px;
+	height: 26px;
+	width: 130px;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+input.BigButton:hover, 
+input.BigButtonA:hover, 
+input.BigButtonB:hover, 
+input.BigButtonC:hover,
+input.BigButtonD:hover,
+input.BigButtonW:hover,
+input.BigButtonE:hover {
+	background-position: 0 -30px;
+}
+
+input.BigButtonA {
+	background: url('../img/subpages/big_btn_a.png') no-repeat top left;
+	width : 65px;
+}
+
+input.BigButtonB, input.BigButton {
+	background: url('../img/subpages/big_btn_b.png') no-repeat top left;
+	width : 89px;
+}
+
+input.BigButtonC {
+	background: url('../img/subpages/big_btn_c.png') no-repeat top left;
+	width : 130px;
+}
+
+input.BigButtonW {
+	width : 200px;
+	background: url('../img/subpages/big_btn_d.png') no-repeat top left;
+}
+
+input.BigButtonD {
+	width : 200px;
+	background: url('../img/subpages/big_btn_d.png') no-repeat top left;
+}
+
+input.BigButtonE {
+	width : 310px;
+	background: url('../img/subpages/big_btn_e.png') no-repeat top left;
+}
+
+input.BigInput,textarea.BigInput {
+	font-size: 10pt;
+	padding: 1px 5px; 
+	vertical-align: middle; 
+	border: 1px solid #C0BBB4; 
+	background: white url('../img/bg_input_text.png') top left repeat-x;
+}
+
+input.BigInput:hover,textarea.BigInput:hover {
+	border: 1px solid #99CC00; 
+	font-size: 10pt;
+	background: white url('bg_input_text_hover.png') top left repeat-x;
+}
+
+input.SmallInput,textarea.SmallInput {
+	font-size: 12px;
+	padding: 1px 5px; 
+	vertical-align: middle; 
+	border: 1px solid #C0BBB4; 
+	background: white url('../img/bg_input_text.png') top left repeat-x;
+}
+
+input.SmallInput:hover,textarea.SmallInput:hover {
+	font-size: 12px;
+	border: 1px solid #99CC00; 
+	background: white url('bg_input_text_hover.png') top left repeat-x;
+}
+
+input.BigStatic,textarea.BigStatic {
+	font-size: 10pt;
+	padding: 1px 5px; 
+	vertical-align: middle; 
+	border: 1px solid #C0BBB4; 
+	background: #E0E0E0;
+}
+
+input.SmallStatic,textarea.SmallStatic {
+	font-size: 12px;
+	padding: 1px 5px; 
+	vertical-align: middle;
+	border: 1px solid #C0BBB4; 
+	background: #E0E0E0;
+}
+
+.TableData {
+	background:#ffffff;
+	COLOR:#000000;
+}
+
+.TableLine1 td,
+td.TableLine1 {
+	background-color: #F6F6F6;
+	border-bottom: 1px solid #9c9c9c;
+	height: 25px;
+}
+
+.TableLine2 td,
+td.TableLine2 {
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #9c9c9c;
+	height: 25px;
+}
+
+.TableLineSelect {
+	background-color:#CCDADF; 
+	border: 0px solid #0E6F67; 
+	border-bottom: 1px solid #0E6F67; 
+	cursor: pointer; 
+	color: #000000;
+}
+
+/* 提示框样式 */
+.MessageBox {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px dashed #919191;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    height: 127px;
+    width: 357px;
+}
+.MessageBox td.msg {
+    color: #000000;
+    padding: 5px 20px 10px 100px;
+}
+.MessageBox td.msg h4.title {
+    border-bottom: 1px dotted #B8D1E2;
+    color: #36434E;
+    font-size: 18pt;
+    margin-bottom: 10px;
+}
+.MessageBox td.msg div.content {
+    border: medium none;
+    color: #FF6633;
+}
+.MessageBox td.error {
+    background: url("../img/icon64_error.png") no-repeat scroll 20px 30px transparent;
+    font-size: 11pt;
+}
+.MessageBox td.info {
+    background: url("../img/icon64_info.png") no-repeat scroll 20px 30px transparent;
+    font-size: 11pt;
+}
+.MessageBox td.warning {
+    background: url("../img/icon64_warning.png") no-repeat scroll 20px 30px transparent;
+}
+.MessageBox td.forbidden {
+    background: url("../img/icon64_forbidden.png") no-repeat scroll 20px 30px transparent;
+}
+.MessageBox td.stop {
+    background: url("../img/icon64_stop.png") no-repeat scroll 20px 30px transparent;
+}
+.MessageBox td.blank {
+    height: 40px;
+    padding: 10px 20px;
+    text-align: center;
+}
+/*  block型表格样式  */
+.TableBlock {
+    border: 1px solid #CCCCCC;
+    border-collapse: collapse;
+    font-size: 9pt;
+    line-height: 20px;
+}
+.TableBlock td {
+    height: 30px;
+    padding: 3px;
+}
+.TableBlock .TableHeader td, .TableBlock td.TableHeader {
+    background: none repeat scroll 0 0 #f7f8bd;
+    border: 1px solid #CCCCCC;
+    color: #383838;
+    font-weight: bold;
+    height: 30px !important;
+    line-height: 23px;
+    padding: 0 0 0 5px;
+}
+
+.TableBlock .TableHeader td,
+.TableBlock td.TableHeader{
+   background:#bdd9ff;
+   padding-left:10px;
+   border:1px #9c9c9c solid;
+   color:#313131;
+}
+
+.TableBlock .TableLine1 td, .TableBlock td.TableLine1 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+.TableBlock .TableLine2 td, .TableBlock td.TableLine2 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+.TableBlock .TableData td, .TableBlock td.TableData {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+
+.TableBlock .TableContent td, .TableBlock td.TableContent {
+  background: none repeat scroll 0 0 #F2F2F2;
+  border-bottom: 1px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+}
+
+.Content{
+  line-height:normal;
+}
+
+.TableFooter td,
+td.TableFooter {
+}
+
+.TableBlock .TableFooter td,
+.TableBlock .TableControl td,
+.TableBlock td.TableFooter,
+.TableBlock td.TableControl{
+   background:#fdfce0;
+   border-top:1px #9c9c9c solid;
+}
+.TableBlock .TableRed td,
+.TableBlock td.TableRed
+{
+   background:#FFEBEB;
+}
+
+/*邮件*/
+span.TextColor1 {
+	COLOR: #ff6600
+}
+.TextColor2 {
+	COLOR: #ff0000
+}
+.TextColor3 {
+	COLOR: #808080
+}
+
+A.orgAdd:link {
+	PADDING-LEFT: 12px; BACKGROUND: url(../img/org_select.png) no-repeat 0px 0px; COLOR: #207bd6
+}
+A.orgAdd:visited {
+	PADDING-LEFT: 12px; BACKGROUND: url(../img/org_select.png) no-repeat 0px 0px; COLOR: #207bd6
+}
+A.orgAdd:hover {
+	COLOR: #207bd6; TEXT-DECORATION: underline
+}
+A.orgAdd:active {
+	COLOR: #207bd6; TEXT-DECORATION: underline
+}
+A.orgClear:link {
+	PADDING-LEFT: 12px; BACKGROUND: url(../img/org_select.png) no-repeat 0px -40px; MARGIN-LEFT: 5px; COLOR: #207bd6
+}
+A.orgClear:visited {
+	PADDING-LEFT: 12px; BACKGROUND: url(../img/org_select.png) no-repeat 0px -40px; MARGIN-LEFT: 5px; COLOR: #207bd6
+}
+A.orgClear:hover {
+	BACKGROUND-POSITION: 0px -40px; COLOR: #207bd6; TEXT-DECORATION: underline
+}
+A.orgClear:active {
+	BACKGROUND-POSITION: 0px -40px; COLOR: #207bd6; TEXT-DECORATION: underline
+}
+
+.TableTr {
+  height: 25px;
+}
+
+.TableControl{ 
+	background-color:#fdfff0;
+}
+.TableContent,.TableContent td {
+	background-color: #effbfe;
+}
+.auto{
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	overflow:hidden
+}
+
+a.CalLevel1:link, a.CalLevel1:hover, a.CalLevel1:active, a.CalLevel1:visited, span.CalLevel1 {
+   display:inline-block;
+   color:#FF0000;
+   padding-left:16px;
+   background:url("../img/flag.gif") no-repeat;
+   background-position:0px 0px;
+}
+a.CalLevel2:link, a.CalLevel2:hover, a.CalLevel2:active, a.CalLevel2:visited, span.CalLevel2 {
+   display:inline-block;
+   color:#FF9933;
+   padding-left:16px;
+   background:url("../img/flag.gif") no-repeat;
+   background-position:0px -40px;
+}
+a.CalLevel3:link, a.CalLevel3:hover, a.CalLevel3:active, a.CalLevel3:visited, span.CalLevel3 {
+   display:inline-block;
+   color:#00AA00;
+   padding-left:16px;
+   background:url("../img/flag.gif") no-repeat;
+   background-position:0px -20px;
+}
+a.CalLevel4:link, a.CalLevel4:hover, a.CalLevel4:active, a.CalLevel4:visited, span.CalLevel4 {
+   display:inline-block;
+   color:#6F7274;
+   padding-left:16px;
+   background:url("../img/flag.gif") no-repeat;
+   background-position:0px -160px;
+}
+a.CalColor:link, a.CalColor:hover, a.CalColor:active, a.CalColor:visited, span.CalColor {
+   display:inline-block;
+   padding-left:25px;
+   background:url("../img/color_flag.png") no-repeat;
+   background-position:0px -150px;
+}
+a.CalColor1:link, a.CalColor1:hover, a.CalColor1:active, a.CalColor1:visited, span.CalColor1 {
+   display:inline-block;
+   color:#FF0000;
+   padding-left:25px;
+   background:url("../img/color_flag.png") no-repeat;
+   background-position:0px 0px;
+}
+a.CalColor2:link, a.CalColor2:hover, a.CalColor2:active, a.CalColor2:visited, span.CalColor2 {
+   display:inline-block;
+   color:#9A9519;
+   padding-left:25px;
+   background:url("../img/color_flag.png") no-repeat;
+   background-position:0px -25px;
+}
+a.CalColor3:link, a.CalColor3:hover, a.CalColor3:active, a.CalColor3:visited, span.CalColor3 {
+   display:inline-block;
+   color:#00AA00;
+   padding-left:25px;
+   background:url("../img/color_flag.png") no-repeat;
+   background-position:0px -50px;
+}
+a.CalColor4:link, a.CalColor4:hover, a.CalColor4:active, a.CalColor4:visited, span.CalColor4 {
+   display:inline-block;
+   color:#FF9933;
+   padding-left:25px;
+   background:url("../img/color_flag.png") no-repeat;
+   background-position:0px -75px;
+}
+
+a.CalColor5:link, a.CalColor5:hover, a.CalColor5:active, a.CalColor5:visited, span.CalColor5 {
+   display:inline-block;
+   color:#0000FF;
+   padding-left:25px;
+   background:url("../img/color_flag.png") no-repeat;
+   background-position:0px -100px;
+}
+
+a.CalColor6:link, a.CalColor6:hover, a.CalColor6:active, a.CalColor6:visited, span.CalColor6 {
+   display:inline-block;
+   color:#4D318D;
+   padding-left:25px;
+   background:url("../img/color_flag.png") no-repeat;
+   background-position:0px -125px;
+}
+#overlay {display: none; z-index: 10000; height:100%;BACKGROUND: #000; filter: alpha(opacity=20);LEFT: 0px; POSITION: absolute; TOP: 0px; -moz-opacity:0.2;opacity:0.2;}
+
+.ModalDialog {
+	border: 1px #9F9F9F solid; 
+	background: #FFF; 
+	padding: 0px;
+	margin: 10px auto; 
+	clear: both; 
+	position: absolute;  
+	z-index: 10000;
+	display:none;
+}
+
+.header {border-bottom: 1px #DCDCDC solid; font-size: 12px; overflow: hidden; font-weight: normal; background: url('list_hd_bg.png') top left repeat-x;height:24px;}
+.header .title {padding: 2px 3px;  float: left;line-height:20px;}
+.header .operation {padding-top: 8px;padding-right:5px; float: right; cursor: pointer; text-decoration: none;}
+.body {font-size: 12px;margin: 0 !important; overflow-y: auto; padding: 10px 5px;}
+.footer {padding: 0; text-align: center; font-size: 12px; margin-bottom: 10px;}
+
+.borderTd{
+  border-right-width: thin;
+  border-top-style: none;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left-style: none;
+  border-right-color: #666666;
+}
+
+.module {
+  BORDER-BOTTOM: #9ab3d1 1px solid; BORDER-LEFT: #9ab3d1 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: 10px; MARGIN-LEFT: 10px; BORDER-TOP: #9ab3d1 1px solid; BORDER-RIGHT: #9ab3d1 1px solid; PADDING-TOP: 0px
+}
+.moduleHeader {
+  BACKGROUND: url(../img/block_hd_bg.png) repeat-x left top; HEIGHT: 30px; COLOR: #000066; FONT-SIZE: 12px; OVERFLOW: hidden; FONT-WEIGHT: normal
+}
+.moduleHeader .icon {
+  PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FLOAT: left; PADDING-TOP: 5px
+}
+.moduleHeader .text {
+  PADDING-BOTTOM: 2px; LINE-HEIGHT: 25px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; FLOAT: left; CURSOR: pointer;PADDING-TOP: 2px
+}
+.moduleHeader .title {
+  PADDING-BOTTOM: 2px; LINE-HEIGHT: 20px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; FLOAT: left; PADDING-TOP: 2px
+}
+.moduleHeader .option {
+  PADDING-BOTTOM: 2px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; FLOAT: right; CURSOR: pointer; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+.moduleHeader .close {
+  PADDING-BOTTOM: 2px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; DISPLAY: none; FLOAT: right; CURSOR: pointer; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+.module_body {
+  PADDING-BOTTOM: 5px; OVERFLOW-Y: auto; MARGIN: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; FONT-SIZE: 12px; PADDING-TOP: 5px
+}
+.module_body .moduleType {
+  CLEAR: both
+}
+.module_body .moduleTypeLink {
+  LINE-HEIGHT: 20px; FLOAT: left; HEIGHT: 20px; OVERFLOW: hidden
+}
+.module_body .moduleTypeLink A.active {
+  COLOR: #ff0000
+}
+.module_body .moduleTypeOp {
+  LINE-HEIGHT: 20px; DISPLAY: none; FLOAT: right
+}
+.moduleFooter {
+  TEXT-ALIGN: center; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: 10px; FONT-SIZE: 12px; PADDING-TOP: 0px
+}
+.module_page {
+  DISPLAY: none
+}
+.module_div {
+  CLEAR: both; OVERFLOW: hidden
+}
+.listColor {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.listColorCollapsed {
+	
+}
+.listColor HR {
+	
+}
+.listColor .head {
+	PADDING-LEFT: 6px; BACKGROUND: url(../img/module_head_bg_left.png) no-repeat left top; HEIGHT: 30px
+}
+.listColor .moduleHeader {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BACKGROUND: url(../img/module_head_bg_right.png) no-repeat right top; HEIGHT: 30px; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.listColor .module_body {
+	BORDER-BOTTOM: #99c5ee 1px solid; BORDER-LEFT: #99c5ee 1px solid; BACKGROUND: url(../img/module_body_bg.png); BORDER-TOP: medium none; BORDER-RIGHT: #99c5ee 1px solid
+}
+.listColor .module_body:hover {
+	BACKGROUND: url(../img/module_body_bg_hover.png)
+}
+.listColor .bright {
+	COLOR: #003366 !important
+}
+.tip {
+	Z-INDEX: 10003; BORDER-BOTTOM: 0px; POSITION: fixed; FILTER: alpha(opacity=90); BORDER-LEFT: 0px; LINE-HEIGHT: 30px; PADDING-LEFT: 10px; WIDTH: 98%; BOTTOM: 0px; BACKGROUND: #b3d4ea; BORDER-TOP: #9ab3d1 1px solid; BORDER-RIGHT: #9ab3d1 1px solid; LEFT: 0px; opacity: 0.9; -moz-opacity: 0.9
+}
+.listColor .module_body TEXTAREA {
+	FILTER: alpha(opacity=70); opacity: 0.7; -moz-opacity: 0.7
+}
+
+/** DTree1.0 2011-04-07 ***************************************/
+.dtree-rootul li {
+  padding-left: 20px;
+}
+.dtree-rootul > li {
+  padding-left: 0;
+}
+_.dtree-rootul {
+  margin-left: -20px;
+}
+/** end ******************************************************/
+
+/****************NEW STYLE**********************/
+.TableList {
+    border: 1px solid #CCCCCC;
+    border-collapse: collapse;
+    font-size: 9pt;
+    line-height: 21px;
+    padding: 3px;
+}
+.TableList td {
+    height: 30px;
+    padding: 3px;
+}
+.TableList .TableHeader td, .TableList td.TableHeader,
+.TableList .TableHeader th, .TableList th.TableHeader {
+    background: none repeat scroll 0 0 #f7f8bd;
+    border-bottom: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    color: #383838;
+    font-weight: bold;
+    height: 30px !important;
+    padding: 0;
+    text-align: center;
+}
+.TableList .TableHeader td.TableCorner {
+    background: none repeat scroll 0 0 #99C729;
+}
+.TableList .TableLine1 td, .TableList td.TableLine1 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+}
+.TableList .TableLine2 td, .TableList td.TableLine2 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+}
+.TableList .TableData td, .TableList td.TableData {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+}
+.TableList .TableContent td, .TableList td.TableContent {
+    background: none repeat scroll 0 0 #F2F2F2;
+    border-bottom: 1px solid #CFCFCF;
+}
+.TableList .TableFooter td, .TableList .TableControl td, .TableList td.TableFooter, .TableList td.TableControl {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+}
+.TableList .TableRed td, .TableList td.TableRed {
+    background: none repeat scroll 0 0 #EDF6DB;
+}
+.TableList .TextColor1 td, .TableList td.TextColor1 {
+    color: #FF6600;
+}
+.TableList .TextColor2 td, .TableList td.TextColor2 {
+    color: #FF0000;
+}
+.TableList .TableLeft td, .TableList td.TableLeft {
+    background: none repeat scroll 0 0 #f7f8bd;
+    border-bottom: 1px solid #A7BD74;
+}
+.TableList .TableRowHover td, .TableList td.TableRowHover {
+    background: none repeat scroll 0 0 #EDF6DB;
+}
+.TableList .TableRowActive td, .TableList td.TableRowActive {
+    background: none repeat scroll 0 0 #E5E5E5;
+}
+
+/**** 表格头部圆角 ****/
+.TableTop {
+  border: 0 none;
+  font-size: 12px;
+}
+.TableTop td {
+  background: url("../img/subpages/table_top_bg.png") no-repeat scroll 0 -32px transparent;
+  color: #383838;
+  font-weight: bold;
+  height: 32px;
+  padding: 0;
+}
+.TableTop td.left {
+  background-position: left 0;
+  width: 5px !important;
+}
+.TableTop td.center {
+  background-position: 0 -32px;
+  background-repeat: repeat-x;
+}
+.TableTop td.right {
+  background-position: right -64px;
+  width: 5px !important;
+}
+
+/**** 导航头部圆角 ****/
+.BlockTop {
+    border: 0 none;
+    font-size: 12px;
+}
+.BlockTop td {
+	padding: 0;
+  background: url("../img/subpages/block_top_bg.png") no-repeat scroll 0 -32px transparent;
+  color: #383838;
+  font-weight: bold;
+  height: 32px;
+}
+.BlockTop td.left {
+  background-position: left 0;
+  width: 5px;
+}
+.BlockTop td.center {
+  background-position: 0 -32px;
+  background-repeat: repeat-x;
+}
+.BlockTop td.right {
+  background-position: right -64px;
+  width: 5px;
+}
+.BlockTopInactive {
+    border: 0 none;
+    font-size: 12px;
+}
+.BlockTopInactive td {
+  background: url("images/block_top_inactive_bg.png") no-repeat scroll 0 -32px transparent;
+  color: #383838;
+  font-weight: bold;
+  height: 32px;
+  text-align: center;
+}
+.BlockTopInactive td.left {
+    background-position: left 0;
+    width: 5px;
+}
+.BlockTopInactive td.center {
+    background-position: 0 -32px;
+    background-repeat: repeat-x;
+}
+.BlockTopInactive td.right {
+    background-position: right -64px;
+    width: 5px;
+}
+
+table.TableNav {
+  border-color: #85b6df;
+  border-right: 1px solid #85b6df;
+  border-style: none solid solid;
+  border-width: 0 1px 1px;
+}
+
+.TableNav .TableContent td,
+.TableNav td.TableContent {
+  background: url("../img/subpages/block_top_bg.png") repeat-x scroll 0 -32px transparent;
+  font-weight: bold;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #383838;
+}
+
+.TableNav .TableData td,
+.TableNav td.TableData {
+  padding: 5px 0px 5px 12px;
+}
+
+
+.TableNav .TableData td a,
+.TableNav td.TableData a {
+	color: #393939;
+	padding-left: 13px;
+	background: url("../img/subpages/dot.png") no-repeat scroll 0 center transparent;
+}
+
+.TableNav td {
+  line-height: 25px;
+}
+
+
+/**** TableBlock ****/
+.TableBlock {
+    border: 1px solid #CCCCCC;
+    border-collapse: collapse;
+    font-size: 9pt;
+    line-height: 20px;
+}
+.TableBlock td {
+    height: 30px;
+    padding: 3px;
+}
+.TableBlock .TableHeader td, .TableBlock td.TableHeader,
+.TableBlock .TableHeader th, .TableBlock th.TableHeader {
+    background: none repeat scroll 0 0 #f7f8bd;
+    border: 1px solid #CCCCCC;
+    color: #383838;
+    font-weight: bold;
+    height: 30px !important;
+    line-height: 23px;
+    padding: 0 0 0 5px;
+}
+.TableBlock .TableHeader td.TableCorner {
+    background: none repeat scroll 0 0 #99C729;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.TableBlock .TableLine1 td, .TableBlock td.TableLine1 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+.TableBlock .TableLine2 td, .TableBlock td.TableLine2 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+.TableBlock .TableData td, .TableBlock td.TableData {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+.TableBlock .TableContent td, .TableBlock td.TableContent {
+    background: none repeat scroll 0 0 #F2F2F2;
+    border-bottom: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+.TableBlock .TableFooter td, .TableBlock .TableControl td, .TableBlock td.TableFooter, .TableBlock td.TableControl {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+}
+.TableBlock .TableRed td, .TableBlock td.TableRed {
+    background: none repeat scroll 0 0 #EDF6DB;
+}
+.TableBlock .TableLeft td, .TableBlock td.TableLeft {
+    background: none repeat scroll 0 0 #f7f8bd;
+    border-bottom: 1px solid #A7BD74;
+}
+.Content {
+    line-height: normal;
+    word-wrap: break-word;
+}
+.TableBlock .TableRowHover td, .TableBlock td.TableRowHover {
+    background: none repeat scroll 0 0 #EDF6DB;
+}
+.TableBlock .TableRowActive td, .TableBlock td.TableRowActive {
+    background: none repeat scroll 0 0 #E5E5E5;
+}
+
+.no-top-border {
+  border-top: none;
+}
+
+.no-border {
+  border: none;
+}
+
+.BlockBottom {
+  border: 0 none;
+  font-size: 12px;
+}
+.BlockBottom td {
+	margin: 0;
+	padding: 0;
+  background: url("../img/subpages/block_bottom_bg.png") no-repeat scroll 0 -32px transparent;
+  color: #383838;
+  font-weight: bold;
+  height: 32px;
+}
+.BlockBottom td.left {
+  background-position: left 0;
+  width: 5px;
+}
+.BlockBottom td.center {
+  background-position: 0 -32px;
+  background-repeat: repeat-x;
+}
+.BlockBottom td.right {
+  background-position: right -64px;
+  width: 5px;
+}
+
+/**** a标签的按钮样式 ****/
+a.ToolBtn {
+  background: url("../img/subpages/tool_btn.png") no-repeat scroll left 0 transparent;
+  display: inline-block;
+  padding-left: 5px;
+  text-decoration: none;
+}
+a.ToolBtn span {
+  background: url("../img/subpages/tool_btn.png") no-repeat scroll right -50px transparent;
+  color: #373737 !important;
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 13px 0 8px;
+}
+a.ToolBtn:hover, a.ToolBtn-active {
+  background-position: left -25px;
+}
+a.ToolBtn:hover span, a.ToolBtn-active span {
+  background-position: right -75px;
+  color: #FFFFFF !important;
+}
+a.ToolBtn2 {
+	height: 25px;
+  background: url("../img/subpages/tool_btn2.png") no-repeat scroll left 0 transparent;
+  display: inline-block;
+  padding-left: 5px;
+  text-decoration: none !important;
+}
+a.ToolBtn2 span {
+  background: url("../img/subpages/tool_btn2.png") no-repeat scroll right -50px transparent;
+  color: #36434E !important;
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  overflow: hidden;
+  padding: 0 13px 0 8px;
+}
+a.ToolBtn2:hover {
+  background-position: left -25px;
+}
+a.ToolBtn2:hover span {
+  background-position: right -75px;
+  color: #FFFFFF !important;
+  font-weight: bold;
+}
+
+
+/**** 底部边线,在文件柜等地方用到 ****/
+.BlockTop2 {
+    border: 0 none;
+    height: 5px;
+    overflow-y: hidden;
+    width: 100%;
+}
+.BlockTop2 td {
+	margin: 0;
+	padding: 0;
+  background: url("../img/subpages/block_top2_bg.png") no-repeat scroll 0 -5px transparent;
+  font-size: 1px;
+}
+.BlockTop2 td.left {
+    background-position: left 0;
+    width: 5px;
+}
+.BlockTop2 td.center {
+    background-position: left -5px;
+    background-repeat: repeat-x;
+}
+.BlockTop2 td.right {
+    background-position: right -10px;
+    width: 5px;
+}
+.BlockBottom2 {
+    border: 0 none;
+    overflow-y: hidden;
+    width: 100%;
+    height: 5px;
+}
+.BlockBottom2 td {
+    background: url("../img/subpages/block_top2_bg.png") no-repeat scroll transparent;
+    font-size: 1px;
+}
+.BlockBottom2 td.left {
+    background-position: left -15px;
+    width: 5px;
+    margin: 0;
+    padding: 0;
+}
+.BlockBottom2 td.center {
+    background-position: left -20px;
+    background-repeat: repeat-x;
+}
+.BlockBottom2 td.right {
+    background-position: right -25px;
+    width: 3px;
+}
+
+.new_dropdown {
+  background: url("../img/subpages/menu_downarrow.png") no-repeat scroll right center transparent;
+  padding-right: 20px;
+}
+
+a.dropdown:link, a.dropdown:hover, a.dropdown:active, a.dropdown:visited {
+  background: url("../img/subpages/btn_dropdown_l.png") no-repeat scroll left top transparent;
+  color: #373737;
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  padding-left: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+a.dropdown:hover {
+  text-decoration: none;
+}
+a.dropdown span {
+  background: url("../img/subpages/btn_dropdown_r.png") no-repeat scroll right top transparent;
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  margin: 0;
+  padding: 0 15px 0 0;
+  white-space: nowrap;
+}
+
+.PageHeader {
+  color: #666666;
+  height: 32px !important;
+  padding-top: 47px;
+}
+
+/**** 操作按钮条 ****/
+.controlbar {
+    font-size: 12px;
+    height: 25px;
+}
+
+.controlbar td {
+  padding: 0;
+  margin: 0;
+}
+
+td.controlbar-left {
+  background: url("../img/subpages/email/table_controlbar.gif") no-repeat scroll 0 0 transparent;
+  height: 25px;
+  width: 4px;
+}
+td.controlbar-center {
+  background: url("../img/subpages/email/table_controlbar.gif") repeat-x scroll 0 -25px transparent;
+  padding: 0 5px;
+}
+td.controlbar-right {
+  background: url("../img/subpages/email/table_controlbar.gif") no-repeat scroll 0 -50px transparent;
+  height: 25px;
+  width: 4px;
+}
+
+.TableData > ol {
+  margin-left: 30px;
+}
+
+/**** 用于提交的空iframe ****/
+#commintFrame {
+  visibility: hidden;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .addfile, .addimage {
+    display: none;
+  }
+}

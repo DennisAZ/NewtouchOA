@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="/yh/core/styles/style1/css/views.css" type="text/css" />
+<link rel="stylesheet" href="/yh/core/styles/style1/css/style.css" type="text/css" />
+<script type="text/Javascript" src="/yh/core/js/datastructs.js"></script>
+<script type="text/Javascript" src="/yh/core/js/sys.js" ></script>
+<script type="text/Javascript" src="/yh/core/js/prototype.js" ></script>
+<script type="text/Javascript" src="/yh/core/js/smartclient.js" ></script>
+<script type="text/Javascript" src="/yh/rad/codeSel/codeSel.js" ></script>
+<script type="text/Javascript" src="/yh/rad/grid/grid.js" ></script>
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+function onSubmit(){
+  var url = "/yh/yh/rad/velocity/act/YHCodeUtilAct/test.act";
+  var rtJson = getJsonRs(url, mergeQueryString($("f1")));
+}
+</script>
+<form name="f1" id="f1">
+orcale<input type="checkbox" name="chk" value="orcale">
+mysql<input type="checkbox" name="chk" value="mysql">
+mssql<input type="checkbox" name="chk" value="mssql">
+</form>
+<input type="button" value="提交" onclick="onSubmit()"></input>
+</body>
+</html>

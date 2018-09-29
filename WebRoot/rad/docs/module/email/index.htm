@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">文件相关操作</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:</td>
+    <td width="20%">&nbsp;</td>
+    <td width="15%">创建日期:</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="60%">适用情景描述</th>
+    <th width="35%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+    <td>内部邮件提醒<br>
+            当开发的模块需要提供内部邮件提醒支持时,则可以通过此接口实现内部邮件提醒功能
+    </td>
+    <td>YHEmailUtil.emailNotifier(Connection conn , int fromId 
+      , String toId , String subject  , String content ,Date sentTime,String important,String contextPath)
+      此方法默认不会短信提醒！
+   <br>
+   * @param conn 数据库连接<br>
+   * @param fromId 邮件发送人<br>
+   * @param toId  邮件接收人<br>
+   * @param subject 邮件标题<br>
+   * @param content 邮件正文<br>
+   * @param sentTime 邮件发送时间<br>
+   * @param important 邮件重要度[1,2,3]<br>
+   * @param contextPath 系统上下文地址<br>
+      <br>
+      
+     YHEmailUtil. emailNotifier(Connection conn , int fromId 
+      , String toId , String subject  , String content ,Date sentTime,String important,String contextPath,boolean isSmsRemind)<br> 
+   * @param conn 数据库连接<br>
+   * @param fromId 邮件发送人<br>
+   * @param toId  邮件接收人<br>
+   * @param subject 邮件标题<br>
+   * @param content 邮件正文<br>
+   * @param sentTime 邮件发送时间<br>
+   * @param important 邮件重要度[1,2,3]<br>
+   * @param contextPath 系统上下文地址<br>
+   * @param isSmsRemind 是否短信提醒<br>
+      </td>
+    
+    <td></td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+html, body {
+  font: normal 12px verdana;
+  font-family: "微软雅黑";
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+}
+
+img, button {
+  border:none;
+}
+
+a {
+  outline-style:none;
+}
+
+a:link,a:visited,a:hover,a:active {
+  text-decoration: none;
+}
+
+ol,ul {
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+
+/* 页面头部的工具按钮 */
+.top-toolbar {
+	padding: 4px;
+}
+
+.page-header {
+	padding-left: 10px;
+}
+
+input.small {
+	width: 80px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+select.small {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+input.big {
+	width: 240px;
+	margin-left: 5px;
+  margin-right: 5px;
+}
+
+form fieldset.action {
+	text-align: center;
+}
+
+.toolbar .toolbar-btn {
+	padding: 4px;
+}
+
+.ui-dialog iframe.ui-dialog-content {
+	padding: 0;
+}
+
+.ui-resizable-resizing iframe {
+	display: none;
+}
+
+label em {
+	padding-right: 5px;
+}

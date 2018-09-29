@@ -1,0 +1,36 @@
+/*=== 库存管理 ===*/
+.allWms{
+		 cursor:pointer;
+		 text-align:left; 
+		 padding:5px;
+		 margin:10px;
+		 margin-left:15px;
+		 border-width:1px;
+		 width:30%; 
+		 background-image:url(../images/icon/sys/stro.gif); 
+		 background-repeat:no-repeat; 
+		 height:75px; 
+		 padding-left:66px;
+}
+.topWms{
+		 cursor:pointer;
+		 border-width:1px;
+		 
+		 width:80px; 
+		 height:70px; 
+		 padding:0px; 
+		 margin:0px; 
+		 padding-top:58px; 
+		 text-align:center; 
+		 background-image:url(../images/icon/wms/wms_all.gif); 
+		 background-repeat:no-repeat; 
+		 background-position:top;
+}
+
+/* 列表顶部仓库名 */
+.curStroName {
+	text-align:left;
+	color:#1c254e;
+	font-weight:bold;
+	font-size:13px;
+}

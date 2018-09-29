@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">数据列表翻页导航</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:</td>
+    <td width="20%">陈懿</td>
+    <td width="15%">创建日期:</td>
+    <td width="20%">2009-09-23</td>
+    <td width="10%">版本:</td>
+    <td width="25%">1.0</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="30%">适用情景描述</th>
+    <th width="60%">特别强调</th>
+    <th width="10%">代码</th>
+  </tr>
+   <tr>
+    <td>
+    <a href="page.jsp">翻页列表控件</a>
+    </td>
+    <td><br>
+    @dataAction         必添、数据取得服务路径<br>
+    @colums             必添、栏目定义[<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;type               必添、类别 (check|opts|data|attach|hidden|selfdef)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;, name              必添、名称，用于取数<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;, text              必添、显示文本<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;, width             必添、宽度<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;, dataType          数据类型(int|doube|float|date|dateTime|time)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;, align             数据水平对齐方式<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;, title             提示信息<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;, render            自定义描画器<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;, bindAction        自定义事件绑定<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;, format            格式，dataType=(int,doube,float,date,dateTime,time)时有效<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;, opts              type=opts时有效、按钮数组[{type, text, clickFunc, overFunc, floatMenu:{menuItems},...]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;, floatMenu         type=opts时有效、浮动菜单配置<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;, iconFunc          取得图标路径的扩展函数<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;, selfStyle         栏目样式<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;, selfTitleStyle    栏目标题样式<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;, sortDef           排序类型{type, direct} type=(1=整型;2=浮点型;其他值=字符串)，不设置，视为不排序<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;, styleFunc         字体颜色函数<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;, bindTitleFunc     绑定列表标题响应事件<br>
+    }, ...]<br>
+    @container          分页的容器<br>
+    @paramFunc          取得其他参数的函数<br>
+    @sortColum          排序的栏目索引   <br>
+    @rowFuncs           记录相关函数扩展{dblclickFunc, clickFunc}<br>
+    @sizeList           允许显示列表记录条数列表<br>
+    @mouseSelect        是否需要使用鼠标选择，缺省不用<br>
+    @isMulPage          是否分页，缺省是true<br>
+    @moduleName         模块名称，用于文件上传传递参数<br>
+    @sortIndex          排序栏目索引<br>
+    @showRecordCnt      显示记录条数信息<br>
+    @afterShow         数据显示完毕事件响应<br>
+    
+    <font color="red">注意： </font><br>
+           1.如果存在附件则在此colums中必须有此项：[<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;{type:"hidden", name:"attachId"},<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;{type:"data", name:"attach", text:"附件", width: "20%", dataType:"attach"}<br>
+       ]<br>
+       2.类别 (check|opts|data|attach|hidden|selfdef)<br>
+       check   ==>选择框<br>
+       opts    ==>操作栏<br>
+       data    ==>数据，显示在页面的数据(与hidden区别在于是否显示)<br>
+       attach  ==>附件，表示此列用于显示附件<br>
+       hidden  ==>数据，页面不显示<br>
+       selfdef  ==>自定义列<br>
+       3.colums中的render，在定义type为selfdef时必须与render配合使用<br>
+       4.数据类型为data|hidden|attach定义的顺序和后台数据查询字段的顺序必须一一对应<br>
+   <br></td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/nevpage/page.jsp">代码</a></td>
+  </tr>
+</table>
+
+</body>
+</html>

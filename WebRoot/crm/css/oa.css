@@ -1,0 +1,56 @@
+/*============ 新闻内容格式 ============*/
+#newsStyle {
+	background-color:#fff;
+	padding:25px;
+	margin-top:20px;
+	text-align:center;
+	border:#727b9c 1px solid;
+	width:90%;
+}
+#newsTitle {
+	font-size:16px;
+	font-weight:600;
+	color:#303f79;
+	padding:8px;
+	border-bottom:#999999 1px solid;
+}
+#newsInf {
+	color:#999999;
+	padding:8px;
+	padding-bottom:15px;
+}
+#newsContent {
+	height:500px;
+	text-align:left
+}
+
+/*============ 消息内容格式 ============*/
+#mesStyle{
+	background-color:#fff;
+	padding:10px;
+	text-align:left;
+	border:#7b7b7d 1px solid;
+	width:90%;
+}
+#mesTools {
+	width:100%;
+	padding:5px;
+	margin-bottom:5px;
+}
+#mesTools span{
+	padding:2px;
+	height:20px; 
+	width:80px;
+	cursor:pointer;
+	text-align:center;
+}
+
+#mesTop {
+	padding:4px;
+}
+#mesTop td{
+	height:22px;
+}
+#mesCon {
+	padding:10px;
+}

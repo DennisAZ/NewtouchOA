@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" color="#000000" xmlns:viewStackEffects="org.efflex.mx.viewStackEffects.*" layout="absolute">
+   <mx:Script>
+     <![CDATA[
+      import mx.effects.Effect;
+      [Embed(source="image/《.png")]
+      public var imgClss1:Class;
+      [Embed(source="image/》.png")]
+      public var imgClss2:Class;
+      [Embed(source="album/1.jpg")]
+      public var albumImage1:Class;
+      [Embed(source="album/2.jpg")]
+      public var albumImage2:Class;
+      [Embed(source="album/3.jpg")]
+      public var albumImage3:Class;
+      [Embed(source="album/4.jpg")]
+      public var albumImage4:Class;
+     ]]>
+   </mx:Script>
+   <viewStackEffects:FlipPapervision3D id="effect1" transparent="true"/>
+   <viewStackEffects:CoverFlowPapervision3D id="effect" transparent="true"/>
+   <viewStackEffects:CubePapervision3D  id="effect3" transparent="true"/>
+   <viewStackEffects:FadeZoom id="effect4" transparent="true"/>
+   <viewStackEffects:Pixelate id="effect5" transparent="true"/>
+   <viewStackEffects:GridZoom id="effect6"/>
+   <viewStackEffects:Squash id="effect7"/>
+     <viewStackEffects:List id="effect8"/>
+    <mx:ViewStack verticalGap="0" horizontalGap="0" id="viewStack" width="100%" height="100%">
+    
+    <mx:Canvas id="child1"  hideEffect="effect" showEffect="effect">
+     <mx:HBox  width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+       <mx:HBox x="0" y="0">
+      <mx:Image  maxHeight="640"  source="{albumImage1}"/>
+      </mx:HBox>
+     </mx:HBox>
+      
+      <mx:HBox x="0" y="0" width="100%" height="100%" showEffect="effect">
+      <mx:HBox width="50%"  height="100%"  verticalAlign="middle" horizontalAlign="left">
+        <mx:Image source="{imgClss1}"   click="viewStack.selectedChild = child4;" />
+      </mx:HBox>
+      <mx:HBox width="50%"  height="100%" verticalAlign="middle" horizontalAlign="right">
+        <mx:Image source="{imgClss2}"  click="viewStack.selectedChild = child2;" />
+      </mx:HBox>
+      </mx:HBox>
+    </mx:Canvas>
+    <mx:Canvas id="child2"  hideEffect="effect" showEffect="effect">
+       <mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+      <mx:HBox x="0" y="0">
+      <mx:Image  maxHeight="640" source="{albumImage2}"/>
+      </mx:HBox>
+      </mx:HBox>
+      <mx:HBox x="0" y="0" width="100%" height="100%" showEffect="effect">
+      <mx:HBox width="50%" height="100%"  verticalAlign="middle" horizontalAlign="left">
+        <mx:Image source="{imgClss1}"  click="viewStack.selectedChild = child1;"/>
+      </mx:HBox>
+      <mx:HBox width="50%"  height="100%"  verticalAlign="middle" horizontalAlign="right">
+        <mx:Image source="{imgClss2}"  click="viewStack.selectedChild = child3;" />
+      </mx:HBox>
+      </mx:HBox>
+    </mx:Canvas>
+    
+     <mx:Canvas id="child3"   hideEffect="effect" showEffect="effect">
+     <mx:HBox  width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+       <mx:HBox x="0" y="0">
+      <mx:Image   maxHeight="640" source="{albumImage3}"/>
+      </mx:HBox>
+     </mx:HBox>
+      
+      <mx:HBox x="0" y="0" width="100%" height="100%" showEffect="effect">
+      <mx:HBox  width="50%" height="100%"  verticalAlign="middle" horizontalAlign="left">
+        <mx:Image source="{imgClss1}"  click="viewStack.selectedChild = child2;"/>
+      </mx:HBox>
+      <mx:HBox width="50%"  height="100%" verticalAlign="middle" horizontalAlign="right">
+        <mx:Image source="{imgClss2}"  click="viewStack.selectedChild = child4;" />
+      </mx:HBox>
+      </mx:HBox>
+    </mx:Canvas>
+    
+    <mx:Canvas id="child4"   hideEffect="effect" showEffect="effect">
+     <mx:HBox  width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+       <mx:HBox x="0" y="0">
+      <mx:Image  maxHeight="640"  source="{albumImage4}"/>
+      </mx:HBox>
+     </mx:HBox>
+      
+      <mx:HBox x="0" y="0" width="100%" height="100%" showEffect="effect">
+      <mx:HBox width="50%" height="100%"  verticalAlign="middle" horizontalAlign="left">
+        <mx:Image source="{imgClss1}"  click="viewStack.selectedChild = child3;"/>
+      </mx:HBox>
+      <mx:HBox width="50%"  height="100%" verticalAlign="middle" horizontalAlign="right">
+        <mx:Image source="{imgClss2}"  click="viewStack.selectedChild = child1;" />
+      </mx:HBox>
+      </mx:HBox>
+    </mx:Canvas>
+    </mx:ViewStack>
+    
+</mx:Application>

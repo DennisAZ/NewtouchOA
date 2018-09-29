@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">动态异步加载树</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:刘涵</td>
+    <td width="20%">&nbsp;</td>
+    <td width="15%">创建日期:2011-01-13</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:1</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="20%">适用情景描述</th>
+    <th width="75%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+  <td><a  target="_blank" href="tree1.jsp">简单异步加载树</a></td>
+  <td>
+  <pre>
+<font color=red>引入Js文件：[contextPath]/core/js/cmp/DTree1.0.js</font>
+function doInit(){
+  //配置树
+  tree = new DTree({bindToContainerId:'content'
+    ,requestUrl:contextPath + '/yh/rad/docs/tree/YHDTreeAct/getTree.act?id='
+    ,isOnceLoad:false//异步加载
+    ,treeStructure:{isNoTree:false}//每个结点id的不是编码结构
+    ,linkPara:{clickFunc:addDeptFunction}//为每个结点的a标签加下点击事件
+  });
+  //调用树的显示接口
+ tree.show(); 
+}
+</pre>
+  </td>
+   <td>前台代码<br/><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/tree/tree1.jsp">/rad/docs/component/tree/tree1.jsp
+   </a><br/>
+   后台代码<br/><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/tree/src/YHDTreeAct.html">/src/yh/rad/docs/tree/YHDTreeAct.html
+   </td>
+  </tr>
+  
+  <tr>
+  <td><a  target="_blank" href="tree2.jsp">简单同步加载树</a></td>
+  <td>
+  <pre>
+<font color=red>//定义一个树的全局变量</font>
+<font color=red>引入Js文件：[contextPath]/core/js/cmp/DTree1.0.js</font>
+function doInit(){
+  tree = new DTree({bindToContainerId:'content'
+    ,requestUrl:contextPath + '/yh/rad/docs/tree/YHDTreeAct/getTreeOnce.act'
+    ,isOnceLoad:true//<font color=red>同步加载</font>
+    ,treeStructure:{isNoTree:false}//每个结点id的不是编码结构
+    ,linkPara:{clickFunc:addDeptFunction}//为每个结点的a标签加下点击事件
+  });
+ tree.show(); 
+}
+
+<font color=red>同步加载相对上面的异步加载前台参数配置主要修改以下两个地方
+  isOnceLoad:true
+  requestUrl:contextPath + '/yh/rad/docs/tree/YHDTreeAct/getTreeOnce.act'//同步加载后台逻辑</font>
+</pre>
+  </td>
+   <td>前台代码<br/><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/tree/tree2.jsp">/rad/docs/component/tree/tree2.jsp
+   </a><br/>
+   后台代码<br/><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/tree/src/YHDTreeAct.html">/src/yh/rad/docs/tree/YHDTreeAct.html
+   </td>
+  </tr>
+  
+  <tr>
+  <td><a  target="_blank" href="tree3.jsp">带checkbox的树</a></td>
+  <td>
+  <pre>
+<font color=red>引入Js文件：[contextPath]/core/js/cmp/DTree1.0.js</font>
+function doInit(){
+  //配置树
+  tree = new DTree({bindToContainerId:'content'
+    ,requestUrl:contextPath + '/yh/rad/docs/tree/YHDTreeAct/getTree.act?id='
+    ,isOnceLoad:false//异步加载
+    ,checkboxPara:{isHaveCheckbox:true,disCheckedFun:disCheckedFun
+                        ,checkedFun:checkedFun ,expandEvent:true }
+    ,treeStructure:{isNoTree:false}//每个结点id的不是编码结构
+    ,linkPara:{clickFunc:addDeptFunction}//为每个结点的a标签加下点击事件
+  });
+  //调用树的显示接口
+ tree.show(); 
+}
+
+<font color="red">
+带checkbox的树需加入参数checkboxPara,且isHaveCheckbox为true
+其它参数根据需要加入,具体用法参见下面的参数说明
+另外还提供一个取得所有选中结点Id的接口getCheckedList,具体用法可参见接口说明
+</font>
+</pre>
+  </td>
+   <td>前台代码<br/><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/tree/tree3.jsp">/rad/docs/component/tree/tree3.jsp
+   </a><br/>
+   后台代码<br/><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/tree/src/YHDTreeAct.html">/src/yh/rad/docs/tree/YHDTreeAct.html
+   </td>
+  </tr>
+  <tr>
+  <td><a  target="_blank" href="tree4.jsp">树和右建菜单的结合</a></td>
+  <td>
+  <pre>
+<font color=red>引入Js文件：[contextPath]/core/js/cmp/DTree1.0.js</font>
+<font color=red>            [contextPath]/core/js/cmp/Menu.js</font>
+
+function doInit(){
+  //配置树
+  tree = new DTree({bindToContainerId:'content'
+    ,requestUrl:contextPath + '/yh/rad/docs/tree/YHDTreeAct/getTree.act?id='
+    ,isOnceLoad:false//异步加载
+    ,treeStructure:{isNoTree:false}//每个结点id的不是编码结构
+    ,linkPara:{clickFunc:addDeptFunction}//为每个结点的a标签加下点击事件
+     ,contextMenu:openRight
+  });
+  //调用树的显示接口
+ tree.show(); 
+}
+//创建右键菜单
+function openRight(event, nodeId){
+   var tree = $("content").tree;//取得树实例
+   nodeId2 = tree.liEncode + nodeId;//取得根据结点id取得结点html控件
+   var md = [ {name:'新增',action:add,icon:imgPath + '/cmp/rightmenu/addStep.gif' , extData:nodeId}
+              ,{name:'修改',action:update,icon:imgPath + '/cmp/rightmenu/addStep.gif', extData:nodeId}
+               ,{name:'删除',action:del,icon:imgPath + '/cmp/rightmenu/addStep.gif', extData:nodeId}
+                 ];
+   var menu = new Menu({bindTo:nodeId2 , menuData:md});
+   menu.show(event);
+}
+<font color="red">
+原理：为树加上参数contextMenu后,当在结点上点击右键时会执行openRight函数
+然后在openRight函数里创建右建菜单
+关于创建右键菜单具体说明请参见<a href="../popmenu/index.htm">弹出菜单</a>
+</font>
+</pre>
+  </td>
+   <td>前台代码<br/><a  href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/tree/tree4.jsp">/rad/docs/component/tree/tree4.jsp
+   </a><br/>
+   后台代码<br/><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/tree/src/YHDTreeAct.html">/src/yh/rad/docs/tree/YHDTreeAct.html
+   </td>
+  </tr>
+  <tr>
+  <td>引入文件及参数介绍</td>
+  <td>
+  <pre>
+Js文件：[contextPath]/core/js/cmp/DTree1.0.js
+js对象:DTree
+ 构造函数参数:{treeId,bindToContainerId,requestUrl,isOnceLoad,treeStructure
+                  ,checkboxPara,linkPara,contextMenu}
+     treeId 字符串  树的Id
+     bindToContainerId 字符串  容器Id 默认为boby
+     requestUrl 字符串 请求路径
+     isOnceLoad 布尔  是否一次加载 默认为false
+     treeStructure :
+        {isNoTree,regular}
+         isNoTree  布尔  树的节点的nodeId是否编码  默认为false
+         regular   字符串  如果树的节点的nodeId是否编码，需指字编码规则形如2,2,4,5，第段用逗号分割
+     checkboxPara:
+         {isHaveCheckbox,disCheckedFun,checkedFun ,expandEvent }
+         isHaveCheckbox 布尔 是否有选框  默认为false
+         disCheckedFun 函数  如果有选框，则当取消选择时要执行的函数,函数参数为此节点的ID
+         checkedFun 函数 如果有选框，则当选择时要执行的函数,函数参数为此节点的ID
+         expandEvent 布尔 是否有扩展事件函数
+
+     linkPara:
+         {clickFunc,linkAddress,target}
+         clickFunc 函数 点击链接时要执行的函数,函数参数为此节点的ID
+         linkAddress 字符串 点击链接时要打开的地址,如果指定了上面的函数，点击链接时将不会打开此地址
+        target 字符串 指定点击链接时在什么地方打开上面的链接地址，默为为一个'_blank'
+     contextmenu:右键执行的函数
+     onmuseover:移动的函数
+     isHaveTitle:结点的是否有title,且后台需给对应的字段
+  </pre></td>
+  <td></td></tr>
+  
+  <tr>
+  <td>接口介绍</td>
+  <td>
+  <pre>
+单个结点对象：node = {nodeId:'5',name:'1.1.3',isChecked:true,isHaveChild:1
+                        ,extData:'1.1.3',imgAddress:''};
+    nodeId:字符串，唯一
+    name:字符串，单个结点展示的label;
+    isChecked:boolean，如果有checkbox的时候，来设置checkbox是否选中
+    isHaveChild:1/0， 1-说明此结点下有子结点，0-说明此结点下子结点
+    extData:字符串,此结点附带的数据
+    imgAddress:字符串,此结点图片的地址
+初始化：var tree = new DTree(parameters);
+<font color=red>取得树实例：var tree = $(bindToContainerId).tree;
+      //bindToContainerId:为参数里面的bindToContainerId</font>
+显示：tree.show();
+取得结点：tree.getNode(nodeId):node;
+取得当前点击的结点：tree.getCurrNode():node;//返回结点对象，慎用
+增加\删除结点：tree.addNode(node);tree.removeNode(nodeId);
+取得第一个结点:tree.getFirstNode():node;//返回结点对象
+展开结点：tree.open(nodeId);
+关闭结点：tree.close(nodeId);
+点击结点：tree.nodeClick(nodeId);
+取得选中的结点:tree.getCheckedList():String//返回以逗号分割的字符串
+更新结点：tree.updateNode(oldId,node);//暂不支持，修改一些值，只能修改nodeId,name,extData 
+  </pre></td>
+  <td></td></tr>
+</table>
+
+</body>
+</html>

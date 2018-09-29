@@ -1,0 +1,278 @@
+﻿#container #service {
+  height: auto;
+  text-align: center;
+  margin: 0 auto;
+}
+#container #search {
+  width: 720px;
+  margin-top: 20px;
+  margin-left: 40px;
+  text-align: left;
+}
+#container #search .box-center {
+  height: auto;
+}
+#container #search h2 {
+  width: 660px;
+  height: 30px;
+  padding-left: 40px;
+  background: url(images/search-icon.png) no-repeat;
+  color: #ef3d07;
+  margin-left: 20px;
+  font: bold 16px/30px "微软雅黑","宋体";
+}
+#container #search #search-txt {
+  height: auto;
+  line-height: 34px;
+  padding-left: 30px;
+  vertical-align: top;
+}
+#container #search #scope {
+  margin-left: 30px;
+}
+#container #search span {
+  font: 14px/28px "微软雅黑","宋体";
+  color: #00258f;
+}
+#container #service #search label {
+  color: #00258f;
+  font: 14px/28px "微软雅黑","宋体";
+  padding-left: 3px;
+  margin-right: 10px;
+}
+#container #search p {
+  font: 14px/28px "微软雅黑","宋体";
+  color: #171717;
+  width: 953px;
+  margin-left: 30px;
+}
+#container #bookmark {
+  width: 720px;
+  margin-top: 20px;
+  margin-left: 40px;
+  text-align: left;
+}
+#container #bookmark .box-center {
+  height: auto;
+}
+#container #bookmark h1 {
+  width: 660px;
+  height: 30px;
+  padding-left: 40px;
+  background: url(images/collect.png) no-repeat;
+  color: #ef3d07;
+  margin-left: 20px;
+  font: bold 16px/30px "微软雅黑","宋体";
+}
+
+#container #bookmark h1 img {
+	position:relative;
+	margin-left:25px;
+  margin-bottom:-5px;
+  font-weight: normal;
+}
+
+#container #bookmark h1 a {
+	position:relative;
+  margin-left:300px;
+	margin-bottom:-20px;
+  font-weight: normal;
+}
+#container #bookmark p {
+  font: 14px/21px "微软雅黑","宋体";
+  color: #171717;
+  width: 690px;
+  margin-left: 30px;
+}
+#container #bookmark #operation {
+  text-align: center;
+}
+#container #bookmark #operation a {
+  margin-left: 10px;
+  font: 15px/30px "微软雅黑","宋体";
+  color: #171717;
+  text-decoration: underline; 
+  margin-right: 10px;
+}
+#container #message {
+  width: 720px;
+  height: auto;
+  margin-top: 20px;
+  margin-left: 40px;
+  text-align: left;
+}
+#container #message .box-center {
+  height: auto;
+}
+#container #message h1 {
+  width: 670px;
+  height: 32px;
+  padding-left: 30px;
+  background: url(images/question.png) no-repeat;
+  color: #ef3d07;
+  margin-left: 20px;
+  font: bold 16px/32px "微软雅黑","宋体";
+}
+#container #message h1 a {
+	margin-left: 500px;
+  font-weight: normal;
+}
+#container #message p {
+  font: 13px/26px "微软雅黑","宋体";
+  color: #171717;
+  width: 690px;
+  margin-left: 30px;
+}
+#container #link {
+  width: 970px;
+  margin-top: 20px;
+  margin-left: 40px;
+  text-align: left;
+}
+#container #link h1 {
+  width: 900px;
+  height: 30px;
+  padding-left: 40px;
+  background: url(images/letter.png) no-repeat;
+  color: #ef3d07;
+  margin-left: 0;
+  font: bold 16px/30px "微软雅黑","宋体";
+}
+#container #link p {
+  font: 13px/26px "微软雅黑","宋体";
+  color: #fff;
+  width: 940px;
+  margin-left: 30px;
+}
+#container #service #merge {
+ width: 110px;
+ height: 37px;
+ margin-right: 40px;
+ font: 14px/37px "微软雅黑","宋体";
+ background: url(images/button.png) no-repeat;
+ border: 0 none;
+}
+
+#container #service #all {
+ 
+ font: 14px/37px "微软雅黑","宋体";
+ padding-left: 28px;
+}
+#container #service #selectAll {
+ 
+ font: bold 14px/37px "微软雅黑","宋体";
+ padding-left: 10px;
+}
+/*
+.textar {
+  width: 680px;
+  *height:137px;
+  padding: 5px 20px;
+  background-attachment:fixed;
+  background:url(images/textarea.png) no-repeat center center ;
+}*/
+.textbox {
+  width: 660px;
+  height: 137px;
+  overflow-y: auto;
+  /* *height:137px; */
+  padding: 5px 20px;
+  background-attachment:fixed;
+  background:url(images/textarea.png) no-repeat center center;
+  border: 0 none;
+}
+.box-up {
+  overflow: hidden;
+  width: 720px;
+  height: 6px;
+  background: url(images/framebox-up.gif) no-repeat;
+}
+.box-center {
+  width: 720px;
+  background: url(images/framebox-center.gif) repeat-y;
+}
+.box-down {
+  width: 934px;
+  height: 6px;
+  background: url(images/framebox-down.gif) no-repeat;
+}
+.Button {
+  width: 110px;
+  height: 37px;
+  background: url(images/button.png) no-repeat left top;
+  border: 0 none;
+  font: 18px/36px "微软雅黑","宋体";
+  color: #000;
+}
+.Search {
+	margin-left: 6px;
+  width: 30px;
+  height: 34px;
+  border: 0 none;
+  cursor: pointer;
+  background: url(images/search.png) no-repeat left top;
+  _background: url(images/search.png) no-repeat left top;
+}
+.BigInput {
+  width: 600px;
+  height: 34px;
+  border: 0 none;
+  padding-left: 10px;
+  background: url("images/input_bg.png") no-repeat left top;
+  font: 14px/34px "微软雅黑","宋体";
+}
+.hrline {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 880px;
+  height: 2px;
+  background: url(images/hrline.gif) repeat-x;
+}
+
+
+#moremessage {
+  font: 14px/34px "微软雅黑","宋体";
+    padding-right: 10px;
+    float:right;
+}
+
+#newemail ul{
+  margin-left: 50px;
+}
+
+#newemail li{
+  height: 30px;
+  width: 770px;
+  text-align: left;
+  padding-left: 20px;
+  background: url(images/news/ic-o.gif) no-repeat;
+  border-bottom: #eaeaea 1px solid;
+}
+#container #bookmark #newemail li a {
+	font: 14px/28px "微软雅黑","宋体";
+	color: #00258f;
+}
+#container #bookmark #newemail li span {
+	font: 14px/28px "微软雅黑","宋体";
+}
+#bookmark .box-center #booking  p{
+	width:150px;
+	float:left;
+	}
+#booking ul{
+  float:left;
+}
+
+#booking li{
+  padding-left: 18px;
+  width: auto;
+  text-align: left;
+  float:left;  
+}
+
+
+#se_content{
+	width:540px;
+	height:30px;
+
+}

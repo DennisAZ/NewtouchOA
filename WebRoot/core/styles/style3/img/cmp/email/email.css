@@ -1,0 +1,69 @@
+ {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+BODY {
+	FONT-SIZE: 9pt; BACKGROUND: url(bg.jpg) fixed -200px -83px
+}
+IMG {
+	VERTICAL-ALIGN: middle; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+A:link {
+	COLOR: #36434e; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #36434e; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #36434e; TEXT-DECORATION: none
+}
+#body {
+	BORDER-RIGHT: #4a8bc3 1px solid; OVERFLOW: hidden; BORDER-LEFT: #4a8bc3 1px solid; HEIGHT: 2000px
+}
+.toolBar {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; OVERFLOW: hidden; HEIGHT: 36px; TEXT-ALIGN: center
+}
+.toolBar A {
+	DISPLAY: block; BACKGROUND: url(big_btn_bg.png); PADDING-TOP: 6px; HEIGHT: 36px
+}
+.toolBar A:hover {
+	BACKGROUND-POSITION: 0px -38px
+}
+.nmBtn {
+	FLOAT: left; WIDTH: 74px
+}
+.wmBtn {
+	FLOAT: left; BORDER-LEFT: #dcdcdc 1px solid; WIDTH: 73px
+}
+.header {
+	BACKGROUND: url(block_hd_bg.png) 50% top; CURSOR: pointer; BORDER-BOTTOM: #4a8bc3 1px solid
+}
+.header A {
+	PADDING-LEFT: 16px; BACKGROUND: url(ar.png) no-repeat left center; LINE-HEIGHT: 25px; PADDING-TOP: 5px
+}
+.header A:hover {
+	TEXT-DECORATION: underline
+}
+#folder {
+	PADDING-TOP: 10px
+}
+#custom_folder {
+	OVERFLOW-Y: auto
+}
+UL {
+	MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px; LIST-STYLE-TYPE: none
+}
+LI A {
+	DISPLAY: block; PADDING-LEFT: 10px; LINE-HEIGHT: 25px
+}
+LI A:hover {
+	BORDER-RIGHT: #83accf 1px solid; BORDER-TOP: #83accf 1px solid; BACKGROUND: #ffffff; BORDER-LEFT: #83accf 1px solid; BORDER-BOTTOM: #83accf 1px solid
+}
+A.op {
+	DISPLAY: inline; RIGHT: 8px; POSITION: absolute; TOP: 180px; TEXT-DECORATION: underline
+}
+A.op:hover {
+	TEXT-DECORATION: underline
+}
+HR {
+	WIDTH: 80%; COLOR: #83accf; HEIGHT: 1px
+}

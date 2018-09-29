@@ -1,0 +1,3 @@
+insert into CODE_ITEM(CLASS_NO, CLASS_CODE, SORT_NO, CLASS_DESC) values('SMS_REMIND', 60, 60, '招聘需求'); 
+insert into CODE_ITEM(CLASS_NO, CLASS_CODE, SORT_NO, CLASS_DESC) values('SMS_REMIND', 63, 63, '招聘计划');
+insert into CODE_ITEM(CLASS_NO, CLASS_CODE, SORT_NO, CLASS_DESC) values('SMS_REMIND', 65, 65, '招聘筛选');

@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">备选选中</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:刘涵</td>
+    <td width="20%">&nbsp;</td>
+    <td width="15%">创建日期:2011-01-13</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:1</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="60%">适用情景描述</th>
+    <th width="35%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+    <td><a href="ExchangeSelect1.jsp" target="_blank">备选选中</a>
+    </td>
+    <td>
+    <pre>
+<font color="red">样式表：[cssPath]/cmp/ExchangeSelect.css
+Js文件：[contextPath]/core/js/cmp/ExchangeSelect1.0.js</font>
+function doInit(){
+  var selected = [{value:'1',text:'公告通知'}
+    ,{value:'2',text:'内部邮件'}
+    ,{value:'3',text:'日程安排'}];
+  var disselected = [{value:'6',text:'工资上报'}
+    ,{value:'7',text:'工作计划'}];
+
+  new ExchangeSelectbox({containerId:'div'//容器Id
+    , selectedArray:selected //选中的项
+    , disSelectedArray:disselected //未选中的项
+    ,title:'选择'//标题
+    ,selectName:'nextProcess'
+      ,selectedChange:exchangeHandler}); 
+    
+}
+function exchangeHandler(ids){
+  //ids为选中项的值以逗号连接的字符串
+  $('selectValue').value = ids;
+}
+    </pre>
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/multyselect/ExchangeSelect1.jsp">/rad/docs/component/multyselect/ExchangeSelect1.jsp</a></td>
+  </tr>
+  <tr>
+    <td><a href="ExchangeSelect2.jsp" target="_blank">带有排序功能的备选选中</a>
+    </td>
+    <td>
+    <pre>
+<font color="red">样式表：[cssPath]/cmp/ExchangeSelect.css
+Js文件：[contextPath]/core/js/cmp/ExchangeSelect1.0.js</font>
+function doInit(){
+  var selected = [{value:'1',text:'公告通知'}
+    ,{value:'2',text:'内部邮件'}
+    ,{value:'3',text:'日程安排'}];
+  var disselected = [{value:'6',text:'工资上报'}
+    ,{value:'7',text:'工作计划'}];
+
+  new ExchangeSelectbox({containerId:'div'//容器Id
+    , selectedArray:selected //选中的项
+    , disSelectedArray:disselected //未选中的项
+    ,title:'选择'//标题
+    ,isSort:true//是否排序
+    ,selectName:'nextProcess'
+      ,selectedChange:exchangeHandler}); 
+    
+}
+function exchangeHandler(ids){
+  //ids为选中项的值以逗号连接的字符串
+  $('selectValue').value = ids;
+}
+<font color="red">加入参数isSort并设置为true,即可实现排序功能</font>
+    </pre>
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/multyselect/ExchangeSelect2.jsp">/rad/docs/component/multyselect/ExchangeSelect2.jsp</a></td>
+  </tr>
+   <tr>
+    <td><a href="ExchangeSelect3.jsp" target="_blank">两级-备选选中</a>
+    </td>
+    <td>
+    <pre>
+<font color="red">样式表：[cssPath]/cmp/ExchangeSelect.css
+Js文件：[contextPath]/core/js/cmp/ExchangeSelect1.0.js</font>
+function doInit(){
+  var selected = [{value:'1',text:'公告通知',parentId:2}
+  ,{value:'2',text:'内部邮件'},{value:'3',text:'日程安排'}];
+  var disselected = [{id:1,text:'系统模块',isParent:true}
+  ,{value:'6',text:'工资上报'}
+  ,{value:'5',text:'车辆申请',parentId:1}
+  ,{value:'7',text:'工作计划',parentId:1}
+  ,{id:2,text:'功能模块',isParent:true}];
+
+  new ExchangeSelectbox({containerId:'div'
+    , selectedArray:selected
+    , disSelectedArray:disselected 
+    ,isOneLevel:false
+    ,title:'选择'
+    ,selectName:'nextProcess'
+      ,selectedChange:exchangeHandler}); 
+}
+function exchangeHandler(ids){
+  $('selectValue').value = ids;
+}
+<font color="red">
+两级时首先需加入参数isOneLevel并设置为false
+另外对选项数组中每项的也有要求：
+对于子选项则必须指定它的父级id，如果是一般选项不需设置父级id
+对于父选项则必须指定它的Id以及isParent属性必须是true
+</font>
+    </pre>
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/multyselect/ExchangeSelect3.jsp">/rad/docs/component/multyselect/ExchangeSelect3.jsp</a></td>
+  </tr>
+  
+  <tr>
+    <td><a href="ExchangeSelect4.jsp" target="_blank">备选选中其它设置</a>
+    </td>
+    <td>
+    <pre>
+<font color="red">样式表：[cssPath]/cmp/ExchangeSelect.css
+Js文件：[contextPath]/core/js/cmp/ExchangeSelect1.0.js</font>
+function doInit(){
+  var selected = [{value:'1',text:'公告通知'}
+    ,{value:'2',text:'内部邮件'}
+    ,{value:'3',text:'日程安排'}];
+  var disselected = [{value:'6',text:'工资上报'}
+      ,{value:'7',text:'工作计划'}];
+
+  new ExchangeSelectbox({containerId:'div'
+    , selectedArray:selected
+    , disSelectedArray:disselected 
+    ,title:'自定义标题'
+    ,selectName:'nextProcess'
+    ,selectedChange:exchangeHandler
+    ,titleText:{selectedTitle:'选中标题',disSelectedTitle:'备选标题'}
+    }); 
+}
+function exchangeHandler(ids){
+  $('selectValue').value = ids;
+}
+    </pre>
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/multyselect/ExchangeSelect4.jsp">/rad/docs/component/multyselect/ExchangeSelect4.jsp</a></td>
+  </tr>
+  
+  <tr>
+    <td><a href="ExchangeSelect.jsp">参数说明</a>
+    </td>
+    <td>
+    <pre>
+<font color="red">样式表：[cssPath]/cmp/ExchangeSelect.css
+Js文件：Js文件：[contextPath]/core/js/cmp/ExchangeSelect1.0.js</font>
+js对象:ExchangeSelectbox
+构造函数参数:{containerId,selectedArray,disSelectedArray,isSort
+  ,isOneLevel,title,selectName,selectedChange,titleText}
+  containerId 字符串 互选框所依附的div的id值,不指定默认为body
+  selectedArray 对象数组  初始化时默认选中的对象
+   
+  disSelectedArray 对象数组  初始化时默认没有选中的对象
+  isSort boolean 是否排序
+  isOneLevel boolean 指定控件把展示数据的层数，现控件只支持两级
+  title 字符串 指定控件的标题,不指定默认不显示
+  selectName 字符串 指定控件选中框的name属性，主要方便form 表单中些控件的提交。
+  titleText 标题的字{selectedTitle:'',disSelectedTitle:''}默认为选中,备选
+  selectedChange 函数 指定选中的项改变时触发的事件处理函数
+        
+对el参数的说明：
+如：本例中el是对应div的id值
+对selectedArray和disSelectedArray对象数组的说明
+  [{value:'',text:'',parentId:2,isParent:true,id:2},....]
+  value:项的值
+  text:项的label
+  parentId:父项的id;
+  id:如果是父项的话需指定id
+  isParent:是否是父项
+    </pre>
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/multyselect/ExchangeSelect.jsp">rad/docs/component/multyselect/ExchangeSelect.jsp</a></td>
+  </tr>
+</table>
+
+</body>
+</html>

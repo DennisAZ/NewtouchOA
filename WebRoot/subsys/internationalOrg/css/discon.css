@@ -1,0 +1,232 @@
+.blank20 {
+  height: 20px;
+}
+.underline {
+  overflow:hidden;
+  background:url(images/line.png) repeat-x left bottom;
+}
+.title2 {
+  width: 800px;
+  height: 25px;
+  margin-left:10px;
+  text-align:left;
+}
+#selfch-title {
+  width: 800px;
+  margin-left: 20px;
+  height: 28px;
+  text-align:left;
+  background:url(images/line.png) repeat-x left bottom;  
+}
+#selfch-title img {
+  float:left;
+  padding-left:5px;
+  padding-right: 15px;
+  vertical-align:middle;
+}
+#selfch{
+  margin-left: 20px;
+  width:800px;
+}
+#selfch ul {
+}
+#selfch li {
+  width: 800px;
+  height: 30px;
+  overflow:hidden;
+  vertical-align:center;
+  zoom:1;
+  padding-left: 15px;
+  text-align: left;
+  background: url(images/list-li.gif) no-repeat left center;
+}
+#selfch li a {
+  font: 13px/30px "微软雅黑","宋体";
+  float:left;
+  width: 700px;
+  display:inline;
+}
+#selfch li span {
+  float: right;
+  display:inline;
+  width: 90px;
+  font: 13px/30px "微软雅黑","宋体";
+}
+.tab_first {
+  display:inline;
+  width:81px;
+  height:26px;
+  float:left;
+  text-align:center;
+  font: 13px/26px "微软雅黑","宋体";
+  background:url(images/tab-first.png) no-repeat;
+}
+.tab_last {
+  display:inline;
+  width:80px;
+  height:26px;
+  float:left;
+  text-align:center;
+  font: 13px/26px "微软雅黑","宋体";
+  background:url(images/tab-last.png) no-repeat;
+}
+.tab_num {
+  display:inline;
+  width:82px;
+  height:26px;
+  float:left;
+  text-align:center;
+  border-left: #bababc 1px solid;
+  border-left: #bababc 1px solid;
+  font: 13px/26px "微软雅黑","宋体";
+  background:url(images/tab-num.png) repeat-x;
+}
+#butn {
+  float:right;
+  display:inline;
+  margin-right: 20px;
+  line-height:26px;
+  vertical-align:middle;
+}
+.defbutton {
+  width:93px;
+  height: 16px;
+  border: none;
+  background:url(images/selfdef.png) repeat-x;
+}
+#pager {
+  text-align:center;
+  margin-left: 250px;
+/*  margin-top:10px;
+  margin-left:10px;
+  width: auto; */
+  height: 30px;
+  overflow:hidden;
+}
+#pager span {
+  float:left;
+  width:20px;
+  display:block;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align:center;
+}
+#pager .pageup {
+  width: 11px;
+  height:17px;
+  background:url(images/pageup.png) no-repeat left center;
+}
+#pager .pagedown {
+  width: 11px;
+  height:17px;
+  background:url(images/pagedown.png) no-repeat left center;
+}
+#pager .curpage {
+  width: 20px;
+  height:17px;
+  color: #fff;
+  font: 13px/20px "微软雅黑","宋体";
+  background:url(images/cur.png) no-repeat center center;
+}
+#pager .pagenum {
+  width: 18px;
+  height:17px;
+  color: #111;
+  font: 13px/20px "微软雅黑","宋体";
+  background:url(images/pagebg.png) no-repeat center center;
+}
+.tv {
+  float:left;
+  display:inline;
+  width: 260px;
+  overflow:hidden;
+  margin: 10px 0 20px 15px;
+}
+.tv h2 {
+  text-align:left;
+  padding-left:20px;
+  font: bold 11pt "微软雅黑","宋体";
+}
+.tv li {
+    font: 13px/20px "微软雅黑","宋体";
+}
+.videopic {
+  width:142px;
+  height:102px;
+  background:url(images/video-bg.gif) no-repeat center center;
+}
+/* 选举结果 */
+#buttons {
+  width: 100%;
+  height: 32px;
+  margin: 10px auto;
+  text-align:center;
+}
+#buttons li {
+  display:inline;
+  width: 168px;
+  height:32px;
+  padding: 0 3px;
+}
+.area {
+  position:relative;
+  height:auto;
+  width:840px;
+  height: 420px;
+  text-align:left;
+  overflow:hidden;
+}
+
+#stat1, #stat2, #stat3, #stat4 {
+  position:absolute;
+  visibility: hidden;
+  top:20px;
+  width:100%;
+  display:block;
+  text-align:center;
+  overflow-x:hidden;
+  overflow-y:auto;
+  max-height:400px;
+}
+#stat1 {
+  visibility:visible;
+  height: 400px;
+  text-align:left;
+}
+#stat2 {
+  height: 671px;
+  height:400px;
+}
+#stat3 {
+  height: 400px;
+  height:400px;
+}
+#stat4 {
+  height: 664px;
+  height:400px;
+}
+.zone {
+  margin-left: 20px;
+  margin-top:10px;
+  height:100px;
+  width: 640px;
+  text-align:left;
+  overflow:hidden;
+}
+.zone ul {
+  margin-top:5px;
+}
+.zone li {
+  float:left;
+  display:inline;
+  width: 70px;
+  padding-left:0px;
+  padding-right:10px;
+}
+.area h2 {
+  width:74px;
+  height:22px;
+  background:url(images/zone-expand.png) no-repeat;
+  font: bold 13px/22px "微软雅黑","宋体";
+  padding-left: 25px;
+}

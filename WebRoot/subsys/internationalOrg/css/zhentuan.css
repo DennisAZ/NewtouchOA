@@ -1,0 +1,443 @@
+#container #zhentuan {
+  width: 985px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 10px;
+}
+#container #zhentuan #zt-left {
+  width: 160px;
+  height: auto;
+  display: block;
+  float: left;
+  padding-left: 10px;
+  padding-top: 170px;
+  /* background: url(images/canxuan.png) no-repeat 15px 0; */
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+#container #zhentuan #zt-left ul {
+  margin-left: 15px;
+}
+#container #zhentuan #zt-left li {
+  height: 27px;
+  width: 100px;
+  text-align: left;
+  padding-left: 20px;
+  border-bottom: #eaeaea 1px solid; 
+}
+#container #zhentuan #zt-left li.selected {
+	background: url(images/list-ico.png) no-repeat left 6px;
+}
+#container #zhentuan #zt-left a {
+  color: #594db3;
+  font: 16px/27px "微软雅黑","宋体";
+  float: left;
+  width: 100px;
+}
+#container #zhentuan #zt-left .back {
+  margin-left: 25px;
+}
+#container #zhentuan #zt-left .back a {
+  color: #615c5c;
+  font: 16px/27px "微软雅黑","宋体";
+}
+#container #zhentuan #zt-right {
+  width: 800px;
+  height: auto;
+  display: block;
+  float: right;
+  padding-left: 15px!important;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  background: url(images/inset-line.png) repeat-y left top;
+}
+#container #zhentuan #zt-right #zt-info {
+  width: 800px;
+  /* height: 40px; */
+  height: auto;
+}
+#container #zhentuan #zt-right #zt-ico {
+  display: block;
+  text-align: left;
+  height:auto;
+}
+#container #zhentuan #zt-right #zt-ico img {
+  text-align: center;
+  border: #fff 0 none;
+  
+}
+#container #zhentuan #zt-right #zt-intro {
+  display: block;
+  padding-left: 20px;
+  height: auto;
+  min-height: 300px;
+  _height: 300px;
+}
+
+
+#total .tableHeader {
+	background-color: #b5b5b6;
+}
+#total .rowStyle1 {
+	background-color: #ddd;
+}
+#total .rowStyle2 {
+	background-color: #e6e6e6;
+}
+
+.rowStyle3 {
+  font: 18px/36px "微软雅黑","粗体";
+  color: #00EE00;
+}
+#container #zhentuan #zt-right #zt-intro p {
+  font: 14px/20px "微软雅黑","宋体";
+  color: #3b3b3b;
+  width: 700px;
+  padding-top: 15px;
+  text-align: left;
+  text-indent: 2em;
+}
+#container #zhentuan #zt-right #infomation {
+	width: 800px;
+	height: auto;
+	margin-top: 10px;
+}
+#container #zhentuan #zt-right #infomation .modules ul {
+  margin-left: 15px;
+}
+#container #zhentuan #zt-right #infomation .modules li {
+  height: 30px;
+  width: 765px;
+  text-align: left;
+  padding-left: 20px;
+  background: url(images/news/ic-o.gif) no-repeat;
+  border-bottom: #eaeaea 1px solid;
+}
+#container #zhentuan #zt-right #infomation .modules li a {
+  font: 14px/30px "微软雅黑","宋体";
+  color: #3b3b3b;
+  width: 670px;
+  float: left;
+}
+#container #zhentuan #zt-right #infomation .modules li span {
+  font: 14px/30px "微软雅黑","宋体";
+  color: #3b3b3b;
+  width: 90px;
+  float: right;
+}
+#container #zhentuan #zt-right #candidate {
+	width: 800px;
+	height: auto;
+	margin-top: 10px;
+}
+#container #zhentuan #zt-right #candidate:after {
+  content:"."; 
+  height:0; 
+  visibility:hidden; 
+  display:block; 
+  clear:both;	
+}
+#container #zhentuan #zt-right #candidate #xq-houxuan ul {
+		margin-left: 5px;
+}
+#container #zhentuan #zt-right #candidate #xq-houxuan li {
+	background: none no-repeat;
+	width: 49%;
+	height: 150px;
+	text-align: left;
+	padding-left: 0;
+	display: inline;
+	float: left;
+	overflow: hidden;
+}
+#container #zhentuan #zt-right #candidate #xq-houxuan td {
+	font: 14px/21px "微软雅黑","宋体";
+}
+#container #zhentuan #zt-right #candidate #xq-houxuan a {
+	float: left;
+	padding-left: 5em;
+	font: 14px/21px "微软雅黑","宋体";
+}
+#container #zhentuan #zt-right #candidate #xq-houxuan td a {
+  font: 14px/20px "微软雅黑","宋体";
+  color: #3b3b3b;
+}
+#container #zhentuan #zt-right #candidate #xq-houxuan td p {
+  font: 14px/20px "微软雅黑","宋体";
+  color: #3b3b3b;
+  padding-top: 0;
+  width: 600px;
+  text-indent: 0;
+  text-align: left;
+}
+#container #zhentuan #zt-right #xq-news ul {
+	margin-left: 10px;
+}
+#container #zhentuan #zt-right #xq-news li {
+	height: 30px;
+	width: 770px;
+	text-align: left;
+	padding-left: 20px;
+	background: url(images/news/ic-o.gif) no-repeat;
+	border-bottom: #eaeaea 1px solid;
+}
+#container #zhentuan #zt-right #xq-news a {
+	float: left;
+	width: 675px;
+	font: 14px/30px "微软雅黑","宋体";
+}
+#container #zhentuan #zt-right #xq-news li span {
+	width: 90px;
+	font: 14px/30px "微软雅黑","宋体";
+	float: right;
+}
+#container #zhentuan #zt-right #zt-tab {
+  background: url(images/tab2_bg.png) no-repeat;
+  width: 769px;
+  height: 34px;
+  margin-top: 5px;
+}
+#container #zhentuan #zt-right #zt-tab ul {
+  padding-left: 20px;
+}
+#container #zhentuan #zt-right #zt-tab li {
+  display: inline;
+  float: left;
+  width: 95px;
+  height: 31px;
+}
+#container #zhentuan #zt-right #zt-tab li.selected {
+  background: url(images/tab_sel.png) no-repeat;
+}
+#container #zhentuan #zt-right #zt-tab a {
+  font: 14px/31px "微软雅黑","宋体";
+}
+
+#container #canxuan {
+  width: 995px;
+  height: 440px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+#container #canxuan #overview {
+  display: block;
+  float: left;
+  width: 600px;
+  height: 440px;
+}
+
+#container #canxuan #history {
+  width: 380px;
+  height: auto;
+  display: block;
+  float: right;
+  padding-left: 10px;
+}
+#container #canxuan #overview #ov-pic {
+  width: 588px;
+  height: 399px;
+  margin-top: 20px;
+  background: url(images/zhentuan/zhentuan-bg.png) no-repeat;
+   position: relative;
+}
+/* 爱国爱港 */
+#container #canxuan #overview #ov-pic #pt1 {
+  position: absolute;
+  left: 235px;
+  top: 98px;
+  width: 92px;
+  height: 92px;
+  display: block;
+  float: left;
+  background: url(images/zhentuan/frnd.png) no-repeat;
+}
+#container #canxuan #overview #ov-pic #pt1-tip {
+  position: absolute;
+  left: 175px;
+  top: 52px; /* old 12px */
+  width: 195px;
+  height: 81px;
+  display: block;
+  float: left;
+  padding: 10px 8px 0;
+  background: url(images/zhentuan/box-r.png) no-repeat;
+  word-break: normal;
+}
+/* 反对派 */
+#container #canxuan #overview #ov-pic #pt2 {
+  position: absolute;
+  left: 324px;
+  top: 245px;
+  width: 92px;
+  height: 92px;
+  display: block;
+  float: left;
+  background: url(images/zhentuan/oppo.png) no-repeat;
+}
+#container #canxuan #overview #ov-pic #pt2-tip {
+  position: absolute;
+  left: 395px;
+  top: 176px; /* org 136px; */
+  width: 176px;
+  height: 124px;
+  display: block;
+  float: left;
+  padding: 10px 8px 0;
+  background: url(images/zhentuan/box-gr.png) no-repeat;
+}
+/* 其他组织 */
+#container #canxuan #overview #ov-pic #pt3 {
+  position: absolute;
+  left: 143px;
+  top: 247px;
+  width: 92px;
+  height: 92px;
+  display: block;
+  float: left;
+  background: url(images/zhentuan/other.png) no-repeat;
+}
+#container #canxuan #overview #ov-pic #pt3-tip {
+  position: absolute;
+  left: 5px;
+  top: 206px; /* old 166px */
+  width: 193px;
+  height: 81px;
+  display: block;
+  float: left;
+  padding: 10px 5px 0;
+  background: url(images/zhentuan/box-g.png) no-repeat;
+}
+#container #canxuan #overview #ov-pic ul {
+  width: 180px;
+}
+#container #canxuan #overview #ov-pic li {
+  float: left;
+  display: inline;
+  padding-right: 5px!important;
+  padding-right: 5px;
+}
+#container #canxuan #overview #ov-pic #pt1-tip span {
+  font: 14px/21px "微软雅黑","宋体";
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  word-break: keep-all;
+  filter: glow(color=#af3d23);
+}
+#container #canxuan #overview #ov-pic #pt2-tip span {
+  font: 14px/21px "微软雅黑","宋体";
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  word-break: keep-all;
+  filter: glow(color=#71786a);  
+}
+#container #canxuan #overview #ov-pic #pt3-tip span {
+  font: 14px/21px "微软雅黑","宋体";
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  filter: glow(color=#4e9300);
+}
+#container #canxuan #overview #ov-pic #pt1-tip a {
+  color: #af3d23;
+} 
+#container #canxuan #overview #ov-pic #pt2-tip a {
+  color: #71786a;
+}
+#container #canxuan #overview #ov-pic #pt3-tip a {
+  color: #4e9300;
+}
+#container #canxuan #history #more {
+  margin-left: 270px;
+  padding-right: 20px; 
+}
+#container #canxuan #history #more a {
+  color: #303030;
+  font: 12px/22px "微软雅黑","宋体";
+}
+#container #canxuan #history #statpic p {
+  font: 19px/32px "微软雅黑","宋体";
+  color: #315ea2;
+}
+#container #canxuan #operation ul {
+  margin-top: 10px;
+  margin-left: 45px;
+}
+#container #canxuan #operation li {
+  height: 31px;
+  width: 73px;
+  float: left;
+  display: inline;
+  padding-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background: url(images/zhentuan/op-buttom.png) no-repeat;
+}
+#container #canxuan #operation a {
+  color: #303030;
+  font: 13px/22px "微软雅黑","宋体";
+  float: left;
+  width: 73px;
+}
+
+.title {
+  height: 31px;
+  width: 786px;
+  background: url(images/tab_bg800.png) no-repeat left top;
+  text-align: left;
+  padding-left: 14px;
+  font: bold 16px/32px "微软雅黑","宋体";
+}
+
+.title span{
+  font: 16px/32px "微软雅黑","宋体";
+  float: left;
+}
+
+.title a {
+  float: right;
+  font: 14px/32px "微软雅黑","宋体";
+  margin-right: 20px;
+}
+.modules p {
+  margin-left: 10px;
+  text-indent: 2em;
+  font: 14px/21px "微软雅黑","宋体";
+}
+
+#result td { 
+text-align: center; 
+font: 13px/20px "微软雅黑","宋体"; 
+} 
+#result .tableHeader { 
+background-color: #b5b5b6; 
+} 
+#result .rowStyle1 { 
+background-color: #ddd; 
+} 
+#result .rowStyle2 { 
+background-color: #e6e6e6; 
+}
+
+
+#relaNews ul {
+  margin-left: 15px;
+}
+#relaNews li {
+  height: 30px;
+  width: 765px;
+  text-align: left;
+  padding-left: 20px;
+  background: url(images/news/ic-o.gif) no-repeat;
+  border-bottom: #eaeaea 1px solid;
+}
+#relaNews li a {
+  font: 14px/30px "微软雅黑","宋体";
+  color: #3b3b3b;
+  width: 670px;
+  float: left;
+}

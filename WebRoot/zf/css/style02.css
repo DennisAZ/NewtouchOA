@@ -1,0 +1,101 @@
+@charset "utf-8";
+/* CSS Document */
+body{margin:0; padding:0;}
+.wap{width:980px; margin:0 auto; height:auto;}
+li,a,ul,h3{ list-style:none; text-decoration:none; margin:0; padding:0;}
+.top{ overflow:hidden; height:155px;}
+.nav{ overflow:hidden;}
+.nav_l{width:7px; height:71px; background:url(../images/allbgs.png) no-repeat -47px -228px; float:left;}
+.nav_c{background:url(../images/nva_c.jpg) top center repeat-x; float:left; width:960px; height:71px;}
+.nav_c ul{ margin:0; padding:0; overflow:hidden; width:960px; height:33px;}
+.nav_c ul li{ float:left; line-height:31px; margin:0 10px;}
+.nav_c ul li a{ text-decoration:none; color:#FFF; font-weight:bold;}
+.nav_r{width:13px; height:71px; background:url(../images/allbgs.png) no-repeat -54px -228px; float:right;}
+.date{ float:left; overflow:hidden; line-height:39px; height:39px;}
+.soso{ float:right; line-height:39px;}
+
+/*nav style*/
+.navon{ background:url(../images/nav_a.jpg) left center repeat-x; padding:0 5px; border:#F58C0C 1px solid;}
+.navon a{ color:#CC0000 !important;}
+.col01{ overflow:hidden; width:980px; height:auto; margin:5px 0;}
+.connet{ overflow:hidden;}
+.c1_l{ float:left; width:330px; height:270px; border:#F00 solid 1px;}
+.c1_c{ float:left; width:380px; margin:0 10px;}
+.c1_c h3{ margin:0; border-bottom:1px solid #FB9D23; height:27px; line-height:27px;}
+.c1_c h3 strong{width:115px; height:28px; background:url(../images/allbgs.png) no-repeat 0px -146px; display:block; float:left; font-size:14px; padding-left:15px;}
+.c1_c h3 span{ float:right; }
+.c1_c h3 span a{font-size:12px; color:#CF0100;}
+.c1_c ul{ margin:0; padding:0;}
+.c1_c ul li{ background:url(../images/list_bg.jpg) left center no-repeat; padding-left:10px; line-height:22px; margin:5px 0;width:335px;}
+.c1_c ul li a{ font-size:14px; color:#474444;}
+.c1_c ul li span{ float:right; font-size:12px; color:#CCCCCC;}
+.c1_r{ overflow:hidden; width:235px; float: right;}
+.c1_r h3{ background:url(../images/hot_b.jpg) left center no-repeat; width:235px; height:35px; display:block; margin:0; text-indent:-999em;}
+.c1_r ul{ margin:0; padding:0; border:1px solid #F4630A; border-top:none; padding:0 5px;}
+.c1_r ul li{ background:url(../images/list_bgg.jpg) left center no-repeat; padding-left:10px; line-height:23px; }
+.c1_r ul li a{font-size:14px; color:#474444;}
+
+.col02{ overflow:hidden; height:auto;}
+.c2_l{ width:235px; float:left;}
+
+.c2_l_01{ text-align:center; border:1px solid #C8DFEF; border-radius:3px; padding:5px 0;}
+.c2_l_01 li{ margin:5px 0;}
+.c2_l_02{ margin:10px 0;}
+.c2_l_02 ul{ border:1px solid #F48A00; border-top:none; border-radius:0 0 3px 3px; padding:0 10px;}
+.c2_l_02 ul li{background:url(../images/list_bgg.jpg) left center no-repeat; padding-left:10px; line-height:23px; }
+.c2_l_02 ul li a{font-size:14px; color:#474444;}
+.c2_l h3{width:235px; height:30px; background:url(../images/allbgs.png) no-repeat 0px -75px;}
+.c2_l h3 strong{ font-size:14px; line-height:30px; margin-left:30px; display:block; float:left; color:#FFFFFF;}
+.c2_l h3 span{width:33px; height:13px; background:url(../images/allbgs.png) no-repeat 0px 0px; float:right; margin-top:10px; display:block; margin-right:10px;}
+.c2_l h3 span a{width:33px; height:13px; display:block; }
+
+.c2_r{ overflow:hidden; width:705px; float:right; padding:0 15px;}
+.c2_r ul{ overflow:hidden; border-bottom:#CCCCCC 1px dotted; margin:10px 0; padding-bottom:10px;}
+.c2_r ul li{ line-height:22px; background:url(../images/list_bgg.jpg) left center no-repeat; padding-left:10px; line-height:23px; }
+.c2_r ul li a{ font-size:14px; color:#666;}
+.c2_r ul li span{ float:right; font-size:12px; color:#4C6DB0;}
+.mb{ background:#E2DDE1; line-height:22px; margin:5px 0; padding:0 10px; width:960px;}
+.mb a{ font-size:14px; color:#58595D;}
+
+.footer{ overflow:hidden;}
+.footer h3{ background:url(../images/link_c.jpg) left center repeat-x; height:31px; }
+.footer h3 strong{ width:105px; height:31px; background:url(../images/allbgs.png) no-repeat 0px -105px; display:block; text-indent: -999em;}
+.link{ overflow:hidden;}
+.link a{ font-size:12px; margin:5px; display:block; float:left; color:#333333; width:150px; background:url(../images/list_bgg.jpg) left center no-repeat; padding-left:10px; line-height:23px; line-height:16px;}
+.telme{ text-align:center; background:#7B5454; margin:5px 0;}
+.telme a{ font-size:14px; color:#FFF;}
+.copy{ text-align:center; font-size:12px; color:#999999;}
+
+
+/*幻灯片样式*/
+.code{ height:auto; padding:20px; border:1px solid #9EC9FE; background:#ECF3FD;}
+.code pre{ font-family:"Courier New";font-size:14px;}
+.info{ font-size:12px; color:#666666; font-family:Verdana; margin:20px 0 50px 0;}
+.info p{ margin:0; padding:0; line-height:22px; text-indent:40px;}
+h2.title{ margin:0; padding:0; margin-top:50px; font-size:18px; font-family:"微软雅黑",Verdana;}
+h3.title{ font-size:16px; font-family:"微软雅黑",Verdana;}
+.importInfo{ font-family:Verdana; font-size:14px;}
+
+
+/*分页样式表*/
+/*CSS badoo style pagination*/
+
+DIV.badoo {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 13px; PADDING-BOTTOM: 10px; COLOR: #48b9ef; PADDING-TOP: 10px; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #fff; TEXT-ALIGN: center
+}
+DIV.badoo A {
+	BORDER-RIGHT: #f0f0f0 2px solid; PADDING-RIGHT: 5px; BORDER-TOP: #f0f0f0 2px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; MARGIN: 0px 2px; BORDER-LEFT: #f0f0f0 2px solid; COLOR: #48b9ef; PADDING-TOP: 2px; BORDER-BOTTOM: #f0f0f0 2px solid; TEXT-DECORATION: none
+}
+DIV.badoo A:hover {
+	BORDER-RIGHT: #ff5a00 2px solid; BORDER-TOP: #ff5a00 2px solid; BORDER-LEFT: #ff5a00 2px solid; COLOR: #ff5a00; BORDER-BOTTOM: #ff5a00 2px solid
+}
+DIV.badoo A:active {
+	BORDER-RIGHT: #ff5a00 2px solid; BORDER-TOP: #ff5a00 2px solid; BORDER-LEFT: #ff5a00 2px solid; COLOR: #ff5a00; BORDER-BOTTOM: #ff5a00 2px solid
+}
+DIV.badoo SPAN.current {
+	BORDER-RIGHT: #ff5a00 2px solid; PADDING-RIGHT: 5px; BORDER-TOP: #ff5a00 2px solid; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 2px; BORDER-LEFT: #ff5a00 2px solid; COLOR: #fff; PADDING-TOP: 2px; BORDER-BOTTOM: #ff5a00 2px solid; BACKGROUND-COLOR: #ff6c16
+}
+DIV.badoo SPAN.disabled {
+	DISPLAY: none
+}
+

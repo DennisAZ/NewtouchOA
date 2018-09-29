@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">弹出菜单</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:</td>
+    <td width="20%">&nbsp;刘涵 </td>
+    <td width="15%">创建日期:</td>
+    <td width="20%">&nbsp;2011-01-13</td>
+    <td width="10%">版本:</td>
+    <td width="25%">&nbsp;1</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="20%">适用情景描述</th>
+    <th width="75%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+    <td><a href="Menu1.jsp" target="_blank">弹出菜单</a></td>
+    <td>
+    <pre>
+Js文件：[contextPath]/core/js/cmp/Menu.js
+function showMenu1(event){
+  var menuData1 =[{name:'新增',action:add,icon:imgPath + '/cmp/rightmenu/addStep.gif' , extData:"menu1"}
+         ,{name:'修改',action:update,icon:imgPath + '/cmp/rightmenu/addStep.gif', extData:"menu1"}
+         ,{name:'删除',action:del,icon:imgPath + '/cmp/rightmenu/addStep.gif', extData:"menu1"}
+         ];
+  var menu = new Menu({menuData:menuData1,attachCtrl:true,bindTo:"menu1"});
+  menu.show(event);
+}
+function add(event ,bindTo, extData,item) {
+  alert("新增" + extData);
+}
+function del(event ,bindTo, extData,item) {
+  alert("删除" + extData);
+}
+function update(event ,bindTo, extData,item) {
+  alert("修改" + extData);
+}      
+    </pre>
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/menu/Menu1.jsp">/rad/docs/component/menu/Menu1.jsp
+   </a></td>
+  </tr>
+  
+  <tr>
+    <td><a href="Menu2.jsp" target="_blank">异步加载菜单项</a></td>
+    <td>
+    <pre>
+Js文件：[contextPath]/core/js/cmp/Menu.js
+function showMenu1(event){
+  var url = contextPath + "/yh/rad/docs/menu/YHMenuAct/getData.act";
+  var menu = new Menu({requestUrl:url
+    ,attachCtrl:true
+    ,bindTo:"menu1"});
+  //显示
+  menu.show(event);
+}
+function add(event ,bindTo, extData,item) {
+  alert("新增" + extData);
+}
+function del(event ,bindTo, extData,item) {
+  alert("删除" + extData);
+}
+function update(event ,bindTo, extData,item) {
+  alert("修改" + extData);
+}    
+<font color="red">
+后台返回数据结构为：
+{rtState:"0"
+, rtMsrg:"成功返回结果！"
+, rtData:[{name:'新增',action:add,icon:imgPath + '/cmp/rightmenu/addStep.gif' , extData:"menu1"},...]}
+其中rtData结构和上面的  menuData1结构类似
+    </font>
+    </pre>
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/menu/Menu2.jsp">/rad/docs/component/menu/Menu2.jsp
+   </a></td>
+  </tr>
+  
+  
+  <tr>
+    <td><a href="Menu3.jsp" target="_blank">菜单显示位置</a></td>
+    <td>
+    <pre>
+Js文件：[contextPath]/core/js/cmp/Menu.js
+function showMenu1(event){
+    var menuData1 =[{name:'新增',action:add,icon:imgPath + '/cmp/rightmenu/addStep.gif' , extData:"menu1"}
+         ,{name:'修改',action:update,icon:imgPath + '/cmp/rightmenu/addStep.gif', extData:"menu1"}
+         ,{name:'删除',action:del,icon:imgPath + '/cmp/rightmenu/addStep.gif', extData:"menu1"}
+         ];
+  var menu = new Menu({menuData:menuData1,attachCtrl:false,bindTo:"menu1"});
+  menu.show(event);
+}
+function add(event ,bindTo, extData,item) {
+  alert("新增" + extData);
+}
+function del(event ,bindTo, extData,item) {
+  alert("删除" + extData);
+}
+function update(event ,bindTo, extData,item) {
+  alert("修改" + extData);
+}    
+<font color="red">
+通过attachCtrl来设置显示的菜单位置，true：显示在 绑定的控件下面，false:显示在鼠标的下面
+    </font>
+    </pre>
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/menu/Menu3.jsp">/rad/docs/component/menu/Menu3.jsp
+   </a></td>
+  </tr>
+  
+  <tr>
+    <td><a href="Menu4.jsp" target="_blank">菜单样式的设置</a></td>
+    <td>
+    <pre>
+Js文件：[contextPath]/core/js/cmp/Menu.js
+function showMenu1(event){
+  var  style  =  {border:"1px  solid  red"  ,  backgroundColor:"blue",width:'50px'};
+  var menuData1=[{name:'新增',action:add,icon:imgPath+'/cmp/rightmenu/addStep.gif',extData:"menu1"}
+      ,{name:'<span  style="background-color:red">更新</span>'
+              ,action:update,icon:imgPath  +  '/cmp/rightmenu/addStep.gif',  extData:"menu1"}
+      ,{name:'删除',action:del,icon:imgPath  +  '/cmp/rightmenu/addStep.gif',  extData:"menu1"}
+       ];
+    var  menu  =  new  Menu({menuData:menuData1
+        ,attachCtrl:true
+        ,bindTo:"menu1"}  ,  style);
+    //显示
+    menu.show(event);
+
+}
+function add(event ,bindTo, extData,item) {
+  alert("新增" + extData);
+}
+function del(event ,bindTo, extData,item) {
+  alert("删除" + extData);
+}
+function update(event ,bindTo, extData,item) {
+  alert("修改" + extData);
+}    
+<font color="red">
+通过参数style可以设置整个菜单的样式
+例如：var style = {border:"1px solid red" , backgroundColor:"blue",width:'50px'};
+因为name支持html标签，所以可以通过name扩展每一项样式
+例如：name:"<span  style="background-color:#fff">更新</span>";
+    </font>
+    </pre>
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/menu/Menu4.jsp">/rad/docs/component/menu/Menu4.jsp
+   </a></td>
+  </tr>
+  
+  <tr>
+  <td>引入文件及参数介绍</td>
+  <td>
+  <pre>
+Js文件：[contextPath]/core/js/cmp/Menu.js
+js对象:Menu
+ 构造函数参数: parameters,divStyle
+   parameters:{bindTo,menuData,attachCtrl,requestUrl,hasScoll}
+   bindTo 字符串 指定绑定的控件id
+   attachCtrl boolean 是否显示在绑定的控件的下方
+   requestUrl 字符串 指定异步加载菜单项的地址
+   hasScoll boolean 当弹出菜单的高度大于300是否出滚动条
+   menuData 对象数组 指定menu每一项的数据
+      [{name:,action:,icon:,extData:},.....]
+         name 字符串 每一项的label
+         action 函数 单击每一项时执行的函数,可以取得的参数为(event,bindTo,extData,item)
+         icon 字符串 每一项的图片地址，可以没有
+         extData 任一类型 第一项所附带的数据，可以没有
+       
+    divStyle:{border:'',width:'',backgroundColor:'',padding:''}
+          其中的属性和css的样式对应
+  </pre></td>
+  <td></td></tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+#container #center #right {
+	width: 193px;
+	padding: 0px;
+	float: left;
+}
+#container #center #right #right-top {
+	background-image: url(images/right-a-bg.jpg);
+	background-repeat: no-repeat;
+	height: 50px;
+	width: 193px;
+	overflow:hidden;
+}
+#container #center #right #right-top #Fileclass {
+	width: 80px;
+	float: right;
+	margin-right: 15px;
+	display:inline;
+}
+#container #center #right #right-top #Fileclass form {
+	padding: 0px;
+	display: block;
+}
+#container #center #right #right-top #Fileclass select {
+	font-family: "����";
+	font-size: 12px;
+	margin-top: 19px;
+	width: 80px;
+	color: #999999;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+
+#container #center #right #right-cen {
+	height:620px;
+	width: 193px;
+	background-image: url(images/right-background.jpg);
+	background-repeat: repeat-y;
+}
+#container #center #right #right-cen #right-tree {
+	height: 589px;
+	width: 170px;
+	float: right;
+}
+#container #center #right #right-cen #right-down {
+	background-image: url(images/right-b-bg.jpg.jpg);
+	background-repeat: no-repeat;
+	height: 33px;
+	width: 193px;
+	padding: 0px;
+	margin: 0px;
+}
+#container #center #right #right-cen #right-down #Preservation {
+	float: left;
+	padding-top: 5px;
+	margin-left: 30px;
+	overflow:hidden;
+	margin-right: 0px;
+	display:inline;
+
+}
+#container #center #right #right-cen #right-down #definition {
+	float: left;
+	padding-top: 4px;
+	margin-left: 49px;
+	overflow:auto;
+	margin-right: 0px;
+	display:inline;
+
+}
+#container #center #right #right-cen #right-down #defin{
+	float: left;
+	padding-top: 4px;
+	margin-left: 60px;
+	overflow:auto;
+	margin-right: 0px;
+	display:inline;
+
+}

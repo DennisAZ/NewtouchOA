@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oa.spring.dao.batis.FinanceMapper">
+
+	<select id="getCusMsg" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT o.order_title, oc.cus_name, oc.id, pp.total,
+		pp.already_total FROM erp_sale_order o, erp_order_cus oc,
+		erp_paid_plan pp WHERE o.id = oc.order_id AND o.id = pp.order_id
+		and o.id=#{order_id}
+	</select>
+	<select id="getOut" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT fout.id AS foutId,fout.code AS fCode,fout.status AS
+		fStatus,fout.type AS fType,fout.type_id AS fTypeId,fout.payee AS
+		fPayee,bank_name,open_name,account,paid_total,already_paid_total,fout.remark
+		AS fRemark FROM erp_finance_out fout where id=#{fId}
+	</select>
+	<select id="getFIMsg" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT code,type,customer,total,already_total FROM
+		erp_finance_in WHERE id=#{fi_id}
+	</select>
+	<select id="getFIDMsg" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT fi.code as fi_code, fi.type, fi.customer, fi.total,
+		fi.already_total, fid.code,fid.bank_id,
+		fid.money,fid.paid_way,fid.paid_date,fid.person,fid.invoice_id,fid.remark
+		FROM erp_finance_in fi, erp_finance_in_detial fid WHERE fi.id =
+		fid.fi_id and fid.id = #{fid_id}
+	</select>
+	<select id="getFinanceInMsg" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT code, type, customer, total, already_total, remark FROM
+		erp_finance_in WHERE id = #{fi_id}
+	</select>
+	<select id="getBankById" resultType="java.util.HashMap"
+		parameterType="String">
+		select id,name,open_name,account,money,remark from erp_company_bank where
+		id=#{bankId}
+	</select>
+	<select id="getBankMsg" resultType="java.util.HashMap">
+		select id,name,account,money,remark from erp_company_bank
+	</select>
+	<select id="getPPDMsg" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT o.order_title, fi.customer, fi.code, fi.status, fi.total,
+		fi.bank_id, fi.paid_way, fi.person, fi.paid_date, fi.invoice_id,
+		fi.remark FROM erp_finance_in fi, erp_sale_order o WHERE
+		o.id=fi.type_id AND fi.id =#{fi_id}
+	</select>
+	<select id="getOutDetail" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT*FROM erp_finance_out_detial where id=#{fdId}
+	</select>
+	<insert id="addPPD" parameterType="java.util.HashMap">
+		insert into
+		erp_finance_in(id,code,status,type,type_id,customer,total,bank_id,paid_way,paid_date,person,invoice_id,remark)
+		values(uuid(),#{code},#{status},#{type},#{type_id},#{customer},#{total},#{bank_id},#{paid_way},#{paid_date},#{person},#{invoice_id},#{remark})
+	</insert>
+	<insert id="addFinanceIn" parameterType="java.util.HashMap">
+		insert into
+		erp_finance_in(id,code,status,type,customer,total,already_total,remark)
+		values(uuid(),#{code},#{status},#{type},#{customer},#{total},#{already_total},#{remark})
+	</insert>
+	<insert id="addOut" parameterType="java.util.HashMap">
+		INSERT INTO erp_finance_out
+		(id,CODE,STATUS,TYPE,type_id,payee,bank_name,open_name,account,paid_total,already_paid_total,remark)
+		VALUE(#{outId},#{outCode},#{outStatus},#{outType},#{outTypeId},#{outPayee},#{bank},#{outBankName},#{outAccount},#{outPaidTotal},#{outAlreadyPaidTotal},#{outRemark})
+	</insert>
+	<update id="updateOut" parameterType="java.util.HashMap">
+		UPDATE erp_finance_out SET
+		CODE=#{fCode},type=#{outType},payee=#{outPayee},bank_name=#{bank},open_name=#{outBankName},account=#{outAccount},paid_total=#{outPaidTotal},already_paid_total=#{outAlreadyPaidTotal},remark=#{outRemark}
+		WHERE id=#{fId}
+	</update>
+	<insert id="addOutDetail" parameterType="java.util.HashMap">
+		INSERT INTO erp_finance_out_detial
+		(id,fo_id,CODE,STATUS,bank_id,money,paid_way,paid_date,person,invoice_id,remark,person_id)
+		VALUE(#{outId},#{fId},#{outCode},#{outStatus},#{bank_id},#{outTotal},#{paid_way},#{paid_date},#{person},#{invoice_id},#{outRemark},#{personId})
+	</insert>
+	<update id="updateOutDetail" parameterType="java.util.HashMap">
+		UPDATE erp_finance_out_detial SET CODE=#{outCode},bank_id=#{bank_id},money=#{outTotal},paid_way=#{paid_way},paid_date=#{paid_date},person=#{person},invoice_id=#{invoice_id},remark=#{outRemark},person_id=#{personId} where id=#{fdId}
+	</update>
+	<insert id="addFID" parameterType="java.util.HashMap">
+		insert into
+		erp_finance_in_detial(id,fi_id,code,status,bank_id,money,paid_way,paid_date,person,invoice_id,remark)
+		values(uuid(),#{fi_id},#{code},#{status},#{bank_id},#{money},#{paid_way},#{paid_date},#{person},#{invoice_id},#{remark})
+	</insert>
+	<update id="updatePPD" parameterType="java.util.HashMap">
+		update erp_finance_in set code = #{ppd_code}, total = #{total},
+		bank_id = #{bank_id}, paid_way = #{paid_way}, person =
+		#{person}, paid_date = #{paid_date}, invoice_id = #{invoice_id},cust_id=#{custId}
+		remark = #{remark} where id = #{ppd_id}
+	</update>
+	<update id="updateFID" parameterType="java.util.HashMap">
+		update erp_finance_in_detial set code = #{code}, bank_id =
+		#{bank_id}, money = #{money}, paid_way = #{paid_way}, paid_date
+		= #{paid_date}, person = #{person}, invoice_id = #{invoice_id},
+		remark = #{remark} where id = #{fid_id}
+	</update>
+	<update id="updateFinanceIn" parameterType="java.util.HashMap">
+		update erp_finance_in set code = #{code}, type = #{type},
+		customer = #{customer}, total = #{total}, already_total =
+		#{already_total}, remark = #{remark} where id = #{fi_id}
+	</update>
+	
+	<delete id="deletePPD" parameterType="String">
+		delete from erp_finance_in where id=#{ppd_id}
+	</delete>
+	<delete id="deleteOut" parameterType="String">
+		delete from erp_finance_out where id=#{fId}
+	</delete>
+	<delete id="deleteOutDetail" parameterType="String">
+		delete from erp_finance_out_detial where fo_id=#{fId}
+	</delete>
+	<delete id="deleteOutDetails" parameterType="String">
+		delete from erp_finance_out_detial where id=#{fdId}
+	</delete>
+	<delete id="deleteFID" parameterType="String">
+		delete from erp_finance_in_detial where id=#{fid_id}
+	</delete>
+	<delete id="deleteBank" parameterType="String">
+		delete from erp_company_bank where id=#{bankId}
+	</delete>
+	<insert id="addBank" parameterType="java.util.HashMap">
+		INSERT INTO erp_company_bank (id,NAME,open_name,account,money,remark)
+		VALUE(UUID(),#{bankName},#{openName},#{bankAccount},#{bankMoney},#{bankRemark})
+	</insert>
+	<update id="updateBank" parameterType="java.util.HashMap">
+		UPDATE erp_company_bank SET
+		NAME=#{bankName},open_name=#{openName},account=#{bankAccount},money=#{bankMoney},remark=#{bankRemark}
+		WHERE id=#{bankId}
+	</update>
+	<update id="openAccount" parameterType="java.util.HashMap">
+		UPDATE erp_finance_in SET
+		status = #{status}
+		WHERE id=#{fi_id}
+	</update>
+	<update id="openAccountFinanceOut" parameterType="java.util.HashMap">
+		UPDATE erp_finance_out SET
+		status = #{status}
+		WHERE id=#{id}
+	</update>
+	
+</mapper>

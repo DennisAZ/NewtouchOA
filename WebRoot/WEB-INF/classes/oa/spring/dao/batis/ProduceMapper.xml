@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oa.spring.dao.batis.ProduceMapper">
+
+	<select id="getCrafts" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT
+  crafts.id,
+  crafts.pro_id,
+  pro.pro_code,
+  pro.pro_name,
+	pt.name AS pt_name,
+	pu.unit_name,
+  crafts.crafts_version,
+  is_using,
+  crafts.remark
+FROM erp_produce_crafts crafts
+  LEFT JOIN erp_product pro
+    ON pro.id=crafts.pro_id
+  LEFT JOIN erp_product_type pt ON pt.id=pro.pt_id
+  LEFT JOIN erp_product_unit pu ON pu.unit_id=pro.unit_id 
+WHERE crafts.id =#{craftsId}
+	</select>
+	<select id="getProductInfo" resultType="java.util.HashMap" parameterType="String">
+		SELECT p.id AS pro_id,p.pro_code,p.pro_name,p.pro_type,pu.unit_name
+		FROM erp_product p LEFT JOIN 
+		erp_product_unit pu ON p.unit_id = pu.unit_id
+		WHERE p.id = #{proId}
+	</select>
+	<select id="getWareHouse" resultType="java.util.HashMap" >
+		SELECT id,name FROM erp_warehouse
+	</select>
+	<select id="getExamProDetial" resultType="java.util.HashMap" parameterType="String">
+		SELECT db.id AS db_id,w.name AS wh_name,db.number,db.batch,db.wh_id,db.pro_id,db.pro_id,db.price,db.invalid_time AS invalid
+		FROM erp_db_log db LEFT JOIN erp_produce_exam_product ep ON ep.exam_id = db.pod_id AND ep.pro_id = db.pro_id
+		LEFT JOIN erp_warehouse w ON db.wh_id = w.id
+		WHERE db.pod_id=#{pod_id} and db.flag=#{flag}
+	</select>
+	<select id="getBOMDetial" resultType="java.util.HashMap" parameterType="String">
+		SELECT db.id AS db_id,w.name AS wh_name,db.number,db.wh_id,db.pro_id,db.batch
+		FROM erp_db_log db LEFT JOIN erp_produce_bom_product bp ON bp.bom_id = db.pod_id AND bp.pro_id = db.pro_id
+		LEFT JOIN erp_warehouse w ON db.wh_id = w.id
+		WHERE db.pod_id=#{pod_id} and db.flag=#{flag}
+	</select>
+	<select id="getBOMInfoList" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+		SELECT b.id AS bom_id,pp.code AS plan_code,b.code,b.remark,p.id AS pro_id,p.pro_code,p.pro_name,p.pro_type,pu.unit_name,bp.number
+		FROM erp_produce_bom b,
+		erp_produce_bom_product bp,
+		erp_product p,
+		erp_product_unit pu,
+		erp_produce_plan pp
+		WHERE b.id =bp.bom_id
+		AND bp.pro_id = p.id
+		AND p.unit_id=pu.unit_id
+		AND pp.id = b.pp_id
+		AND b.pp_id = #{planId}
+		AND b.bom_type = #{bom_type}
+	</select>
+	<select id="getExamInfoList" resultType="java.util.HashMap" parameterType="String">
+		SELECT e.id AS exam_id,e.code AS exam_code,e.remark,ep.pro_id,p.pro_code,p.pro_name,p.pro_type,pu.unit_name,ep.exam_way,ep.number,ep.qualified_number
+		FROM erp_produce_exam e LEFT JOIN erp_produce_exam_product ep ON e.id = ep.exam_id
+		LEFT JOIN erp_product p ON ep.pro_id = p.id LEFT JOIN erp_product_unit pu ON p.unit_id = pu.unit_id
+		WHERE e.pp_id = #{planId}
+	</select>
+	<select id="getBOMList" resultType="java.util.HashMap" parameterType="String">
+		SELECT ppc.pro_id,ppc.number
+		FROM erp_produce_process pp LEFT JOIN 
+		erp_produce_process_consume ppc ON pp.id = ppc.process_id
+		WHERE pp.crafts_id=#{crafts_id}
+	</select>
+	<select id="getPlanProNumberList" resultType="java.util.HashMap" parameterType="String">
+		SELECT pro_id,number,crafts_id
+		FROM erp_produce_plan_product 
+		WHERE pp_id=#{planId}
+	</select>
+	<select id="getType" resultType="java.util.HashMap"
+		parameterType="String">
+		select id,code,machine_name,remark from
+		erp_produce_machine_type where
+		id=#{typeId}
+	</select>
+	<select id="getDrawing" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT d.id,d.code,d.pro_id,p.pro_name,d.dt_id,d.drawing_version,d.is_using,d.attachment_id,d.attachment_name,d.remark 
+		FROM erp_produce_drawing  d ,
+		erp_product p,
+		erp_produce_drawing_type dt
+		WHERE d.pro_id = p.id
+		AND d.dt_id = dt.id
+		AND d.id=#{drawingId}
+	</select>
+	<select id="getDrawingTypeByDtId" resultType="java.util.HashMap"
+		parameterType="String">
+		select name from
+		erp_produce_drawing_type where
+		id=#{dt_id}
+	</select>
+	<select id="getDrawingType" resultType="java.util.HashMap"
+		parameterType="String">
+		select id,name,remark from
+		erp_produce_drawing_type where
+		id=#{drawingTypeId}
+	</select>
+	<select id="selectProductByProId" resultType="java.util.HashMap"
+		parameterType="String">
+		select pro_name from
+		erp_product where
+		id=#{proId}
+	</select>
+	<select id="getProcessByIds" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT prc.id,prc.crafts_id,prc.name,prc.process_index,mt.machine_name,mt.id AS
+		mtId,prc.bad_rate,prc.process_index,prc.process_time,prc.remark FROM
+		erp_produce_process prc LEFT JOIN erp_produce_machine_type mt ON
+		mt.id=prc.machine_type where prc.id=#{id}
+	</select>
+	<select id="getNotifyById" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT id,CODE,TYPE,type_id,produce_time,person_id,person,create_time,STATUS,remark FROM erp_produce_notify where id=#{notifyId}
+	</select>
+	<select id="getNotifyProById" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT
+		  np.id             AS npId,
+		  np.pn_id,
+		  np.pro_id,
+		  pro.pro_type           AS ptName,
+		  np.number,
+		  np.already_number,
+		  np.status,
+		  np.end_time,
+		  np.remark,
+		  pro.pro_code,
+		  pro.pro_name,
+		  pu.unit_name,
+		  pc.id AS craftsId,
+		  pc.crafts_version,
+		  pd.id AS drawingId,
+		  pd.drawing_version
+		FROM erp_produce_notify_product np
+		  LEFT JOIN erp_product pro
+		    ON pro.id = np.pro_id
+		  LEFT JOIN erp_product_unit pu
+		    ON pu.unit_id = pro.unit_id
+		  LEFT JOIN erp_produce_crafts pc
+		    ON np.pro_id = pc.pro_id AND pc.is_using='1'
+		  LEFT JOIN erp_produce_drawing pd
+		    ON np.pro_id = pd.pro_id AND pd.is_using='1'
+		WHERE np.pn_id=#{notifyId}
+	</select>
+	<select id="getProcessIndex" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT process_index FROM erp_produce_process WHERE process_index=#{processIndex} AND crafts_id=#{craftsId}
+	</select>
+	<select id="getProcessPro" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT
+		  con.id,
+		  process_id,
+		  con.pro_id,
+		  con.number,
+		 pro.pro_code,
+		 pro.pro_name,
+			pt.name  AS pt_name,
+			pu.unit_name
+		FROM erp_produce_process_consume con
+		  LEFT JOIN erp_product pro    ON pro.id = con.pro_id
+		LEFT JOIN erp_product_type pt ON pt.id=pro.pt_id
+		LEFT JOIN erp_product_unit pu ON pu.unit_id=pro.unit_id where con.process_id=#{processId}
+	</select>
+	<select id="getMachineType" resultType="java.util.HashMap">
+		select
+		id,code,machine_name,remark from erp_produce_machine_type 
+	</select>
+	<select id="getPlanCode" resultType="java.util.HashMap" parameterType="String">
+		SELECT code FROM erp_produce_plan where id=#{planId}
+	</select>
+	<select id="getPlan" resultType="java.util.HashMap" parameterType="String">
+		SELECT pp.id,pp.code ,pp.pn_id,pn.code as pnCode,pp.person_id,pp.person,pp.create_time,pp.status,pp.remark FROM erp_produce_plan pp LEFT JOIN erp_produce_notify pn ON pn.id=pp.pn_id where pp.id=#{planId}
+	</select>
+	<select id="getPlanPro" resultType="java.util.HashMap" parameterType="String">
+		SELECT p.id as pro_id,p.pro_code,p.pro_name,p.pro_type AS ptName,pu.unit_name,pnp.number,pnp.end_time,pnp.already_number,ppp.number AS pNumber,pc.id AS craftsId,pc.crafts_version,pd.id AS drawingId,pd.drawing_version
+		FROM erp_produce_plan_product ppp LEFT JOIN erp_produce_plan pp ON ppp.pp_id = pp.id
+		LEFT JOIN erp_produce_notify pn ON pp.pn_id = pn.id
+		LEFT JOIN erp_produce_notify_product pnp ON pn.id = pnp.pn_id
+		LEFT JOIN erp_product p ON ppp.pro_id = p.id
+		LEFT JOIN erp_product_unit pu ON p.unit_id = pu.unit_id
+		LEFT JOIN erp_produce_crafts pc ON pc.pro_id = ppp.pro_id AND pc.is_using='1'
+		LEFT JOIN erp_produce_drawing pd ON pd.pro_id = ppp.pro_id AND pd.is_using='1'
+		where ppp.pp_id=#{planId}
+		AND ppp.pro_id = pnp.pro_id
+	</select>
+	<select id="getProcessById" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT prc.id,prc.name,prc.process_index FROM
+		erp_produce_process prc where
+		prc.crafts_id=#{craftsId}
+	</select>
+
+	<insert id="addBOM" parameterType="java.util.HashMap">
+		INSERT INTO
+		erp_produce_bom (id,code,bom_type,pp_id,status,person_id,person,create_time,remark)
+		VALUE(#{id},#{code},#{bom_type},#{pp_id},#{status},#{person_id},#{person},#{create_time},#{remark})
+	</insert>
+	<insert id="addExam" parameterType="java.util.HashMap">
+		INSERT INTO
+		erp_produce_exam (id,code,pp_id,status,person_id,person,create_time,remark)
+		VALUE(#{id},#{code},#{pp_id},#{status},#{person_id},#{person},#{create_time},#{remark})
+	</insert>
+	<insert id="addCrafts" parameterType="java.util.HashMap">
+		INSERT INTO
+		erp_produce_crafts (id,pro_id,crafts_version,is_using,remark)
+		VALUE(#{craftsId},#{proId},#{crafts_version},#{is_using},#{remark})
+	</insert>
+	<insert id="addNotify" parameterType="java.util.HashMap">
+	INSERT INTO erp_produce_notify (id,CODE,STATUS,TYPE,type_id,produce_time,person_id,person,create_time,remark)
+VALUE(#{notifyId},#{code},#{status},#{type},#{type_id},#{produce_time},#{person_id},#{person},#{create_time},#{remark})
+	</insert>
+	<insert id="addProcess" parameterType="java.util.HashMap">
+		INSERT INTO
+		erp_produce_process
+		(id,crafts_id,NAME,machine_type,process_index,bad_rate,process_time,remark)
+		VALUE(#{processId},#{craftsId},#{name},#{machine_type},#{process_index},#{bad_rate},#{process_time},#{remark})
+	</insert>
+	<insert id="addProcessConsume" parameterType="List">
+		INSERT INTO erp_produce_process_consume (id,process_id,pro_id,number)
+		VALUE
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.consumeId},#{item.processId},#{item.proId},#{item.num})
+		</foreach>
+	</insert>
+	<insert id="addPlan" parameterType="java.util.HashMap">
+		INSERT INTO erp_produce_plan (id,CODE,pn_id,STATUS,person_id,person,create_time,remark)
+		 VALUE(#{planId},#{code},#{pn_id},#{status},#{person_id},#{person},#{create_time},#{remark})
+	</insert>
+	<insert id="addBOMPros" parameterType="List">
+	INSERT INTO erp_produce_bom_product(id,bom_id,pro_id,number) VALUES
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(uuid(),#{item.bom_id},#{item.pro_id},#{item.number})
+		</foreach>
+	</insert>
+	<insert id="addExamPros" parameterType="List">
+	INSERT INTO erp_produce_exam_product(id,exam_id,pro_id,number,qualified_number,exam_way) VALUES
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(uuid(),#{item.exam_id},#{item.pro_id},#{item.number},#{item.qualified_number},#{item.exam_way})
+		</foreach>
+	</insert>
+	<insert id="addDBLog" parameterType="List">
+	INSERT INTO erp_db_log(id,batch,wh_id,pro_id,pod_id,number,flag,status,time) VALUES
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(uuid(),#{item.batch},#{item.wh_id},#{item.pro_id},#{item.pod_id},#{item.number},#{item.flag},#{item.status},#{item.time})
+		</foreach>
+	</insert>
+	<insert id="addDBLog1" parameterType="List">
+	INSERT INTO erp_db_log(id,batch,wh_id,pro_id,pod_id,price,number,invalid_time,flag,status,time) VALUES
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(uuid(),#{item.batch},#{item.wh_id},#{item.pro_id},#{item.pod_id},#{item.price},#{item.number},#{item.invalid_time},#{item.flag},#{item.status},#{item.time})
+		</foreach>
+	</insert>
+	<insert id="addPlanPro" parameterType="List">
+	INSERT INTO erp_produce_plan_product(id,pp_id,pro_id,number,drawing_id,crafts_id) VALUE
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.planProId},#{item.pp_id},#{item.proId},#{item.number},#{item.drawing_id},#{item.crafts_id})
+		</foreach>
+	</insert>
+	<insert id="addNotifyPro" parameterType="List">
+		INSERT INTO erp_produce_notify_product (id,pn_id,pro_id,number,STATUS,end_time,remark) VALUE
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.noProId},#{item.notifyId},#{item.proId},#{item.number},#{item.status},#{item.end_time},#{item.remark})
+		</foreach>
+	</insert>
+	<insert id="addType" parameterType="java.util.HashMap">
+		INSERT INTO
+		erp_produce_machine_type (id,code,machine_name,remark)
+		VALUE(#{typeId},#{code},#{machine_name},#{remark})
+	</insert>
+	
+	<insert id="addDrawing" parameterType="java.util.HashMap">
+		INSERT INTO
+		erp_produce_drawing (id,dt_id,pro_id,code,drawing_version,is_using,attachment_id,attachment_name,remark)
+		VALUE(#{drawingId},#{dt_id},#{pro_id},#{code},#{drawing_version},#{is_using},#{attachment_id},#{attachment_name},#{remark})
+	</insert>
+	
+	<insert id="addDrawingType" parameterType="java.util.HashMap">
+		INSERT INTO
+		erp_produce_drawing_type (id,name,remark)
+		VALUE(#{drawingTypeId},#{drawing_type_name},#{remark})
+	</insert>
+
+	<update id="updateBOMInfo" parameterType="java.util.HashMap">
+		UPDATE
+		erp_produce_bom SET
+		code=#{code},bom_type=#{bom_type},pp_id=#{pp_id}
+		,status=#{status}
+		,person_id=#{person_id}
+		,person=#{person}
+		,remark=#{remark}
+		where id=#{id}
+	</update>
+	<update id="updateCrafts" parameterType="java.util.HashMap">
+		UPDATE
+		erp_produce_crafts SET
+		pro_id=#{proId},crafts_version=#{crafts_version},is_using=#{is_using}
+		,remark=#{remark}
+		where id=#{craftsId}
+	</update>
+	<update id="updateProcess" parameterType="java.util.HashMap">
+		UPDATE
+		erp_produce_process SET
+		NAME=#{name},machine_type=#{machine_type},process_index=#{process_index},bad_rate=#{bad_rate},process_time=#{process_time},remark=#{remark}
+		where id=#{processId}
+	</update>
+	<update id="changeExamWay" parameterType="java.util.HashMap">
+		UPDATE
+		erp_produce_exam_product SET
+		exam_way=#{exam_way}
+		where exam_id=#{exam_id} and pro_id=#{pro_id}
+	</update>
+	<update id="updatePlan" parameterType="java.util.HashMap">
+		UPDATE erp_produce_plan SET code=#{code},remark=#{remark} where id=#{planId}
+	</update>
+	<update id="updateNotify" parameterType="java.util.HashMap">
+		UPDATE
+		erp_produce_notify SET
+		CODE=#{code},TYPE=#{type},produce_time=#{produce_time},remark=#{remark}
+		where id=#{notifyId}
+	</update>
+	<update id="updateExamDetial" parameterType="java.util.HashMap">
+			update erp_produce_exam_product set qualified_number = #{qualified_number} where exam_id=#{exam_id} and pro_id=#{pro_id}
+	</update>
+	<update id="updateExam" parameterType="java.util.HashMap">
+				UPDATE
+		erp_produce_exam SET
+		code=#{code},pp_id=#{pp_id}
+		,status=#{status}
+		,person_id=#{person_id}
+		,person=#{person}
+		,remark=#{remark}
+		where id=#{id}
+	</update>
+	
+	<update id="updateType" parameterType="java.util.HashMap">
+		UPDATE
+		erp_produce_machine_type SET
+		code=#{code},machine_name=#{machine_name},
+		remark=#{remark}
+		where
+		id=#{typeId}
+	</update>
+	
+	<update id="updateDrawingType" parameterType="java.util.HashMap">
+		UPDATE
+		erp_produce_drawing_type SET
+        name=#{drawing_type_name},
+		remark=#{remark}
+		where
+		id=#{drawingTypeId}
+	</update>
+	
+	
+	<update id="updateDrawing" parameterType="java.util.HashMap">
+		UPDATE erp_produce_drawing set
+		dt_id=#{dt_id},
+		code=#{code},
+		pro_id=#{pro_id},
+		drawing_version=#{drawing_version},
+		is_using=#{is_using},
+		attachment_id=#{attachment_id},
+		attachment_name=#{attachment_name},
+        remark=#{remark} WHERE id=#{drawingId}
+	</update>
+	
+	<delete id="deleteBOMPro" parameterType="String">
+		delete from
+		erp_produce_bom_product where bom_id=#{bom_id}
+	</delete>
+	<delete id="deleteCrafts" parameterType="String">
+		delete from
+		erp_produce_crafts where id=#{craftsId}
+	</delete>
+	<delete id="deleteProcessConsume" parameterType="String">
+		delete from
+		erp_produce_process_consume where process_id=#{processId}
+	</delete>
+	<delete id="deleteProcess" parameterType="String">
+		delete from
+		erp_produce_process where id=#{processId}
+	</delete>
+	<delete id="deleteNoPro" parameterType="String">
+		delete from
+		erp_produce_notify_product where pn_id=#{notifyId}
+	</delete>
+	<delete id="deleteNotify" parameterType="String">
+		delete from
+		erp_produce_notify where id=#{notifyId}
+	</delete>
+	<delete id="deleteType" parameterType="String">
+		delete from
+		erp_produce_machine_type where id=#{typeId}
+	</delete>
+	<delete id="deleteDrawingType" parameterType="String">
+		delete from
+		erp_produce_drawing_type where id=#{drawingTypeId}
+	</delete>
+	<delete id="deleteDrawing" parameterType="String">
+		delete from
+		erp_produce_drawing where id=#{drawingId}
+	</delete>
+	<delete id="deletePlan" parameterType="String">
+		delete from
+		erp_produce_plan where id=#{planId}
+	</delete>
+	<delete id="deletePlanPro" parameterType="String">
+		delete from
+		erp_produce_plan_product where pp_id=#{planId}
+	</delete>
+	<delete id="deleteDBLog" parameterType="String">
+		delete from erp_db_log where pod_id=#{pod_id} and flag = #{flag}
+	</delete>
+
+
+</mapper>

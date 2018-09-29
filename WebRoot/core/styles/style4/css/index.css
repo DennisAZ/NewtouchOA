@@ -1,0 +1,560 @@
+html, body {
+  font: normal 12px verdana;
+  margin: 0px;
+  padding: 0;
+  border: 0 none;
+  height: 100%;
+  overflow-y:hidden;
+  overflow-x:hidden;
+  background:white;
+}
+
+a {
+  outline-style:none;
+}
+
+a:link,a:visited,a:active,a:hover {
+	text-decoration: none;
+}
+
+.banner_bg {
+  height:65px;
+  background: url(../img/banner/overflow_x_bg.jpg) repeat-x left top;
+}
+
+.banner_logo {
+  width:538px;
+  height:65px;
+  background:url(../img/banner/logo_bg.jpg) no-repeat left top;
+}
+
+.banner_overflow_x_scroll {
+
+}
+
+.banner-shortcutlist-container {
+  position:absolute;
+  overflow:hidden;
+  height:62px;
+  width:310px;
+  top:0px;
+  right:50px;
+}
+
+.clear{
+  clear:both;
+}
+
+.banner_shortcut_bg{
+  width:80px;
+  height:64px;
+  background: url(../img/banner/button_bg.jpg) no-repeat left top;
+}
+
+.banner_shortcut_bg a{
+  display: block; 
+  width: 50px; 
+  position: relative;
+  left: 17px;
+  text-align: center;
+}
+
+.banner_scroll_up{
+  top:20px;
+  position:absolute;
+  right: 369px;
+}
+
+.banner_scroll_up img{
+  width:27px;
+  height:27px;
+}
+
+.banner_scroll_down{
+	top:20px;
+	position:absolute;
+	right:10px;
+}
+
+.banner_scroll_down img{
+  width:27px;
+  height:27px;
+}
+
+.banner_shortcut_bg a:link,.banner_shortcut_bg a:visited,.banner_shortcut_bg a:active,.banner_shortcut_bg a:hover{
+  color:#fff;
+}
+
+.banner_shortcut_bg:hover{
+  width:80px;
+  height:62px;
+  background: url(../img/banner/button_mouseon_bg.jpg) no-repeat left top;
+}
+
+.mainframe-logout{
+  width:53px;
+  height:22px;
+  background: url(../img/mainframe/logout.jpg) no-repeat left top;
+}
+
+.mainframe-logout-mouseon {
+  width:53px;
+  height:22px;
+  background: url(../img/mainframe/logout_mouseon.jpg) no-repeat left top;
+}
+
+.mainframe-right-explorer{
+  border: none;
+  height: 30px;
+  background:url(../img/mainframe/right_exporer_bg.jpg) repeat-x left top;
+}
+
+.mainframe-right-logout{
+	position:absolute;
+	right:30px;
+	top:0px;
+}
+
+.mainframe-right-logout a{
+	display:block;
+  width: 58px;
+  height: 30px;
+  cursor:pointer;
+  background:url(../img/mainframe/logout.jpg) no-repeat left top;
+}
+
+.mainframe-right-logout a:hover{
+  background:url(../img/mainframe/logout_mouseon.jpg) no-repeat left top;
+}
+
+
+.mainframe-leftExplorer {
+  border:none;
+  overflow:hidden;
+}
+
+.mainframe-right-callright{
+	position:absolute;
+	left:10px;
+	top:0px;
+}
+
+.west-tabpanel-east {
+  height:100%;
+  width:7px;
+  background:url(../img/mainframe/left_bar_panel_mr.jpg) repeat-y left top;
+}
+
+.west-tabpanel-west {
+  height:100%;
+  width:7px;
+  background:url(../img/mainframe/left_bar_panel_ml.jpg) repeat-y left top #f4f4f4;
+}
+
+#navigation {
+	margin:0 5px;
+  width: 200px;
+  top: 25px;
+}
+
+.mainframe-right-callright a {
+	display:block;
+  width: 12px;
+  height: 30px;
+  margin:7px 0px;
+  cursor: pointer;
+  visibility:hidden;
+  background:url(../img/mainframe/call_right.jpg) no-repeat left top;
+}
+
+.mainframe-right-control {
+  position:absolute;
+  right:100px;
+  top:0px;
+}
+
+.mainframe-right-control a{
+  display:block;
+  width: 89px;
+  height: 30px;
+  cursor: pointer;
+  background:url(../img/mainframe/control.jpg) no-repeat left top;
+}
+
+.mainframe-right-timeinfo {
+  position:absolute;
+  color:#fff;
+  right:270px;
+  top:0px;
+}
+
+.mainframe-right-control a:hover{
+  cursor: pointer;
+  background:url(../img/mainframe/control_mouseon.jpg) no-repeat left top;
+}
+
+.mainframe-right-desktop{
+  position:absolute;
+  right:200px;
+  top:0px;
+}
+
+.mainframe-right-desktop a{
+	display:block;
+  width: 57px;
+  height: 30px;
+  cursor: pointer;
+  background: url(../img/mainframe/desktop.jpg) no-repeat left top;
+}
+
+.mainframe-right-desktop a:hover{
+  cursor: pointer;
+  background: url(../img/mainframe/desktop_mouseon.jpg) no-repeat left top;
+}
+
+.mainframe-right-username{
+  margin:0px 5px;
+  float:right;
+  text-align:center;
+  width: 104px;
+  height: 30px;
+  background: url(../img/mainframe/username_bg.jpg) no-repeat left top;
+}
+
+.mainframe-menu-lv2 .mainframe-menu-expand{
+  color:#323232;
+  background: url(../img/mainframe/menu_lv2_expand.jpg) no-repeat left top;
+}
+
+.mainframe-menu-lv2 .mainframe-menu-expand:hover{
+  color:#323232;
+  background: url(../img/mainframe/menu_lv2_expand.jpg) no-repeat left top;
+}
+
+.mainframe-menu-lv2 .mainframe-menu-close:hover{
+  color:#323232;
+  background: url(../img/mainframe/menu_lv2_close_hover.jpg) no-repeat left top;
+}
+
+.mainframe-menu-lv2 .mainframe-menu-close{
+  color:#323232;
+  background: url(../img/mainframe/menu_lv2_close.jpg) no-repeat left top;
+}
+
+.mainframe-right-username:hover{
+  background: url(../img/mainframe/username_mouseon.jpg) no-repeat left top;
+}
+
+.mainframe-right-username input{
+  margin:8px 0px;
+  width:80px;
+  color:#fff;
+  text-align:center;
+  cursor: pointer;
+  font-size: 12px;
+  border:none;
+  background-color:transparent 
+}
+
+.mainframe-right-userstatus{
+  margin:0px 5px;
+  float:right;
+  text-align:center;
+  width: 58px;
+  height: 30px;
+  background: url(../img/mainframe/userstatus_bg.jpg) no-repeat left top;
+}
+
+.mainframe-right-editInfo{
+  display:none;
+  margin:0px 5px;
+  text-align:center;
+  width: 193px;
+  height: 30px;
+  background: url(../img/mainframe/edit_info_bg.jpg) no-repeat left top;
+}
+
+.mainframe-right-editInfo input{
+  color:#fff;
+  margin:9px 0px;
+  width:160px;
+  border:none;
+  font-size: 12px;
+  background-color:transparent 
+}
+
+.mainframe-right-userstatus:hover{
+  background: url(../img/mainframe/userstatus_mouseon.jpg) no-repeat left top;
+}
+
+.mainframe-right-userstatus input{
+  margin:8px 0px;
+  width:38px;
+  text-align:center;
+  color:#fff;
+  cursor: pointer;
+  border:none;
+  font-size: 12px;
+  background-color:transparent 
+}
+
+.mainframe-left-bg {
+  width: 209px;
+  height: 32px;
+  background: url(../img/mainframe/left_bar_bg.jpg) no-repeat left top;
+}
+
+.mainframe-left-bl-bg {
+  width: 7px;
+  height: 100%;
+  background: url(../img/mainframe/left_bar_bl.jpg) repeat-y left top;
+}
+
+.mainframe-left-br-bg {
+  width: 7px;
+  height: 100%;
+  background: url(../img/mainframe/left_bar_br.jpg) repeat-y left top;
+}
+
+.mainframe-left-bg li {
+  float:left;
+}
+
+.mainframe-left-bg li a img {
+  position:relative;
+  top:4px;
+  left:4px;
+  height:28px;
+  width:41px;
+}
+
+.mainframe-left-lv2-bg {
+  width: 209px;
+  height: 23px;
+  background: url(../img/mainframe/left_bar_lv2_bg.jpg) no-repeat left top;
+}
+
+.mainframe-left-lv2-bg li a img {
+  height:18px;
+  width:32px;
+  margin: 1px 5px;
+}
+
+.mainframe-left-lv2-bg li img {
+  height:16px;
+  width:4px;
+}
+
+.mainframe-left-lv2-bg li {
+  float:left;
+}
+
+.mainframe-footer {
+  width: 100%;
+  height: 7px;
+  background: url(../img/mainframe/footer.jpg) repeat-x left top;
+}
+
+.mainframe-menu-lv1 {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+.mainframe-menu-lv1 li {
+  list-style:none outside none;
+  border:none;
+  border-style:none;
+  height: 30px;
+}
+
+.mainframe-menu-lv1 li a {
+  display:block;
+  width: 176px;
+  line-height: 30px;
+  font-size:13px;
+  color:#323232;
+  -moz-user-select:none;
+  text-align:left;
+  vertical-align:middle;
+  padding:0 0 0 30px;
+  cursor:pointer;
+  background: url(../img/mainframe/menu_lv1_bg.jpg) no-repeat left top;
+}
+
+.mainframe-menu-lv1 .mainframe-menu-selected{
+  color:#323232;
+  background: url(../img/mainframe/menu_lv1_selected.jpg) no-repeat left top;
+}
+
+.mainframe-menu-lv1 .mainframe-menu-selected:hover{
+  color:#323232;
+  background: url(../img/mainframe/menu_lv1_selected.jpg) no-repeat left top;
+}
+
+.mainframe-menu-lv2 .mainframe-menu-selected{
+  color:#323232;
+  background: url(../img/mainframe/menu_lv2_selected.jpg) no-repeat left top;
+}
+.mainframe-menu-lv2 .mainframe-menu-selected:hover{
+  color:#323232;
+  background: url(../img/mainframe/menu_lv2_selected.jpg) no-repeat left top;
+}
+
+.mainframe-menu-lv3 .mainframe-menu-selected{
+  color:#000000;
+  background: url(../img/mainframe/menu_lv3_selected.jpg) no-repeat left top;
+}
+
+.mainframe-menu-lv3 .mainframe-menu-selected:hover{
+  color:#000000;
+  background: url(../img/mainframe/menu_lv3_selected.jpg) no-repeat left top;
+}
+
+.mainframe-menu-loading{
+  background: white url(../img/loading.gif) no-repeat left top !important;
+}
+
+.mainframe-menu-lv1 li a:hover{
+  background: url(../img/mainframe/menu_lv1_mouseon.jpg) no-repeat left top;
+}
+
+.mainframe-menu-lv2 {
+  list-style:none outside none;
+  border:none;
+  margin: 0;
+  padding: 0;
+}
+
+.mainframe-menu-lv2 li {
+  list-style:none outside none;
+  border:none;
+  border-style:none;
+  height:29px;  
+}
+
+.mainframe-menu-lv2 li a {
+  display:block;
+  width: 176px;
+  line-height: 29px;
+  vertical-align:middle;
+  font-size:12px;
+  color:#323232;
+  -moz-user-select:none;
+  text-align:left;
+  padding-left:45px;
+  cursor:pointer;
+  background: url(../img/mainframe/menu_lv2_bg.jpg) no-repeat left top;
+}
+
+.mainframe-menu-lv2 li a:hover{
+  width: 176px;
+  height: 29px;
+  color:#08124e;
+  background: url(../img/mainframe/menu_lv2_mouseon.jpg) no-repeat left top;
+}
+
+.mainframe-menu-lv3 {
+  list-style:none outside none;
+  border:none;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.mainframe-menu-lv3 li {
+  list-style:none outside none;
+  border:none;
+  border-style:none;
+  height:25px;
+}
+
+.mainframe-menu-lv3 li a {
+  display:block;
+  width: 176px;
+  line-height: 25px;
+  vertical-align:middle;
+  font-size:12px;
+  color:#0e1956;
+  text-align:left;
+  -moz-user-select:none;
+  padding-left:60px;
+  cursor:pointer;
+  background: url(../img/mainframe/menu_lv3_bg.jpg) no-repeat left top;
+}
+
+.mainframe-menu-lv3 li a:hover{
+  width: 176px;
+  height: 25px;
+  color:#000000;
+  background: url(../img/mainframe/menu_lv3_selected.jpg) no-repeat left top;
+}
+
+.mainframe-left-callLeft{
+  display:block;
+  margin:8px 13px;
+  width:11px;
+  height:16px;
+  background:url(../img/mainframe/call_left.jpg) no-repeat left top;
+}
+
+.icon-window{
+  background-image:url(../img/sms.gif) !important;
+}
+.icon-sms{
+  background-image:url(../img/icon-sms.gif) !important;
+}
+
+.mainframe-rightbar-up {
+  position:absolute;right:10px;top:0px;
+}
+
+.mainframe-rightbar-up img {
+  width:15px;height:30px;
+}
+
+
+.mainframe-leftContent{
+  background: url(../img/mainframe/left_bar_panel_mc.jpg) repeat-y left top;
+  background-color:#f4f4f4;
+}
+
+.mainframe-leftContent .x-panel-body {
+  background-color:transparent;
+}
+
+.mainframe-left-leftMenu {
+  height:100%;
+  overflow-y:auto;
+  overflow-x:hidden;
+  width:195px;
+}
+
+#shortcutMenu, #favMenu {
+  width:195px;
+}
+
+.statusbar-usercount{
+  heigth:21px;
+  background: url(../img/statusbar/usercount_bg.jpg) no-repeat left top;
+}
+
+.status-content .statusbar-usercount a:link,.status-content .statusbar-usercount a:visited,.status-content .statusbar-usercount a:active,.status-content .statusbar-usercount a:hover{
+  color:#000;
+}
+
+.statusbar-usercount input{
+  color:#000;
+}
+
+.status-content {
+  background: url(../img/statusbar/bg.jpg) repeat-x left top;
+}
+
+.status-content a:link,.status-content a:visited,.status-content a:active,.status-content a:hover{
+  color:#000;
+}
+
+.status-sms {
+  background: url(../img/statusbar/bg.jpg) repeat-x left top;
+}

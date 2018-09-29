@@ -1,0 +1,94 @@
+	.none {
+		display: none;
+	}
+	
+	.block {
+		display: block;
+	}
+
+	.s_c {
+		width:800px; text-align: center;
+	}
+	
+	.s_c ul{
+		clear:both; margin:0;
+	}
+	
+	.s_c li{
+		list-style:none; float:left; position: relative; width: 70px;
+	}
+
+	.c_0 {
+		background-color: #CCCCCC;
+	}
+	
+	.c_1 {
+		background-color: #0000CC;
+	} 
+
+	.s_b{ 
+		border:1px solid red;
+		height: 160px;
+		width: 440px;
+	}
+	#navPanel
+	{
+	    FONT-SIZE: 13px;
+	    BACKGROUND: url(../imgs/menu_top_bg.png) repeat-x left top;
+	    WIDTH: 100%;
+	    PADDING-TOP: 4px;                          
+	}
+	
+	#title
+	{
+       
+	    PADDING-RIGHT: 20px;
+	    PADDING-LEFT: 20px;
+	    FLOAT: left;
+	    PADDING-BOTTOM: 0px;
+	    OVERFLOW: hidden;
+	    PADDING-TOP: 0px;
+	    WHITE-SPACE: nowrap;
+	    HEIGHT: 26px
+	    /*BACKGROUND: url(../imgs/bg.jpg) -200px -83px*/
+	}
+	#title A
+	{
+	    PADDING-LEFT: 5px;
+	    FLOAT: left;
+	    OVERFLOW: hidden;
+	    COLOR: #ffffff;
+	    HEIGHT: 26px;
+	    TEXT-DECORATION: none
+	}
+	#title A SPAN
+	{
+	    PADDING-RIGHT: 10px;
+	    PADDING-LEFT: 5px;
+	    FLOAT: left;
+	    PADDING-BOTTOM: 3px;
+	    CURSOR: pointer;
+	    PADDING-TOP: 3px;
+	    HEIGHT: 26px
+	}
+	#title a:hover{
+	    FONT-WEIGHT: bold;
+	    BACKGROUND: url(../imgs/menu_top_hover_l.png) no-repeat left top;
+	    COLOR: #000000;
+	}
+	#title a:hover span{
+	    BACKGROUND: url(../imgs/menu_top_hover_r.png) no-repeat right top;
+	}
+	#title a.active{
+	    FONT-WEIGHT: bold;
+	    BACKGROUND: url(../imgs/menu_top_active_l.png) no-repeat left top;
+	    COLOR: #000000
+	}
+	#title a.active span{
+	    BACKGROUND: url(../imgs/menu_top_active_r.png) no-repeat right top
+	}
+	#content {
+		width:100%;
+		height:300px;
+	}
+}

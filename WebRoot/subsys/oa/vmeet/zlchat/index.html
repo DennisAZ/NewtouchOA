@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>zlchat 2.0演示</title>
+<style type="text/css">
+<!--
+body {
+	background-image: url(default.jpg);
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size:16px;
+}
+.STYLE1 {color: #FFFFFF}
+-->
+</style>
+
+<script LANGUAGE="javascript">
+  function checkuser(){
+	  
+	  var username = document.getElementById("userName").value;
+	  if(username==''){
+		  alert("请输入用户名称");
+		  return false;
+	  } 
+		 return true;
+	  
+}
+
+/*
+function document.onkeydown() 
+{ 
+    if(event.keyCode==13) 
+    {
+        checkuser();        
+    }
+    return true;
+
+}*/
+
+function resize_rect()
+        {
+            var o = document.getElementById("loginForm");
+           
+           
+            o.style.left = ( document.body.clientWidth - o.offsetWidth ) / 2 + "px";
+            o.style.top = (document.documentElement.clientHeight - o.offsetHeight ) / 2 + "px";
+			o.style.visibility="visible";
+        }
+        
+        window.onresize = resize_rect;
+
+
+</script>
+
+
+</head>
+
+<body onload="resize_rect();">
+<div id="loginForm"  style="position:absolute; visibility: hidden;" >
+<form method="post" action="zlchat.jsp" id="form1" name="form1" onsubmit="javascript:return checkuser();">
+  <table width="350" border="0" cellspacing="0" cellpadding="4">
+    <tr>
+      <td><span class="STYLE1">用户名:</span></td>
+      <td><input name="userName" type="text" id="userName" size="20" maxlength="50" /></td>
+    </tr>
+    <tr>
+      <td class="STYLE1">密 码:</td>
+      <td><input name="password" type="password" id="password" size="20" maxlength="50" />
+        <span class="STYLE1">(缺省为123456)</span></td>
+    </tr>
+    <tr>
+      <td class="STYLE1">角 色：</td>
+      <td><select name="role" id="role">
+        <option value="4">普通用户</option>
+        <option value="3">演讲者</option>
+        <option value="2">主持人</option>
+      </select>      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><input type="submit" name="sub" id="sub" value="登录"  />
+        <label>
+        <input type="reset" name="button2" id="button2" value="重置" />
+        </label></td>
+      </tr>
+  </table>
+	
+</form>
+
+</div>
+</body>
+</html>

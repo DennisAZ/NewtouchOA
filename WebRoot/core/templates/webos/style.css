@@ -1,0 +1,70 @@
+body {
+	font:12px "微软雅黑", helvetica, Arial, Sans-Serif;
+  background: url(img/bg.jpg) repeat;
+  padding-top:128px;
+}
+
+.login-bg {
+  position:relative;
+  width:724px;
+  height:313px;
+}
+
+.login-username {
+  position:absolute;
+  top:156px;
+  left:130px;
+  width:57px;
+  height:16px;
+}
+
+.login-password {
+  position:absolute;
+  top:193px;
+  left:130px;
+  width:57px;
+  height:16px;
+}
+
+.login-input-bg {
+  padding-top: 1px;
+  position:relative;
+  width:184px;
+  height:25px;
+}
+
+.verification-code {
+  position:absolute;
+  top:237px;
+  left:58px;
+  width:173px;
+  height:31px;
+  text-align: left;
+  line-height: 25px;
+}
+
+.verification-code input {
+	width: 60px;
+  margin-left: 5px;
+}
+
+.login-input-bg input{
+  border:none;
+  background-color:transparent;
+  height:20px;
+  width: 170px;
+}
+
+.login-btn {
+  position:absolute;
+  top:237px;
+  left:238px;
+  cursor:pointer;
+  width:113px;
+  height:31px;
+  background: url(img/login_btn.png) no-repeat left top;
+}
+
+.login-btn:hover {
+	  background: url(img/login_btn_hover.png) no-repeat left top;
+}

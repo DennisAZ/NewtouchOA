@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">开发模式</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:</td>
+    <td width="20%">&nbsp;</td>
+    <td width="15%">创建日期:</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="60%">适用情景描述</th>
+    <th width="35%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+    <td>开发模式</td>
+    <td>开发步骤<br>
+1.	建立数据库表 结构  在数据库中建立起要开发的模块的数据结构<br>
+建表的规则为：<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;1.表名称和字段名的命名规则为：名称大写，且单词与单词之间使用下划线连接<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;2.每一张表都存在一个唯一且自增的字段SEQ_ID<br>
+2.	建立数据字典  在系统管理菜单下的数据字典，新建中可以通过抽取数据字典按钮，可以快速填写数据字典。<br>
+3.	建立模块：<BR>
+ &nbsp;&nbsp;&nbsp;&nbsp;1.在src和webroot下建立相对应的目录结构<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;2.src的模块下至少应包括的子包有：act、data、logic<br>
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;act：存放处理请求的方法<br>
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;data：存放实体类<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;logic： 存放用于处理具体逻辑的方法<br>
+4.	创建实体类<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;实力类的创建规则为：<BR>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;实体类名： <BR>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.在对应的表名称前加前缀YH；<BR>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.所有单词首字母大写，其余小写；<BR>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.取消所有下划线；<BR>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如：表名称-- OA_TEST 对应的类名为 --- YHOaTest<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;字段名称： <br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.数据库中对应的字段，所有单词首字母大写，其余小写；<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.取消所有下划线；<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.字段名称首字母小写<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如： AO_TEST_FIELD  对应类字段名为 oaTestField;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;方法：<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所有的字段都需要有get/set方法。
+<br>
+</td>
+    <td><a href="#">代码</a></td>
+  </tr>
+  <tr>
+    <td>单表增删改查向导</td>
+    <td>单表的增删改查可以快速的搭建上述开发模式中的第3和第4步.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;向导：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.选择合适的模板<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.根据数据字典建的table_no，和对应的模块名（模块位置对应的是src下的yh目录）<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.生产代码<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.手动调试代码的错误或不合理的地方<br></td>
+    <td><a href="#">代码</a></td>
+  </tr>
+</table>
+
+</body>
+</html>

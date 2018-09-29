@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="x-ua-compatible" content="ie=EmulateIE7" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+    <title>天气预报</title>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <style type="text/css">
+    	body{
+			background-color:#fff;
+		}
+		.coverLayer {
+			position:absolute;
+			top:50px;
+			left:10px;
+			width:300px;
+			height:225px;
+			FILTER: alpha(opacity=0);
+			opacity:0;
+			background-color:#fff;
+   			z-index:99;
+		}
+    </style>
+    <script type="text/javascript">
+    	function netError(){
+			parent.document.getElementById("weaContent").style.display="none";
+			parent.document.getElementById("allWea").style.display="none";
+			parent.document.getElementById("weaError").style.display="";
+		}
+		window.onload=function(){
+			document.getElementById("checkImg").src="http://desktop.google.com/images/gadget_icon.gif?tempid="+Math.random();
+			document.getElementById("checkImg").onerror=function(){
+				netError();
+			}
+		}
+    </script>
+</head>
+
+<body>
+	<img id="checkImg" style="display:none"/>
+	
+	<!--<div class="coverLayer"></div>-->
+    <iframe src="http://m.weather.com.cn/n/pn12/weather.htm?id=101190101T " width="260" height="110" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>
+    <!--<iframe src="http://www.thinkpage.cn/weather/weather.aspx?uid=&c=CHXX0099&l=zh-CHS&p=CMA&a=1&u=C&s=1&m=1&x=1&d=3&fc=&bgc=&bc=&ti=1&in=1&li=2"  frameborder="0" scrolling="no" width="258" height="225" allowTransparency="true"></iframe>-->
+</body>
+</html>

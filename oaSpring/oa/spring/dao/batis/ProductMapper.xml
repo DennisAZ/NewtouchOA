@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oa.spring.dao.batis.ProductMapper">
+
+	<resultMap type="oa.spring.po.Product" id="product">
+		<id property="id" column="id" />
+		<result property="proName" column="pro_name" />
+		<result property="proCode" column="pro_code" />
+		<result property="proType" column="pro_type" />
+		<result property="proPrice" column="pro_price" />
+		<result property="remark" column="remark" />
+		<association property="pUnit" column="unit_id"
+			javaType="oa.spring.po.ProductUnit">
+			<id property="unitId" column="unit_id" />
+			<result property="unitName" column="unit_name" />
+		</association>
+		<association property="pType" column="id"
+			javaType="oa.spring.po.ProductType">
+			<id property="id" column="id" />
+			<result property="name" column="name" />
+		</association>
+		<association property="pStyle" column="id"
+			javaType="oa.spring.po.ProductStyle">
+			<id property="id" column="id" />
+			<result property="name" column="ptName" />
+		</association>
+
+	</resultMap>
+
+	<select id="getProduct" resultMap="product">
+		SELECT * from erp_product where is_del='0'
+	</select>
+	<select id="getProductByIds" resultType="java.util.HashMap" parameterType="String">
+	SELECT p.id ,pt.id AS ptId,u.unit_id AS unitId,ps.id AS psId,
+		pro_code,pro_name,pro_type,pro_price,u.unit_name,ps.name,pt.name AS ptName
+		,p.remark
+		FROM erp_product p LEFT JOIN erp_product_style ps ON
+		ps.id=p.ps_id
+		LEFT JOIN erp_product_type pt ON pt.id=p.pt_id LEFT JOIN
+		erp_product_unit u ON u.unit_id=p.unit_id where p.id=#{id}
+
+	</select>
+	<select id="getProType" resultType="java.util.HashMap" parameterType="String">
+			SELECT id, NAME FROM erp_product_type WHERE parent_name='-1' AND is_del='0'
+
+	</select>
+
+	<select id="getType" resultType="java.util.HashMap">
+	SELECT id,name FROM erp_product_type WHERE is_del!=1
+	</select>
+	<select id="checkIsUsing" resultType="int" parameterType="string">
+	SELECT count(*) from erp_produce_crafts WHERE  pro_id=#{pro_id} and is_using = '1'
+	</select>
+	<select id="checkIsUsing1" resultType="int" parameterType="java.util.HashMap">
+	SELECT count(*) from erp_produce_crafts WHERE  pro_id=#{pro_id} and is_using = '1' and id <![CDATA[<>]]> #{craftsId}
+	</select>
+	<select id="checkDrawIsUsing" resultType="int" parameterType="string">
+	SELECT count(*) from erp_produce_drawing WHERE  pro_id=#{pro_id} and is_using = '1'
+	</select>
+	<select id="checkDrawIsUsing1" resultType="int" parameterType="string">
+	SELECT count(*) from erp_produce_drawing WHERE  pro_id=#{pro_id} and is_using = '1' and id <![CDATA[<>]]> #{drawingId}
+	</select>
+	<insert id="addProduct" parameterType="oa.spring.po.Product">
+		insert into
+		erp_product(id,pro_code,pro_name,pro_type,pro_price,unit_id,ps_id,pt_id,remark,shortName)
+		values(uuid(),#{proCode},#{proName},#{proType},#{proPrice},#{pUnit.unitId},#{pStyle.id},#{pType.id},#{remark},#{shortName})
+	</insert>
+	<update id="productUpdate" parameterType="oa.spring.po.Product">
+		update erp_product set
+		pro_name = #{proName},
+		pro_code=#{proCode},
+		pro_type=#{proType},
+		pro_price=#{proPrice},
+		unit_id=#{pUnit.unitId},
+		ps_id=#{pStyle.id},
+		pt_id=#{pType.id},
+		remark=#{remark},shortName=#{shortName} where id=#{id}
+	</update>
+	<update id="setUsing" parameterType="String">
+	update erp_produce_crafts set is_using = '1' where  id=#{craftsId}
+	</update>
+	<update id="setDrawingUsing" parameterType="String">
+	update erp_produce_drawing set is_using = '1' where  id=#{drawingId}
+	</update>
+	<update id="changeUsing" parameterType="String">
+	update erp_produce_crafts set is_using = '0' where  pro_id=#{pro_id} and is_using = '1'
+	</update>
+	<update id="changeDrawUsing" parameterType="String">
+	update erp_produce_drawing set is_using = '0' where  pro_id=#{pro_id} and is_using = '1'
+	</update>
+	<delete id="productDelete" parameterType="String">
+		update erp_product set
+		is_del='1' where id=#{id};
+	</delete>
+</mapper>

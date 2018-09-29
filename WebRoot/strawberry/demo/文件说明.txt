@@ -1,0 +1,5 @@
+strawberry.html 绘制主要页面.
+view.html 预览界面,不可单独打开.
+saveXml.html 保存strawberry xml文件,不可单独打开.
+flow1.xml 示列.
+flow2.xml 示列.

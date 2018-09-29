@@ -1,0 +1,70 @@
+package ${packageName}.act;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import yh.core.data.YHRequestDbConn;
+import yh.core.global.YHActionKeys;
+import yh.core.global.YHBeanKeys;
+import yh.core.global.YHConst;
+import yh.core.util.YHUtility;
+import yh.core.util.db.YHDBUtility;
+
+public class ${className}Act{
+  public ${className}Logic logic = new ${className}Logic();
+  public String getById(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    Connection conn = null;
+    try{
+      YHRequestDbConn requestDbConn = (YHRequestDbConn) request
+      .getAttribute(YHBeanKeys.REQUEST_DB_CONN_MGR);
+      
+      conn = requestDbConn.getSysDbConn();
+      logic.getById();
+      
+  	} catch (Exception ex){
+      request.setAttribute(YHActionKeys.RET_STATE, YHConst.RETURN_ERROR);
+      request.setAttribute(YHActionKeys.RET_MSRG, ex.toString());
+      throw ex;
+    }
+    return "/core/inc/rtjson.jsp";
+  }
+  public String saveOrUpdate(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    Connection conn = null;
+    try{
+      YHRequestDbConn requestDbConn = (YHRequestDbConn) request
+      .getAttribute(YHBeanKeys.REQUEST_DB_CONN_MGR);
+      conn = requestDbConn.getSysDbConn();
+      String seqId = request.getParameter(seqId);
+      if (YHUtility.isNullOrEmpty(seqId)) {
+      
+      } else {
+      
+      
+      }
+      
+  	} catch (Exception ex){
+      request.setAttribute(YHActionKeys.RET_STATE, YHConst.RETURN_ERROR);
+      request.setAttribute(YHActionKeys.RET_MSRG, ex.toString());
+      throw ex;
+    }
+    return "/core/inc/rtjson.jsp";
+  }
+  public String list(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    Connection dbConn = null;
+    try {
+      YHRequestDbConn requestDbConn = (YHRequestDbConn) request
+          .getAttribute(YHBeanKeys.REQUEST_DB_CONN_MGR);
+      dbConn = requestDbConn.getSysDbConn();
+      
+      PrintWriter pw = response.getWriter();
+      pw.println( result.toString());
+      pw.flush();
+    } catch (Exception ex) {
+      throw ex;
+    }
+    return null;
+  }
+}

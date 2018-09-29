@@ -1,0 +1,344 @@
+*{padding:0px;margin:0px;}
+body{
+   background:#e6f3fb;
+   font-size:12px;
+}
+.loading{
+   background:url('/images/loading.gif') top center no-repeat;
+   margin-top:10px;
+   padding-top:50px;
+   text-align:center;
+}
+
+a.btn-white-big{
+   padding-top:2px;
+   width:95px;
+   height:30px;
+   display:inline-block;
+   color:#393939;
+   font-size:18px;
+   font-family:微软雅黑,宋体;
+   text-align:center;
+   text-decoration:none;
+   background:url('images/btn_white_big.png') center top no-repeat;
+}
+a.btn-white-big:hover{
+   background-position:center -35px;
+}
+
+.center{
+   padding-top:5px;
+   padding-left:10px;
+   height:423px;
+   overflow:hidden;
+   position:relative;
+}
+.center-left{
+   float:left;
+   width:197px;
+   height:415px;
+   margin-right:7px;
+   position:relative;
+}
+.center-group{
+   height:22px;
+   background:url('images/smsbox_group_bg.png') left top no-repeat;
+   text-align:center;
+   margin-bottom:5px;
+}
+.center-group #group_by_name{
+   float:left;
+   display:block;
+   width:98px;
+   height:22px;
+   line-height:22px;
+   color:#317ddb;
+   text-decoration:none;
+}
+.center-group #group_by_name.active{
+   color:#fff;
+   background:url('images/smsbox_group_bg.png') left -22px no-repeat;
+}
+.center-group #group_by_type{
+   float:right;
+   display:block;
+   width:98px;
+   height:22px;
+   line-height:22px;
+   color:#317ddb;
+   text-decoration:none;
+}
+.center-group #group_by_type.active{
+   color:#fff;
+   background:url('images/smsbox_group_bg.png') right -22px no-repeat;
+}
+#smsbox_scroll_up{
+   display:none;
+   height:10px;
+   font-size:1px;
+   overflow:hidden;
+   cursor:pointer;
+   background:url('images/scroll_arrow.png') center 0px no-repeat;
+}
+#smsbox_scroll_up.active{
+   background-position:center -20px;
+}
+#smsbox_list{
+   height:343px;
+}
+#smsbox_list .list-container{
+   width:205px;
+   height:343px;
+   overflow:hidden;
+   position:absolute;
+   z-index:1;
+}
+#smsbox_list .list-container .list-block{
+   border:1px #e6f3fb solid;
+   border-right:1px #bbd1de solid;
+   cursor:pointer;
+   padding:5px 0px;
+   -moz-border-radius-topleft:5px;
+   -moz-border-radius-bottomleft:5px;
+   -webkit-border-top-left-radius:5px;
+   -webkit-border-bottom-left-radius:5px;
+}
+#smsbox_list .list-container .list-block-hover{
+   border:1px #bbd1de solid;
+   background:#f4f9ff;
+}
+#smsbox_list .list-container .list-block-active{
+   border:1px #bbd1de solid;
+   border-right:1px #fff solid;
+   background:#fff;
+}
+#smsbox_list .list-container .list-block table{
+   border:0px;
+   width:185px;
+   font-size:12px;
+   clear:both;
+   table-layout:fixed;
+   margin-left:5px;
+}
+#smsbox_list .list-container .list-block table.unread{
+   font-weight:bold;
+}
+#smsbox_list .list-container .list-block table.unread td.count{
+   background:url('images/smsbox_unread.png') left center no-repeat;
+}
+#smsbox_list .list-container .list-block table td{
+   text-overflow:ellipsis;
+   white-space:nowrap;
+   overflow:hidden;
+}
+#smsbox_list .list-container .list-block table td.name{
+}
+#smsbox_list .list-container .list-block table td.count{
+   padding-left:20px;
+   color:#307dd7;
+}
+#smsbox_list .list-container .list-block table td.time{
+   width:40px;
+   text-align:right;
+}
+#smsbox_list .list-container .list-block table td.msg{
+}
+#smsbox_scroll_down{
+   display:none;
+   height:10px;
+   font-size:1px;
+   overflow:hidden;
+   cursor:pointer;
+   background:url('images/scroll_arrow.png') center -10px no-repeat;
+}
+#smsbox_scroll_down.active{
+   background-position:center -30px;
+}
+#smsbox_op_all{
+   width:197px;
+   height:22px;
+   line-height:22px;
+   margin-top:5px;
+   background:url('images/smsbox_op_all_bg.png') left top no-repeat;
+   position:absolute;
+   left:0px;
+   bottom:0px;
+   text-align:center;
+}
+#smsbox_read_all{
+   display:inline-block;
+   width:60px;
+   height:22px;
+   line-height:22px;
+   color:#317ddb;
+   text-decoration:none;
+}
+#smsbox_detail_all{
+   display:inline-block;
+   width:60px;
+   height:22px;
+   line-height:22px;
+   color:#317ddb;
+   text-decoration:none;
+}
+#smsbox_delete_all{
+   display:inline-block;
+   width:60px;
+   height:22px;
+   line-height:22px;
+   color:#317ddb;
+   text-decoration:none;
+}
+.center-right{
+   float: left;
+   display:inline;
+   width:267px;
+   height:418px;
+   background:#fff;
+   border:1px #bbd1de solid;
+}
+.center-toolbar{
+   height:27px;
+   border-bottom:1px #bbd1de solid;
+   background:url('images/smsbox_toolbar_bg.png') top left repeat-x;
+}
+.center-toolbar a{
+   float:left;
+   display:block;
+   height:26px;
+   line-height:26px;
+   color:#327ed4;
+   background:url('images/smsbox_toolbar_icons.png') left top no-repeat;
+   padding-left:20px;
+   margin-left:10px;
+   text-decoration:none;
+}
+.center-toolbar #smsbox_toolbar_read{
+   background-position:0px 0px;
+}
+.center-toolbar #smsbox_toolbar_detail{
+   background-position:0px -26px;
+}
+.center-toolbar #smsbox_toolbar_delete{
+   background-position:0px -52px;
+}
+.center-chat{
+   padding:5px;
+   padding-bottom:0px;
+   width:260px;
+   height:300px;
+   overflow-x:hidden;
+   overflow-y:auto;
+}
+.center-chat .msg-block{
+   -moz-border-radius:5px;
+   -webkit-border-radius:5px;
+   margin-bottom:3px;
+}
+.center-chat .from{
+   padding:5px;
+}
+.center-chat .msg-hover{
+   background:#e6f3fb;
+}
+.center-chat .msg-active{
+   background:#e6f3fb;
+}
+.center-chat .from .head{
+   height:20px;
+   line-height:20px;
+}
+.center-chat .from .head .name{
+   float:left;
+   color:#327dd8;
+}
+.center-chat .from .head .operation{
+   float:right;
+   text-align:right;
+}
+.center-chat .from .head .operation a{
+   color:#317ed8;
+   text-decoration:none;
+}
+.center-chat .from .msg{
+}
+.center-chat .to{
+   padding:5px;
+}
+.center-chat .to .head{
+   height:20px;
+   line-height:20px;
+}
+.center-chat .to .head .name{
+   float:left;
+   color:#42B475;
+}
+.center-chat .to .head .operation{
+   float:right;
+}
+.center-chat .to .msg{
+}
+.center-reply{
+   margin:5px 0px;
+   padding:5px;
+   height:80px;
+   text-align:center;
+   background:url('images/smsbox_textarea_bg.png') center top no-repeat;
+   position:relative;
+}
+.center-reply-focus{
+   background-position:center -90px;
+}
+.center-reply textarea{
+   width:238px;
+   height:70px;
+   line-height:17px;
+   border:0px;
+   overflow:auto;
+   background:transparent;
+}
+.center-reply #smsbox_send_msg{
+   display:block;
+   width:53px;
+   height:22px;
+   color:#307dd5;
+   text-decoration:none;
+   text-align:left;
+   padding-top:4px;
+   padding-left:6px;
+   background:url('images/smsbox_send_bg.png') left top no-repeat;
+   position:absolute;
+   right:6px;
+   bottom:7px;
+}
+.center-tips{
+   width:490px;
+   height:100%;
+   background:#e6f3fb;
+   position:absolute;
+   left:0px;
+   top:0px;
+   z-index:10;
+   text-align:center;
+   font-size:16px;
+}
+.center-tips .error{
+   margin-top:80px;
+   font-size:16px;
+   text-align:center;
+}
+#no_msg{
+   display:none;
+}
+.no-msg{
+   margin-top:60px;
+   padding-top:120px;
+   background:url('images/no_sms.jpg') center top no-repeat;
+}
+.no-msg .close-tips{
+   font-size:14px;
+   margin-bottom:20px;
+}
+#smsbox_close_countdown{
+   color:#ff0000;
+}

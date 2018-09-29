@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<title>WebWork Tutorial - Lesson 5 - Example 1</title>
+	</head>
+	<body>
+	#set ($ses = $request.getSession())
+	<p>
+		<b>
+              <!—从session中取出欢迎信息-->
+			${ses.getAttribute('greeting')}!      
+		</b>
+	</p>
+	</body>
+</html>

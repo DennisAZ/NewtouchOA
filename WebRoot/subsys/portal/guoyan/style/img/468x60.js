@@ -1,0 +1,1 @@
+document.write("<IFRAME border=0 name=rl marginWidth=0 frameSpacing=0 marginHeight=0 src='http://www.drame.cn/ad/mobanad/468x60.htm' frameBorder=0 noResize width=468 scrolling=no height=60 vspale='0'><\/IFRAME>")

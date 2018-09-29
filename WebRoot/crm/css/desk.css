@@ -1,0 +1,141 @@
+/*=== 工作台 ===*/
+
+#deskBox{
+	margin:0px;
+	padding:4px 0 0 0;
+	text-align:center;
+}
+#deskTop{
+	width:100%;
+	padding:0px 10px 0px 10px;
+	background-color:#dadada;
+}
+#deskTop div{
+	height:18px;
+}
+
+p{
+	margin:0px;
+}
+.container{
+	width:100%;
+}
+.column{
+	width:49%;
+	margin:0px;
+	padding:0px;
+	float:left;
+	overflow:hidden;
+}
+
+.modTitle{
+	padding:3px;
+	margin-top:10px;
+	background-color:#d3dffd;
+	color:#393c46;
+	font-weight:600;
+}
+		
+.module,.module1,.module2,.module3,.module4{
+	margin:8px;
+	margin-right:0px;
+	padding-bottom:0px;/* title加float后底部留白，不用padding */
+	border:1px solid #315f9d;
+	position:relative;
+	background-color:white;
+	list-style:none;
+	text-align:left;
+}
+/*.module1{
+	border:2px solid #507dd8;
+}
+.module2{
+	border:2px solid #fed700;
+}
+.module3{
+	border:2px solid #88e03e;
+}
+.module4{
+	border:2px solid #fe9900;
+}*/
+
+
+.title,.title1,.title2,.title3,.title4{
+	margin:0px;
+	background:url(../images/content/modTop.gif) repeat-x;
+	border-bottom:1px solid #315f9d;
+	padding:4px;
+	height:26px;
+	font-size:12px;
+	font-weight:600;
+	/*color:#25282c;*/
+	color:#fff;
+	overflow:hidden;
+	cursor:move;
+	z-index:0;
+	
+	text-align:left;
+}
+/*.title1{
+	background:url(../images/content/modTop1.gif) repeat-x;
+}
+.title2{
+	background:url(../images/content/modTop2.gif) repeat-x;
+}
+.title3{
+	background:url(../images/content/modTop3.gif) repeat-x;
+}
+.title4{
+	background:url(../images/content/modTop4.gif) repeat-x;
+}*/
+
+.tilTxt img{
+	cursor:pointer;
+}
+.tilTxt {
+	float:left;
+	padding-right:5px;
+}
+.tilTxt2 {
+	float:left;
+	padding-top:3px;
+}
+/* 模块右上小图标 */
+.tilIcon {
+	float:right;
+}
+.tilIcon img{
+	cursor:pointer;
+}
+
+.cont{
+	padding:2px;
+	padding-left:5px;
+	overflow:hidden;
+}
+
+.cont iframe{
+	height:250px;
+}
+
+.hide .cont{
+	display:none;
+}
+
+.ghost{
+	border:2px dashed gray;
+}
+.float{
+	position:absolute;
+	z-index:100;
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+	list-style:none;
+	filter:Alpha(opacity=50);
+	opacity:0.5;
+}
+.frameLoad img{
+	margin-top:-3px;
+	vertical-align:middle;
+}

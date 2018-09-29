@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.psit.struts.entity.CrmManagementArea" table="crm_management_area"  >
+        <id name="Id" type="java.lang.Long">
+            <column name="Id" />
+            <generator class="identity" />
+        </id>
+        <property name="person_id" type="java.lang.String">
+            <column name="person_id" length="100" />
+        </property>
+        <property name="person" type="java.lang.String">
+            <column name="person" length="100" />
+        </property>
+        <property name="management_area" type="java.lang.String">
+            <column name="management_area" length="100" />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="remark" length="200" />
+        </property>
+    
+    </class>
+</hibernate-mapping>

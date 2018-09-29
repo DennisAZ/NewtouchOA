@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">表单参数映射到Java对象</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:</td>
+    <td width="20%">&nbsp;陈懿</td>
+    <td width="15%">创建日期:</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:</td>
+    <td width="25%">&nbsp;1.0</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="10%">类名</th>
+    <th width="85%">方法使用</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+    <td>
+      YHORM
+    </td>
+    <td>
+    	<table width="100%" border="1">
+    			<tr>
+    			<th width="10%">返回值</th>
+    			<th width="40%">方法</th>
+    			<th width="50%">方法描述</th>
+ 				 </tr>
+ 				 <tr>
+ 				 	<td>void</td>
+ 				 	<td><a href='data.html#a0' title='saveSingle核心代码'>saveSingle</a>(Connection dbConn, Object obj) throws Exception </td>
+ 				 	<td>
+ 				 		向数据库中Obj对象所对应的表中插入一条数据（只限于单表情况）。
+ 				 	</td>
+ 				 </tr>
+ 				 <tr>
+ 				 	<td>void</td>
+ 				 	<td><a href='data.html#a1' title='saveComplex核心代码'>saveComplex</a>(Connection dbConn, Object obj) throws Exception </a> </td>
+ 				 	<td>向数据库中Obj对象所对应的表中插入一条数据（适用于主从表结构）。
+ 				 		如果又从表，在定义实体类时，从表以集合的形式保存，必须使用泛型定义从表的类型。
+ 				 		如obj中有从表childObj 则需在obj中定义集合如：List< childObj > childList ;
+ 				 	</td>
+ 				 </tr>
+ 				 <tr>
+ 				 	<td>void</td>
+ 				 	<td><a href='data.html#a2' title='saveSingle核心代码'>saveSingle</a>(Connection dbConn, String tableName, <a href='data.html#formInfo' title='formInfo结构'>Map formInfo</a>)throws Exception  </td>
+ 				 	<td>
+ 				 		将formInfo中的数据插入到tableName对应的表中(只适用于单表情况)，注意：tableName的命名规则为java命名规则
+ 				 	</td>
+ 				 </tr>
+ 				 <tr>
+ 				 	<td>void</td>
+ 				 	<td><a href='data.html#a3' title='saveComplex核心代码'>saveComplex</a>(Connection dbConn, String tableName, <a href='data.html#formInfo' title='formInfo结构'>Map formInfo</a>) throws Exception </td>
+ 				 	<td> 				
+ 				 	 		将formInfo中的数据插入到tableName对应的表中(适用于主从表结构)，注意：tableName的命名规则为java命名规则
+ 				 	</td>
+ 				 </tr>
+ 				 <tr>
+ 				 	<td>void</td>
+ 				 	<td><a href='data.html#a4' title='updateSingle核心代码'>updateSingle</a>(Connection dbConn, Object obj) throws Exception  </td>
+ 				 	<td>
+ 				 	根据obj的内容更新对应的数据库表中的数据（只适用于单表结构）。
+ 				 	</td>
+ 				 </tr>
+ 				 <tr>
+ 				 	<td>void</td>
+ 				 	<td><a href='data.html#a5' title='updateComplex核心代码'>updateComplex</a>(Connection dbConn, Object obj) throws Exception </td>
+ 				 	<td>根据obj的内容更新对应的数据库表中的数据（适用于主从表结构）。</td>
+ 				 </tr>
+ 				 <tr>
+ 				 	<td>void</td>
+ 				 	<td><a href='data.html#a6' title='updateSingle(核心代码'>updateSingle</a>(Connection dbConn, String tableName, <a href='data.html#formInfo' title='formInfo结构'>Map formInfo</a>) throws Exception  </td>
+ 				 	<td>
+ 				 	根据formInfo的内容更新tableName表中的数据（适用于单表结构）。注意：tableName命名规则为java命名规则。
+ 				 	</td>
+ 				 </tr>
+ 				 <tr>
+ 				 	<td>void</td>
+ 				 	<td><a href='data.html#a19' title='updateComplex(核心代码'>updateComplex</a>(Connection dbConn, String tableName,<a href='data.html#formInfo' title='formInfo结构'>Map formInfo</a>)throws Exception  </td>
+ 				 	<td>
+ 				 	根据formInfo的内容更新tableName表中的数据（适用于主从表结构）。注意：tableName命名规则为java命名规则。
+ 				 	</td>
+ 				 </tr>
+ 				 <tr>
+ 				 	<td>void</td>
+ 				 	<td><a href='data.html#a7' title='deleteSingle核心代码'>deleteSingle</a>(Connection dbConn, Class cls, int objId) throws Exception  </td>
+ 				 	<td>
+ 				 	根据cls对象删除一天数据
+ 				 	</td>
+ 				 </tr>
+ 				 <tr>
+ 				 	<td>void</td>
+ 				 	<td><a href='data.html#a8' title='deleteSingle核心代码'>deleteSingle</a>(Connection conn, String tableName,<a href='data.html#formInfo' title='formInfo结构'>Map formInfo</a>) throws Exception</td>
+ 				 	<td>
+ 				 	根据formInfo的内容删除tableName表中的数据（适用于单表结构）。注意：tableName命名规则为java命名规则。
+ 				 	</td>
+ 				 </tr>
+ 				 <tr>
+ 				 	<td>void</td>
+ 				 	<td><a href='data.html#a9' title='deleteComplex核心代码'>deleteComplex</a>(Connection conn, String tableName,<a href='data.html#formInfo' title='formInfo结构'>Map formInfo</a>) throws Exception </td>
+ 				 	<td>
+ 				 	根据formInfo的内容删除tableName表中的数据（适用于单表结构）。注意：tableName命名规则为java命名规则。
+ 				 	</td>
+ 				 </tr>
+ 				 <tr>
+ 				 	<td>void</td>
+ 				 	<td><a  href='data.html#a10' title='deleteSingle核心代码'> deleteSingle</a>(Connection dbConn, Object obj) throws Exception </td>
+ 				 	<td>
+ 				 	根据obj的内容删除tableName表中的数据（适用于单表结构）。注意：tableName命名规则为java命名规则。
+ 				 	</td>
+ 				 </tr>
+ 				 <tr>
+ 				 	<td>void</td>
+ 				 	<td><a href='data.html#a11' title='deleteComplex核心代码'>deleteComplex</a>(Connection dbConn, Object obj) throws Exception </td>
+ 				 	<td>
+ 				 	根据obj的内容删除tableName表中的数据（适用于主从表结构）。注意：tableName命名规则为java命名规则。
+ 				 	</td>
+ 				 </tr>
+ 				  <tr>
+ 				 	<td><a href='data.html#map' title='RETURN MAP 结构'>Map</a></td>
+ 				 	<td><a href='data.html#a12' title='loadDataSingle核心代码'>loadDataSingle</a>(Connection dbConn, <a href='data.html#list' title='list结构'>List< Object></a> formInfo,
+      <a href='data.html#filters' title='filters结构' >Map filters</a>) throws Exception</a> </td>
+ 				 	<td>
+ 				 	根据formInfo的内容加载tableName表中的数据（适用于单表结构）。注意：tableName命名规则为java命名规则。
+ 				 	filters为where条件字段命名规则为数据库命名规则
+ 				 	Map filters 值为  需要查询的字段的数据库命名 --- 所对应的值  SEQ_ID = 1 =>>> filters: key = "SEQ_ID" value=1;
+ 				 	filters.put(key,value);
+ 				 	</td>
+ 				 </tr>
+ 				  <tr>
+ 				 	<td><a href='data.html#map' title='RETURN MAP 结构'>Map</a></td>
+ 				 	<td><a href='data.html#a13' title='loadDataComplex核心代码'> loadDataComplex</a>(Connection dbConn, <a href='data.html#list' title='list结构'>List< Object> </a>formInfo,
+      <a href='data.html#filters' title='filters结构' >Map filters</a>) throws Exception</a> </td>
+ 				 	<td>
+ 				 	根据formInfo的内容加载tableName表中的数据（适用于主从表结构）。注意：tableName命名规则为java命名规则。
+ 				 	filters为where条件字段命名规则为数据库规则
+ 				 	Map filters 值为  需要查询的字段的数据库命名 --- 所对应的值  SEQ_ID = 1 =>>> filters: key = "SEQ_ID" value=1;
+ 				 	filters.put(key,value);
+ 				 	</td>
+ 				 </tr>
+ 				  <tr>
+ 				 	<td>Object</td>
+ 				 	<td><a href='data.html#a14' title='loadDataComplex核心代码'> loadObjComplex</a>(Connection dbConn, Class cls, int objId)
+      throws Exception </a> </td>
+ 				 	<td>
+ 				 加载一个cls类型的对象，根据SEQ_ID
+ 				 	</td>
+ 				 </tr>
+ 				  <tr>
+ 				 	<td>Object</td>
+ 				 	<td><a href='data.html#a15' title='loadObjSingle核心代码'>loadObjSingle</a>(Connection dbConn, Class cls,<a href='data.html#filters' title='filters结构' > Map filters</a>)
+      throws Exception</a> </td>
+ 				 	<td>
+ 				 	加载一个cls类型的对象，根据SEQ_ID，	filters为where条件字段命名规则为数据库命名规则。（单表结构）
+ 				 	Map filters 值为  需要查询的字段的数据库命名 --- 所对应的值  SEQ_ID = 1 =>>> filters: key = "SEQ_ID" value=1;
+ 				 	filters.put(key,value);
+ 				 	</td>
+ 				 </tr>
+ 				   <tr>
+ 				 	<td>Object</td>
+ 				 	<td><a href='data.html#a16' title='loadObjComplex核心代码'>loadObjComplex</a>(Connection dbConn, Class cls,<a href='data.html#filters' title='filters结构'> Map filters</a>)
+      throws Exception  </td>
+ 				 	<td>
+ 				 加载一个cls类型的对象filters为where条件字段命名规则为数据库命名规则。（主从表结构）
+ 				 Map filters 值为  需要查询的字段的数据库命名 --- 所对应的值  SEQ_ID = 1 =>>> filters: key = "SEQ_ID" value=1;
+ 				 	filters.put(key,value);
+ 				 	</td>
+ 				 </tr>
+ 				  <tr>
+ 				 	<td>List </td>
+ 				 	<td><a href='data.html#a17' title='loadListSingle核心代码'>loadListSingle</a> (Connection dbConn, Class cls,<a href='data.html#filters' title='filters结构'> Map filters</a>)
+      throws Exception  </td>
+ 				 	<td>
+ 				 	加载一组cls类型的对象，根据filters，	filters为where条件字段命名规则为数据库命名规则。（单表结构）
+ 				 	Map filters 值为  需要查询的字段的数据库命名 --- 所对应的值  SEQ_ID = 1 =>>> filters: key = "SEQ_ID" value=1;
+ 				 	filters.put(key,value);
+ 				 	</td>
+ 				 </tr>
+ 				  <tr>
+ 				 	<td>List </td>
+ 				 	<td><a href='data.html#a18' title='loadListComplex核心代码'>loadListComplex</a>(Connection dbConn, Class cls, <a href='data.html#filters' title='filters结构'>Map filters</a>)
+      throws Exception</a> </td>
+ 				 	<td>
+ 				 		加载一组cls类型的对象，根据filters，	filters为where条件字段命名规则为数据库命名规则。（主从表结构）
+ 				 		Map filters 值为  需要查询的字段的数据库命名 --- 所对应的值  SEQ_ID = 1 =>>> filters: key = "SEQ_ID" value=1;
+ 				 	filters.put(key,value);
+ 				 	</td>
+ 				 </tr>
+    	</table>
+    </td>
+    <td></a></td>
+  </tr>
+</table>
+
+</body>
+</html>

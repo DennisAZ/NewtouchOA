@@ -1,0 +1,1 @@
+{cls: "window-height","items":[],"xtype":"panel","cmpCls":"jq-window","title":"日历","iframeSrc": contextPath +"/core/funcs/portal/rili.jsp"}

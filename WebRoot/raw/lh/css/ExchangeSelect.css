@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+#exchange-div {
+	float: left;
+	width: 450px;
+	border: 1px solid  #BBE1F1;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 14px;
+	color: #96C2F1;
+  }
+ 
+  
+  .exchangeSelect{
+	width:150px;
+	height: 200px;
+  }
+  .exchangeSelectTd{
+	 background-color:#F0FBEB 
+	  
+  }
+  .exchangeSelectTitle{
+     font-size:16px;
+     background-color:#FFF5FA
+  }

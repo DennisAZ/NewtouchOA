@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oa.spring.dao.batis.PaidPlanMapper">
+
+	<resultMap type="oa.spring.po.PaidPlan" id="paidPlan">
+		<id property="id" column="id" />
+		<result property="paidCode" column="paid_code" />
+		<result property="paidTitle" column="paid_title" />
+		<result property="paidStatus" column="paid_status" />
+		<result property="total" column="total" />
+		<result property="alreadyTotal" column="already_total" />
+		<result property="salePaid" column="sale_paid" />
+		<result property="remark" column="remark" />
+		
+		<association property="saleOrder" column="order_id"
+			javaType="oa.spring.po.SaleOrder">
+			<id property="id" column="id" />
+			<result property="orderCode" column="Order_code" />
+		</association>
+	</resultMap>
+
+
+
+	<insert id="addPaidPlan" parameterType="oa.spring.po.PaidPlan">
+INSERT INTO erp_paid_plan(id,paid_code,paid_title,order_id,paid_status,total,already_total,sale_paid,remark) 
+VALUES(UUID(),#{paid_code},#{paid_title},#{order_id},#{paid_status},#{total},#{already_total},#{sale_paid},#{remark})
+	</insert>
+	
+	<delete id="paidPlanDelete" parameterType="String">
+		delete from
+		erp_paid_plan where id=#{id};
+	</delete>
+	
+	<update id="paidPlanUpdate" parameterType="oa.spring.po.PaidPlan">
+		UPDATE erp_paid_plan SET
+		paid_code=#{paidCode},paid_title=#{paidTitle},paid_status='0',total=#{total},already_total=#{alreadyTotal},sale_paid=#{salePaid},remark=#{remark}
+		WHERE order_id=#{saleOrder.id}
+	</update>
+</mapper>

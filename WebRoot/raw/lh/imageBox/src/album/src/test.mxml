@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<!-- transitions\LoginFormTransition.mxml -->  
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"    
+    verticalAlign="middle">  
+    <mx:Script>  
+        <![CDATA[   
+            // Import easing classes if you use them only in MXML.   
+            import mx.effects.easing.Bounce; 
+       ]]>  
+    </mx:Script>  
+  
+    <!-- 定义改变状态时的动画效果 -->  
+   <mx:transitions>  
+       <mx:Transition>  
+            <mx:Parallel    
+              targets="{[loginPanel, registerLink, loginButton, confirm]}">  
+                <mx:Resize duration="500" easingFunction="Bounce.easeOut"/>
+                <mx:Sequence target="{confirm}">  
+                   <mx:Blur duration="200" blurYFrom="1.0" blurYTo="20.0"/>  
+                   <mx:Blur duration="200" blurYFrom="20.0" blurYTo="1"/>  
+                </mx:Sequence>  
+            </mx:Parallel>  
+        </mx:Transition>  
+    </mx:transitions>  
+          
+    <mx:states>  
+        <mx:State name="Register">  
+            <mx:AddChild relativeTo="{loginForm}"    
+                position="lastChild">  
+                <mx:FormItem id="confirm" label="确认:">  
+                    <mx:TextInput/>  
+                </mx:FormItem>  
+            </mx:AddChild>               
+            <mx:SetProperty target="{loginPanel}"  
+                name="title" value="注册"/>               
+           <mx:SetProperty target="{loginButton}"  
+               name="label" value="注册"/>  
+            <mx:RemoveChild target="{registerLink}"/>  
+           <mx:AddChild relativeTo="{spacer1}" position="before">  
+                <mx:LinkButton label="回到登录页面"    
+                    click="currentState=''"/>  
+            </mx:AddChild>  
+        </mx:State>  
+    </mx:states>  
+  
+    <mx:Panel    
+        title="登录" id="loginPanel"  
+       horizontalScrollPolicy="off" verticalScrollPolicy="off">  
+  
+    <mx:Form id="loginForm">  
+        <mx:FormItem label="用户名:">  
+            <mx:TextInput/>  
+        </mx:FormItem>  
+        <mx:FormItem label="密码:">  
+            <mx:TextInput/>  
+        </mx:FormItem>  
+    </mx:Form>  
+       
+    <mx:ControlBar>  
+        <mx:LinkButton id="registerLink"  
+            label="需要注册?"    
+            click="currentState='Register'"/>  
+        <mx:Spacer width="100%" id="spacer1"/>  
+        <mx:Button label="登录" id="loginButton"/>  
+    </mx:ControlBar>  
+    </mx:Panel>  
+</mx:Application>  
+

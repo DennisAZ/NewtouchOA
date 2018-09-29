@@ -1,0 +1,198 @@
+ {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+BODY {
+	FONT-SIZE: 9pt; BACKGROUND: url(bg2.jpg) 0px -50px; MARGIN: 0px; FONT-FAMILY: ËÎÌו
+}
+#on_status {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; FONT-WEIGHT: bold; BACKGROUND: url(shortcut_bg.png) repeat-x; CURSOR: pointer; COLOR: #ffffff; PADDING-TOP: 4px; HEIGHT: 28px
+}
+#on_status A {
+	
+}
+#on_status A.general {
+	COLOR: #ffffff; TEXT-DECORATION: underline
+}
+#on_status_ul {
+	BORDER-RIGHT: #036 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: 0px; DISPLAY: none; PADDING-LEFT: 0px; FONT-WEIGHT: normal; BACKGROUND: #e7f1f8; PADDING-BOTTOM: 0px; BORDER-LEFT: #036 1px solid; WIDTH: auto; PADDING-TOP: 0px; BORDER-BOTTOM: #036 1px solid; POSITION: absolute
+}
+#on_status_ul LI {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 5px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+#on_status_1 {
+	PADDING-LEFT: 20px; BACKGROUND: url(/images/user_list/U01.gif) no-repeat; LINE-HEIGHT: 18px
+}
+.on_status_1 {
+	PADDING-LEFT: 20px; BACKGROUND: url(/images/user_list/U01.gif) no-repeat; LINE-HEIGHT: 18px
+}
+#on_status_2 {
+	PADDING-LEFT: 20px; BACKGROUND: url(/images/user_list/U02.gif) no-repeat; LINE-HEIGHT: 18px
+}
+.on_status_2 {
+	PADDING-LEFT: 20px; BACKGROUND: url(/images/user_list/U02.gif) no-repeat; LINE-HEIGHT: 18px
+}
+#on_status_3 {
+	PADDING-LEFT: 20px; BACKGROUND: url(/images/user_list/U03.gif) no-repeat; LINE-HEIGHT: 18px
+}
+.on_status_3 {
+	PADDING-LEFT: 20px; BACKGROUND: url(/images/user_list/U03.gif) no-repeat; LINE-HEIGHT: 18px
+}
+#my_status {
+	BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; WIDTH: 170px; COLOR: #8896a0; BORDER-BOTTOM: #ffffff 1px solid
+}
+#my_status:hover {
+	COLOR: #000000
+}
+#tabs {
+	PADDING-RIGHT: 5px; WIDTH: 100%
+}
+#search {
+	BORDER-RIGHT: #154b76 1px solid; BORDER-TOP: #154b76 1px solid; BACKGROUND: url(bg_input_text.png) repeat-x left top; FILTER: alpha(opacity=80); MARGIN-LEFT: 5px; BORDER-LEFT: #154b76 1px solid; WIDTH: 189px; BORDER-BOTTOM: #154b76 1px solid; opacity: 0.8; moz-opacity: 0.8
+}
+#search:hover {
+	BORDER-RIGHT: #99cc00 1px solid; BORDER-TOP: #99cc00 1px solid; BACKGROUND: url(bg_input_text_hover.png) repeat-x left top; BORDER-LEFT: #99cc00 1px solid; BORDER-BOTTOM: #99cc00 1px solid
+}
+#search INPUT.SmallInput {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; FONT-SIZE: 9pt; BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-LEFT: 0px; WIDTH: 155px; COLOR: #8896a0; BORDER-BOTTOM: 0px
+}
+#search INPUT.SmallInput:hover {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; COLOR: #000000; BORDER-BOTTOM: 0px
+}
+#nav_menu {
+	MARGIN-TOP: 5px; FONT-SIZE: 12pt; BACKGROUND: url(nav_menu_bg.png) no-repeat; MARGIN-LEFT: 4px; WIDTH: 192px; HEIGHT: 35px
+}
+#nav_menu LI {
+	DISPLAY: inline; LIST-STYLE-TYPE: none
+}
+#nav_menu A:link {
+	DISPLAY: block; FLOAT: left; COLOR: #000000; LINE-HEIGHT: 35px; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+#nav_menu A:visited {
+	DISPLAY: block; FLOAT: left; COLOR: #000000; LINE-HEIGHT: 35px; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+#nav_menu A:hover {
+	COLOR: #ffffff
+}
+#nav_menu A.active {
+	COLOR: #ffffff
+}
+#menu_1 {
+	WIDTH: 58px
+}
+#menu_2 {
+	WIDTH: 46px
+}
+#menu_3 {
+	WIDTH: 44px
+}
+#menu_4 {
+	WIDTH: 44px
+}
+#menu_1:hover {
+	BACKGROUND: url(nav_menu_active.png) no-repeat left top; COLOR: #ffffff
+}
+.active#menu_1:link {
+	BACKGROUND: url(nav_menu_active.png) no-repeat left top; COLOR: #ffffff
+}
+.active#menu_1:visited {
+	BACKGROUND: url(nav_menu_active.png) no-repeat left top; COLOR: #ffffff
+}
+#menu_2:hover {
+	BACKGROUND: url(nav_menu_active.png) no-repeat -58px 0px; COLOR: #ffffff
+}
+.active#menu_2:link {
+	BACKGROUND: url(nav_menu_active.png) no-repeat -58px 0px; COLOR: #ffffff
+}
+.active#menu_2:visited {
+	BACKGROUND: url(nav_menu_active.png) no-repeat -58px 0px; COLOR: #ffffff
+}
+#menu_3:hover {
+	BACKGROUND: url(nav_menu_active.png) no-repeat -104px 0px; COLOR: #ffffff
+}
+.active#menu_3:link {
+	BACKGROUND: url(nav_menu_active.png) no-repeat -104px 0px; COLOR: #ffffff
+}
+.active#menu_3:visited {
+	BACKGROUND: url(nav_menu_active.png) no-repeat -104px 0px; COLOR: #ffffff
+}
+#menu_4:hover {
+	BACKGROUND: url(nav_menu_active.png) no-repeat right top; COLOR: #ffffff
+}
+.active#menu_4:link {
+	BACKGROUND: url(nav_menu_active.png) no-repeat right top; COLOR: #ffffff
+}
+.active#menu_4:visited {
+	BACKGROUND: url(nav_menu_active.png) no-repeat right top; COLOR: #ffffff
+}
+#expand_link {
+	FLOAT: left; MARGIN: 3px 0px 0px; CURSOR: pointer
+}
+.sub_tabs {
+	BORDER-RIGHT: #3063a8 1px solid; BACKGROUND: url(sub_tabs_bg.png) repeat-x; MARGIN-LEFT: 4px; BORDER-LEFT: #3063a8 1px solid; WIDTH: 100%; MARGIN-RIGHT: 4px; HEIGHT: 26px
+}
+.hide {
+	HEIGHT: 0px
+}
+.sub_tabs UL {
+	FLOAT: left; MARGIN-LEFT: 5px; WIDTH: 163px; HEIGHT: 21px
+}
+.sub_tabs LI {
+	DISPLAY: inline; LIST-STYLE-TYPE: none
+}
+.sub_tabs A:link {
+	PADDING-LEFT: 4px; FLOAT: left; OVERFLOW: hidden; COLOR: #ffffff; TEXT-DECORATION: none
+}
+.sub_tabs A:visited {
+	PADDING-LEFT: 4px; FLOAT: left; OVERFLOW: hidden; COLOR: #ffffff; TEXT-DECORATION: none
+}
+.sub_tabs A:link SPAN {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 3px; FLOAT: left; PADDING-BOTTOM: 3px; CURSOR: pointer; PADDING-TOP: 4px
+}
+.sub_tabs A:visited SPAN {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 3px; FLOAT: left; PADDING-BOTTOM: 3px; CURSOR: pointer; PADDING-TOP: 4px
+}
+.sub_tabs A.active {
+	BACKGROUND: url(sub_nav_hover_l.png) no-repeat left top; COLOR: #003366; TEXT-DECORATION: none
+}
+.sub_tabs A:hover {
+	BACKGROUND: url(sub_nav_hover_l.png) no-repeat left top; COLOR: #003366; TEXT-DECORATION: none
+}
+.sub_tabs A.active:link {
+	BACKGROUND: url(sub_nav_hover_l.png) no-repeat left top; COLOR: #003366; TEXT-DECORATION: none
+}
+.sub_tabs A.active:hover {
+	BACKGROUND: url(sub_nav_hover_l.png) no-repeat left top; COLOR: #003366; TEXT-DECORATION: none
+}
+.sub_tabs A.active:active {
+	BACKGROUND: url(sub_nav_hover_l.png) no-repeat left top; COLOR: #003366; TEXT-DECORATION: none
+}
+.sub_tabs A.active:visited {
+	BACKGROUND: url(sub_nav_hover_l.png) no-repeat left top; COLOR: #003366; TEXT-DECORATION: none
+}
+.sub_tabs A.active SPAN {
+	BACKGROUND: url(sub_nav_hover_r.png) no-repeat right top
+}
+.sub_tabs A:hover SPAN {
+	BACKGROUND: url(sub_nav_hover_r.png) no-repeat right top
+}
+.sub_tabs A.active:link SPAN {
+	BACKGROUND: url(sub_nav_hover_r.png) no-repeat right top
+}
+.sub_tabs A:hover SPAN {
+	BACKGROUND: url(sub_nav_hover_r.png) no-repeat right top
+}
+.sub_tabs A.active:active SPAN {
+	BACKGROUND: url(sub_nav_hover_r.png) no-repeat right top
+}
+.sub_tabs A.active:visited SPAN {
+	BACKGROUND: url(sub_nav_hover_r.png) no-repeat right top
+}
+#body {
+	CLEAR: left; OVERFLOW-Y: auto; OVERFLOW-X: hidden; WIDTH: 100%
+}
+#shortcut_ref {
+	RIGHT: 10px; BACKGROUND: none transparent scroll repeat 0% 0%; POSITION: absolute; TOP: 12px
+}
+#bottom {
+	WIDTH: 100%
+}

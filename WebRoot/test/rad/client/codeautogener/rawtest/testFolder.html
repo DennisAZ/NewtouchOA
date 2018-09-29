@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function getFolders(baseUrl,base){ 
+  var fso, f, fc, s; 
+  var folderpath = baseUrl;
+  fso = new ActiveXObject("Scripting.FileSystemObject"); 
+  f = fso.GetFolder(folderpath); 
+  fc = new Enumerator(f.SubFolders);
+  s = "";
+  for (;!fc.atEnd(); fc.moveNext()) {
+    var folderUrl = fc.item().Path;
+    s +=  format(base,folderUrl);
+    s += ",";
+    s += getFolders(folderUrl,base)
+  } 
+ return s;
+}
+function format(baseUrl,str){
+  var tempUrl = str.substr(baseUrl.length + 1,str.length);
+  var packs = tempUrl.split("\\");
+  var result = "";
+  for(var i = 0; i < packs.length ; i++){
+    if(packs[i]){
+      if(result){
+        result += "." + packs[i];
+      }else{
+        result += packs[i];
+      }
+    }
+  }
+  return result;
+}
+function onSub(){
+  var val = getFolders('D:\\project\\yh\\src','D:\\project\\yh\\src');
+  var packageNames = val.split(",");
+}
+</script>
+</head>
+<body>
+<input type="button" onclick="onSub()" value="Test">
+</body>
+</html>

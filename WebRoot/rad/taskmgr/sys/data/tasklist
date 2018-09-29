@@ -1,0 +1,13 @@
+{taskPath:"oa2t9.core.ogr.person",taskDesc:"人员管理",startDate:"2009-10-20",workloads:4,responsiblePerson:"ljf",taskSort:"",funcsCmp:"",state:"2"}
+{taskPath:"oa2t9.core.ogr.dept",taskDesc:"部门管理",startDate:"2009-10-13",workloads:2,responsiblePerson:"cc",taskSort:"",funcsCmp:"",state:"2"}
+{taskPath:"oa2t9.core.dborm",taskDesc:"关系型与对象型之间映射",startDate:"2009-10-21",workloads:0,responsiblePerson:"cy",taskSort:"",funcsCmp:"",state:"1"}
+{taskPath:"oa2t9.core.smartform",taskDesc:"智能表单",startDate:"2009-10-21",workloads:2,responsiblePerson:"lh",taskSort:"",funcsCmp:"",state:"1"}
+{taskPath:"oa2t9.core.webinfo",taskDesc:"通用信息发布",startDate:"2009-10-21",workloads:0,responsiblePerson:"lh",taskSort:"",funcsCmp:"",state:"1"}
+{taskPath:"wbprj.biddoc.docmake",taskDesc:"WB项目文章撰写",startDate:"2009-10-21",workloads:0,responsiblePerson:"yzq",taskSort:"",funcsCmp:"文章撰写",state:"1"}
+{taskPath:"wbprj.biddoc.pics",taskDesc:"WB项目图片制作",startDate:"2009-10-21",workloads:0,responsiblePerson:"yzq",taskSort:"",funcsCmp:"WB项目图片制作",state:"1"}
+{taskPath:"oa2t9.core.dtree",taskDesc:"动态树",startDate:"2009-10-22",workloads:1,responsiblePerson:"lh",taskSort:"",funcsCmp:"",state:"1"}
+{taskPath:"oa2t9.core.codeWindow.multyCode",taskDesc:"选择多个代码",startDate:"2009-10-23",workloads:1,responsiblePerson:"cy",taskSort:"",funcsCmp:"选择多个代码",state:"1"}
+{taskPath:"oa2t9.core.codeWindow.singleCode",taskDesc:"选择单个代码",startDate:"2009-10-23",workloads:1,responsiblePerson:"cy",taskSort:"",funcsCmp:"选择单个代码",state:"1"}
+{taskPath:"oa2t9.core.menumgr",taskDesc:"菜单管理",startDate:"2009-10-23",workloads:1,responsiblePerson:"ljf",taskSort:"",funcsCmp:"菜单管理",state:"1"}
+{taskPath:"oa2t9.core.codeWindow.deptpersonselect",taskDesc:"部门人员选择窗口",startDate:"2009-10-23",workloads:1,responsiblePerson:"cc",taskSort:"A",funcsCmp:"部门人员选择窗口",state:"1"}
+{taskPath:"oa2t9.core.ogr.specialflag",taskDesc:"标记",startDate:"2009-11-13",workloads:1,responsiblePerson:"ljf",taskSort:"A",funcsCmp:"",state:"1"}

@@ -1,0 +1,151 @@
+
+.north {
+  width: 100%;
+  top: 0;
+  position: absolute;
+  background: url(../images/design/design_bar_bg.png) repeat-x left top;
+}
+
+.north .center {
+  height: 155px;
+}
+
+.work-space {
+  top: 162px;
+  bottom: 0px;
+}
+
+.left {
+	left: 2%;
+  width: 33%;
+}
+
+.right {
+	right: 12%;
+  width: 50%;
+}
+
+.btns {
+	position: absolute;
+	top: 0px;
+	width: 10%;
+	height: 100%;
+	right: 0;
+}
+
+.mc {
+	overflow: auto;
+  height: 127px;
+  width: 100%;
+  background:url(../images/design/design_bar_center.png)  repeat-x left top;
+}
+
+.ml {
+  height: 127px;
+  width: 100%;
+	margin: 10px 0;
+  padding-left:9px;
+  background:url(../images/design/design_bar_left.png)  repeat-y left top;
+}
+
+.mr {
+  height: 127px;
+  width: 100%;
+  padding-right:9px;
+  background:url(../images/design/design_bar_right.png) repeat-y right top;
+}
+
+.save {
+	position: relative;
+	top: 80px;
+  height: 26px;
+  width: 102px;
+  background:url(../images/design/save.png)  repeat-x left top;
+}
+
+.close {
+  position: relative;
+  top: 60px;
+  height: 26px;
+  width: 70px;
+  background:url(../images/design/close.png)  repeat-x left top;
+}
+
+.layout-sel label {
+	 display: block;
+}
+
+.layout-2 {
+  height: 55px;
+  width: 58px;
+  background:url(../images/design/layout_2.png)  repeat-x left top;
+}
+
+.layout-3 {
+  height: 55px;
+  width: 58px;
+  background:url(../images/design/layout_3.png)  repeat-x left top;
+}
+
+.layout-free {
+  height: 55px;
+  width: 58px;
+  background:url(../images/design/layout_free.png)  repeat-x left top;
+}
+
+.layout-grid {
+  height: 55px;
+  width: 58px;
+  background:url(../images/design/layout_grid.png)  repeat-x left top;
+}
+
+.layout-sel {
+	text-align: center;
+  float: left;
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+}
+
+#config {
+	overflow: auto;
+  height: 100%;
+}
+
+.port-sawdow {
+	padding-left: 5px;
+  float: left;
+  width: 75px;
+  height: 95px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.port-sawdow img {
+	height: 70px;
+	width: 70px;
+}
+
+.port-sawdow span {
+	 width: 70px;
+	 display: block;
+}
+
+.port-sawdow-selected .portlet-source {
+	color: black;
+  background:url(../images/design/port_bg_selected.jpg)  no-repeat left top;
+}
+
+.portlet-source {
+	vertical-align: middle;
+	line-height: 75px;
+	color: #fff;
+	margin-top: 8px;
+  height: 78px;
+  width: 75px;
+  background: url(../images/design/port_bg.jpg)  no-repeat left top;
+}
+
+.north .left {
+	width: 340px;
+}

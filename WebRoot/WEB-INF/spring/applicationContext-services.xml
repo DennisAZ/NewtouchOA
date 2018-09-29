@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="baseTransactionProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+		abstract="true">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="proxyTargetClass" value="true" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="jdbcDefault" />
+	</bean>
+
+	<!--  -->
+	<bean id="testService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="oa.spring.service.TestService">
+				<property name="testDao" ref="testDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="whService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="oa.spring.service.WareHouseService">
+				<property name="whMapper" ref="wareHouseMapper" />
+				<property name="purchaseMapper" ref="purchaseMapper" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="dbService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="oa.spring.service.DBService">
+          		<property name="whMapper" ref="wareHouseMapper"/>
+          		<property name="dbMapper" ref="dbMapper"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="contractService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="oa.spring.service.ContractService">
+          		<property name="contractMapper" ref="contractMapper"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="systemService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="oa.spring.service.SystemService">
+				<property name="systemMapper" ref="systemMapper"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="financeService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="oa.spring.service.FinanceService">
+				<property name="financeMapper" ref="financeMapper"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="productStyleService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="oa.spring.service.ProductStyleService">
+				<property name="productStyleMapper" ref="productStyleMapper" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="productTypeService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="oa.spring.service.ProductTypeService">
+				<property name="productTypeMapper" ref="productTypeMapper" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="productUnitService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="oa.spring.service.ProductUnitService">
+				<property name="productUnitMapper" ref="productUnitMapper" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="productService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="oa.spring.service.ProductService">
+				<property name="productMapper" ref="productMapper" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="saleOrderService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="oa.spring.service.SaleOrderService">
+				<property name="saleOrderMapper" ref="saleOrderMapper" />
+			
+				<property name="orderProductOutMapper" ref="orderProductOutMapper" />
+			
+				<property name="poProMapper" ref="poProMapper" />
+		
+				<property name="paidPlanMapper" ref="paidPlanMapper" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="orderProductOutService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="oa.spring.service.OrderProductOutService">
+				<property name="orderProductOutMapper" ref="orderProductOutMapper" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="poProService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="oa.spring.service.PoProService">
+				<property name="poProMapper" ref="poProMapper" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="produceService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="oa.spring.service.ProduceService">
+				<property name="produceMapper" ref="produceMapper" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="paidPlanService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="oa.spring.service.PaidPlanService">
+				<property name="paidPlanMapper" ref="paidPlanMapper" />
+			</bean>
+		</property>
+	</bean>
+		<bean id="purchaseService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="oa.spring.service.PurchaseService">
+				<property name="purchaseMapper" ref="purchaseMapper" />
+			</bean>
+		</property>
+	</bean>
+		<bean id="uploadService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="oa.spring.service.FileUploadService">
+			</bean>
+		</property>
+	</bean>
+</beans>

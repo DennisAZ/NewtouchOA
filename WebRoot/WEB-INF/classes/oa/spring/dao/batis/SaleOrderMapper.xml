@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oa.spring.dao.batis.SaleOrderMapper">
+
+	<resultMap type="oa.spring.po.SaleOrder" id="saleOrder">
+		<id property="id" column="id" />
+		<result property="orderCode" column="order_code" />
+		<result property="orderTitle" column="order_title" />
+		<result property="orderStatus" column="order_status" />
+		<result property="Salesperson" column="Salesperson" />
+		<result property="SignDate" column="Sign_date" />
+		<result property="contractId" column="Contract_id" />
+		<result property="personId" column="person_id" />
+		<result property="remark" column="remark" />
+		<association property="cust" column="cus_id"
+			javaType="com.psit.struts.entity.CusCorCus">
+			<id property="corCode" column="cor_code" />
+			<result property="corNum" column="cor_num" />
+			<result property="corName" column="cor_name" />
+			<result property="corEmail" column="cor_email" />
+			<result property="corPhone" column="cor_phone" />
+			<result property="corAddress" column="cor_address" />
+		</association>
+	</resultMap>
+
+	<select id="getSaleOrder" resultMap="saleOrder">
+		SELECT * from erp_sale_order
+	</select>
+	<select id="getAddressById" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT cad_id,cad_addr,cad_contact,cad_pho,cad_post_code from
+		crm_cus_addr where cad_id=#{cadId}
+	</select>
+	<select id="getContactById" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT
+		con_id,con_cor_code,con_sex,con_name,con_sex,con_dep,con_pos,con_add,con_phone,con_work_pho,con_email,con_remark
+		FROM crm_cus_contact where con_id=#{conId}
+	</select>
+	<select id="getOrder" resultType="java.util.HashMap" parameterType="String">
+	   SELECT
+		  o.order_code,
+		  o.order_title,
+		  c.cus_id,
+		  c.cus_name,
+		  cc.con_id,
+		  cc.name,
+		  cc.phone,
+		  cc.mobile,
+		  cc.email,
+		  o.sign_date,
+		  o.contract_id,
+		  o.remark         AS saleRemark,
+		  po.id            AS po_id,
+		  po.po_title,
+		  po.po_code,
+		  a.cad_id,
+		  a.person,
+		  a.zip_code,
+		  a.phone          AS addrPhone,
+		  a.address,
+		  po.remark        AS poRemark,
+		  pp.paid_title,
+		  pp.paid_code,
+		  pp.sale_paid,
+		  pp.total,
+		  pp.already_total,
+		  pp.remark        AS ppRemark
+		FROM erp_sale_order o
+		  LEFT JOIN erp_order_product_out po
+		    ON o.id = po.order_id
+		  LEFT JOIN erp_paid_plan pp
+		    ON o.id = pp.order_id
+		  LEFT JOIN erp_order_cus c
+		    ON o.id = c.order_id
+		  LEFT JOIN erp_order_cus_address a
+		    ON o.id = a.order_id
+		  LEFT JOIN erp_order_cus_contact cc
+		    ON o.id = cc.order_id
+		WHERE o.id =#{orderId} 
+	</select>
+	<select id="getPoPro" resultType="java.util.HashMap" parameterType="String">
+		SELECT
+			  poPro.pro_id,
+			  p.pro_code,
+			  p.pro_name,
+			  p.pro_type,
+			  u.unit_name,
+			  poPro.sale_price,
+			  poPro.order_num,
+			  poPro.total,
+			  poPro.send_date
+			FROM erp_po_pro poPro
+			LEFT JOIN erp_product p ON poPro.pro_id = p.id
+			LEFT JOIN erp_product_unit u ON p.unit_id=u.unit_id
+			WHERE poPro.po_id = #{po_id}
+	</select>
+	<select id="getCustById" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT cor_code,cor_name,cor_num,cor_se_no,cor_com_inf FROM
+		crm_cus_cor_cus WHERE cor_code=#{cusId}
+	</select>
+	<select id="getProById" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT
+		id,pro_code,pro_name,pro_type,pro_price,unit_id,pt_id,ps_id,remark
+		FROM erp_product WHERE id=#{proId}
+	</select>
+	<select id="getUnitById" resultType="String"
+		parameterType="String">
+		SELECT unit_name FROM erp_product_unit WHERE unit_id=#{unitId}
+	</select>
+	<select id="getTypeById" resultType="String"
+		parameterType="String">
+		SELECT NAME FROM erp_product_type WHERE id=#{typeId}
+	</select>
+	<select id="getStyleById" resultType="String" parameterType="String">
+		SELECT NAME FROM erp_product_style WHERE id=#{styleId}
+	</select>
+	<select id="getSaleOrderById" resultMap="saleOrder"
+		parameterType="String">
+		SELECT * from erp_sale_order where id=#{id}
+	</select>
+	<insert id="addCust" parameterType="java.util.HashMap">
+		INSERT INTO erp_order_cus
+		(id,order_id,cus_name,cus_code,cus_corporation,cus_info,contact_id,address_id,remark,cus_id)
+		VALUE(#{cusUuid},#{order_id},#{cor_name},#{cor_num},#{cor_se_no},#{cor_com_inf},#{contact_id},#{cad_id},#{cor_remark},#{cor_code})
+	</insert>
+	<insert id="addIn" parameterType="java.util.HashMap">
+		INSERT INTO erp_finance_in
+		(id,CODE,STATUS,TYPE,type_id,customer,total,already_total,person,invoice_id,remark)
+		VALUE(UUID(),#{code},#{status},#{type},#{type_id},#{customer},#{total},#{alreadyTotal},#{saleName},#{invoice_id},#{remark})
+	</insert>
+	<update id="inUpdate" parameterType="java.util.HashMap">
+		UPDATE erp_finance_in SET CODE=#{paidCode},customer=#{customer},total=#{total},already_total=#{already_total},person=#{person},invoice_id=#{invoice_id},remark=#{remark} WHERE type_id=#{orderId}
+	</update>
+	<insert id="addContact" parameterType="java.util.HashMap">
+		INSERT INTO
+		erp_order_cus_contact(id,order_id,NAME,sex,phone,mobile,email,remark,con_id)
+		VALUE(#{contactId},#{order_id},#{con_name},#{con_sex},#{con_work_pho},#{con_phone},#{con_email},#{con_remark},#{con_id})
+	</insert>
+	<insert id="addAddress" parameterType="java.util.HashMap">
+		INSERT INTO erp_order_cus_address
+		(id,order_id,person,address,phone,zip_code,cad_id)
+		VALUE(#{addressId},#{order_id},#{cad_contact},#{cad_addr},#{cad_pho},#{cad_post_code},#{cad_id})
+	</insert>
+	<insert id="addOrder" parameterType="oa.spring.po.SaleOrder">
+		INSERT INTO erp_sale_order
+		(id,order_code,order_title,order_status,cus_id,salesperson,sign_date,contract_id,remark,person_id)
+		VALUE(#{id},#{orderCode},#{orderTitle},#{orderStatus},#{cusUuId},#{Salesperson},#{SignDate},#{contractId},#{remark},#{personId})
+	</insert>
+	<delete id="deleteSaleOrder" parameterType="String">
+		delete from erp_sale_order where id=#{id};
+	</delete>
+	<delete id="deleteCust" parameterType="String">
+		delete from erp_order_cus where order_id=#{id};
+	</delete>
+	<delete id="deleteContact" parameterType="String">
+		delete from erp_order_cus_contact where order_id=#{id};
+	</delete>
+	<delete id="deleteAddress" parameterType="String">
+		delete from erp_order_cus_address where order_id=#{id};
+	</delete>
+	<delete id="deleteFinanceIn" parameterType="String">
+		delete from erp_finance_in where type_id=#{orderId};
+	</delete>
+	<delete id="deleteOutProduct" parameterType="String">
+		delete from erp_order_product_out where order_id=#{id};
+	</delete>
+	<delete id="deletePaid" parameterType="String">
+		delete from erp_paid_plan where order_id=#{id};
+	</delete>
+	<delete id="deletePoPro" parameterType="String">
+		delete from erp_po_pro where po_id=#{proId};
+	</delete>
+
+	<update id="updateCust" parameterType="java.util.HashMap">
+		UPDATE erp_order_cus SET cus_name=#{cor_name}
+		,cus_code=#{cor_num},cus_info=#{cor_com_inf},contact_id=#{contact_id},address_id=#{cad_id},cus_corporation=#{cor_se_no},cus_id=#{cor_code}
+		WHERE order_id=#{orderId}
+	</update>
+	<update id="updateContact" parameterType="java.util.HashMap">
+		UPDATE erp_order_cus_contact SET
+		NAME=#{con_name},sex=#{con_sex},phone=#{con_work_pho},mobile=#{con_phone},con_id=#{con_id}
+		WHERE order_id=#{orderId}
+	</update>
+	<update id="updateAddress" parameterType="java.util.HashMap">
+		UPDATE erp_order_cus_address SET
+		person=#{cad_contact},address=#{cad_addr},phone=#{cad_pho},zip_code=#{cad_post_code},cad_id=#{cad_id}
+		WHERE order_id=#{orderId}
+	</update>
+	<update id="updateOrder" parameterType="java.util.HashMap">
+		UPDATE erp_sale_order SET
+		order_code=#{orderCode},order_title=#{orderTitle},salesperson=#{Salesperson},sign_date=#{SignDate},contract_id=#{contractId},remark=#{remark},person_id=#{personId}
+		WHERE id=#{id}
+	</update>
+	<update id="updateSaleOrderStatus" parameterType="java.util.HashMap">
+		UPDATE erp_sale_order SET
+			order_status = #{status}
+		WHERE id=#{order_id}
+	</update>
+	<update id="updateProductOutStatus" parameterType="java.util.HashMap">
+		UPDATE erp_order_product_out SET
+		po_status = #{status}
+		WHERE order_id=#{order_id}
+	</update>
+	<update id="updatePaidPlanStatus" parameterType="java.util.HashMap">
+		UPDATE erp_paid_plan SET
+		paid_status = #{status}
+		WHERE order_id=#{order_id}
+	</update>
+	<update id="updateFinanceInStatus" parameterType="java.util.HashMap">
+		UPDATE erp_finance_in SET
+		status = #{status}
+		WHERE type_id=#{order_id}
+	</update>
+
+</mapper>

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+var xmlhttp;
+
+function init(categories) {
+	var nevPanel = document.createElement(&quot;div&quot;);
+	nevPanel.setAttribute(&quot;id&quot;, &quot;navPanel&quot;);
+	document.body.appendChild(nevPanel);
+	
+	var div_first = document.createElement(&quot;div&quot;);
+	div_first.setAttribute(&quot;id&quot;, &quot;title&quot;);
+	div_first.className = &quot;navPanel&quot;;
+	nevPanel.appendChild(div_first);
+	
+	var div_second = document.createElement(&quot;div&quot;);
+	div_second.className = &quot;s_b&quot;;
+	div_second.setAttribute(&quot;id&quot;, &quot;content&quot;);
+	document.body.appendChild(div_second);
+	
+	var div_inner = document.createElement(&quot;div&quot;);
+	div_inner.id = &quot;content_div&quot;;
+	div_second.appendChild(div_inner);
+	
+	var div_inner1 = document.createElement(&quot;div&quot;);
+	div_inner1.style.display = &quot;none&quot;;
+	div_inner.appendChild(div_inner1);
+	
+	var firstTitle = categories[0].title;
+	for(var i=0; i&lt;categories.length; i++) {
+		var a = document.createElement(&quot;a&quot;);
+		a.setAttribute(&quot;href&quot;,&quot;#&quot;);
+		
+		//将选中的标题栏传入方法中
+
+		var title = categories[i].title;
+		a.title = title;
+		a.id = i;
+		aOnclick(a,title, i);
+		div_first.appendChild(a);
+		
+		var span = document.createElement(&quot;span&quot;);
+		span.width = 80;			
+		span.innerHTML = &quot;&amp;nbsp;&amp;nbsp;&quot; + categories[i].title;
+		a.appendChild(span);
+		
+		var img = document.createElement(&quot;img&quot;);
+		var imgUrl = categories[i].imgUrl;
+		img.setAttribute(&quot;src&quot;, imgUrl);
+		span.appendChild(img);
+		span.appendChild(document.createTextNode(&quot;  &quot;));
+		
+		var div_inner = document.createElement(&quot;div&quot;);
+		div_inner.className = (i == 0 ? &quot;block&quot; : &quot;none&quot;);
+		div_inner.setAttribute(&quot;id&quot;,&quot;s&quot; + i);
+		div_second.appendChild(div_inner);
+		
+		var div_inner1 = document.createElement(&quot;div&quot;);
+		div_inner1.innerHTML =categories[i].content;
+		div_inner.appendChild(div_inner1);
+		
+	}
+	aa(firstTitle, 0);
+}
+    
+function aa(title, id) {
+	var title_contentUL = document.getElementById(&quot;title&quot;);
+	var count = title_contentUL.childNodes.length;
+	
+	for(var i=0;i&lt;count;i++) {
+		var contentDiv = document.getElementById(&quot;s&quot;+i);
+		if(i == id) {
+			title_contentUL.childNodes[i].className = &quot;active&quot; ;
+			contentDiv.className=&quot;block&quot;; 
+		}else {
+			title_contentUL.childNodes[i].className = &quot;&quot; ;
+			contentDiv.className=&quot;none&quot;; 		
+		}
+	}
+	
+}
+function aOnclick(obj,title, id){
+	alert(obj);
+	obj.onclick = function(){
+		aa(title,id);
+	}
+
+}
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox  fontSize="12" color="#cccccc"  creationComplete="doInit()"  verticalAlign="bottom" horizontalAlign="center" verticalGap="0" xmlns:mx="http://www.adobe.com/2006/mxml" width="120" height="100%">
+<mx:Style>
+ .toolTip {
+   cornerRadius:15;
+   borderColor:#333333;
+   borderStyle:solid;
+   borderThickness:2
+ }
+</mx:Style>
+<mx:Script>
+  <![CDATA[
+    import mx.core.Application;
+    import mx.effects.easing.Bounce; 
+    import mx.controls.Spacer;
+    import mx.controls.ProgressBar;
+    [Bindable]
+    public var imageUrl:String = "";
+    [Bindable]
+    public var titleStr:String = "";
+    public var idStr:Number ;
+    [Bindable]
+    private var titleColor:uint = 0xcccccc;
+    private var space:Spacer = new Spacer();
+    private var baseUrl:String = Application.application.baseUrl;
+    private function doInit():void {
+      space.height = 20;
+      this.addEventListener(MouseEvent.MOUSE_OVER , rollOverHandler);
+      this.addEventListener(MouseEvent.MOUSE_OUT , rollOutHandler);
+    }
+    private function imageOnloadComplete(event:Event):void {
+      var progressBar:ProgressBar = event.currentTarget as ProgressBar;
+      this.removeChild(progressBar);
+      image.visible = true;
+    }
+    
+    private function rollOverHandler(event:Event) {
+      this.currentState = "hasSpace";
+      titleColor = 0xffffff;
+    }
+    private function rollOutHandler(event:Event) {
+      this.currentState = "";
+      titleColor = 0xcccccc;
+    }
+  ]]>
+</mx:Script>
+<mx:transitions>  
+       <mx:Transition>  
+            <mx:Parallel    
+              targets="{[image , title]}">  
+                <mx:Resize duration="500" easingFunction="Bounce.easeOut"/>
+            </mx:Parallel>  
+        </mx:Transition>  
+    </mx:transitions> 
+    <mx:states>
+    <mx:State name="hasSpace">
+    <mx:AddChild target="{space}"/>
+    </mx:State>
+  </mx:states>
+     <mx:Image toolTip="{titleStr}" 
+ id="image"  width="120" height="90"  visible="false"  source="{baseUrl + imageUrl}"/>
+<mx:ProgressBar width="120" source="image" complete="imageOnloadComplete(event)"/>
+<mx:Text width="120"  id="title" color="{titleColor}" text="{titleStr.length > 10 ? titleStr.substring(0 , 8) + '...':titleStr}"/>
+
+</mx:VBox>

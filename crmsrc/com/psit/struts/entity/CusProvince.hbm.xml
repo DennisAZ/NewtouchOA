@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.psit.struts.entity.CusProvince" table="crm_cus_province"  >
+        <id name="prvId" type="java.lang.Long">
+            <column name="prv_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cusArea" class="com.psit.struts.entity.CusArea" fetch="select" not-null="false">
+            <column name="prv_area_id" />
+        </many-to-one>
+        <property name="prvName" type="java.lang.String">
+            <column name="prv_name" length="100" />
+        </property>
+        <property name="prvIsenabled" type="java.lang.String">
+            <column name="prv_isenabled" length="10" />
+        </property>
+    
+        <set name="cusCities" inverse="true" cascade="all">
+            <key>
+                <column name="city_prv_id" />
+            </key>
+            <one-to-many class="com.psit.struts.entity.CusCity" />
+        </set>
+        <set name="cusCorCuses" inverse="true">
+            <key>
+                <column name="cor_province" />
+            </key>
+            <one-to-many class="com.psit.struts.entity.CusCorCus" />
+        </set>
+    </class>
+</hibernate-mapping>

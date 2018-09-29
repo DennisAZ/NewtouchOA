@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">高级折叠菜单</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:</td>
+    <td width="20%">&nbsp;刘涵 </td>
+    <td width="15%">创建日期:</td>
+    <td width="20%">&nbsp;2011-01-14</td>
+    <td width="10%">版本:</td>
+    <td width="25%">&nbsp;1</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="20%">适用情景描述</th>
+    <th width="75%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+    <td><a href="Menu1.jsp" target="_blank">高级折叠菜单</a></td>
+    <td>
+    <pre>
+样式表：[cssPath]/menu_left.css
+Js文件：[contextPath]/core/js/cmp/MenuList.js
+<font color=red>
+var deptIndex = ""; //每个面板的索引，便于后面引用面板
+var roleIndex = "";
+var defaultIndex = "";
+</font>
+var tree = null;
+var hasRoleData = false;
+function getAccord(){
+  var data = {
+    panel:'left',
+    data:[{title:'已选人员', action:getSelectedUser},
+         {title:'按部门选择', action:getTree},
+         {title:'按角色选择', action:getRole}]
+   };
+  menu = new MenuList(data);
+  deptIndex = menu.getContainerId(2);//取得deptIndex便于后面应用 
+  roleIndex = menu.getContainerId(3);//取得roleIndex便于后面应用 
+  menu.showItem(this,{},2);//展示第二个菜单项
+  getTree();//取得树
+}
+function getSelectedUser(){
+  alert("已选人员处理方法");
+}
+<font color=red>
+getSelectedUser是当点击第一个菜单项时执行的方法
+getContainerId可以取得对应索引的面板Id
+showItem(this,{} , 2)前面两个参数是固定的，后面这个是默认展开的项的索引(从1开始)
+getTree设置刚展开的面板(默认展开的面板是没有内容的
+,需调用一次函数,这里展开的是索引为2的项
+，其执行的方法是getTree所以这里需要调用一下这个方法)
+
+</font>
+    </pre>
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/menulist/Menu1.jsp">/rad/docs/component/menulist/Menu1.jsp
+   </a></td>
+  </tr>
+   <tr>
+    <td><a href="Menu1.jsp" target="_blank">高级折叠菜单和树的结合</a></td>
+    <td>
+    <pre>
+样式表：[cssPath]/menu_left.css
+Js文件：[contextPath]/core/js/cmp/MenuList.js
+        [contextPath]/core/js/cmp/DTree1.0.js
+<font color=red>
+var deptIndex = ""; //每个面板的索引，便于后面引用面板
+var roleIndex = "";
+var defaultIndex = "";
+var tree = null;
+</font>
+var hasRoleData = false;
+function getAccord(){
+  var data = {
+    panel:'left',
+    data:[{title:'已选人员', action:getSelectedUser},
+         {title:'按部门选择', action:getTree},
+         {title:'按角色选择', action:getRole}]
+   };
+  menu = new MenuList(data);
+  deptIndex = menu.getContainerId(2);//取得deptIndex便于后面应用 
+  roleIndex = menu.getContainerId(3);//取得roleIndex便于后面应用 
+  menu.showItem(this,{},2);//展示第二个菜单项
+  getTree();//取得树
+}
+function getTree(){
+  var tree = $(deptIndex).tree;//取得树的实例
+  //如果为空说明是还没有生成
+  //因为第二次展开时还会调用这个函数，这样判断主要是为了防止树重复生成
+  if (tree == null){
+    var url = contextPath + "/yh/core/funcs/orgselect/act/YHDeptSelectAct/getDeptTree.act?id=";
+    var config = {bindToContainerId:deptIndex//所在面板的id
+        , requestUrl:url
+        , isOnceLoad:false
+        , isUserModule:true //必须加上此项，处理兼容性问题
+      }
+    tree = new DTree(config);
+    tree.show(); 
+  }
+}
+<font color=red>
+getTree生成树的方法,关于树的配置请参见树的参数说明
+注：这里需加上isUserModule:true,如不指定此项树的每个结点很可能位置不对
+        树的bindToContainerId指定为，所在面板的id(树生成到了外面时,就很可能是这项没有设置上)
+       每次展开的时候,对应的方法都会重执行，所以一定要去判断树是否已经生成，防止树重复生成
+</font>
+    </pre>
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/menulist/Menu1.jsp">/rad/docs/component/menulist/Menu1.jsp
+   </a></td>
+  </tr>
+  
+   <tr>
+    <td><a href="Menu3.jsp" target="_blank">高级折叠菜单和动态表格的结合</a></td>
+    <td>
+    <pre>
+样式表：[cssPath]/menu_left.css
+Js文件：[contextPath]/core/js/cmp/MenuList.js
+<font color=red>
+var deptIndex = ""; //每个面板的索引，便于后面引用面板
+var roleIndex = "";
+var defaultIndex = "";
+var hasRoleData = false;
+</font>
+function getAccord(){
+  var data = {
+    panel:'left',
+    data:[{title:'已选人员', action:getSelectedUser},
+         {title:'按部门选择', action:getTree},
+         {title:'按角色选择', action:getRole}]
+   };
+  menu = new MenuList(data);
+  deptIndex = menu.getContainerId(2);//取得deptIndex便于后面应用 
+  roleIndex = menu.getContainerId(3);//取得roleIndex便于后面应用 
+  menu.showItem(this,{},3);//展示第三个菜单项
+  getRole();
+}
+function getRole(){
+  if (!hasRoleData) {
+    var url = contextPath + "/yh/core/module/org_select/act/YHRoleSelectAct/getRoles.act";
+    var json = getJsonRs(url);
+    if(json.rtState == "0"){
+      roleList = json.rtData;
+      var tabStr = "<table class='TableList' width='100%'><tbody id='roleList'></tbody></table>";
+      $(roleIndex).update(tabStr);
+      addRole(roleList);
+    }
+    hasRoleData = true;
+  }
+  
+}
+function addRole(roles) {
+  if(roles.length > 0 ){
+    for(var i = 0 ; i < roles.length ; i++){
+      var role = roles[i];
+      var tr = new Element("tr");
+      td = new Element("td");
+      td.align = 'center';
+      td.update(role.privName);
+      tr.appendChild(td);
+      $('roleList').appendChild(tr);
+    }
+  }
+}
+<font color=red>
+getRole生成表格的方法
+注：这里hasRoleData,主要是记录是否已经加载
+         每次展开的时候,对应的方法都会重执行，所以一定要去判断hasRoleData数据是否已经加载，防止重复加载
+</font>
+    </pre>
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/menulist/Menu3.jsp">/rad/docs/component/menulist/Menu3.jsp
+   </a></td>
+  </tr>
+  
+  <tr>
+  <td>引入文件及参数介绍</td>
+  <td>
+  <pre>
+样式表：[cssPath]/menu_left.css
+Js文件：[contextPath]/core/js/cmp/MenuList.js
+js对象:MenuList
+ 构造函数参数: {panel:,index:,data:[{title:,action:},....]}
+   panel 字符串 指定父容器
+   fix boolean 当单击菜单时只响应事件设置为false，同时展开子项则设置为true
+   data 对象数组 指定menu每一项的数据
+      [{title:,action:,icon:,data:},.....]
+         title 字符串 每一项的label
+         action 函数 单击每一项时执行的函数,可以取得的参数为(event,item,index)
+                    ,其中event为单击事件,item为当前项的对象,index为索引。
+  </pre></td>
+  <td></td></tr>
+</table>
+
+</body>
+</html>

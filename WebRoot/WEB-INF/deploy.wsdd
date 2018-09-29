@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:ns="http://T9BjcaSynchronization.logic.bjca.portal.subsys.t9"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+  <service name="Synchronization" provider="java:RPC">
+      <parameter name="className" value="t9.subsys.portal.bjca.logic.T9BjcaSynchronization"/>
+      <parameter name="allowedMethods" value="*"/>
+      <parameter name="scope" value="Request"/>
+  </service>
+  <service name="T9WorkListService" provider="java:RPC"> 
+    <parameter name="className" value="t9.user.taiji.workflow.T9WorkListService"/> 
+    <parameter name="allowedMethods" value="*"/> 
+    <parameter name="scope" value="Request"/> 
+  </service> 
+  <service name="T9SystemLogService" provider="java:RPC"> 
+    <parameter name="className" value="t9.user.taiji.system.T9SystemLogService"/> 
+    <parameter name="allowedMethods" value="*"/> 
+    <parameter name="scope" value="Request"/> 
+  </service>
+</deployment>

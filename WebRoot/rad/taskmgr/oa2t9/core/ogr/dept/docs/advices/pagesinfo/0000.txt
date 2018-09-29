@@ -1,0 +1,5 @@
+webInfoUser=YZQ
+webInfoTitle=版本１.０要求
+webInfoDate=2009-10-21 13:50
+webInfoKeyWord=版本１.０要求
+fileCount=0

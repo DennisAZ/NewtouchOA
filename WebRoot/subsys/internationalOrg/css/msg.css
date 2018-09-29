@@ -1,0 +1,193 @@
+.blank20 {
+  height: 20px;
+}
+.underline {
+  overflow:hidden;
+  background:url(images/line.png) repeat-x left bottom;
+}
+.title2 {
+  width: 800px;
+  _width: 780px;
+  height: 25px;
+  margin-left:10px;
+  text-align:left;
+}
+
+.title2 img {
+  float:left;
+  display:inline;
+}
+#selfch-title {
+  width: 800px;
+  margin-left: 20px;
+  height: 28px;
+  text-align:left;
+  background:url(images/line.png) repeat-x left bottom;
+  overflow:hidden;
+}
+#selfch-title #lead {
+  float:left;
+  margin-right:15px;
+  display:inline;
+  vertical-align:middle;
+}
+#selfch-title div {
+/*  vertical-align:middle; */
+  height:26px;
+  _height:21px;
+  overflow:hidden;
+  padding-top:0;
+  _padding-top:5px;
+}
+#selfch-title img {
+  display:inline;
+  padding-left:5px;
+  line-height:26px;
+  vertical-align:middle;
+}
+#selfch{
+  margin-left: 20px;
+  width:800px;
+}
+#selfch ul {
+}
+#selfch li {
+  width: 790px;
+  height: 30px;
+  *height:25px;
+  overflow:hidden;
+  vertical-align:center;
+  zoom:1;
+  padding-left: 15px;
+  text-align: left;
+  background: url(images/list-li.gif) no-repeat left center;
+
+}
+#selfch li a {
+  font: 13px/30px "微软雅黑","宋体";
+  float:left;
+  width: 700px;
+  display:inline;
+}
+#selfch li span {
+  float: right;
+  display:inline;
+  width: 90px;
+  font: 13px/30px "微软雅黑","宋体";
+}
+.tab_first {
+  display:inline;
+  vertical-align:middle;
+  width:81px;
+  height:26px;
+  float:left;
+  text-align:center;
+  vertical-align:middle;
+  font: 13px/26px "微软雅黑","宋体";
+  background:url(images/tab-first.png) no-repeat;
+ /* border:red 1px solid;
+  padding-top:5px; */
+}
+.tab_last {
+  display:inline;
+  vertical-align:middle;
+  width:80px;
+  height:26px;
+  float:left;
+  text-align:center;
+  font: 13px/26px "微软雅黑","宋体";
+  background:url(images/tab-last.png) no-repeat;
+}
+.tab_num {
+  display:inline;
+  vertical-align:middle;
+  width:82px;
+  height:26px;
+/*  overflow:hidden; */
+  float:left;
+  text-align:center;
+  border-left: #bababc 1px solid;
+  border-left: #bababc 1px solid;
+  font: 13px/26px "微软雅黑","宋体";
+  background:url(images/tab-num.png) repeat-x;
+}
+#butn {
+  float:right;
+  display:inline;
+  margin-right: 0px;
+  line-height:26px;
+  vertical-align:middle;
+}
+.defbutton {
+  width:93px;
+  height: 16px;
+  border: none;
+  cursor:pointer;
+  
+  background:url(images/selfdef.png) repeat-x;
+}
+#pager {
+  text-align:center;
+  margin-left:105px;
+/*  margin-top:10px;
+  margin-left:10px;
+  width: auto; */
+  height: 30px;
+  overflow:hidden;
+}
+#pager span {
+  font: 14px/26px "微软雅黑","宋体";
+  font-weight:bold;
+  float:left;
+  width:auto;
+  display:block;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align:center;
+}
+
+
+#pager .pageup {
+  width: 11px;
+  height:17px;
+  background:url(images/pageup.png) no-repeat left center;
+}
+#pager .pagedown {
+  width: 11px;
+  height:17px;
+  background:url(images/pagedown.png) no-repeat left center;
+}
+#pager .curpage {
+  width: 20px;
+  height:17px;
+  color: #fff;
+  font: 13px/20px "微软雅黑","宋体";
+  background:url(images/cur.png) no-repeat center center;
+}
+#pager .pagenum {
+  width: 18px;
+  height:17px;
+  color: #111;
+  font: 13px/20px "微软雅黑","宋体";
+  background:url(images/pagebg.png) no-repeat center center;
+}
+.tv {
+  float:left;
+  display:inline;
+  width: 260px;
+  overflow:hidden;
+  margin: 10px 0 20px 15px;
+}
+.tv h2 {
+  text-align:left;
+  padding-left:20px;
+  font: bold 11pt "微软雅黑","宋体";
+}
+.tv li {
+    font: 13px/20px "微软雅黑","宋体";
+}
+.videopic {
+  width:142px;
+  height:102px;
+  background:url(images/video-bg.gif) no-repeat center center;
+}

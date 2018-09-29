@@ -1,0 +1,278 @@
+.button-bg {
+	width: 141px;
+	height:auto;
+	min-height:20px;
+	padding-top: 5px;
+	padding-left: 45px;
+}
+.but-a {
+	float: left;
+	height: 22px;
+	width: 56px;
+}
+.but-a a {
+/*行内元素没有没有上下填充,也就是说你设置padding-top padding-bottom将是徒劳
+*/
+	display:block; 
+	height: 22px;
+	width: 73px;
+	margin-left:-20px;
+	background: url(../images/button-yuan-a1.jpg) no-repeat 0 0 transparent;
+}
+
+.but-b a {
+	display:block;
+	height: 22px;
+	width: 75px;
+	background: url(../images/button-yuan-b1.jpg) no-repeat 0 0 transparent;
+}
+.but-b {
+	float: left;
+	height: 22px;
+	width: 72px;
+	margin-left: 10px;
+}
+
+#Left{
+	  float:left; 
+	 }
+	 
+#Right{
+	 float:right;
+}
+
+/**
+* tag云图样式表开始
+*/
+
+#font1{
+	  position:relative;
+	  font-family: "微软雅黑", "宋体";
+	  color:#908743;
+	}
+	#font2{
+	
+		 font-family: "微软雅黑", "宋体";
+		 color:#456412;
+	}
+	#font3{
+		font-family: "微软雅黑", "宋体";
+		color:red;
+	}
+	#font4{
+		font-family: "微软雅黑", "宋体";
+		color:112200;
+	}
+	#font5{
+	font-family: "微软雅黑", "宋体";
+	color:Fuchsia;
+	}
+	#font6{
+	font-family: "微软雅黑", "宋体";
+	color:Aqua;
+	}
+	#font7{
+		font-family: "微软雅黑", "宋体";
+		color:Lime;
+	}
+	#font8{
+		font-family: "微软雅黑", "宋体";
+		color:Olive;
+	}
+	#fonyh{
+		color:#999900;
+		font-family: "微软雅黑", "宋体";
+
+	}
+	#font10{
+		font-family: "微软雅黑", "宋体";
+		color:#779900;
+		font-variant:normal|small-caps； 
+	}
+	#font11 {
+	   position:relative;
+		 font-family: "微软雅黑", "宋体";
+		 color:#4523RR;
+	}
+	#font12{
+		font-family: "微软雅黑", "宋体";
+		color:555666;
+	}
+	#font13{
+		font-family: "微软雅黑", "宋体";
+		color:#005611;
+	}
+	#font14{
+		font-family: "微软雅黑", "宋体";
+		color:#990099;
+	}
+	#font15{
+		font-family: "微软雅黑", "宋体";
+		style:color#red;
+		font-variant:normal|small-caps； 
+	}
+	
+	#font16 {
+	   position:relative;
+		 font-family: "微软雅黑", "宋体";
+		 color:#750000;
+	}
+	#font17{
+		font-family: "微软雅黑", "宋体";
+		color:#D200D2;
+	}
+	#font18{
+		font-family: "微软雅黑", "宋体";
+		color:#ff7575;
+	}
+	#font19{
+		font-family: "微软雅黑", "宋体";
+		color:#930093;
+	}
+	#font20{
+		font-family: "微软雅黑", "宋体";
+		style:#8600FF;
+		font-variant:normal|small-caps； 
+	}
+	
+		#font21 {
+	   position:relative;
+		 font-family: "微软雅黑", "宋体";
+		 color:#7D7DFF;
+	}
+	#font22{
+		font-family: "微软雅黑", "宋体";
+		color:#0066CC;
+	}
+	#font23{
+		font-family: "微软雅黑", "宋体";
+		color:#02C874;
+	}
+	#font24{
+		font-family: "微软雅黑", "宋体";
+		color:#00EC00;
+	}
+	#font25{
+		font-family: "微软雅黑", "宋体";
+		style:#EAC100;
+		font-variant:normal|small-caps； 
+	}
+	
+		#font26 {
+	   position:relative;
+		 font-family: "微软雅黑", "宋体";
+		 color:#743A3A;
+	}
+	#font27{
+		font-family: "微软雅黑", "宋体";
+		color:#616130;
+	}
+	#font28{
+		font-family: "微软雅黑", "宋体";
+		color:#4F9D9D;
+	}
+	#font29{
+		font-family: "微软雅黑", "宋体";
+		color:#B7FF4A;
+	}
+	#font30{
+		font-family: "微软雅黑", "宋体";
+		style:#AE57A4;
+		font-variant:normal|small-caps； 
+	}
+	
+	#font31 {
+	   position:relative;
+		 font-family: "微软雅黑", "宋体";
+		 color:#99CC32;
+	}
+	#font32{
+		font-family: "微软雅黑", "宋体";
+		color:#02C874;
+	}
+	#font33{
+		font-family: "微软雅黑", "宋体";
+		color:#CC3299;
+	}
+	#font34{
+		font-family: "微软雅黑", "宋体";
+		color:#4F2F4F;
+	}
+	#font35{
+		font-family: "微软雅黑", "宋体";
+		style:#5C4033;
+		font-variant:normal|small-caps； 
+	}
+	
+		#font36 {
+	   position:relative;
+		 font-family: "微软雅黑", "宋体";
+		 color:#007FFF;
+	}
+	#font37{
+		font-family: "微软雅黑", "宋体";
+		color:#DB9370;
+	}
+	#font38{
+		font-family: "微软雅黑", "宋体";
+		color:#38B0DE;
+	}
+	#font39{
+		font-family: "微软雅黑", "宋体";
+		color:#236B8E;
+	}
+	#font40{
+		font-family: "微软雅黑", "宋体";
+		style:#00FF7F;
+		font-variant:normal|small-caps； 
+	}
+	
+	#font41 {
+	   position:relative;
+		 font-family: "微软雅黑", "宋体";
+		 color:#FF1CAE;
+	}
+	#font42{
+		font-family: "微软雅黑", "宋体";
+		color:#007FFF;
+	}
+	#font43{
+		font-family: "微软雅黑", "宋体";
+		color:#8E6B23;
+	}
+	#font44{
+		font-family: "微软雅黑", "宋体";
+		color:#6B4226;
+	}
+	#font45{
+		font-family: "微软雅黑", "宋体";
+		style:#238E68;
+		font-variant:normal|small-caps； 
+	}
+	
+		#font46 {
+	   position:relative;
+		 font-family: "微软雅黑", "宋体";
+		 color:#6F4242;
+	}
+	#font47{
+		font-family: "微软雅黑", "宋体";
+		color:#5959AB;
+	}
+	#font48{
+		font-family: "微软雅黑", "宋体";
+		color:#EAADEA;
+	}
+	#font49{
+		font-family: "微软雅黑", "宋体";
+		color:#00EC00;
+	}
+	#font50{
+		font-family: "微软雅黑", "宋体";
+		style:#FF7F00;
+		font-variant:normal|small-caps； 
+	}
+	/**
+* tag云图样式表 结束
+*/
+	

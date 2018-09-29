@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">数据库相关</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:</td>
+    <td width="20%">&nbsp;</td>
+    <td width="15%">创建日期:</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="60%">适用情景描述</th>
+    <th width="35%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+    <tr>
+    <td><a href="/yh/test/rad/server/util/db/orm/index.htm">YHORM api文档</a><br>
+    YHORM 提供了对象关系映射的接口
+    YHORM 1.0版的api帮助文档
+    </td>
+    <td>&nbsp;</td>
+    <td><a href="#">代码</a></td>
+  </tr>
+  </tr>
+    <tr>
+    <td><a href="/yh/test/rad/server/util/db/orm/indexDTJ.htm">DTJ api文档</a><br>
+    YHDTJ 提供了数据展示的接口，可以展示带有小编码/编码外键的数据
+    YHDTJ 1.0版的api帮助文档
+    </td>
+    <td><br><pre>
+    所有返回的数据结构如下：
+    {'total':2,'records':[
+                 { seqId:8,userName:"cc",isPolitical:1,isPoliticalDesc:"是",province:102,provinceDesc:"深圳",sex:"1",sexDesc:"男",userNo:10005,city:104,cityDesc:"成都" },
+                 { seqId:2,userName:"cy",isPolitical:2,isPoliticalDesc:"否",province:102,provinceDesc:"深圳",sex:"2",sexDesc:"女",userNo:10002,city:103,cityDesc:"武汉" }]}
+    	其中：小编码和外键展示实属都以Desc结束 如：sex:"2",sexDesc:"女"
+    </pre></td><td><a href="#">代码</a></td>
+  </tr>
+</table>
+
+</body>
+</html>

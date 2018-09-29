@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">类似于Google快速录入</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:刘涵</td>
+    <td width="20%">&nbsp;</td>
+    <td width="15%">创建日期:2011-01-14</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:1</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="20%">适用情景描述</th>
+    <th width="75%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+    <td><a href="assistInput.jsp" target="_blank">类似与Google辅助快速录入提示</a>
+    </td>
+    <td>  <pre>
+Js文件：[contextPath]/core/js/cmp/AssistInput1.0.js
+样式表：[cssPath]/cmp/AssistInput.css
+  var url = contextPath 
+      + "/yh/rad/docs/assistinput/YHAssistInputAct/getData.act?w=";
+  var par = {bindToId:"input",requestUrl:url,showLength:5,func:showMore};
+  new AssistInuput(par);
+id指定的input标签类型必须是text类型
+后台可以通过取得w的值，来进行查询
+</pre>
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=rad/docs/component/asstinput/assistInput.jsp">/rad/docs/component/asstinput/assistInput.jsp</a></td>
+  </tr>
+  
+  <tr>
+  <td>引入文件及参数介绍</td>
+  <td>
+  <pre>
+Js文件：[contextPath]/core/js/cmp/AssistInput1.0.js
+样式表：[cssPath]/cmp/AssistInput.css
+js对象:AssistInuput
+构造函数参数:{bindToId,requestUrl,showLength,func}
+    bindToId 字符串  所要邦定的输入控件
+    requestUrl 字符串 请求路径
+    showLength int 最多显示的条数
+    func 函数 超出最多显示条数时点击'...'所执行的函数
+后台提供的数据结构：
+    {rtState:"0", rtMsrg:"成功返回!"
+        , rtData:{count:,lis:
+                     [{id:,string:},....]}}
+    count int 总条数,不是显示的条数
+    lis 对象数组 每条的数据其中,id废弃了,string每一条显示的label
+  </pre></td>
+  <td></td></tr>
+</table>
+</body>
+</html>

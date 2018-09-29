@@ -1,0 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>带导航功能的多窗格页面</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	</head>
+	<frameset rows="80,*">	
+		<frame src="topic.html" noresize />
+		<frameset cols="200,*">	
+			<frame name="navigateFrame" src="list.html" />
+			<frame name="contentFrame" src="content.jsp" />	
+		</frameset>
+	</frameset>
+</html>

@@ -1,0 +1,174 @@
+#container #workinfo {
+  width: 985px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+#container #workinfo #worknews {
+  width: 985px;
+  height: auto;
+  text-align: left;
+}
+#container #workinfo #worknews #workpic {
+  width: 140px;
+  height: 175px;
+  margin-top: 30px;
+  float: left;
+  background: url(images/workinfo/worknews.png) no-repeat;
+  _background: none;
+  _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="css/images/workinfo/worknews.png" ,sizingMethod="crop"); 
+}
+#container #workinfo #worknews #work-content {
+  width: 825px;
+ /* height: 200px;*/
+  height: auto;
+  float: right;
+  text-align: left;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+#container #workinfo #worknews #work-content #content-top {
+  width: 825px;
+  height: 13px;
+  overflow: hidden;
+  background: url(images/workinfo/wframe-top.png) no-repeat; 
+}
+#container #workinfo #worknews #work-content #content-mid {
+  width: 815px;
+  /*height: 150px;*/
+  height: auto;
+  padding-left: 10px;
+  background: url(images/workinfo/wframe-mid.png) repeat-y;  
+}
+#container #workinfo #worknews #work-content #content-mid ul {
+  margin-left: 15px;
+}
+#container #workinfo #worknews #work-content #content-mid li {
+  height: 30px;
+  width: 720px;
+  text-align: left;
+  padding-left: 20px;
+  background: url(images/workinfo/arrow-r.png) no-repeat left center;
+}
+#container #workinfo #worknews #work-content #content-mid a {
+  font: 14px/30px "微软雅黑","宋体";
+  float: left;
+  width: 630px;
+}
+#container #workinfo #worknews #work-content #content-mid a img  {
+  border: #fff 0 none;
+  /* height: 11px; */
+  line-height: 30px;
+  padding: 0 5px;
+}
+#container #workinfo #worknews #work-content #content-mid a span {
+  width: 30px;
+  float: left;
+}
+#container #workinfo #worknews #work-content #content-mid li span {
+  width: 90px;
+  font: 14px/30px "微软雅黑","宋体";
+  float: right;
+}
+#container #workinfo #worknews #work-content #content-bot {
+  width: 825px;
+  height: 13px;
+  background: url(images/workinfo/wframe-bot.png) no-repeat; 
+}
+#container #workinfo #worknews .ch-other {
+  /* height: 320px; */
+  width: 985px;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#container #workinfo .ch-other {
+  width: 985px;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/* 处理IE8无法自动高度  */
+
+#container #workinfo .ch-other:after {
+  content:"."; 
+  height:0; 
+  visibility:hidden; 
+  display:block; 
+  clear:both; 	
+}
+
+#container #workinfo .ch-other .frame-top {
+  width: 486px;
+  height: 45px;
+  overflow: hidden;
+  background: url(images/workinfo/frame-top.png) no-repeat;
+}
+.ch-title {
+  width: 483px;
+  height: 24px;
+  font: 14px/30px "微软雅黑","宋体";
+  color: #393939;
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 36px;
+
+}
+#container #workinfo #worknews #work-content #content-mid .ch-title {
+  background: url(images/token.png) no-repeat;
+  padding-left: 36px;
+  padding-top: 0;
+  overflow: hidden;
+}
+#container #workinfo .ch-other .frame-top .ch-title {
+  width: 447px;
+  height: 24px;
+  font: 14px/30px "微软雅黑","宋体";
+  color: #393939;
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 36px;
+}
+#container #workinfo .ch-other .frame-top span {
+  margin-left: 300px;
+  font: 14px/30px "微软雅黑","宋体";
+  color: #393939; 
+}
+#container #workinfo .ch-other .frame-mid {
+  width: 486px;
+  /* height: auto; */
+  /* jQuery("#container #workinfo .ch-other .frame-mid").css({"height": 新闻条数*30+10}); */
+  height: 210px!important;
+  height: 222px;
+  /* background-color: yellow; */
+  background: url(images/workinfo/frame-mid.png) repeat-y;
+}
+#container #workinfo .ch-other .frame-mid ul {
+  margin-left: 15px;
+}
+#container #workinfo .ch-other .frame-mid li {
+  height: 30px;
+  width: 430px;
+  text-align: left;
+  padding-left: 20px;
+  background: url(images/news/ic-o.gif) no-repeat;
+  border-bottom: #eaeaea 1px solid;
+}
+#container #workinfo .ch-other .frame-mid li span {
+  width: 90px;
+  font: 13px/30px "微软雅黑","宋体";
+  float: right;
+}
+#container #workinfo .ch-other .frame-mid a {
+  font: 14px/30px "微软雅黑","宋体";
+  float: left;
+  width: 340px;
+}
+#container #workinfo .ch-other .frame-bot {
+  width: 486px;
+  height: 10px;
+  background: url(images/workinfo/frame-bot.png) no-repeat;
+}

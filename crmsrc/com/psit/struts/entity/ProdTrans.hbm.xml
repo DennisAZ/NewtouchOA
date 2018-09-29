@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.psit.struts.entity.ProdTrans" table="crm_prod_trans" >
+        <id name="ptrId" type="java.lang.Long">
+            <column name="ptr_id"/>
+            <generator class="identity" />
+        </id>
+        <many-to-one name="ptrExpTypeList" class="com.psit.struts.entity.TypeList" fetch="select" not-null="false">
+            <column name="ptr_typ_id" />
+        </many-to-one>
+        <many-to-one name="ptrProduct" class="com.psit.struts.entity.WmsProduct" fetch="select" not-null="false">
+            <column name="ptr_wpr_id" />
+        </many-to-one>
+        <many-to-one name="ptrProv" class="com.psit.struts.entity.CusArea" fetch="select" not-null="false">
+            <column name="ptr_prov_id" />
+        </many-to-one>
+        <many-to-one name="ptrCity" class="com.psit.struts.entity.CusProvince" fetch="select" not-null="false">
+            <column name="ptr_city_id" />
+        </many-to-one>
+        <many-to-one name="ptrDistrict" class="com.psit.struts.entity.CusCity" fetch="select" not-null="false">
+            <column name="ptr_district_id" />
+        </many-to-one>
+       	<property name="ptrUnit" type="java.lang.String">
+            <column name="ptr_unit" length="50" />
+        </property>
+        <property name="ptrAmt" type="java.lang.Double">
+            <column name="ptr_amt" precision="18" />
+        </property>
+    </class>
+</hibernate-mapping>

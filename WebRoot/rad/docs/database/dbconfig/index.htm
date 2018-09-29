@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">数据库配置相关</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:</td>
+    <td width="20%">&nbsp;</td>
+    <td width="15%">创建日期:</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="45%">适用情景描述</th>
+    <th width="50%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+    <td>Web模式下</td>
+    <td>在sysconfig.properties配置数据库的配置<br>
+           1.数据库配置选项:db.jdbc.dbms = 当前系统的数据库类型(oracle,mysql,sqlserver)<br>
+           2.系统库数据源名称db.jdbc.datasource.sysDsName=oracle/YHDB;<br>
+           <font color="red">系统库数据源名称，必须和dbconfig.properties下的dsName相匹配</font><br>
+           3.配置当前数据库的数据库连接配置：以oracle为例<br>
+             db.jdbc.driver.oracle = oracle.jdbc.driver.OracleDriver<br>
+             db.jdbc.conurl.oracle = jdbc:oracle:thin:@192.168.0.5:1521:orcl<br>
+             db.jdbc.userName.oracle = TD_OA<br>
+             #密码暂定为test<br>
+             db.jdbc.passward.oracle = Wn9AYBymR+Y=<br>
+             db.jdbc.maxActive.oracle=200<br>
+             db.jdbc.maxIdle.oracle=200<br>
+             db.jdbc.maxWait.oracle=5000<br>
+             db.jdbc.defaultAutoCommit.oracle=false<br>
+             db.jdbc.defaultReadOnly.oracle=false<br>
+          <br></br>
+          
+          在web模式下取得数据库连接<br>
+          YHRequestDbConn requestDbConn = (YHRequestDbConn) request
+          .getAttribute(YHBeanKeys.REQUEST_DB_CONN_MGR);<br>
+          Connection  dbConn = requestDbConn.getSysDbConn();<br>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>独立运行模式下</td>
+    <td>如果需要进行单元测试或者临时需要取得数据库连接<br>
+    则可以，将sysconfig.properties文件拷贝到D:\project\test目录下<br>
+    取得连接的方式为：<br>
+    Connection dbConn = TestDbUtil.getConnection(boolean autoCommit, String dbName);<br>
+    @param autoCommit 是否自动提交<br>
+    @param dbName  数据库名<br>
+     </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>跨数据库、数据源定义</td>
+    <td>1.根据配置文件中的db.jdbc.dbms选择就可以实现不同数据库之间的切换<br>
+        2.根据db.jdbc.datasource.sysDsName的配置不同就可以实现不同数据源之间的切换</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+</body>
+</html>

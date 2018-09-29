@@ -1,0 +1,331 @@
+#start_menu_panel {
+    left: 3px;
+    position: absolute;
+    top: 132px;
+    width: 277px;
+    z-index: 91000;
+}
+#start_menu_panel .panel-head {
+    background: url("images/start_menu_panel_bg.png") no-repeat scroll 0 top transparent;
+    height: 16px;
+}
+#start_menu_panel .panel-foot {
+    background: url("images/start_menu_panel_bg.png") no-repeat scroll -554px bottom transparent;
+    height: 16px;
+}
+#start_menu_panel .panel-user {
+    background: url("images/start_menu_panel_bg.png") no-repeat scroll 0 bottom transparent;
+    height: 52px;
+    padding-left: 22px;
+    padding-right: 22px;
+}
+#start_menu_panel .panel-user .avatar {
+    background: url("images/avatar_bg.jpg") no-repeat scroll center center transparent;
+    cursor: pointer;
+    float: left;
+    height: 42px !important;
+    padding-left: 4px;
+    padding-top: 4px;
+    width: 42px !important;
+}
+#start_menu_panel .panel-user .avatar img {
+    height: 38px;
+    width: 38px;
+}
+#start_menu_panel .panel-user .avatar div.status_icon {
+    height: 16px;
+    left: 55px;
+    overflow: hidden;
+    position: absolute;
+    top: 45px;
+    width: 16px;
+}
+#start_menu_panel .panel-user .avatar div.status_icon_1 {
+    background: url("images/online_status.png") no-repeat scroll 0 -7px transparent;
+}
+#start_menu_panel .panel-user .avatar div.status_icon_2 {
+    background: url("images/online_status.png") no-repeat scroll 0 -37px transparent;
+}
+#start_menu_panel .panel-user .avatar div.status_icon_3 {
+    background: url("images/online_status.png") no-repeat scroll 0 -97px transparent;
+}
+#start_menu_panel .panel-user .avatar div.status_icon_4 {
+    background: url("images/online_status.png") no-repeat scroll 0 -67px transparent;
+}
+#start_menu_panel .panel-user .avatar #on_status {
+    background: url("images/on_status_bg.png") repeat-y scroll left top #FFFFFF;
+    border: 1px solid #B3B3B3;
+    display: none;
+    left: 25px;
+    position: absolute;
+    top: 60px;
+    width: 100px;
+    z-index: 94000;
+}
+#start_menu_panel .panel-user .avatar #on_status a {
+    background: url("images/online_status.png") no-repeat scroll left top transparent;
+    color: #393939;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 25px;
+    text-decoration: none;
+}
+#start_menu_panel .panel-user .avatar #on_status a:hover {
+    background-color: #E6EBF1;
+}
+#start_menu_panel .panel-user .avatar #on_status a.on_status_1 {
+    background-position: 4px 0;
+}
+#start_menu_panel .panel-user .avatar #on_status a.on_status_2 {
+    background-position: 4px -30px;
+}
+#start_menu_panel .panel-user .avatar #on_status a.on_status_3 {
+    background-position: 4px -90px;
+}
+#start_menu_panel .panel-user .avatar #on_status a.on_status_4 {
+    background-position: 4px -60px;
+}
+#start_menu_panel .panel-user .name {
+    color: #0E4387;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-top: 24px;
+}
+#start_menu_panel .panel-user .tools {
+    float: right;
+    margin-top: 20px;
+}
+#start_menu_panel .panel-user .tools .logout {
+    background: url("images/logout.jpg") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 24px;
+    margin-right: 0px;
+    overflow: hidden;
+    width: 58px;
+}
+#start_menu_panel .panel-user .tools .logout:hover {
+    background-position: 0 -24px;
+}
+#start_menu_panel .panel-user .tools .exit {
+    background: url("images/logout.jpg") no-repeat scroll -62px 0 transparent;
+    display: inline-block;
+    height: 24px;
+    overflow: hidden;
+    width: 55px;
+}
+#start_menu_panel .panel-user .tools .exit:hover {
+    background-position: -62px -24px;
+}
+#start_menu_panel .panel-menu {
+    background: url("images/start_menu_panel_bg.png") repeat-y scroll -277px top transparent;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.panel-menu > div{
+	  height: 350px;
+    overflow: auto;
+}
+
+#start_menu_panel .panel-menu #first_panel {
+    padding: 5px 0;
+    width: 200px;
+}
+#start_menu_panel .panel-menu #first_panel .scroll-up, #start_menu_panel .panel-menu #first_panel .scroll-down {
+    background: url("images/scroll_arrow.png") no-repeat scroll center 0 transparent;
+    cursor: pointer;
+    height: 10px;
+    overflow: hidden;
+}
+#start_menu_panel .panel-menu #first_panel .scroll-up {
+    background-position: center 0;
+}
+#start_menu_panel .panel-menu #first_panel .scroll-down {
+    background-position: center -10px;
+}
+#start_menu_panel .panel-menu #first_panel .scroll-up-hover {
+    background-position: center -20px;
+}
+#start_menu_panel .panel-menu #first_panel .scroll-down-hover {
+    background-position: center -30px;
+}
+#start_menu_panel .panel-menu #first_panel ul {
+    height: 360px;
+    left: 0;
+    list-style-type: none;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    z-index: 93000;
+}
+#start_menu_panel .panel-menu #first_panel ul li {
+}
+#start_menu_panel .panel-menu #first_panel ul li a {
+    background: url("images/menu_bg.png") no-repeat scroll right top transparent;
+    color: #000000;
+    display: block;
+    font-size: 12px;
+    height: 25px !important;
+    line-height: 20px;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-top: 5px !important;
+    text-decoration: none;
+}
+#start_menu_panel .panel-menu #first_panel ul li a:hover, #start_menu_panel .panel-menu #first_panel ul li a.active {
+    background-position: right -30px;
+    color: #FFFFFF;
+}
+#start_menu_panel .panel-menu #first_panel ul li a img {
+    border: 0 none;
+    height: 20px;
+    width: 20px;
+}
+
+#workspace .tabs-panel {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+#workspace .selected {
+    display: block;
+}
+#workspace .tabs-panel iframe {
+    height: 100%;
+    width: 100%;
+}
+
+#center {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    top:71px;
+}
+.over-mask-layer {
+    display: none;
+    position: absolute;
+    top: -2000px;
+    z-index: 1100;
+}
+#theme_panel {
+    background: none repeat scroll 0 0 transparent;
+    height: auto;
+    position: absolute;
+    right: 20px;
+    width: 311px;
+}
+#theme_panel .center {
+    background: url("images/themeswitch/themeswitch_c.png") repeat-y scroll 0 0 transparent;
+    height: auto;
+    padding: 10px 20px 40px;
+    width: 100%;
+}
+#theme_panel .center a.theme_thumb {
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 74px;
+    margin: 10px 15px;
+    width: 107px;
+}
+#theme_panel .center a.theme_thumb img {
+    border: 1px solid #FFFFFF;
+}
+#theme_panel .center a.theme_thumb span {
+    background: url("images/themeswitch/theme_title.png") no-repeat scroll center center transparent;
+    color: #FFFFFF;
+    display: block;
+    height: 25px;
+    line-height: 23px;
+    margin-top: 3px;
+    text-align: center;
+    width: 100%;
+}
+#theme_panel .center a.current span {
+    font-weight: bold;
+}
+#theme_panel .bottom {
+    background: url("images/themeswitch/themeswitch_b.png") no-repeat scroll left center transparent;
+    height: 16px;
+    width: 100%;
+}
+#theme_panel .close {
+    bottom: 10px;
+    height: 27px;
+    position: absolute;
+    right: 10px;
+    z-index: 1110;
+}
+#theme_panel .close a {
+    margin-right: 10px;
+}
+a.btn-black-a {
+    background: url("images/btn_black.png") no-repeat scroll center top transparent;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 12px;
+    height: 25px !important;
+    padding-top: 2px !important;
+    text-align: center;
+    text-decoration: none;
+    width: 66px;
+}
+a.btn-black-a:hover {
+    background-position: center -27px;
+}
+#overlay_panel {
+    background: none repeat scroll 0 0 #FFFFFF;
+    display: none;
+    height: 100%;
+    opacity: 0.01;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+.ui-autocomplete {
+    cursor: default;
+    position: absolute;
+    right: 32px;
+    width: 105px;
+    top: 142px;
+    z-index: 99000;
+}
+.ui-menu {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    display: block;
+    list-style: none outside none;
+    margin: 0;
+    padding: 2px;
+}
+.ui-menu .ui-menu {
+    margin-top: -3px;
+}
+.ui-menu .ui-menu-item {
+    clear: left;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.ui-menu .ui-menu-item a {
+    cursor: pointer;
+    display: block;
+    line-height: 20px;
+    padding: 0.2em 0.4em;
+    text-decoration: none;
+    font-family:"";
+    font-size: 13px;
+}
+.ui-menu .ui-menu-item a:hover {
+    background: none repeat scroll 0 0 #5D99DA;
+    color: #FFFFFF;
+    font-weight: normal;
+}

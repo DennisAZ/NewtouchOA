@@ -1,0 +1,258 @@
+.PrevMonth {
+  background: url("../img/subpages/cal_arrow.png") no-repeat scroll -5px center transparent;
+  cursor: pointer;
+  display: inline-block !important;
+  height: 20px !important;
+  width: 20px;
+}
+.YearMonth {
+  display: inline-block !important;
+  margin-bottom: 0 !important;
+  width: 90px;
+}
+.NextMonth {
+  background: url("../img/subpages/cal_arrow.png") no-repeat scroll -35px center transparent;
+  cursor: pointer;
+  display: inline-block !important;
+  height: 20px !important;
+  width: 20px;
+}
+
+#module_calendar {
+  border-color: #95BEDE;
+  border-right: 1px solid #95BEDE;
+  border-style: none solid solid;
+  border-width: 0 1px 1px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 178px;
+}
+
+#module_calendar .head td {
+  color: #6AAD44;
+  font-weight: bold;
+}
+
+#module_calendar td {
+  border-bottom: 1px solid #CDCDCD;
+  border-right: 1px solid #CDCDCD;
+  cursor: pointer;
+  height: 20px;
+}
+
+#module_calendar a {
+	color: #393939;
+}
+
+#module_calendar td.hover, #module_calendar td.active {
+  background: none repeat scroll 0 0 #C8E08C;
+}
+
+.container {
+  width: 178px;
+}
+
+.new_reply{
+	padding-bottom: 11px;
+}
+.new_reply ul{
+  line-height:30px;
+  border: 1px solid #95BEDE;
+  border-top: none;
+}
+.new_reply li {
+   padding-left: 25px;
+   background: url("../img/subpages/dot.png") no-repeat scroll 12px center transparent;
+}
+
+.new_reply a:link, .new_reply a:visited, .new_reply a:hover, .new_reply a:active {
+  text-decoration: none;
+}
+
+#commintFrame {
+	visibility: hidden;
+}
+
+/*  diary_left.php begin     */
+.outer {
+	 border:1px solid #CCCCCC;
+   margin-left: 5px;
+   width: 90%;
+	 margin-right: 0px;
+	 height: 100%;
+}
+
+#left_top{
+	width:100%;
+	height:36px;
+	text-align:center;
+	overflow:hidden;
+}
+
+#calendar_table{
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  background-color: #ffffff;
+}
+.calendar_header{
+  background-color: #dfeaff;
+  padding: 3px;
+}
+#calendar_table .row TD {
+  FONT-SIZE: 9px;
+  FONT-FAMILY: Verdana;
+  HEIGHT: 18px;
+}
+.calendar_header{background-color: #dfeaff;}
+#calendar_table .header1 {
+  FONT-WEIGHT: bolder;
+  COLOR: #6bad42;
+  BORDER-BOTTOM: #dedede 0px solid;
+  HEIGHT: 16px;
+  BACKGROUND-COLOR: #efefef;
+  text-align: center;
+  font-size: 12px;
+}
+.module_dia{
+  overflow: hidden;
+  width: 100%;
+  border-width: 0px;
+}
+
+#module_calendar a{
+	font-weight: normal;
+  text-decoration: none;
+  display:block;
+  width: 18px;
+  height: 13px;
+  font-size: 12px;
+}
+#year_month{
+  font-size: 12px;
+}
+.header{
+  background-color: #dfeaff;
+  padding: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+  border-bottom: 1px dotted #C8C8C8;}
+
+/*  diary_left.php end     */
+
+/*  diary_body.php begin     */
+#body_top{
+	margin-top: 8px;
+}
+.body_content{
+   margin-top: 0px;
+   text-align: center;
+}
+.one_diary{
+	margin-top: 0px;
+	width: 100%;
+	text-align: left;
+}
+
+.subject{
+  height: 21px;
+	text-align: left;
+	font-size: 12px;
+  padding-top: 3px;
+  padding-left: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #313131;
+}
+
+.subject A:link,
+.subject A:visited{
+	FONT-SIZE: 14px;
+	PADDING-TOP: 8px;
+	TEXT-DECORATION: none;
+	color: #313131;
+}
+
+.subject A:hover,
+.subject A:active {
+	color: #313131;
+}
+
+.subject table{
+  color:#313131;
+}
+.diary_type {
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	color: #999;
+	padding-top: 10px;
+	font-size: 12px;
+	background-color: #ffffff;
+	border-left: 1px #CCCCCC solid;
+	border-right: 1px #CCCCCC solid;
+}
+.operate {
+	text-align: right;
+	height:30px;
+	line-height: 30px;
+	color: #6b6b6b;
+	font-size: 12px;
+	background-color: #FFFFFF;
+	border-bottom: #CCCCCC 1px solid;
+	border-left: 1px #CCCCCC solid;
+	border-right: 1px #CCCCCC solid;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.operate a {
+	TEXT-DECORATION: none;
+}
+.content {
+	PADDING-RIGHT: 20px;
+	PADDING-LEFT: 20px;
+	PADDING-BOTTOM: 8px;
+	COLOR: #252927;
+	line-height: normal;
+	PADDING-TOP: 8px;
+	FONT-SIZE: 12px;
+	background-color: #ffffff;
+	border-left: 1px #CCCCCC solid;
+	border-right: 1px #CCCCCC solid;
+}
+
+.leftsubjectdairy{
+	background:url(../img/block_hd_bg.png);
+  margin-top: 0px;
+  color: #000;
+}
+
+.leftsubjectnew{
+	background:url(../img/block_hd_bg.png);
+  margin-top: 0px;
+  color: #000;
+}
+
+#readbody{
+	width: 100%;
+}
+.replycontent{
+  padding-left: 14px;
+}
+
+.operatebar{
+  margin-top: 10px;
+	width: 100%;
+	text-align: right;
+	height: 30px;
+	line-height: 30px;
+  background-color: #FDFCE0;
+  border: 1px #CCCCCC solid;
+}
+
+ol{
+	margin-left:20px;
+}
+/*  diary_body.php end     */

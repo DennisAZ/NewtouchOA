@@ -1,0 +1,28 @@
+<chart  showLabels='1'
+ showColumnShadow='1'
+  animation='1'
+  showAlternateHGridColor='1' 
+  AlternateHGridColor='ff5904'
+   divLineColor='ff5904' 
+   divLineAlpha='20' 
+   alternateHGridAlpha='5' 
+   canvasBorderColor='666666' 
+   baseFontColor='666666' 
+   lineColor='FF5904' 
+   lineAlpha='85' 
+   showValues='1' 
+   rotateValues='1' 
+   valuePosition='auto'  paleteThemeColor='6699FF' >
+<set label='1月' value='46'  toolText='1月命中率46'/>
+<set label='2月' value='32'   toolText='2月命中率32'/>
+<set label='3月' value='12'   toolText='3月命中率12'/>
+<set label='4月' value='24'   toolText='4月命中率24'/>
+<set label='5月' value='36'   toolText='5月命中率36'/>
+<set label='6月' value='46'   toolText='6月命中率46'/>
+<set label='7月' value='53'   toolText='7月命中率53'/>
+<set label='8月' value='12'   toolText='8月命中率12'/>
+<set label='9月' value='24'   toolText='9月命中率24'/>
+<set label='10月' value='42'   toolText='10月命中率42'/>
+<set label='11月' value='12'   toolText='11月命中率12'/>
+<set label='12月' value='26'   toolText='12月命中率26'/>
+</chart> 

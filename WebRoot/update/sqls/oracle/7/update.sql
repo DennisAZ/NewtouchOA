@@ -1,0 +1,1 @@
+ALTER TABLE file_sort ADD  (DEL_USER  CLOB);

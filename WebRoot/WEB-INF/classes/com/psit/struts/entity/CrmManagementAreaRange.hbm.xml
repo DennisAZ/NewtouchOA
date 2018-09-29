@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.psit.struts.entity.CrmManagementAreaRange" table="crm_management_area_range"  >
+        <id name="Id" type="java.lang.Long">
+            <column name="Id" />
+            <generator class="identity" />
+        </id>
+        <property name="ma_id" type="java.lang.Long">
+            <column name="ma_id" length="50" />
+        </property>
+        <property name="country_id" type="java.lang.Long">
+            <column name="country_id" length="50" />
+        </property>
+        <property name="province_id" type="java.lang.Long">
+            <column name="province_id" length="50" />
+        </property>
+        <property name="city_id" type="java.lang.Long">
+            <column name="city_id" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

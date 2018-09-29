@@ -1,0 +1,138 @@
+@CHARSET "UTF-8";
+th,td { 
+ padding: 3px; 
+}
+ div.YH_grid {
+  width : 100% ;
+  height :100% ;
+  overflow:hidden;
+  zoom:1;
+  position:relative;
+  background-color : #FFffff ;
+}
+
+.YH_grid_topBar {
+	height:15%;
+    font:normal 11px arial, tahoma, helvetica, sans-serif;
+    overflow:hidden;
+	zoom:1;
+    position:relative;
+}
+.YH_grid_data {
+  
+  width : 100% ;
+  height : 70% ;
+  BACKGROUND: #FFFFFF;
+  COLOR:#000000;
+}
+.YH_grid.YH_grid_bottomBar {
+	height:15%;
+	font:normal 11px arial, tahoma, helvetica, sans-serif;
+	overflow:hidden;
+	zoom:0.9;
+    position:relative;
+}
+.YH_grid_table {
+	width : 100% ;
+	height : 70% ;
+	font-size：12px;
+	overflow-y :scroll;
+	empty-cells :show;
+	text-align:center ;
+	border-spacing:1px;
+	padding: 3pt; 
+	margin:1pt;
+}
+.TableLine1 {COLOR:#2E2E5A;}
+.TableLine2 {COLOR:#2E2E5A;}
+
+.YH_Grid_OpratePanel{
+	
+	width : 100% ;
+    font:normal 11px arial, tahoma, helvetica, sans-serif;
+	overflow:hidden;
+	zoom:0.9;
+	FONT-SIZE: 12px;
+    FONT-FAMILY: "宋体";
+    position:relative;
+}
+A.YH_Grid_data_opratePanel_A{
+  cursor:pointer;
+  FONT-SIZE: 14px;
+  FONT-FAMILY: "宋体";
+}
+A.YH_Grid_data_opratePanel_A:hover {
+  color:#9AA9B8;
+  text-decoration:underline;
+  background-position:0px -17px;
+}
+.YH_Grid_OpratePanel_select{
+  cursor:pointer;
+  width:30%;
+  FONT-SIZE: 12px;
+  FONT-FAMILY: "宋体";
+}
+button.YH_grid_bottomBar_firstButton{
+	cursor:pointer;
+	width:20px;
+	height:20px;
+	background:url(/yh/core/styles/style1/img/cmp/grid/pageStart.gif) no-repeat;
+	border:none;
+}
+.YH_grid_bottomBar_lastButton{
+	cursor:pointer;
+  background: url(/yh/core/styles/style1/img/cmp/grid/pageEnd.gif) top right repeat-x;
+	width:20px;
+	height:20px;
+
+	border:none;
+}
+.YH_grid_bottomBar_nextButton{
+	cursor:pointer;
+	width:20px;
+	height:20px;
+	background: url(/yh/core/styles/style1/img/cmp/grid/pageNext.gif) top right repeat-x;
+	border:none;
+}
+.YH_grid_bottomBar_priButton{
+	cursor:pointer;
+	width:20px;
+	height:20px;
+	background: url(/yh/core/styles/style1/img/cmp/grid/pagePrev.gif) top left repeat-x;
+	border:none;
+	}
+.YH_grid_bottomBar_firstButton2{
+	cursor:pointer;
+	width:20px;
+	height:20px;
+	background: url(/yh/core/styles/style1/img/cmp/grid/pageStart1.gif) top  left repeat-x;
+	border:none;
+}
+.YH_grid_bottomBar_lastButton2{
+	cursor:pointer;
+	width:20px;
+	height:20px;
+	background: url(/yh/core/styles/style1/img/cmp/grid/pageEnd1.gif) top right repeat-x;
+	border:none;
+}
+.YH_grid_bottomBar_nextButton2{
+	cursor:pointer;
+	width:20px;
+	height:20px;
+	background: url(/yh/core/styles/style1/img/cmp/grid/pageNext1.gif) top right repeat-x;
+	border:none;
+}
+.YH_grid_bottomBar_priButton2{
+	cursor:pointer;
+	width:20px;
+	height:20px;
+	background: url(/yh/core/styles/style1/img/cmp/grid/pagePrev1.gif) top left repeat-x;
+	border:none;
+	}
+div.YH_Grid_data_opratePanel{
+	font:normal 11px arial, tahoma, helvetica, sans-serif;
+	overflow:hidden;
+	cursor:pointer;
+	zoom:0.9;
+	position:relative;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">文件相关操作</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:</td>
+    <td width="20%">陈懿</td>
+    <td width="15%">创建日期:</td>
+    <td width="20%">2011-01-11</td>
+    <td width="10%">版本:</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="22%">适用情景描述</th>
+    <th width="30%">特别强调</th>
+    <th width="48%">代码</th>
+  </tr>
+  <tr>
+    <td>Excel导出</td>
+    <td>YHJExcelUtil.writeExc(OutputStream ops,ArrayList &lt;YHDbRecord &gt;  dataArray );
+    此方法用于excel的导出</td>
+    <td>
+    java代码：
+    <code><br>
+    ArrayList&lt;YHDbRecord&gt; dbL = new ArrayList&lt;YHDbRecord &gt;();<br>
+    for (int i = 0; i < 10; i++) {<br>
+      &nbsp;&nbsp;YHDbRecord dbrec = new YHDbRecord();<br>
+      &nbsp;&nbsp;dbrec.addField("标题1", "值1-" + i);<br>
+      &nbsp;&nbsp;dbrec.addField("标题2", "值2-" + i);<br>
+      &nbsp;&nbsp;dbL.add(dbrec);<br>
+    }<br>
+    YHJExcelUtil.writeExc(ops,dbL );<br>
+    </code>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>Csv导出</td>
+    <td>YHCSVUtil.CVSWrite(OutputStream ops,ArrayList &lt;YHDbRecord &gt;  dataArray );
+    此方法用于csv的导出</td>
+    <td>
+    java代码：
+    <code><br>
+    ArrayList&lt;YHDbRecord&gt; dbL = new ArrayList&lt;YHDbRecord &gt;();<br>
+    for (int i = 0; i < 10; i++) {<br>
+      &nbsp;&nbsp;YHDbRecord dbrec = new YHDbRecord();<br>
+      &nbsp;&nbsp;dbrec.addField("标题1", "值1-" + i);<br>
+      &nbsp;&nbsp;dbrec.addField("标题2", "值2-" + i);<br>
+      &nbsp;&nbsp;dbL.add(dbrec);<br>
+    }<br>
+    YHCSVUtil.CVSWrite(ops,dbL );<br>
+    </code>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>Csv导入</td>
+    <td>YHCSVUtil.CVSReader(InputStream is,String charset);
+    <br>
+          此方法将csv文件解析为YHDbRecord的一个列表，用于导入操作
+    </td>
+    <td>
+    java代码：
+    <code><br>
+    ArrayList&lt;YHDbRecord&gt; drl = YHCSVUtil.CVSReader(is,"gbk");<br>
+    </code>
+    </td>
+  </tr>
+  
+</table>
+
+</body>
+</html>

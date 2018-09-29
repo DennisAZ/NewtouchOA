@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oa.spring.dao.batis.ProductStyleMapper">
+
+	<resultMap type="oa.spring.po.ProductStyle" id="productStyle">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="remark" column="remark" />
+	</resultMap>
+
+	<select id="getProduct" resultMap="productStyle">
+		SELECT * from erp_product_style where is_del='0'
+	</select>
+	<select id="getProductByIds" resultMap="productStyle"
+		parameterType="String">
+		SELECT * from erp_product_style where id=#{id}
+	</select>
+	<insert id="addProduct" parameterType="oa.spring.po.ProductStyle">
+		insert into erp_product_style(id,name,remark)
+		values(uuid(),#{name},#{remark})
+	</insert>
+	<update id="productUpdate" parameterType="oa.spring.po.ProductStyle" >
+		update erp_product_style set name = #{name},
+								 remark=#{remark} where id=#{id}
+	</update>
+	<delete id="productDelete" parameterType="String">
+		update  erp_product_style set is_del='1' where id=#{id};
+	</delete>
+</mapper>

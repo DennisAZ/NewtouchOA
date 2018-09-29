@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">附件权限控制</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:</td>
+    <td width="20%">&nbsp;</td>
+    <td width="15%">创建日期:</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="60%">适用情景描述</th>
+    <th width="35%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+    <td>附件浮动菜单权限控制</td>
+    <td>
+    selfdefMenu 参数是附件浮动菜单用来控制权限的，下面列出来的就是各种类型的附件所对应的权限清单，
+    个人可以更加实际情况进行配置。<br>
+    selfdefMenu:{<br>
+      office:["downFile","dump","read","edit","setSign","deleteFile"],   //office 文档的浮动菜单项<br>
+      img:["downFile","dump",,"play","insertImg"],    //图片的浮动菜单项<br>
+      music:["downFile","dump","play"],  //MP3等的浮动菜单项<br>
+      video:["downFile","dump","play"], //视频等的浮动菜单项<br>
+      others:["downFile","dump"]       //其他格式文档等的浮动菜单项<br>
+   }<br>
+  ["downFile","dump","read","edit","setSign","deleteFile","play","insertImg"] 分别对应["下载","转存","阅读","编辑","设置标引","删除","播放","图片插入到正文"]<br>
+ 
+  </td>
+    <td>var  selfdefMenu = {<br>
+        office:["downFile","dump","read","edit","deleteFile"], <br>
+        img:["downFile","dump","play","deleteFile","insertImg"],  <br>
+        music:["downFile","dump","play","deleteFile"],  <br>
+        video:["downFile","dump","play","deleteFile"], <br>
+        others:["downFile","dump","deleteFile"]<br>
+      }<br>
+      attachMenuSelfUtil(container,moduleName,attachNames,attachIds,prec , code,seqId,selfdefMenu);<br>
+      参数注释:<br>
+      * @param container  附件显示的HTML容器的 ID<br>
+     *  @param moduleName 附件所属模块名<br>
+     * @param attachNames 附件名称串，以×隔开<br>
+     * @param attachIds   附件的ID串，命名规则详细参见文件上传下载<br>
+     * @param prec        附件前缀，主要是为了解决同一个页面多个附件组建的问题<br>
+     * @param code        附件组建后缀，作用同上<br>
+     * @param seqId       传入的特殊值，文件柜中使用到<br>
+     *@param selfdefMenu     各种类型附件的权限<br>
+      </td>
+      
+  </tr>
+</table>
+
+</body>
+</html>

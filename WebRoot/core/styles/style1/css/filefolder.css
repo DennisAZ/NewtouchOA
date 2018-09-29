@@ -1,0 +1,95 @@
+#left {
+    padding-left: 20px;
+    vertical-align: top;
+    width: 268px;
+}
+#left_top {
+    background: url("../img/subpages/filefolder/file_folder.jpg") no-repeat scroll left center transparent;
+    height: 79px;
+}
+#netdisk_top {
+    background: url("../img/pageheaders/netdisk.jpg") no-repeat scroll left center transparent;
+    height: 79px;
+}
+#top_menu {
+    height: 30px;
+    width: 268px;
+}
+#top_menu .left {
+    background: url("../img/subpages/filefolder/folder_tabs_bg.png") no-repeat scroll left top transparent;
+    float: left;
+    height: 30px;
+    text-align: center;
+    width: 50%;
+}
+#top_menu .right {
+    background: url("../img/subpages/filefolder/folder_tabs_bg.png") no-repeat scroll right top transparent;
+    float: right;
+    height: 30px;
+    text-align: center;
+    width: 50%;
+}
+#top_menu a {
+    display: block;
+    font-size: 14px;
+    padding-left: 5px;
+    text-decoration: none;
+}
+#top_menu a span {
+    color: #383838;
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+}
+#top_menu a.active {
+    background: url("../img/subpages/filefolder/folder_tabs_bg.png") no-repeat scroll left -30px transparent;
+}
+#top_menu a.active span {
+    background: url("../img/subpages/filefolder/folder_tabs_bg.png") no-repeat scroll right -60px transparent;
+    color: #383838 !important;
+    font-weight: bold;
+}
+#tree_container {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    overflow: auto;
+    padding: 10px;
+}
+
+#tree_container iframe {
+}
+.capacity {
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+#center {
+    width: 16px;
+}
+#right {
+    height: 100%;
+    vertical-align: top;
+}
+
+.scroll-left {
+  background: url("../img/subpages/filefolder/hscroll_arrow.png") no-repeat scroll 0 center transparent;
+  cursor: pointer;
+  width: 16px;
+}
+
+.scroll-left:hover {
+  background-position: -32px center;
+}
+
+.scroll-right {
+  background: url("../img/subpages/filefolder/hscroll_arrow.png") no-repeat scroll -16px center transparent;
+  cursor: pointer;
+  width: 16px;
+}
+
+.scroll-right:hover {
+  background-position: -48px center;
+}

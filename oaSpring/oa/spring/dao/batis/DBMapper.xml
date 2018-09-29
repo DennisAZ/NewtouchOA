@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oa.spring.dao.batis.DBMapper">
+
+	<resultMap type="oa.spring.po.DB" id="dbResultMap">
+		<id property="id" column="id" />
+		<result property="price" column="price" />
+		<result property="number" column="number" />
+		<result property="total" column="total" />
+		<result property="remark" column="remark" />
+		<association property="warehouse" column="wh_id"
+			javaType="oa.spring.po.WareHouse">
+			<id property="id" column="id" />
+			<result property="name" column="name" />
+		</association>
+		<association property="product" column="pro_id"
+			javaType="oa.spring.po.Product">
+			<id property="id" column="id" />
+			<result property="proCode" column="pro_code" />
+			<result property="proName" column="pro_name" />
+			<result property="proType" column="pro_type" />
+			<association property="pUnit" column="unit_id"
+				javaType="oa.spring.po.ProductUnit">
+				<id property="unitId" column="unit_id" />
+				<result property="unitName" column="unit_name" />
+			</association>
+		</association>
+	</resultMap>
+	<select id="getWhType" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT ps.name,ps.remark FROM erp_warehouse wh LEFT JOIN
+		erp_product_style ps ON ps.id=wh.type WHERE wh.id=#{whId}
+	</select>
+	<select id="checkBatckOnly" resultType="int" parameterType="java.util.HashMap">
+		SELECT count(id) from erp_db where wh_id=#{wh_id} and pro_id=#{pro_id} and batch=#{batch}
+	</select>
+	<insert id="insertBatch" parameterType="List">
+		insert into erp_db(id,wh_id,pro_id,price,num,batch,invalid_time,remark) values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(uuid(),#{item.wh_id},#{item.pro_id},#{item.price},#{item.number},#{item.batch},#{item.invalid_time},#{item.remark})
+		</foreach>
+	</insert>
+	<select id="getDBMsgById" resultType="java.util.HashMap" parameterType="String" >
+		SELECT
+		  db.id,
+		  p.id        AS proId,
+		  db.price,
+		  db.wh_id,
+		  db.num,
+		  db.batch,
+		  db.invalid_time,
+		  wh.name,
+		  p.pro_code,
+		  p.pro_name,
+		  p.pro_type,
+		  u.unit_name
+		FROM erp_db db,
+		  erp_warehouse wh,
+		  erp_product p,
+		  erp_product_unit u
+		WHERE db.wh_id = wh.id
+		    AND db.pro_id = p.id
+		    AND p.unit_id = u.unit_id
+		    AND db.id =#{id} 
+	</select>
+	<select id="getDBById" resultType="java.util.HashMap" parameterType="String" >
+		SELECT wh_id,pro_id,batch FROM erp_db WHERE id =#{id} 
+	</select>
+	<insert id="addDbLog" parameterType="List">
+		insert into
+		erp_db_log(id,batch,wh_id,pro_id,price,number,flag,status,time,remark)
+		values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(uuid(),#{item.batch},#{item.wh_id},#{item.pro_id},#{item.price},#{item.number},#{item.flag},#{item.DbStatus},#{item.time},#{item.remark})
+		</foreach>
+	</insert>
+	<insert id="addDbLogTest" parameterType="map">
+		insert into
+		erp_db_log_test(id,db_id,wh_id,pro_id,price,number,time,remark)
+		values
+			(uuid(),#{id},#{wh_id},#{proId},#{price},#{number},#{time},#{remark})
+	</insert>
+	<update id="updateDB" parameterType="map">
+		update erp_db set
+		batch=#{batch},price=#{price},num=#{number},invalid_time=#{invalid_time} where id=#{id}
+	</update>
+	<update id="updateDBLog" parameterType="map">
+		update erp_db_log set
+		batch=#{batch},price=#{price},number=#{number} where batch=#{old_batch} and wh_id=#{wh_id} and pro_id=#{pro_id}
+	</update>
+	<update id="updateDbBatch" parameterType="map">
+		UPDATE erp_db SET
+		price=#{price},num=#{number} WHERE pro_id= #{pro_id}
+	</update>
+	<delete id="deleteDBLog" parameterType="String">
+		delete from  erp_db_log  where batch=#{batch} and wh_id=#{wh_id} and pro_id=#{pro_id}
+	</delete>
+	<delete id="deleteDBById" parameterType="String">
+		delete from erp_db
+		where id=#{id}
+	</delete>
+</mapper>

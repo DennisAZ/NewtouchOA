@@ -1,0 +1,140 @@
+@CHARSET "UTF-8";
+#left{
+  position: absolute;
+  left: 0px;
+  top: 2px;
+  width: 240px;
+  height: 320px;
+  
+  border: 1px solid #3063a8;
+  overflow:auto;
+}
+#rightDiv{
+  position: absolute;
+  left: 242px;
+  top: 2px;
+  
+  padding-left : 4px;
+  width: 250px;
+  height: 320px;
+  text-align: center;
+  font-size: 12px;
+  overflow:auto;
+}
+#right{
+  border-right: 1px solid #3063a8;
+  border-left: 1px solid #3063a8;
+  border-bottom: 1px solid #3063a8;
+}
+#title{
+  font-size:12pt;
+}
+.item{
+  width:100%;
+  height: 23px;
+  font-size: 12px;
+  color: #000000;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #3063a8;
+  cursor: pointer;
+  padding-top: 3px;	
+}
+.item2{
+  width:100%;
+  height: 23px;
+  font-size: 12px;
+  color: #000000;
+  cursor: pointer;
+  padding-top: 3px; 
+}
+.operate{
+  
+}
+.userHost{
+    width: 100px;
+	text-align: center;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #3063a8;	
+}
+.userOp{
+  text-align: center;
+}
+.role {
+  height: 23px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #3063a8;
+}
+
+/*  列表型表格样式  */
+
+.TableList2{
+   border-top:1px #3063a8 solid;
+   line-height:25px;
+   font-size:9pt;
+}
+.TableList2 .TableHeader td,
+.TableList2 td.TableHeader{
+	 margin-top:1px;
+	 BACKGROUND: #FFF; 
+    COLOR:#2E2E5A ;
+    border-collapse:collspse;
+    height:20px;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 10pt;
+    background-image: url("../img/headerbg.gif");
+}
+.TableList2 .TableHeader2 td,
+.TableList2 td.TableHeader2{
+	  BACKGROUND: #FFF; 
+    COLOR:#2E2E5A ;
+    border-collapse:collspse;
+    height:20px;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 10pt;
+    background-image: url("../img/headerbg.gif");
+}
+.TableList2 .TableLine1 td,
+.TableList2 td.TableLine1{
+   background:#f8f8f8;
+   border-bottom:1px #dcdcdc solid;
+}
+.TableList2 .TableLine2 td,
+.TableList2 td.TableLine2{
+   background:#ffffff;
+   border-bottom:1px #dcdcdc solid;
+}
+.TableList2 .TableData td,
+.TableList2 td.TableData{
+   background:#ffffff;
+   border-bottom:1px #dcdcdc solid;
+}
+.TableList2 .TableContent td,
+.TableList2 td.TableContent{
+   background:#cbe1f5;
+   border-bottom:1px #dcdcdc solid;
+}
+.TableList2 .TableFooter td,
+.TableList2 .TableControl td,
+.TableList2 td.TableFooter,
+.TableList2 td.TableControl{
+   background:url('../img/table_footer_bg.png');
+   border-top:1px #dcdcdc solid;
+}
+.TableList2 .TableRed td,
+.TableList2 td.TableRed
+{
+   background:#FFEBEB;
+}
+.TableList2 .TextColor1 td,
+.TableList2 td.TextColor1
+{
+   COLOR: #FF6600;
+}
+.TableList2 .TextColor2 td,
+.TableList2 td.TextColor2
+{
+   COLOR: #FF0000;
+}

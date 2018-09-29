@@ -1,0 +1,62 @@
+.main-frame .x-panel-body-noheader {
+  border-top:0px solid;
+}
+
+#westTabPanel .x-panel-footer{
+  width: 207px;
+  height: 100%;
+  background: url(../img/mainframe/left_bar_panel_footer_bg.jpg) repeat-y left top;
+}
+
+#westTabPanel .x-panel-btns-right{
+  width: 207px;
+  height: 100%;
+  background: url(../img/mainframe/left_bar_panel_footer.jpg) no-repeat left top;
+}
+
+.main-frame .x-border-layout-ct {
+    background-color:#dfe8f6;
+}
+
+.main-frame .x-panel-body {
+    border:0px solid;
+}
+
+.main-frame .x-panel-body-noheader, .x-panel-mc .x-panel-body {
+    border-top:0px solid;
+}
+
+.main-frame .x-border-layout-ct {
+    background-color:white;
+}
+
+#westTabPanel .x-tree-node-over{
+  display:block;
+  width: 176px;
+  height: 29px;
+  background: url(../img/mainframe/menu_lv2_mouseon.jpg) no-repeat left top;
+}
+
+#westTabPanel .x-tree-selected {
+  display:block;
+  width: 176px;
+  height: 29px;
+	background: url(../img/mainframe/menu_lv2_selected.jpg) no-repeat left top;
+}
+
+#westTabPanel .x-tree-node {
+	display:block;
+  width: 176px;
+  height: 29px;
+  vertical-align:middle;
+  font-size:12px;
+  color:#323232;
+  -moz-user-select:none;
+  text-align:center;
+  cursor:pointer;
+  background: url(../img/mainframe/menu_lv2_bg.jpg) no-repeat left top;
+}
+
+#westTabPanel .x-tree-root-ct{
+  margin:0px 7px;
+}

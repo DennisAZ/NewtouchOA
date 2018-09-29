@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oa.spring.dao.batis.OrderProductOutMapper">
+
+	<resultMap type="oa.spring.po.OrderProductOut" id="opo">
+		<id property="id" column="id" />
+		<result property="poCode" column="po_code" />
+		<result property="poTitle" column="po_title" />
+		<result property="poStatus" column="po_status" />
+		<result property="remark" column="remark" />
+		<association property="saleOrder" column="order_id"
+			javaType="oa.spring.po.SaleOrder">
+			<id property="id" column="id" />
+			<result property="orderTitle" column="order_title" />
+		</association>
+	</resultMap>
+
+	<select id="getOpo" resultMap="opo">
+		SELECT * from erp_sale_order
+	</select>
+	<select id="getSaleOrderById" resultMap="opo"
+		parameterType="String">
+		SELECT * from erp_sale_order where id=#{id}
+	</select>
+	<insert id="addOrder" parameterType="java.util.HashMap">
+	INSERT INTO erp_order_product_out (id,po_code,po_title,order_id,po_status,remark) 
+	VALUES(#{id},#{po_code},#{po_title},#{order_id},#{po_status},#{remark})
+	</insert>
+	<delete id="saleOrderDelete" parameterType="String">
+		delete from
+		erp_sale_order where id=#{id};
+	</delete>
+	<update id="saleOrderUpdate" parameterType="java.util.HashMap">
+		UPDATE erp_order_product_out SET
+		po_code=#{poCode},po_title=#{poTitle},remark=#{remark} WHERE
+		order_id=#{saleOrder.id}
+	</update>
+</mapper>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.psit.struts.entity.ProdShipment" table="crm_prod_shipment" >
+		<id name="pshId" type="java.lang.Long">
+			<column name="psh_id"/>
+			<generator class="identity"/>
+		</id>
+		<property name="pshNum" type="java.lang.String">
+			<column name="psh_num" length="100"/>
+		</property>
+		<many-to-one name="pshOrder" class="com.psit.struts.entity.SalOrdCon" fetch="select" not-null="false">
+			<column name="psh_sod_id"/>
+		</many-to-one>
+		<property name="pshDeliveryDate" type="java.util.Date">
+			<column name="psh_delivery_date"/>
+		</property>
+		<property name="pshAddr" type="java.lang.String">
+			<column name="psh_addr" length="500"/>
+		</property>
+		<property name="pshConsignee" type="java.lang.String">
+			<column name="psh_consignee" length="100"/>
+		</property>
+		<property name="pshPho" type="java.lang.String">
+			<column name="psh_pho" length="50"/>
+		</property>
+		<property name="pshPostCode" type="java.lang.String">
+			<column name="psh_post_code" length="50"/>
+		</property>
+		<property name="pshProdAmt" type="java.lang.Double">
+			<column name="psh_prod_amt" precision="18"/>
+		</property>
+		<property name="pshExpress" type="java.lang.String">
+			<column name="psh_express" length="50"/>
+		</property>
+		<property name="pshAmt" type="java.lang.Double">
+			<column name="psh_amt" precision="18"/>
+		</property>
+		<property name="pshSalBack" type="java.lang.Double">
+			<column name="psh_sal_back" precision="18"/>
+		</property>
+		<property name="pshShipper" type="java.lang.String">
+			<column name="psh_shipper" length="100"/>
+		</property>
+		<property name="pshRemark" type="java.lang.String">
+			<column name="psh_remark" length="20"/>
+		</property>
+		<property name="pshInpDate" type="java.util.Date">
+			<column name="psh_inp_date" />
+		</property>
+		<property name="pshInpUser" type="java.lang.String">
+			<column name="psh_inp_user" length="50"/>
+		</property>
+		<property name="pshUpdDate" type="java.util.Date">
+			<column name="psh_upd_date" />
+		</property>
+		<property name="pshUpdUser" type="java.lang.String">
+			<column name="psh_upd_user" length="50"/>
+		</property>
+		<set name="rshipPros" inverse="true" cascade="all">
+            <key>
+                <column name="rshp_psh_id"/>
+            </key>
+            <one-to-many class="com.psit.struts.entity.RShipPro" />
+        </set>
+	</class> 
+</hibernate-mapping>

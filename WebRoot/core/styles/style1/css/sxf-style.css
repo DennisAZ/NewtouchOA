@@ -1,0 +1,89 @@
+.oaHeading {
+ BACKGROUND-COLOR: #e2e2e2;
+ PADDING:2px 10px 2px 10px;
+ line-height: 20px;
+    FONT-FAMILY: 'Arial','Verdana', 'Arial', 'Helvetica', 'sans-serif';
+ FONT-WEIGHT: bold;
+ FONT-SIZE: 14px;
+ COLOR: #006699;
+    text-align: center;
+ 
+ border-left:2px solid #E8E8E8;
+ border-top:2px solid #E8E8E8;
+    }
+   table{font-size:11pt}
+   
+   .label{    
+ FONT-FAMILY: 'Arial','Verdana', 'Arial', 'Helvetica', 'sans-serif';
+ FONT-WEIGHT: bold;
+ FONT-SIZE: 12px;
+ COLOR: #006699;
+ BACKGROUND-COLOR: #f0f0f0;
+ PADDING:2px 10px 2px 10px;
+ line-height: 20px;
+ 
+ border-left:2px solid #E8E8E8;
+ border-top:2px solid #E8E8E8;    
+    }
+    
+.head_label{    
+ BACKGROUND-COLOR: #e2e2e2;
+ PADDING:2px 10px 2px 10px;
+ line-height: 20px;
+    FONT-FAMILY: 'Arial','Verdana', 'Arial', 'Helvetica', 'sans-serif';
+ FONT-WEIGHT: bold;
+ FONT-SIZE: 14px;
+ COLOR: #006699;
+ border-left:2px solid #E8E8E8;
+ border-top:2px solid #E8E8E8;  
+    }
+ 
+ .Content
+{
+  FONT-FAMILY: 'Arial','Verdana', 'Arial', 'Helvetica', 'sans-serif';
+ FONT-SIZE: 12px;
+ COLOR: #000000;
+ BACKGROUND-COLOR: #F8F8F8;
+ PADDING:2px 5px 2px 5px;
+ line-height: 20px;
+ border-left:2px solid #E8E8E8;
+ border-top:2px solid #E8E8E8;
+}
+.title_left{
+ BACKGROUND:url(title_left1.gif) 0px 0px no-repeat;
+}
+ 
+.title_right{
+ BACKGROUND:url(title_right.jpg) 0px 0px no-repeat;
+}
+ 
+.title_main{
+ FONT-WEIGHT: bold;
+ border: 0px solid #99ccff;
+ font-size: 14px;
+ line-height: 28px;
+ COLOR: #FFFFFF;
+ BACKGROUND:url(title_main.jpg) 0px 0px no-repeat;
+ /*BACKGROUND-COLOR: #84A3C2;*/
+ FONT-FAMILY: 'Arial','Verdana', 'Arial', 'Helvetica', 'sans-serif';
+}
+.table_title {
+ border: 0px solid #99ccff;
+ border-collapse:collapse;
+}
+
+.span1{width:80px;}
+.span2{width:168px;}
+.margin2{margin-right:8px;}
+
+.bg_01{BACKGROUND-COLOR: #e2e2e2;}
+.bg_02{BACKGROUND-COLOR: #f0f0f0;}
+
+
+a{text-decoration:none}
+a:link {color: #FF0000;text-decoration:none}     /* 未访问的链接 */
+a:visited {color: #00FF00;text-decoration:none}  /* 已访问的链接 */
+a:hover {color: #FF00FF;text-decoration:none}    /* 当有鼠标悬停在链接上 */
+a:active {color: #0000FF;text-decoration:none}
+
+.disableStyle {background-color:#EAEAEA;}

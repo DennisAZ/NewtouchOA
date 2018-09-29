@@ -1,0 +1,86 @@
+package oa.spring.dao.batis;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import oa.spring.po.POD;
+import oa.spring.po.WareHouse;
+import yh.core.data.YHDbRecord;
+
+public interface WareHouseMapper {
+	public List<WareHouse> getWareHouse();
+	public void addWareHouse(WareHouse wh);
+	public int checkHasValue(String order_id);
+	public void updateWareHouse(WareHouse wh);
+	public void deleteWareHouseById(String id);
+	public List<Map<String,Object>>  getWareHouseById(String id);
+	public List<Map<String,Object>>  getStyle();
+	public List<Map<String,Object>>  getWHTypeName(List<String> list);
+	public List<Map<String,Object>>  getWHAdmin(String id);
+	public List<Map<String,Object>> getProductList(String po_id);
+	public ArrayList<YHDbRecord> getExcelDb();
+	public List<Map<String,Object>> getReturn(String retId);
+	public List<Map<String,Object>> getLoss(String lossId);
+	public List<Map<String,Object>> getReturnDb(Map<String,Object> map);
+	public List<Map<String,Object>> getLossDb(Map<String,Object> map);
+	public List<Map<String,Object>> getReturnDbNum(Map<String,Object> map);
+	public List<Map<String,Object>> getDbLogList(Map<String,Object> map);
+	public List<Map<String,Object>> getProducts(String pod_id);
+	public List<Map<String,Object>> getNumbers(Map<String,Object> map);
+	public List<Map<String,Object>> getPudNumbers(Map<String,Object>map);
+	public Map<String,Object> getBatch(Map<String,Object>map);
+	public Map<String,Object> getPro(String proId);
+	public Map<String,Object> getPod(String pdId);
+	public  List<Map<String, Object>>getPur(String outDId);
+	public  List<Map<String, Object>>getPodPro(String pdId);
+	public  List<Map<String, Object>>getPurDb(String outDId);
+	public  List<Map<String, Object>>getPurs(String purId);
+	public  List<Map<String, Object>>getPursProduct(String purId);
+	public Map<String,Object> getCusMsg(String order_id);
+	//批量更新库存
+	public void updateDbBatch(Map<String,Object> map);
+	public void updateDbJs(Map<String,Object>map);
+	public void updateReturnStatus(Map<String,Object> map);
+	public void updateDbStatus(Map<String,Object> map);
+	public Map<String,Object> getPODMsg(String pod_id);
+	public Map<String,Object> getReturnByTypeId(String typeId);
+	public String getSalePrice(Map<String,Object> map);
+	public Map<String,Object> getPodCode(String pod_id);
+	public Map<String,Object> checkPODData(String pod_id);
+	public Map<String,Object> checkPIDData(String pid_id);
+	public Map<String,Object> getPidCode(String pid_id);
+	public void insertBatch(List<Map<String,Object>> list);
+	public void deleteWHPerson(String wh_id);
+	public void addPODBatch(List<Map<String,Object>> list);
+	public void addDbLog(List<Map<String,Object>> list);
+	public void updatePODPRO(Map<String,Object> map);
+	public void addPOD(Map<String,Object> map);
+	public void updatePOD(Map<String,Object> map);
+	public void deletePOD(String pod_id);
+	public void deleteReturn(String retId);
+	public void deleteReturnPro(String retId);
+	public void deletePODPRO(String pod_id);
+	public void deleteDbLog(Map<String,Object> map);
+	public void addPur(Map<String,Object> map);
+	public void addDBLog(List<Map<String,Object>> list);
+	public void addLoss(Map<String,Object> map);
+	public void addLossPro(List<Map<String,Object>> list);
+	public void addReturn(Map<String,Object> map);
+	public void addReturnPro(List<Map<String,Object>> list);
+	public void addPpo(List<Map<String,Object>> list);
+	public void updatePpo(Map<String,Object> map);
+	public void updatePur(Map<String,Object> map);
+	public void updatePurPro(Map<String,Object> map);
+	public void updateDb(Map<String,Object> map);
+	public void deletesPur(String podId);
+	public void deletesDBLog(Map<String,Object> map);
+	public void deleteLossPro(String lossId);
+	public void deleteLoss(String lossId);
+	public void deletesReturnPro(String retId);
+	public void deletesPurDetail(String podId);
+	public void updatePODStatus(Map<String,Object> map);
+	public void updateReturn(Map<String,Object> map);
+	public void updateLoss(Map<String,Object> map);
+
+}

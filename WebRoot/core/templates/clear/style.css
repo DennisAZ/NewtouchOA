@@ -1,0 +1,69 @@
+body {
+  background-color:#FFF;
+  padding-top:128px;
+}
+
+.login-bg {
+  position:relative;
+  width:934px;
+  height:393px;
+}
+
+.login-username {
+  position:absolute;
+  top:195px;
+  left:613px;
+  width:57px;
+  height:16px;
+  background: url(img/username.jpg) no-repeat left top;
+}
+
+.login-password {
+  position:absolute;
+  top:235px;
+  left:613px;
+  width:57px;
+  height:16px;
+  background: url(img/password.jpg) no-repeat left top;
+}
+
+.login-input-bg {
+  padding-top: 1px;
+  position:relative;
+  top: -4px;
+  left: 59px;
+  width:184px;
+  height:25px;
+  background: url(img/input_bg.jpg) no-repeat left top;
+}
+
+.login-input-bg input{
+  border:none;
+  background-color:transparent;
+  height:20px;
+  width: 170px;
+}
+
+.login-btn {
+  position:absolute;
+  top: 265px;
+  left: 772px;
+  cursor:pointer;
+  width:84px;
+  height:29px;
+  background: url(img/login_btn.jpg) no-repeat left top;
+}
+.verification-code {
+  position:absolute;
+  top:270px;
+  left:620px;
+  width:173px;
+  height:31px;
+  text-align: left;
+  line-height: 25px;
+}
+
+.verification-code input {
+	width: 60px;
+  margin-left: 5px;
+}

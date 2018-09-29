@@ -1,0 +1,8 @@
+<chart  useRoundEdges='1' bgColor='FFFFFF,FFFFFF' showBorder='0'>
+	<set label='Alex' value='40'  /> 
+	<set label='Mark' value='43' /> 
+	<set label='David' value='63' /> 
+	<set label='Graham' value='29' /> 
+	<set label='John' value='39' />
+
+</chart>

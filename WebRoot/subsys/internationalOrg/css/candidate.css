@@ -1,0 +1,367 @@
+﻿#container #candidate {
+  width: 100%;
+  height:140px;
+  margin:0 auto;
+  text-align: center;
+  overflow-x:hidden;
+  overflow-y:auto;
+/*  padding-left: 10px; */
+}
+#container #candidate #cd-content {
+  padding-left: 0px;
+}
+#container #candidate .Super {
+  padding-left: 10px;
+  color: #aaa;
+  float: left;
+  width: 55px;
+  height: auto;
+  display: inline;
+  font: 80px "Times New Roman", Times, serif;
+  line-height: 125px;
+  padding-right: 30px;
+
+}
+#container #candidate .capital {
+  width: 100%;
+  min-height: 90px;
+  _height: 120px;
+  height: auto;
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+  padding: 10px 0;
+  background-color:#f7f8bd;
+  /* overflow: hidden; */
+ 
+}
+#container #candidate .capital:after {
+content: ".";
+visibility: hidden;
+clear: both;
+height: 0;
+display: block;
+}
+
+#container #candidate .capital1 {
+  width: 100%;
+  min-height: 120px;
+  _height: 120px;
+  height: auto;
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+  padding: 10px 0;
+  background-color:#FAFAFA;
+}
+#container #candidate .capital1:after {
+content: ".";
+visibility: hidden;
+clear: both;
+height: 0;
+display: block;
+}
+
+
+#container #candidate ul {
+    float: right;
+    width: 90%;
+    display: inline;
+    overflow: hidden;
+}
+
+#container #candidate li {
+  display: inline;
+  width: 260px;
+  float: left;
+  font: 13px/24px "微软雅黑","宋体";
+  color: #252525;
+  text-align: left;
+  vertical-align: middle;
+}
+#container #candidate a {
+  font: 13px/24px "微软雅黑","宋体";
+  color: #252525;
+  /* margin-right: 20px;
+  width: 60px;
+  float: right; */
+}
+#container  #abc {
+  font: 16px/24px "微软雅黑","宋体";
+  color: #252525;
+  padding-left: 5px;
+  width: 800px;
+  
+  margin-bottom: 10px;
+  text-align: center;
+  background: url(images/hrline.gif) repeat-x 0 22px;
+}
+#container  #abc span {
+  font: 16px/22px "微软雅黑","宋体";
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#container  #abc a {
+  color: #e23a38;
+  font: 16px/22px "微软雅黑","宋体";
+}
+#container #person {
+  width: 840px;
+  height: auto;
+  margin:0 auto;
+}
+#container #person #p-left {
+  float: left;
+  display: block;
+  width: 210px;
+  height: auto;
+  padding-top: 10px;
+}
+#container #person #p-left ul {
+  width: 200px;
+}
+
+#container #person #p-left li {
+  padding-left: 10px;
+  color: #aaa;
+  float: left;
+  font: 30px/60px "Times New Roman", Times, serif;
+  padding-right: 30px;
+  width: 20px;
+  height: 60px;
+}
+#container #person #p-left li.selected {
+  padding-left: 0px;
+  float: left;
+  font: 58px/60px "Times New Roman", Times, serif;
+  padding-right: 30px;
+}
+#container #person #p-left li.selected a {
+  font: 58px/60px "Times New Roman", Times, serif;
+  color: #326595;
+}
+#container #person #p-left li a {
+  color: #aaa;
+  font: 30px/60px "Times New Roman", Times, serif;
+}
+#container #person #p-left .alphabet {
+  margin-left: 0;
+  width: 210px;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+#container #person #p-left .alphabet .hilit a {
+  color: #8079e4;
+/*  font: 16px/28px "微软雅黑","宋体"; */
+}
+#container #person #p-left .alphabet ul {
+  margin-left: 15px;
+  clear: left;
+}
+#container #person #p-left .alphabet li {
+  font: 14px/28px "微软雅黑","宋体";
+  color: #000;
+  width: 60px;
+  height: 21px;
+  display: inline;
+  /* float: left; */
+  zoom: 1;
+  padding-left: 0;
+  padding-right: 0;
+  overflow: hidden;
+}
+#container #person #p-left .alphabet li.hilit {
+  font: 14px/28px "微软雅黑","宋体";
+  color: #8079e4;
+  width: 60px;
+  height: 21px;
+  display: inline;
+  float: left;
+  word-break: keep-all;
+}
+#container #person #p-left .alphabet a {
+  font: 14px/28px "微软雅黑","宋体";
+  color: #000;
+}
+#container #person #p-left #goB{
+	clear: left;
+	display: block;
+}
+#container #person #p-right {
+  float:right;
+  display: block;
+  width: 630px!important;
+  width: 624px;
+  width: 500px
+  height: auto;
+  padding-bottom: 10px;
+  overflow: hidden;
+  background: url(images/inset-line.png) repeat-y left top;
+}
+#container #person #p-right #base {
+  width: 610px;
+  height: 160px;
+  margin-top: 20px;
+}
+#container #person #p-right #base #photo {
+  float: left;
+  display: block;
+  width: 136px;
+  margin-left: 50px!important;
+  margin-left: 25px;
+}
+
+#container #person #p-right #base #info {
+  float: right;
+  display: block;
+  width: 380px;
+  text-align: left;
+  padding-left: 30px;
+}
+
+#container #person #p-right #base #info h1 {
+  font: bold 16px/24px "微软雅黑","宋体";
+  color: #7972e4;
+  margin-bottom: 10px;
+}
+#container #person #p-right #base #info table {
+  font: 14px/21px "微软雅黑","宋体";
+  color: #000;
+}
+#container #person .title-bg {
+  width: 583px;
+  height: 31px;
+  text-align: left;
+  margin-left: 5px;  
+  background: url(images/title_bg.png) repeat-x;
+}
+#container #person .title-bg span {
+  font: bold 14px/32px "微软雅黑","宋体";
+  color: #4e4e4e;
+  width: 122px;
+  float: left;
+  padding-left: 20px;
+}
+#container #person .p-news {
+  width: 581px;
+  margin-left: 5px;
+  border-left: #d9d9d9 1px solid;
+  border-right: #d9d9d9 1px solid;
+  text-align: left;
+}
+#container #person .p-news p {
+  width: 560px;
+  padding-left: 10px;
+  text-align: left;
+  text-indent: 2em;
+  font: 14px/21px "微软雅黑","宋体";
+}
+#container #person .p-foot {
+  width: 581px;
+  height: 6px;
+  border-left: #d9d9d9 1px solid;
+  border-right: #d9d9d9 1px solid;
+  border-bottom: #d9d9d9 1px solid;
+  margin-left: 5px;
+/*  background: url(images/candidate/p-foot.png) no-repeat left top; */
+  margin-bottom: 20px;
+}
+#container #person #op-list {
+  width: 610px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+    *margin-bottom: 20px ;
+  height: 35px;
+   
+}
+#container #person #op-list ul {
+/*  padding-left: 50px;
+  padding-top: 45px; */
+  margin: 15px 20px;
+
+}
+#container #person #op-list li {
+  display: inline;
+  float: left;
+  width: 111px;
+  height: 32px;
+  margin-left: 6px;
+  text-align:center;
+  background: url(images/item_bg.png) no-repeat;
+}
+#container #person #op-list a {
+  font: bold 15px/40px "微软雅黑","宋体";
+}
+#container #person #op-list img {
+  border: #fff 0 none;
+}
+
+#container #person #candinfo {
+  background: url(images/candidate/canyue.png) no-repeat;
+  width: 603px!important;
+  width: 610px;
+  margin-top: 5px;
+  margin-left: 20px!important;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  text-align: left;
+  height: auto;
+  overflow: hidden;
+}
+#container #person #bb {
+  width: 603px!important;
+  width: 610px;
+  margin-top: 5px;
+  margin-left: 20px!important;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  height: auto;
+}
+#container #person #candinfo ul {
+/*  padding-left: 50px;
+  padding-top: 45px; */
+  margin: 15px 20px;
+  
+  
+}
+#container #person #candinfo li {
+  display: inline;
+  float: left;
+  width: 136px;
+  height: 52px;
+  margin-left: 6px;
+  background: url(images/candidate/politic.png) no-repeat;
+}
+
+#container #person .p-news ul {
+  margin-left: 15px;
+}
+#container #person .p-news li {
+  height: 30px;
+  width: 690px;
+  text-align: left;
+  background: url(images/news/ic-o.gif) no-repeat;
+  border-bottom: #eaeaea 1px solid;
+}
+#container #person .p-news a {
+  float: left;
+  width: 560px;
+  font: 14px/30px "微软雅黑","宋体";  
+}
+#container #person .p-news span {
+  width: 90px;
+  font: 14px/30px "微软雅黑","宋体";
+  float: right;
+}
+
+.title-bg a {
+	padding-top:5px;
+  padding-left: 370px;
+	font: 14px/32px "微软雅黑", "宋体"
+}
+#info table td {
+	width:160px;
+  text-align:left;
+}

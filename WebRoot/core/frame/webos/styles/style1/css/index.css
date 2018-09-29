@@ -1,0 +1,525 @@
+html, body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "微软雅黑", helvetica, Arial, Sans-Serif;
+  font-size:12px;
+  border: 0 none;
+  height: 100%;
+}
+
+body {
+  overflow: visible;
+}
+
+img {
+  border:none;
+}
+
+a {
+  outline-style:none;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  outline:none;
+}
+
+button {
+  outline:none;
+}
+
+button:focus { 
+  outline: none; 
+}
+
+ol,ul {
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+.north {
+	position: relative;
+	z-index: 3000;
+  width: 100%;
+}
+.north .background {
+  background: url(../images/north_x_bg.png) repeat-x left bottom;
+}
+
+.north .center {
+  height: 82px;
+  position: relative;
+  overflow: hidden;
+}
+
+.north .bottom {
+  height: 7px;
+}
+
+.left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.north .left {
+  display: table;
+  width: 250px;
+  top: 0;
+  height: 81px;
+}
+
+.north .left .logo {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.right {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.south {
+  width: 100%;
+  height: 42px;
+  bottom: 0;
+  z-index: 3001;
+  position: absolute;
+  background: url(../images/south_x_bg.png) repeat-x left bottom;
+}
+
+/**ie6/7设置z-index元素的父级元素有定位时会出现z-index失效的问题*/
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: url(../images/assist_br.png) no-repeat right bottom;
+}
+
+.menu-container {
+  position:absolute;
+  left: 20px;
+  top: 0px;
+  width: 650px;
+}
+
+.menu-control {
+  position:absolute;
+  right: 20px;
+  top: 17px;
+}
+
+.shortcut-a-btn {
+	display: block;
+  height: 49px;
+  width: 49px;
+  background: url(../images/shortcut_a.png) no-repeat left top transparent;
+  border:none;
+}
+
+.shortcut-a-btn:hover {
+  background: url(../images/shortcut_a_hover.png) no-repeat left top transparent;
+}
+
+.shortcut-b-btn {
+	display: block;
+  height: 49px;
+  width: 49px;
+  background: url(../images/shortcut_b.png) no-repeat left top transparent;
+  border:none;
+}
+
+.shortcut-b-btn:hover {
+  background: url(../images/shortcut_b_hover.png) no-repeat left top transparent;
+}
+
+.menu-container img {
+	display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.menu-container span {
+  color: #fff;
+}
+
+.menu-container a {
+	margin: 3px 0;
+	text-align: center;
+	display: block;
+	width: 75px;
+	height: 80px;
+}
+.menu-container .jq-autolayout {
+  position: relative;
+}
+
+.menu-container li {
+  float:left;
+  height: 100px;
+  text-align:center;
+  width:75px;
+}
+
+.menu-container ul {
+  width: 100%;
+}
+
+.south .right, .south .left {
+	height: 31px;
+	bottom: 0px;
+}
+
+.south .right > div {
+  float: right;
+}
+
+.south .left > div {
+  float: left;
+}
+
+.btn-sp {
+  height: 31px;
+  width: 0px;
+}
+
+.btn-logout {
+  background: url(../images/btn_logout.png) no-repeat top left transparent;
+}
+
+.btn-shortcut {
+  background: url(../images/btn_shortcut.png) no-repeat top left transparent;
+}
+
+.btn-org {
+  background: url(../images/btn_org.png) no-repeat top left transparent;
+}
+
+.btn-control {
+  background: url(../images/btn_control.png) no-repeat top left transparent;
+}
+
+.btn-sms {
+  background: url(../images/btn_sms.png) no-repeat top left transparent;
+}
+
+.btn-sms-active {
+	width:51px;
+	height: 31px;
+  background: url(../images/btn_sms.gif) no-repeat top left transparent;
+}
+
+.btn-switch {
+  background: url(../images/btn_switch.png) no-repeat top center transparent;
+}
+
+.btn-theme {
+  background: url(../images/btn_theme.png) no-repeat top left transparent;
+}
+
+.btn-lock {
+  background: url(../images/btn_lock.png) no-repeat top left transparent;
+}
+
+.btn-portal {
+  background: url(../images/btn_portal.png) no-repeat top left transparent;
+}
+
+.btn-menu {
+  width: 73px;
+  height: 33px;
+  background: url(../images/btn_menu.png) no-repeat top left transparent;
+}
+
+.btn-menu:hover {
+  background: url(../images/btn_menu_hover.png) no-repeat top left transparent;
+}
+
+.portal-design {
+  width: 77px;
+  height: 77px;
+  background: url(../images/design_portal.png) no-repeat top left transparent;
+}
+
+.portal-design:hover {
+  background: url(../images/design_portal_hover.png) no-repeat top left transparent;
+}
+
+.portal {
+	width: 85px;
+	height: 66px;
+	color: #fff;
+  background: url(../images/portal.png) no-repeat top left transparent;
+}
+
+.portal:hover {
+  background: url(../images/portal_hover.png) no-repeat top left transparent;
+}
+
+.btn-menu-active {
+  width: 73px;
+  height: 33px;
+  background: url(../images/btn_menu_active.png) no-repeat top left transparent;
+}
+
+.btn-icon {
+  width: 31px;
+  height: 31px;
+}
+
+.btn-icon:hover {
+  position: relative;
+  top: -6px;
+  width: 36px;
+  height: 36px;
+}
+
+.btn-icon-active {
+	position: relative;
+  top: -10px;
+  width: 40px;
+  height: 40px;
+}
+
+.jq-button.btn-icon-active img{
+  width: 36px;
+  height: 36px;
+}
+
+.jq-button.btn-icon:hover img {
+  width: 32px;
+  height: 32px;
+}
+
+.work-space {
+  position: absolute;
+  width: 100%;
+  top: 89px;
+  bottom: 38px;
+  *cursor: default;
+}
+.user-info {
+  float: right;
+}
+
+#flashPlayer {
+  visibility: hidden;
+  width: 0; 
+  height: 0;
+}
+
+#avatar {
+	height: 45px;
+	width: 45px;
+}
+
+.user-info {
+	color: white;
+	width: 240px;
+  height: 100%;
+  padding-top: 10px;
+}
+
+#userInfo {
+  width: 105px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.user-info-top {
+  height: 50px;
+}
+
+.user-info-top > div {
+	padding-left: 5px;
+  float: left;
+}
+
+#onlineStatus {
+	cursor: pointer;
+	padding-left: 10px;
+	width: 61px;
+	height: 18px;
+	font-size: 14px;
+}
+
+#onlineAmount {
+  float: right;
+  width: 100px;
+  background: url(../images/online_amount_bg.png) no-repeat top left transparent;
+}
+
+#onlineAmount:hover {
+  background: url(../images/online_amount_bg_hover.png) no-repeat top left transparent;
+}
+
+#onlineAmount button {
+	width: 100px;
+  height: 20px;
+  color: #fff;
+  background: transparent;
+}
+
+#userStatus {
+  float: left;
+  width: 128px;
+  background: url(../images/user_status_bg.png) no-repeat top left transparent;
+}
+
+#userStatus:hover {
+  background: url(../images/user_status_bg_hover.png) no-repeat top left transparent;
+}
+
+#userStatus input {
+	display: none;
+	border: none;
+	padding: 0px 5px;
+	width: 110px;
+  height: 20px;
+  color: #fff;
+  background: transparent;
+}
+
+#userStatus button {
+  width: 130px;
+  height: 20px;
+  color: #fff;
+  overflow: hidden;
+  background: transparent;
+}
+
+.org-all {
+  width: 113px;
+  height: 27px;
+  font-size: 15px;
+  color: gray;
+  background: url(../images/org_all.jpg) no-repeat top left transparent;
+}
+
+.org-all-active {
+  width: 113px;
+  height: 27px;
+  font-size: 15px;
+  color: black;
+  background: url(../images/org_all_selected.jpg) no-repeat top left transparent;
+}
+
+.org-online {
+  width: 113px;
+  height: 27px;
+  font-size: 15px;
+  color: gray;
+  background: url(../images/org_online.jpg) no-repeat top left transparent;
+}
+
+.org-online-active {
+  width: 113px;
+  font-size: 15px;
+  color: black;
+  height: 27px;
+  background: url(../images/org_online_selected.jpg) no-repeat top left transparent;
+}
+
+.status-tip-btn {
+	width: 108px;
+	height: 29px;
+}
+
+.status-tip-btn:hover {
+	background: url(../images/status_hover.jpg) no-repeat top left transparent;
+}
+
+.br-btn-active {
+	width: 51px;
+	height: 31px;
+  background: url(../images/br_btn_hover.png) no-repeat top left transparent;
+}
+
+.br-btn {
+  width: 51px;
+  height: 31px;
+}
+
+.br-btn:hover {
+  width: 51px;
+  height: 31px;
+  background: url(../images/br_btn_hover.png) no-repeat top left transparent;
+}
+
+.port ul {
+  padding-bottom: 10px;
+}
+
+.port li {
+  margin: 0px;
+  padding: 0px 0 0px 20px;
+  list-style-type: none;
+  line-height:25px;
+  background:url("../images/dot.png") no-repeat 10px center;
+}
+
+.port li .icon {
+}
+
+.port li .title {
+	padding-left: 5px;
+  color: #161616;
+}
+
+.port li .desc {
+	padding-left: 5px;
+  color: #0000ff;
+}
+
+.port li .time {
+  padding-left: 5px;
+  color: #188403;
+}
+
+.port-search {
+  height: 41px;
+  width: 208px;
+  background: url(../imgs/search_bg.png) no-repeat top left transparent;
+}
+
+.port-search input {
+	position: relative;
+	top: 15px;
+	left: 20px;
+	width: 130px;
+  border: none;
+  background-color: transparent;
+}
+
+.port-search-btn {
+	position: relative;
+	top: -36px;
+	left: 170px;
+  width: 30px;
+  height: 31px;
+  background: url(../imgs/search_btn.png) no-repeat top left transparent;
+}
+
+.port-search-btn:hover {
+  background: url(../imgs/search_btn_hover.png) no-repeat top left transparent;
+}
+
+#topMenu {
+  left: 255px;
+  right: 255px;
+  position: absolute;
+  z-index: 3000;
+}
+
+.jq-columnlayout .port {
+  margin-top: 5px;
+}

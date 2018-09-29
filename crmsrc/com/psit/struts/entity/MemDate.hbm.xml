@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.psit.struts.entity.MemDate" table="crm_mem_date" >
+        <id name="mdId" type="java.lang.Long">
+            <column name="md_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="mdContact" class="com.psit.struts.entity.CusContact" fetch="select" not-null="false">
+        	<column name="md_con_id" />
+        </many-to-one>
+        <property name="mdName" type="java.lang.String">
+            <column name="md_name" length="50" />
+        </property>
+        <property name="mdDate" type="java.util.Date">
+            <column name="md_date" length="23" />
+        </property>
+        <property name="mdRemark" type="java.lang.String">
+            <column name="md_remark" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

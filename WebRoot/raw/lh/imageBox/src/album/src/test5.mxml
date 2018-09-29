@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"  backgroundGradientColors="[ 0x000000, 0x323232 ]" xmlns:viewStackEffects="org.efflex.mx.viewStackEffects.*" layout="absolute">
+  
+   <viewStackEffects:FlipPapervision3D id="effect" transparent="true"/>
+    <mx:ViewStack id="viewStack" width="400" height="190">
+    <mx:Image visible="{checkbox.selected}" source="album/415707.jpg" hideEffect="effect" showEffect="effect"/>
+    </mx:ViewStack>
+    <mx:CheckBox id="checkbox" x="25" y="231" label="显示"/>
+</mx:Application>

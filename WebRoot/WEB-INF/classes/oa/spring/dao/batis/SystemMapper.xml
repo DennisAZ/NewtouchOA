@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oa.spring.dao.batis.SystemMapper">
+
+	<insert id="addCode" parameterType="java.util.HashMap">
+		insert into erp_code_style(id,code_type,value,remark)
+		values(uuid(),#{code_type},#{value},#{remark})
+	</insert>
+	<insert id="addLogistics" parameterType="java.util.HashMap">
+		insert into erp_logistics(id,name)
+		values(#{logisticsId},#{logistics})
+	</insert>
+	<select id="getCodeMsgById" resultType="java.util.HashMap" parameterType="string">
+		select code_type,value,remark from erp_code_style where id=#{id}
+	</select>
+	<select id="getLogisticsById" resultType="java.util.HashMap" parameterType="string">
+		select id,name from erp_logistics where id=#{id}
+	</select>
+	<select id="getLogistics" resultType="java.util.HashMap" parameterType="string">
+		select id,name from erp_logistics 
+	</select>
+	<select id="getValueByCodeType" resultType="java.util.HashMap" parameterType="string">
+		select value from erp_code_style where code_type=#{code_type}
+	</select>
+	<update id="updateCode" parameterType="java.util.HashMap">
+		update erp_code_style set code_type=#{code_type},value=#{value},remark=#{remark} where id=#{id}
+	</update>
+	<update id="editLogistics" parameterType="java.util.HashMap">
+		update erp_logistics set name=#{logistics} where id=#{id}
+	</update>
+	<delete id="deleteCodeById" parameterType="string">
+		delete from erp_code_style where id=#{id}
+	</delete>
+	<delete id="deleteLogistics" parameterType="string">
+		delete from erp_logistics where id=#{id}
+	</delete>
+</mapper>

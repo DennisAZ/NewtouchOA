@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+   	<bean id="jdbcDefault" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://192.168.1.6:3306/xz_hr?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;transformedBitIsBoolean=true
+			</value>
+		</property>
+		<property name="username">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value>hr1324!@#</value>
+		</property>
+	</bean>
+	 
+	 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="jdbcDefault" />
+		<property name="typeAliasesPackage" value="oa.spring.dao.batis" />
+		<property name="mapperLocations" value="classpath:/oa/spring/dao/batis/*.xml" />
+	</bean>
+
+<!--mapper bean  --> 
+<bean id="wareHouseMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="mapperInterface" value="oa.spring.dao.batis.WareHouseMapper" />
+	<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+</bean>
+<bean id="dbMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="mapperInterface" value="oa.spring.dao.batis.DBMapper" />
+	<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+</bean>
+<bean id="contractMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="mapperInterface" value="oa.spring.dao.batis.ContractMapper" />
+	<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+</bean>
+<bean id="systemMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="mapperInterface" value="oa.spring.dao.batis.SystemMapper" />
+	<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+</bean>
+<bean id="financeMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="mapperInterface" value="oa.spring.dao.batis.FinanceMapper" />
+	<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+</bean>
+<bean id="productStyleMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="mapperInterface" value="oa.spring.dao.batis.ProductStyleMapper" />
+	<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+</bean> 
+<bean id="productTypeMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="mapperInterface" value="oa.spring.dao.batis.ProductTypeMapper" />
+	<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+</bean>  
+<bean id="productUnitMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="mapperInterface" value="oa.spring.dao.batis.ProductUnitMapper" />
+	<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+</bean>
+<bean id="productMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="mapperInterface" value="oa.spring.dao.batis.ProductMapper" />
+	<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+</bean>        
+<bean id="saleOrderMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="mapperInterface" value="oa.spring.dao.batis.SaleOrderMapper" />
+	<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+</bean> 
+<bean id="orderProductOutMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="mapperInterface" value="oa.spring.dao.batis.OrderProductOutMapper" />
+	<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+</bean> 
+<bean id="poProMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="mapperInterface" value="oa.spring.dao.batis.PoProMapper" />
+	<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+</bean> 
+<bean id="paidPlanMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="mapperInterface" value="oa.spring.dao.batis.PaidPlanMapper" />
+	<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+</bean> 
+<bean id="purchaseMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="mapperInterface" value="oa.spring.dao.batis.PurchaseMapper" />
+	<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+</bean> 
+<bean id="produceMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="mapperInterface" value="oa.spring.dao.batis.ProduceMapper" />
+	<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+</bean> 
+	<!-- <bean id="jdbcDefaultMssql" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://192.168.100.224:3306/syyhData1104?useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull&amp;transformedBitIsBoolean=true
+			</value>
+		</property>
+		<property name="username">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value>root</value>
+		</property>
+	</bean>
+	<bean id="jdbcDefaultOracle" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>oracle.jdbc.driver.OracleDriver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:oracle:thin:@localhost:1521:orcl
+			</value>
+		</property>
+		<property name="username">
+			<value>coa</value>
+		</property>
+		<property name="password">
+			<value>coa</value>
+		</property>
+	</bean> -->
+	<!-- <bean id="jdbcDefaultMssql2" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+      <property name="driverClass">
+        <value>net.sourceforge.jtds.jdbc.Driver</value>
+      </property>
+      <property name="jdbcUrl">
+        <value>jdbc:jtds:sqlserver://localhost:1433/1hoa;SelectMethod=cursor</value>
+      </property>
+      <property name="user">
+       <value>sa</value>
+      </property>
+      <property name="password">
+       <value>lan</value>
+      </property>
+      <property name="initialPoolSize"><value>20</value></property>
+      <property name="minPoolSize"><value>50</value></property>
+      <property name="maxPoolSize"><value>100</value></property>
+      <property name="acquireIncrement"><value>5</value></property>
+      <property name="maxIdleTime"><value>10</value></property>
+      <property name="maxStatements"><value>0</value></property>
+    </bean> -->
+	<!--<bean id="jdbcDefaultMssql2" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>net.sourceforge.jtds.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:jtds:sqlserver://localhost:1433/1hoa</value>
+		</property>
+		<property name="username">
+			<value>sa</value>
+		</property>
+		<property name="password">
+			<value>lan</value>
+		</property>
+	</bean>-->
+<!--  mysql dao-->	
+
+    <bean id="testDao" class="oa.spring.dao.jdbc.TestDao">
+        <property name="dataSource" ref="jdbcDefault"/>
+    </bean>   
+</beans>

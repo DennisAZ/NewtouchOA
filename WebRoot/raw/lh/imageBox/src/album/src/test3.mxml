@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- transitions\ActionTransitions.mxml -->
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" 
+    verticalAlign="middle"
+    layout="vertical">
+
+    <!-- Define one view state, in addition to the base state.-->
+    <mx:states>
+        <mx:State name="OneOnly">
+            <mx:SetProperty target="{p2}" name="visible" value="false"/>
+            <mx:SetProperty target="{p2}" 
+                name="includeInLayout" value="false"/>
+        </mx:State>
+    </mx:states>    
+
+    <!-- Define Transition array with one Transition object.-->
+    <mx:transitions>
+        <mx:Transition id="toOneOnly" fromState="*" toState="OneOnly">
+            <mx:Sequence id="t1" targets="{[p2]}">
+                <mx:Iris showTarget="false" duration="350"/>
+                <mx:SetPropertyAction name="visible"/>
+                <mx:SetPropertyAction target="{p2}" name="includeInLayout"/>
+            </mx:Sequence>
+        </mx:Transition>
+    
+        <mx:Transition id="toAnyFromAny" fromState="*" toState="*">
+            <mx:Sequence id="t2" targets="{[p2]}">
+                <mx:SetPropertyAction target="{p2}" name="includeInLayout"/>
+                <mx:SetPropertyAction name="visible"/>
+                <mx:Iris showTarget="true" duration="350"/>
+            </mx:Sequence>
+        </mx:Transition>
+    </mx:transitions>
+
+    <mx:Panel id="p1" title="面板1" 
+        width="200" height="100">
+        <mx:Label fontSize="24" text="面板1"/>
+    </mx:Panel>
+        
+    <mx:Panel id="p2" title="面板2" 
+        width="200" height="100">
+        <mx:Label fontSize="24" text="面板2"/>
+    </mx:Panel>
+    
+    <mx:Button id="b1" label="改变状态" 
+        click="currentState = currentState == 'OneOnly' ? '' : 'OneOnly';"/>
+</mx:Application>

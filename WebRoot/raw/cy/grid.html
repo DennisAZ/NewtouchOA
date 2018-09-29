@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="/yh/core/styles/style1/css/views.css" type="text/css" />
+<link rel="stylesheet" href="/yh/core/styles/style1/css/style.css" type="text/css" />
+<script type="text/Javascript" src="/yh/core/js/datastructs.js"></script>
+<script type="text/Javascript" src="/yh/core/js/sys.js" ></script>
+<script type="text/Javascript" src="/yh/core/js/prototype.js" ></script>
+<script type="text/Javascript" src="/yh/core/js/smartclient.js" ></script>
+<script type="text/javascript" src = "/yh/raw/cy/grid/grid.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/yh/raw/cy/grid/grid.css"/>
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+ function loads(){
+   
+	var hd =[
+	       	  [
+		       	{header:"user",name:"user_name",width:"10%",hidden:false},
+		       	{header:"classNo",name:"CLASS_no",width:"20%",hidden:false},
+		       	{header:"sex",name:"sexDesc",width:"40%",hidden:false}
+		      ],
+		      {
+	    		header:"操作",
+	    		oprates:[
+		               new YHOprate('增加',true,function(record,index){alert(record.getField('name').value+":"+index)}),
+                       new YHOprate('oprate4',false,function(){alert("oprate4")}),
+                       new YHOprate('删除',true,function(){alert("oprate2")})
+                     //  new YHOprate('oprate3',false,function(){alert("oprate3")})
+                        ]
+             }
+	];
+	// var jso = {"total":5,"records":[{"id":1,"name":"lh","age":23},{"id":2,"name":"cy","age":23},{"id":3,"name":"cc","age":23},{"id":3,"name":"cc","age":23}]};
+	var url = "/yh/raw/cy/act/YHGridNomalAct/jsonTest.act?tabNo=10003";
+	var grid = new YHGrid(hd,url,null,1);
+	//jso = {"total":5,"records":[{"id":5,"name":"lh","age":23},{"id":6,"name":"cy","age":23},{"id":7,"name":"cc","age":23},{"id":8,"name":"cc","age":23}]};
+	 //grid.setJson(jso);
+	 grid.rendTo('divieeeeee');
+	 }
+//function loads(){
+ // var rtJson = getJsonRs("/yh/raw/cy/act/YHGridAct/jsonTest.act?page=0&&dd=2");
+ //                         /yh/raw/cy/act/YHGridAct/jsonTest.act?page=0&&numOfpage=4
+ // alert(rtJson.total);
+//}
+</script >
+<body onload = "loads()">
+<div id = "divieeeeee" style = "width:400px;height:200px;border:1px solid #0000ff;"></div>
+</body>
+</html>

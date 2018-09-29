@@ -1,0 +1,70 @@
+﻿
+.dvItemInOrgStruct
+{
+   position:absolute;
+   border:1px solid #999999;
+   font-size:12px;
+   padding:5px;
+   height:auto;
+   z-index:100;
+   background-color:#FFFFFF;
+   line-height:16px;
+}
+.dvItemInOrgStruct a
+{
+   display:inline;
+   text-decoration:none;
+   color:#333333;
+   height:16px;line-height:16px;
+}
+.imgInOrgStruct
+{
+   height:16px;
+   width:16px;
+   border-style:none;
+}
+.dvItemInOrgStruct a:hover{display:inline;height:16px;line-height:16px;border-bottom:1px dashed #BCCBD8;color:#06f;}
+.dvItemInOrgStruct a:link,a:active,a:visited{display:inline;height:16px;line-height:16px;text-decoration:none;color:#069;}
+.dvHLineInOrgStruct
+{
+position:absolute;
+z-index:1;
+padding:0px;
+margin:0px;
+border-top:1px solid #999999;
+}
+.dvVLineInBottomInOrgStruct
+{
+color:blue;
+position:absolute;
+background-color:#999999;
+width:1px;
+z-index:1;
+}
+.dvVLineInTopInOrgStruct
+{
+color:blue;
+position:absolute;
+background-color:#999999;
+width:1px;
+z-index:1;
+height:15px;
+}
+.PathVLineInOrgStruct
+{
+position:absolute;
+background-color:red;
+border-color:red;
+z-index:10;
+}
+.PathHLineInOrgStruct
+{
+position:absolute;
+z-index:1;
+padding:0px;
+margin:0px;
+border-bottom:none;
+border-left:none;
+border-right:none;
+border-top:solid red;
+}

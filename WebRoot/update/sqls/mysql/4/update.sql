@@ -1,0 +1,11 @@
+delete from sys_function where menu_id = '101203' or menu_id = '101205' or menu_id = '601285' or menu_id = '1010' or menu_id = '1011' OR MENU_ID = '100907';
+insert into sys_function (MENU_ID , FUNC_NAME , FUNC_CODE ,ICON ,OPEN_FLAG  ) values ('100612' , '薪酬统计分析' , '/subsys/oa/hr/salary/welfare_manager/salaryanalysis.jsp', 'edit.gif' , '0');
+insert into hr_code (CODE_NO , CODE_NAME , CODE_ORDER ,PARENT_NO ,CODE_FLAG  ) values  ('JOB_CATEGORY', '期望工作性质', '22', '', '1') ;
+insert into hr_code (CODE_NO , CODE_NAME , CODE_ORDER ,PARENT_NO ,CODE_FLAG  ) values  ('01', '开发', '1', 'JOB_CATEGORY', '1') ;
+insert into hr_code (CODE_NO , CODE_NAME , CODE_ORDER ,PARENT_NO ,CODE_FLAG  ) values 	('02', '管理', '2', 'JOB_CATEGORY', '1') ;
+insert into hr_code (CODE_NO , CODE_NAME , CODE_ORDER ,PARENT_NO ,CODE_FLAG  ) values 	('POOL_EMPLOYEE_MAJOR', '所学专业', '22', '', '1') ;
+insert into hr_code (CODE_NO , CODE_NAME , CODE_ORDER ,PARENT_NO ,CODE_FLAG  ) values 	('01', '网络工程', '1', 'POOL_EMPLOYEE_MAJOR', '1') ;
+insert into hr_code (CODE_NO , CODE_NAME , CODE_ORDER ,PARENT_NO ,CODE_FLAG  ) values 	('02', '计算机应用', '2', 'POOL_EMPLOYEE_MAJOR', '1') ;
+insert into hr_code (CODE_NO , CODE_NAME , CODE_ORDER ,PARENT_NO ,CODE_FLAG  ) values 	('POOL_POSITION', '应聘岗位', '22', '', '1') ;
+insert into hr_code (CODE_NO , CODE_NAME , CODE_ORDER ,PARENT_NO ,CODE_FLAG  ) values 	('01', '开发工程师', '1', 'POOL_POSITION', '1') ;
+insert into hr_code (CODE_NO , CODE_NAME , CODE_ORDER ,PARENT_NO ,CODE_FLAG  ) values 	('02', '研发经理', '2', 'POOL_POSITION', '1') ;

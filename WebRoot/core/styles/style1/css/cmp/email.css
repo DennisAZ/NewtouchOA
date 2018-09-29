@@ -1,0 +1,129 @@
+.toolBar {
+  text-align: center;
+}
+
+.controlbar-center span {   
+display: block;
+float: left;
+height: 18px;
+margin-left: 5px;
+padding: 5px;
+text-align: center;
+}
+
+.controlbar-center a { 
+  background: url("../../img/systop/mt.png") repeat scroll 0 0 transparent;
+border: 1px solid #999999;
+border-radius: 2px 2px 2px 2px;
+-webkit-border-radius:2px 2px 0 0;
+display: block;
+float: left;
+height: 18px;
+margin-left: 5px;
+padding: 5px;
+text-align: center;
+}
+
+.controlbar-center a:hover {  
+-webkit-box-shadow: #666 0px 0px 3px;
+-moz-box-shadow: #666 0px 0px 3px;
+box-shadow: #666 0px 0px 3px;
+behavior: url(../PIE.htc); background: #fff;
+}
+
+a {
+  cursor: pointer;
+}
+
+.arExpand {
+	display: block;
+	font-weight: bold;
+	padding-left: 25px;
+  background: url("../../img/subpages/arrow_d.png") no-repeat scroll 8px center transparent;
+}
+
+.arClose {
+	font-weight: bold;
+	display: block;
+	padding-left: 25px;
+  background: url("../../img/subpages/ar.png") no-repeat scroll 8px center transparent;
+}
+
+.emailheader {
+  background: none repeat scroll 0 0 #C0EFFF;
+  border-left: 1px solid #85b6df;
+  border-right: 1px solid #85b6df;
+  height: 32px;
+  line-height: 32px;
+  padding-left: 5px;	
+}
+
+.folder li a {
+  border-bottom: 1px solid #CCCCCC;
+  color: #383838;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.folder li a:hover {
+  background-color: #edf6db;
+}
+
+.nmBtn {
+  cursor:pointer;FLOAT: left;
+  width:73px;
+}
+.wmBtn {
+  cursor:pointer;FLOAT: left; BORDER-LEFT: #dcdcdc 1px solid;
+  width:74px;
+}
+
+.nmBtn img{
+  margin:0px 5px;
+  float:left;
+}
+.wmBtn img{
+  margin:0px 5px;
+  float:left;
+}
+
+.folder {
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid #85b6df;
+  border-right: 1px solid #85b6df;
+}
+#body{
+	width: 188px;
+  margin:10px 0px;
+  height : 100%;
+  overflow : hidden;
+}
+#custom_folder {
+  OVERFLOW-Y: auto
+}
+UL {
+  MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px; LIST-STYLE-TYPE: none
+}
+
+A.op {
+  DISPLAY: inline; RIGHT: 8px; POSITION: absolute; TOP: 180px; TEXT-DECORATION: underline
+}
+A.op:hover {
+  TEXT-DECORATION: underline
+}
+HR {
+  WIDTH: 80%; COLOR: #83accf; HEIGHT: 1px
+}
+
+#msrg {
+  text-align: center;
+}
+
+.folder li a span {
+  color: #2F7FD8;
+  font-weight: bold;
+}

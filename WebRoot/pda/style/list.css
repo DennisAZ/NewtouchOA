@@ -1,0 +1,219 @@
+*{padding:0px;margin:0px;}
+html, body {
+	height: 100%;
+}
+body{
+   background:url('images/list_body_bg.png') left top repeat-x;
+   color:#383838;
+   font-size:14px;
+}
+img{
+   border:0px;
+   cursor:pointer;
+}
+a{
+	 text-decoration: none;
+}
+input{
+   height:20px;
+   border:1px #cccccc solid;
+}
+select{
+   border:1px #cccccc solid;
+}
+textarea{
+   border:1px #cccccc solid;
+}
+
+.ButtonA{
+   display:inline-block;
+	width:49px;
+   height:30px;
+   line-height:30px;
+	color:#476b9b;
+	font-size:12px;
+	font-weight:bold;
+	text-align:center;
+   background:url('images/btn_a_bg.png') center center  no-repeat;
+   border:0px;
+}
+
+.ButtonB{
+   display:inline-block;
+	width:61px;
+   height:30px;
+   line-height:30px;
+	color:#476b9b;
+	font-size:12px;
+	font-weight:bold;
+	text-align:center;
+   background:url('images/btn_b_bg.png') center center no-repeat;
+   border:0px;
+}
+
+.ButtonBack{
+   display:inline-block;
+	width:67px;
+   height:30px;
+   line-height:30px;
+   background:url('images/btn_back.png') no-repeat top left;
+}
+
+.ButtonHome{
+   display:inline-block;
+	width:69px;
+   height:35px;
+   line-height:30px;
+   background:url('images/btn_home.png') no-repeat top left;
+}
+
+#list_top{
+   margin:0px auto;
+   height:43px;
+   text-align:center;
+   overflow:hidden;
+   position:relative;
+}
+#list_top .list_top_left{
+   position:absolute;
+   left:5px;
+   top:7px;
+   z-index:10;
+}
+#list_top .list_top_center{
+   line-height:43px;
+   color:#01489a;
+   font-size:18px;
+   font-weight:bold;
+   text-align:center;
+   text-shadow:2px 2px 10px #fff;
+}
+#list_top .list_top_right{
+   position:absolute;
+   right:5px;
+   top:7px;
+   z-index:10;
+}
+.list_main{
+   margin-top:10px;
+   padding:0px 10px;
+   line-height:20px;
+}
+.list_main .list_item{
+   display:block;
+   padding-top:10px;
+   border-bottom:1px #e2e6e9 solid;
+   position:relative;
+   cursor:pointer;
+}
+.list_main .list_item .list_item_subject{
+   height:20px;
+   line-height:20px;
+   font-size:14px;
+   color:#383838;
+   overflow:hidden;
+   margin-right:25px;
+}
+.list_main .list_item .list_item_time{
+   height:20px;
+   line-height:20px;
+   font-size:12px;
+   color:#a7a7a7;
+   overflow:hidden;
+}
+.list_main .list_item .list_item_arrow{
+   position:absolute;
+   top:17px;
+   right:-5px;
+   width:16px;
+   height:16px;
+   background:url('images/pda_icons.png') 0px center no-repeat;
+}
+.list_main .list_item .list_item_attachment{
+   position:absolute;
+   top:17px;
+   right:10px;
+   width:16px;
+   height:16px;
+   background:url('images/pda_icons.png') -26px center no-repeat;
+}
+.list_main .list_item .list_item_op{
+   position:absolute;
+   bottom:0px;
+   right:0px;
+   z-index:10;
+   height:20px;
+   line-height:20px;
+   font-size:12px;
+}
+.list_main .list_item .list_item_op a{
+   margin-right:10px;
+}
+.list_main .message{
+   margin:30px auto;
+   margin-bottom:10px;
+   font-size:16px;
+   font-weight:bold;
+   text-align:center;
+}
+#list_bottom{
+   margin:0px auto;
+   height:60px;
+   background:url('images/list_bottom_bg.png') left bottom repeat-x;
+   overflow:hidden;
+   position:relative;
+}
+#list_bottom .list_bottom_left{
+   position:absolute;
+   left:5px;
+   bottom:0px;
+   z-index:10;
+}
+#list_bottom .list_bottom_right{
+   position:absolute;
+   right:5px;
+   bottom:0px;
+   z-index:10;
+}
+
+.pageArea{color:#fff;line-height:20px;}
+.pageArea img{cursor:pointer;}
+.pageArea a{width:30px;height:20px;display:inline-block;}
+.pageArea .pageNumber{font-size:12px;}
+.pageArea .pageFirst{background: url('images/pda_icons.png') -325px center no-repeat;}
+.pageArea .pagePrevious{background: url('images/pda_icons.png') -285px center no-repeat;}
+.pageArea .pageNext{background: url('images/pda_icons.png') -125px center no-repeat;}
+.pageArea .pageLast{background: url('images/pda_icons.png') -165px center no-repeat;}
+.pageArea .pageFirstDisable{background: url('images/pda_icons.png') -45px center no-repeat;}
+.pageArea .pagePreviousDisable{background: url('images/pda_icons.png') -85px center no-repeat;}
+.pageArea .pageNextDisable{background: url('images/pda_icons.png') -245px center no-repeat;}
+.pageArea .pageLastDisable{background: url('images/pda_icons.png') -205px center no-repeat;}
+.pageArea .pageGoto{background: url('/images/green_arrow.gif') center center no-repeat;width:17px;}
+
+.list_main .read_title{
+   height:30px;
+   line-height:30px;
+   color:#0059b7;
+   font-size:16px;
+   font-weight:bold;
+   text-align:center;
+}
+
+.list_main .read_time{
+   height:20px;
+   line-height:20px;
+   font-size:12px;
+   text-align:right;
+}
+
+.list_main .read_attachment{
+   height:20px;
+   line-height:20px;
+   font-size:12px;
+   text-align:left;
+}
+
+.list_main .read_content{
+   border-top:1px #e2e6e9 solid;
+   padding:20px 10px 0px 10px;
+}

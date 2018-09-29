@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oa.spring.dao.batis.WareHouseMapper">
+
+	<resultMap type="oa.spring.po.WareHouse" id="whResultMap">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="address" column="address" />
+		<result property="type" column="type" />
+		<result property="remark" column="remark" />
+	</resultMap>
+
+	<resultMap type="yh.core.data.YHDbRecord" id="yhDbRecord">
+	</resultMap>
+	<resultMap type="yh.core.funcs.person.data.YHPerson" id="personResultMap">
+		<id property="seqId" column="seq_id" />
+		<result property="userName" column="user_name" />
+	</resultMap>
+
+	<resultMap type="oa.spring.po.ProductStyle" id="psResultMap">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+	</resultMap>
+
+
+	<select id="getWareHouse" resultMap="whResultMap">
+		SELECT * from erp_warehouse
+	</select>
+	<select id="checkHasValue" resultType="int" parameterType="String">
+		SELECT count(*) from erp_order_product_out_detail where order_id
+		=
+		#{order_id} and pod_status = '5'
+	</select>
+	<select id="getWareHouseById" resultMap="whResultMap"
+		parameterType="String">
+		SELECT * from erp_warehouse where id=#{id}
+	</select>
+	<select id="getWHAdmin" resultMap="personResultMap"
+		parameterType="String">
+		SELECT p.seq_id,p.user_name from person p,erp_wh_person
+		wp where
+		p.seq_id=wp.person_id and wp.wh_id=#{id}
+	</select>
+	<select id="getSalePrice" resultType="String" parameterType="java.util.HashMap">
+		SELECT sale_price FROM erp_po_pro WHERE po_id=#{po_id} and pro_id=#{pro_id}
+	</select>
+	<select id="getReturnByTypeId" resultMap="personResultMap"
+		parameterType="String">
+		SELECT id FROM erp_purchase WHERE id=#{typeId}
+	</select>
+	<select id="getStyle" resultType="java.util.HashMap">
+		SELECT ps.id,ps.name,ps.remark
+		FROM erp_product_style ps where is_del = '0'
+	</select>
+	<select id="getProductList" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT 
+			 p.id,
+			 p.pro_code,
+			 p.pro_name,
+			 p.pro_type,
+			 u.unit_name,
+			 pp.order_num,
+			 pp.already_send_num
+			FROM erp_po_pro pp LEFT JOIN erp_product p ON pp.pro_id =p.id 
+			LEFT JOIN erp_product_unit u ON p.unit_id = u.unit_id
+			where pp.po_id=#{po_id} AND pp.status='0'
+	</select>
+	<select id="getExcelDb" resultMap="yhDbRecord"
+		parameterType="String">
+		SELECT wh.name,pro.pro_name,db.price,db.num FROM erp_db db LEFT JOIN erp_warehouse wh ON wh.id=db.wh_id LEFT JOIN erp_product pro ON pro.id=db.pro_id
+	</select>
+	<select id="getReturn" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT
+		  cp.id       AS pro_id,
+		  cp.pro_code,
+		  cp.pro_name,
+		  cp.pro_type,
+		  u.unit_name,
+		  rp.num
+		FROM  erp_return_pro rp
+		  LEFT JOIN erp_product cp
+		    ON rp.pro_id = cp.id
+		    LEFT JOIN erp_product_unit u
+		    ON cp.unit_id=u.unit_id
+		WHERE rp.return_id =#{retId}
+	</select>
+	<select id="getLoss" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT cp.id,cp.pro_id AS proId
+		,cp.pro_code,cp.pro_name,cp.pt_name AS
+		ptName,cp.pro_price,cp.unit_name,loss.code,loss.reason,loss.remark,loss.loss_date
+		FROM erp_loss loss
+		LEFT JOIN erp_loss_pro lp ON lp.loss_id=loss.id
+		LEFT
+		JOIN erp_cache_product cp ON cp.useful_id=loss.id
+		WHERE
+		loss.id=#{lossId} GROUP BY cp.id
+	</select>
+	<select id="getReturnDb" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		SELECT
+		  db.id     AS dbId,
+		  dbLog.wh_id,
+		  dbLog.batch,
+		  dbLog.number,
+		  wh.name      AS whName
+		FROM  erp_db_log dbLog
+		    LEFT JOIN erp_db db ON db.batch=dbLog.batch AND db.wh_id=dbLog.wh_id AND db.pro_id=dbLog.pro_id 
+		  LEFT JOIN erp_warehouse wh
+		    ON wh.id = dbLog.wh_id
+		WHERE dbLog.pod_id =#{retId}
+		AND dbLog.flag=#{flag}
+		AND dbLog.pro_id=#{proId}
+	</select>
+	<select id="getBatch" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		SELECT batch  FROM erp_db WHERE batch=#{batch} AND wh_id=#{whId}
+	</select>
+	<select id="getLossDb" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		SELECT dbLog.number,db.num AS dbNumber,wh.name AS whName
+		,db.id AS
+		dbId,db.wh_id AS whId
+		FROM erp_loss loss
+		LEFT JOIN erp_db_log
+		dbLog ON dbLog.pod_id=loss.id
+		LEFT JOIN erp_warehouse
+		wh ON
+		wh.id=dbLog.wh_id
+		LEFT JOIN erp_db db ON db.wh_id=dbLog.wh_id
+		WHERE
+		loss.id=#{lossId} AND dbLog.pro_id=#{proId} GROUP BY db.wh_id
+	</select>
+	<select id="getReturnDbNum" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		SELECT cp.id AS cpId,
+		dbLog.wh_id,dbLog.pro_id,dbLog.number FROM erp_db_log dbLog LEFT JOIN
+		erp_cache_product cp ON cp.useful_id=dbLog.pod_id WHERE
+		pod_id=#{retId} GROUP BY dbLog.id
+	</select>
+	<select id="getDbLogList" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		SELECT id AS dbLogId,wh_id,pro_id FROM erp_db_log WHERE
+		pod_id=#{pod_id} AND pro_id=#{proId}
+	</select>
+	<select id="getProducts" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT
+			  cp.id as pro_id,
+			  cp.pro_code,
+			  cp.pro_name,
+			  cp.pro_type,
+			  u.unit_name,
+			  poPro.order_num,
+			  poPro.already_send_num,
+			  podpro.pod_num
+			FROM erp_order_product_out_detail pod
+			LEFT JOIN erp_po_pro poPro
+			    ON pod.po_id = poPro.po_id
+			LEFT JOIN erp_pod_pro podpro
+			ON pod.id = podpro.pod_id AND podpro.pro_id=poPro.pro_id
+			  LEFT JOIN erp_product cp
+			    ON podpro.pro_id = cp.id
+			    LEFT JOIN erp_product_unit u
+			    ON cp.unit_id=u.unit_id
+			WHERE pod.id =#{pod_id} 
+	</select>
+	<select id="getNumbers" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		SELECT
+		  db.id     AS dbId,
+		  dbLog.pro_id,
+		  dbLog.number,
+		  dbLog.wh_id,
+		  dbLog.batch,
+		  wh.name      AS whName
+		FROM erp_order_product_out_detail pod
+		  LEFT JOIN erp_db_log dbLog
+		    ON dbLog.pod_id = pod.id
+		    LEFT JOIN erp_db db ON db.batch=dbLog.batch AND db.wh_id=dbLog.wh_id AND db.pro_id=dbLog.pro_id 
+		  LEFT JOIN erp_warehouse wh
+		    ON wh.id = dbLog.wh_id
+		WHERE pod.id =#{pod_id}
+		 AND dbLog.pro_id=#{proId} 
+	</select>
+	<select id="getPudNumbers" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		SELECT dbLog.pro_id ,dbLog.id AS
+		dbLogId,dbLog.number,wh.id AS
+		whId,wh.name AS whName,dbLog.batch,invalid_time FROM
+		erp_purchase_product_in_detail pud
+		LEFT JOIN erp_db_log dbLog ON
+		dbLog.pod_id=pud.id LEFT JOIN
+		erp_warehouse wh ON wh.id=dbLog.wh_id
+		WHERE pud.id=#{pdId} AND dbLog.pro_id=#{proId}
+	</select>
+	<select id="getPod" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT
+		pd.id,
+		pd.code AS ppidCode,
+		pd.status,
+		pd.purchase_id,
+		pd.ppo_id,
+		pd.sup_id AS supId,
+		pd.date AS ppidDate,
+		pd.person,
+		pd.remark AS ppidRemark,ps.sup_name,
+		ps.address,ps.phone,ps.zip_code,ps.mobile,pout.ppo_title,pout.ppo_code
+		FROM erp_purchase_product_in_detail pd
+		LEFT JOIN erp_purchase_supplier ps ON ps.purchase_id=pd.purchase_id
+		LEFT JOIN erp_purchase_product_out pout ON pout.id=pd.ppo_id where
+		pd.id=#{pdId}
+		</select>
+	<select id="getPodPro" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT
+		pud.id,
+		ppo.ppo_id,ppo.purchase_num,ppo.already_purchase_num,ppo.pur_price,
+		pro.id as pro_id,
+		pro.pro_code,pro.pro_name,
+		pt.name AS ps_name,
+		ps.name AS unit_name
+		FROM
+		erp_product pro
+		LEFT JOIN erp_ppo_pro ppo ON ppo.pro_id=pro.id
+		LEFT JOIN erp_purchase_product_in_detail pud ON pud.ppo_id=ppo.ppo_id
+		LEFT JOIN erp_product_style ps ON ps.id=pro.ps_id
+		LEFT JOIN erp_product_type pt ON pt.id=pro.pt_id
+
+		WHERE pud.id=#{pdId}
+		</select>
+	<select id="getPur" resultType="java.util.HashMap"
+		parameterType="String">
+			SELECT
+		pud.id,
+		ppo.ppo_id,ppo.purchase_num,ppo.already_purchase_num,ppo.pur_price,
+		pro.id AS pro_id,
+		pro.pro_code,pro.pro_name,
+		pt.name AS ps_name,
+		ps.name AS unit_name
+		FROM
+		erp_product pro
+		LEFT JOIN erp_ppo_pro ppo ON ppo.pro_id=pro.id
+		LEFT JOIN erp_purchase_product_in_detail pud ON pud.ppo_id=ppo.ppo_id
+		LEFT JOIN erp_product_style ps ON ps.id=pro.ps_id
+		LEFT JOIN erp_product_type pt ON pt.id=pro.pt_id WHERE
+		ppid.id=#{outDId}
+	</select>
+	<select id="getPurDb" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT dbLog.id AS
+		dbLogId,dbLog.number,dbLog.pro_id,wh.id AS
+		whId,wh.name AS whName FROM
+		erp_db_log dbLog LEFT JOIN
+		erp_warehouse wh ON wh.id=dbLog.wh_id WHERE
+		dbLog.pod_id=#{outDId}
+	</select>
+	<select id="getDbBatch" resultType="String"
+		parameterType="java.util.HashMap">
+		SELECT COUNT(*) FROM erp_db WHERE batch=#{bacth} AND wh_id=#{wh_id}
+	</select>
+	<select id="getPurs" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT pro.id AS pro_id,pus.id AS sup_id, pout.id
+		AS
+		ppo_id,ppro.id AS pproId,pro.pro_code,pro.pro_name,ppro.purchase_num,ppro.already_purchase_num,ppro.pur_price
+		AS pro_price, pout.ppo_code,pout.ppo_title AS
+		ppoTitle,ps.sup_name,ps.address,ps.phone,ps.mobile,ps.zip_code
+		FROM
+		erp_purchase_product_out pout LEFT JOIN
+		erp_purchase_supplier ps ON
+		ps.purchase_id=pout.purchase_id LEFT
+		JOIN erp_ppo_pro ppro ON
+		ppro.ppo_id=pout.id  LEFT JOIN erp_product pro ON pro.id=ppro.pro_id LEFT JOIN
+		erp_purchase_supplier pus ON
+		pus.purchase_id=pout.purchase_id
+		WHERE pout.purchase_id=#{purId}
+	</select>
+	<select id="getCusMsg" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT
+		o.cus_id,o.order_code,o.order_title,oca.person,oca.address,oca.phone,oca.zip_code
+		FROM erp_sale_order o, erp_order_cus_address oca WHERE o.id =
+		oca.order_id and oca.order_id=#{order_id}
+	</select>
+	<select id="getPODMsg" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT
+		  o.order_code,
+		  o.order_title,
+		  pod.pod_code,
+		  pod.person,
+		  pod.address,
+		  pod.phone,
+		  pod.zip_code,
+		  logis.name AS pod_send_way,
+		  logis.id AS logisId,
+		  pod.total,
+		  pod.pod_sender,
+		  pod.pod_sender_id,
+		  pod.pod_date,
+		  pod.remark
+		FROM erp_sale_order o,
+		  erp_order_product_out_detail pod,erp_logistics logis
+		WHERE pod.order_id = o.id  AND pod.pod_send_way=logis.id
+		    AND pod.id =#{pod_id} 
+	</select>
+	<select id="getPodCode" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT id,pod_code
+		FROM erp_order_product_out_detail
+		WHERE id =#{pod_id}
+	</select>
+	<select id="checkPODData" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT id,code,type,reason,return_date,remark FROM
+		erp_return WHERE type_id=#{pod_id} and type='销售'
+	</select>
+	<select id="checkPIDData" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT id,code,type,reason,return_date,remark FROM
+		erp_return WHERE type_id=#{pid_id} and type='采购'
+	</select>
+	<select id="getPidCode" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT id,code
+		FROM erp_purchase_product_in_detail WHERE
+		id =#{pid_id}
+	</select>
+	<select id="getPro" resultType="java.util.HashMap"
+		parameterType="String">
+		SELECT pro_id FROM erp_cache_product WHERE id=#{proId}
+	</select>
+
+	<select id="getWHTypeName" resultMap="psResultMap">
+		SELECT id,name from erp_product_style where is_del='0' and id in
+		<foreach item="item" index="index" collection="list" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+
+
+	<insert id="addWareHouse" parameterType="oa.spring.po.WareHouse">
+		insert into
+		erp_warehouse(id,name,address,type,remark)
+		values(#{id},#{name},#{address},#{type},#{remark})
+	</insert>
+	<insert id="addDBLog" parameterType="List">
+		INSERT INTO erp_db_log (id,batch,wh_id,pro_id,pod_id,price,number,total,invalid_time,flag,status,time,remark)VALUE
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.id},#{item.batch},#{item.wh_id},#{item.pro_id},#{item.pod_id},#{item.price},#{item.number},#{item.total},#{item.invalid_time},#{item.flag},#{item.status},#{item.time},#{item.remark})
+		</foreach>
+	</insert>
+
+	<update id="updateDb" parameterType="java.util.HashMap">
+		UPDATE erp_db_log SET
+		wh_id=#{whId},number=#{podNums},price=#{price},total=#{total},TIME=#{time},remark=#{ppoRemark}
+		WHERE pod_id=#{pDeId}
+	</update>
+	<update id="updateDbStatus" parameterType="java.util.HashMap">
+		UPDATE erp_db_log SET
+		status=#{status}
+		WHERE pod_id=#{retId};
+	</update>
+	<update id="updateReturnStatus" parameterType="java.util.HashMap">
+		UPDATE erp_return
+		SET
+		status=#{status}
+		WHERE id=#{retId};
+	</update>
+	<update id="updateReturn" parameterType="java.util.HashMap">
+		UPDATE erp_return SET
+		code=#{code},type=#{type},type_id=#{type_id},reason=#{reason},return_date=#{return_date},remark=#{remark}
+		WHERE id=#{id}
+	</update>
+	<update id="updateLoss" parameterType="java.util.HashMap">
+		UPDATE erp_loss SET
+		code=#{code},reason=#{reason},loss_date=#{lossDate},remark=#{remark}
+		WHERE id=#{lossId}
+	</update>
+	<insert id="insertBatch" parameterType="List">
+		insert into erp_wh_person(id,wh_id,person_id) values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(uuid(),#{item.wh_id},#{item.person_id})
+		</foreach>
+	</insert>
+	<insert id="addPODBatch" parameterType="List">
+			
+		insert into erp_pod_pro(id,pod_id,pro_id,pod_num) values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.id},#{item.pod_id},#{item.pro_id},#{item.pod_num})
+		</foreach>
+	</insert>
+	<insert id="addPOD" parameterType="oa.spring.po.POD">
+		insert into
+		erp_order_product_out_detail(id,pod_code,pod_status,order_id,po_id,person,address,phone,zip_code,pod_date,pod_sender,pod_send_way,total,remark,pod_sender_id)
+		values
+		(#{id},#{pod_code},#{pod_status},#{order_id},#{po_id},#{person},#{address},#{phone},#{zip_code},#{pod_date},#{pod_sender},#{pod_send_way},#{total},#{remark},#{pod_sender_id})
+	</insert>
+	<insert id="addReturn" parameterType="java.util.HashMap">
+		INSERT INTO erp_return
+		(id,CODE,TYPE,type_id,reason,status,return_date,remark)
+		VALUE(#{id},#{code},#{type},#{type_id},#{reason},#{status},#{return_date},#{remark})
+	</insert>
+	<insert id="addLoss" parameterType="java.util.HashMap">
+		INSERT INTO
+		erp_loss(id,CODE,reason,user_id,STATUS,loss_date,remark)
+		VALUE(#{lossId},#{code},#{reason},#{user_id},#{status},#{lossDate},#{remark})
+	</insert>
+	<insert id="addReturnPro" parameterType="List">
+		INSERT INTO erp_return_pro (id,return_id,pro_id,num) VALUES
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.id},#{item.return_id},#{item.pro_id},#{item.num})
+		</foreach>
+	</insert>
+	<insert id="addLossPro" parameterType="List">
+		INSERT INTO erp_loss_pro (id,loss_id,pro_id,num) VALUES
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.rpId},#{item.lossId},#{item.cpId},#{item.num})
+		</foreach>
+	</insert>
+	<update id="updatePOD" parameterType="java.util.HashMap">
+		update erp_order_product_out_detail set 
+		pod_code = #{pod_code},
+		person =#{person},
+		address = #{address},
+		phone =#{phone},
+		zip_code = #{zip_code},
+		pod_date=#{pod_date},
+		pod_sender=#{pod_sender},
+		pod_send_way=#{pod_send_way},
+		total=#{total},
+		remark=#{remark},
+		pod_sender_id=#{pod_sender_id} 
+		where id=#{id}
+	</update>
+
+	<update id="updatePODPRO" parameterType="java.util.HashMap">
+		update erp_pod_pro set
+		pod_num = #{pod_num} where
+		pod_id=#{pod_id} and pro_id=#{podProId}
+	</update>
+	<update id="updateDbBatch" parameterType="map">
+		UPDATE erp_db SET
+		num=num+#{number} WHERE pro_id= #{pro_id} and wh_id=#{wh_id}
+	</update>
+	<update id="updateDbJs" parameterType="map">
+		UPDATE erp_db SET
+		num=num-#{number} WHERE pro_id= #{pro_id} and wh_id=#{wh_id}
+	</update>
+	<update id="updatePopro" parameterType="java.util.HashMap">
+		update erp_po_pro set
+		db_log_id = #{dbLogId} where
+		po_id=#{po_id}
+	</update>
+	<update id="updateWareHouse" parameterType="oa.spring.po.WareHouse">
+		update erp_warehouse
+		set name = #{name}, address=#{address},
+		type=#{type}, remark=#{remark}
+		where id=#{id}
+	</update>
+
+	<delete id="deleteWareHouseById" parameterType="String">
+		delete from
+		erp_warehouse where id=#{id}
+	</delete>
+
+	<delete id="deleteWHPerson" parameterType="String">
+		delete from
+		erp_wh_person where wh_id=#{wh_id}
+	</delete>
+	<delete id="deleteReturn" parameterType="String">
+		delete from
+		erp_return
+		where id=#{retId}
+	</delete>
+	<delete id="deleteReturnPro" parameterType="String">
+		delete from
+		erp_return_pro where return_id=#{retId}
+	</delete>
+	<delete id="deletePOD" parameterType="String">
+		delete from
+		erp_order_product_out_detail where id=#{pod_id}
+	</delete>
+	<delete id="deletePODPRO" parameterType="String">
+		delete from erp_pod_pro
+		where pod_id=#{pod_id}
+	</delete>
+	<delete id="deleteDbLog" parameterType="java.util.HashMap">
+		delete from erp_db_log
+		where pod_id=#{pod_id} and flag=#{flag}
+	</delete>
+	<insert id="addPur" parameterType="java.util.HashMap">
+		INSERT INTO
+		erp_purchase_product_in_detail
+		(id,CODE,STATUS,purchase_id,ppo_id,sup_id,DATE,person,remark)
+		VALUE
+		(#{pDeId},#{ppoCode},#{ppoStatus},#{purId},#{ppoId},#{supId},#{purDate},#{purPerson},#{ppoRemark})
+	</insert>
+	<insert id="addPpo" parameterType="ArrayList">
+		INSERT INTO erp_pur_pro (id,pur_id,pro_id,pur_num) VALUE
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.id},#{item.pur_id},#{item.pro_id},#{item.pur_num})
+		</foreach>
+	</insert>
+	<delete id="deletePpo" parameterType="String">
+		delete from erp_ppo_pro
+		where pod_id=#{ppoId}
+	</delete>
+	<delete id="deleteLossPro" parameterType="String">
+		delete from
+		erp_loss_pro
+		where loss_id=#{lossId}
+	</delete>
+	<delete id="deleteLoss" parameterType="String">
+		delete from erp_loss
+		where
+		id=#{lossId}
+	</delete>
+	<delete id="deletesPur" parameterType="String">
+		delete from erp_pur_pro
+		where pur_id=#{podId}
+	</delete>
+	<delete id="deletesDBLog" parameterType="String">
+		delete from erp_db_log
+		where pod_id=#{pod_id} and flag=#{flag}
+	</delete>
+	<delete id="deletesPurDetail" parameterType="String">
+		delete from
+		erp_purchase_product_in_detail where id=#{podId}
+	</delete>
+
+	<update id="updatePpo" parameterType="java.util.HashMap">
+		update erp_ppo_pro set
+		already_purchase_num=#{podNums} where
+		ppo_id=#{ppoId} and
+		pro_id=#{proId}
+	</update>
+	<update id="updatePurPro" parameterType="java.util.HashMap">
+		UPDATE erp_pur_pro SET
+		pur_num=#{pur_num} WHERE pur_id=#{pur_id}
+		AND pro_Id=#{pro_Id}
+	</update>
+	<update id="updatePur" parameterType="java.util.HashMap">
+		UPDATE
+		erp_purchase_product_in_detail SET
+		code=#{ppoCode},DATE=#{purDate},remark=#{ppoRemark} WHERE
+		id=#{pDeId}
+	</update>
+</mapper>

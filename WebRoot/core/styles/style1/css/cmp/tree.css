@@ -1,0 +1,16 @@
+  ul{ /*子结点*/
+    margin-left:20px; /* Left spacing */
+    padding-left:0px;
+  }
+  li{ /* 结点 */ 
+    list-style-type:none;
+    vertical-align:middle;
+    
+  }
+  li a{ /* 结点连接 */
+    color:#000;
+    text-decoration:none;
+    font-family:arial;
+    font-size:0.8em;
+    padding-left:2px;
+  }

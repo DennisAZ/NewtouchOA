@@ -1,0 +1,199 @@
+﻿#container #canyue {
+  width: 955px;
+  height: auto;
+  text-align: center;
+  margin-left: 22px;
+  margin-right: 22px;
+}
+#container #canyue #cy-tab {
+  width: 815px;
+  height: 120px;
+  overflow: hidden;
+}
+#container #canyue .xjcl {
+  margin-top: 20px;
+  width: 955px;
+  height: auto;
+  margin-bottom: 10px;
+  background: url(images/news-bg.gif) repeat-y;
+}
+#container #canyue #cy-tab {
+  background: url(images/canyue.jpg) no-repeat;
+  width: 955px;
+  height: 104px;
+  margin-top: 5px;
+}
+#container #canyue #cy-tab ul {
+  padding-left: 480px;
+  padding-top: 45px;
+}
+#container #canyue #cy-tab li {
+  display: inline;
+  float: left;
+  width: 146px;
+  height: 40px;
+  padding-left: auto;
+  text-align: center;
+  padding-right: auto;
+  margin-right: 10px;
+  background: url(images/candidate/politic.jpg) no-repeat;
+}
+#container #canyue #cy-tab li.selected {
+  background: url(images/button-sel.png) no-repeat;
+}
+#container #canyue #cy-tab a {
+  font: bold 15px/40px "微软雅黑","宋体";
+}
+
+#container #canyue #yearswf {
+  padding-top: 15px;
+  text-align: left;
+  float: left;
+  display: inline;
+  border-right: 2px #bbb solid;
+}
+#container #canyue #yearswf ul {
+  margin-left: 15px;
+  margin-right: 5px;
+}
+#container #canyue #yearswf li {
+	height: 32px;
+	width: 80px;
+	color: #000;
+	font: 16px/32px "微软雅黑","宋体";
+	background: url(images/year-li.gif) no-repeat 20px center;
+	border-bottom: 2px #bbb solid;
+	vertical-align: middle;
+	zoom: 1;
+	padding-left: 50px;
+}
+#container #canyue #yearswf li.selected, #container #canyue #yearswf li:hover {
+	border-bottom: 2px #d00402 solid;
+	background: url(images/year-lia.gif) no-repeat 20px center;
+	color: #d00402;
+}
+#container #canyue #yearswf a.selected, #container #canyue #yearswf a:hover {
+	color: #d00402;
+}
+#container #canyue #yearswf img {
+  border: #fff 0 none;
+}
+#container #canyue .title-tab {
+  height: 33px;
+  width: 955px;
+  background: url(images/title-bg.png) no-repeat left top;
+  text-align: left;
+}
+#container #canyue .title-tab span {
+  font: bold 15px/32px "微软雅黑","宋体";
+  color: #4e4e4e;
+  width: 122px;
+  padding-left: 30px;
+}
+
+
+#container #canyue #other .cy-news {
+  width: 955px;
+  height: auto;
+  background: url(images/news-bg.gif) repeat-y;
+}
+#container #canyue #other .cy-news:after {
+  content: ".";
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+#container #canyue  #other .cy-news ul {
+  margin-left: 10px;
+}
+
+#container #canyue  #other .cy-news ul {
+  margin-left: 15px;
+}
+#container #canyue  #other .cy-news li {
+  height: 30px;
+  width: 900px;
+  text-align: left;
+  padding-left: 20px;
+  background: url(images/news/ic-o.gif) no-repeat;
+  border-bottom: #eaeaea 1px solid;
+}
+
+#container #canyue  #other .cy-news a {
+  float: left;
+  /* width: 820px; */
+  font: 14px/30px "微软雅黑","宋体";
+}
+#container #canyue #other .cy-news li span {
+  width: 90px;
+  font: 14px/30px "微软雅黑","宋体";
+  float: right;
+}
+#container #canyue .cy-page {
+  width: 850px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 100px;
+  text-align: right;
+}
+#container #canyue .cy-page span {
+  margin-left: 10px;
+  margin-right: 10px;
+  font: 14px/30px "微软雅黑","宋体";
+}
+#container #canyue .cy-page span a {
+  font: 14px/30px "微软雅黑","宋体";
+}
+
+#container #canyue .cy-foot {
+  width: 955px;
+  height: 8px;
+  overflow: hidden;
+  background: url(images/cy-foot.gif) no-repeat;
+}
+/* 新增样式 */
+#container #canyue #xjcla .yearswf {
+  width: 155px;
+  float: left;
+  display: inline;
+
+}
+#container #canyue #xjcla .cy-news {
+  width: 740px;
+  overflow: hidden;
+  height: auto;
+  float: left;
+  display: inline;
+  
+  background-image: none;
+}
+#container #canyue #xjcla {
+  width: 955px;
+  height: auto;
+  margin-bottom: 10px;
+  background: url(images/news-bg.gif) repeat-y;
+}
+#container #canyue  #xjcla .cy-news ul {
+  margin-left: 10px;
+}
+#container #canyue  #xjcla .cy-news li {
+  height: 30px;
+  width: 690px;
+  text-align: left;
+  padding-left: 20px;
+  zoom: 1;
+  vertical-align: middle;
+  background: url(images/news/ic-o.gif) no-repeat;
+  border-bottom: #eaeaea 1px solid;
+}
+
+#container #canyue  #xjcla .cy-news a {
+  float: left;
+  /* width: 820px; */
+  font: 14px/30px "微软雅黑","宋体";
+}
+#container #canyue #xjcla .cy-news li span {
+  width: 90px;
+  font: 14px/30px "微软雅黑","宋体";
+  float: right;
+}

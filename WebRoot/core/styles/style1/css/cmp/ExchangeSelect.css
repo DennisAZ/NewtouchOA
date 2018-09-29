@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+#exchange-div {
+	width: 450px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 14px;
+	color: #96C2F1;
+  }
+ 
+  
+  .exchangeSelect{
+	width:150px;
+	height: 200px;
+  }
+  .exchangeSelectTd{
+	 background-color:#F0FBEB 
+  }
+  .exchangeSelectTitle{
+     font-size:16px;
+     background-color:#FFF5FA
+  }
+
+.TableBlock .TableContent td, .TableBlock td.TableContent {
+    background: none repeat scroll 0 0 #F2F2F2;
+    border-bottom: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+
+.exchange-info {
+  width: 450px;
+  text-align: center;
+}

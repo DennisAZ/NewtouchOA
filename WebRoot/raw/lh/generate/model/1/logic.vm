@@ -1,0 +1,32 @@
+package ${packageName}.logic;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import yh.core.data.YHRequestDbConn;
+import yh.core.global.YHActionKeys;
+import yh.core.global.YHBeanKeys;
+import yh.core.global.YHConst;
+import yh.core.util.YHUtility;
+import yh.core.util.db.YHDBUtility;
+
+public class ${className}Logic {
+  public String getById(Connection conn , int id) throws Exception {
+    return "";
+  }
+  public String list(Connection conn) throws Exception {
+    return "";
+  }
+  public String add(Connection conn) throws Exception {
+    String runId = request.getParameter("runId");
+    if (YHUtility.isNullorEmpty(moduleId)) {
+    	//增加
+    } else {
+    	//修改
+    }
+    return moduleId;
+  }
+}

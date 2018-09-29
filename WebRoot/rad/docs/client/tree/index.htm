@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+#title {
+  font-size: 16pt;
+  font-family: 宋体;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+#contentTable
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ background-color: #888888;
+ text-decoration: none;
+}
+#contentTable th {
+  background-color: #CCCCCC;
+  text-decoration: none;
+}
+#contentTable td {
+  background-color: #FFFFFF;
+}
+--></style>
+</head>
+<body>
+<div id="title">动态异步加载树</div>
+<br></br>
+<table width="100%">
+  <tr>
+    <td width="10%">作者:李剑锋</td>
+    <td width="20%">&nbsp;</td>
+    <td width="15%">创建日期:2009-9-23</td>
+    <td width="20%">&nbsp;</td>
+    <td width="10%">版本:1</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" id="contentTable" border="0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th width="60%">适用情景描述</th>
+    <th width="35%">特别强调</th>
+    <th width="5%">代码</th>
+  </tr>
+  <tr>
+    <td><a href="/yh/test/rad/client/tree/dynamicTree1.jsp">使用ParentId字段构造树，异步加载</a>
+    	<pre>
+ Js文件：js/MyTree1.js
+ Prototype框架：js/prototype.js
+ 接口函数：MyTreeInit
+接口函数参数:rootNodeId,requestUrl,treeStructure,isOnceLoad,checkboxPara,linkPara
+       rootNodeId:所依附的节点
+       requestUrl:请求服务器的url地址
+       treeStructure：树的结构
+       isOnceLoad：属性为true或false，true为一次性加载，false非一次性加载
+       checkboxPara：复选框参数
+       linkPara：链接参数
+    	</pre>
+    </td>
+    <td>
+        <pre>
+       treeStructure:包含两个参数：第一个参数说明是否isNoTree，true为是。第二个参数说明如果是idNoTree，需
+指定规则regular
+       checkboxPara：表明是否有复选框。如果有，选中复选框的回调函数，回调函数的参数值是test，选中
+复选框后的撤销函数的参数是test1
+       linkPara：表明是否有链接。如果有，指定链接地址和链接页面在浏览器中的打开方式
+        </pre>
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=test/rad/client/tree/dynamicTree1.jsp">代码</a></td>
+  </tr>
+  <tr>
+    <td><a href="/yh/test/rad/client/tree/dynamicTree2.jsp">使用ParentId字段构造树，同步加载</a>
+            	<pre>
+ Js文件：js/MyTree1.js
+ Prototype框架：js/prototype.js
+ 接口函数：MyTreeInit
+接口函数参数:rootNodeId,requestUrl,treeStructure,isOnceLoad,checkboxPara,linkPara
+       rootNodeId:所依附的节点
+       requestUrl:请求服务器的url地址
+       treeStructure：树的结构
+       isOnceLoad：属性为true或false，true为一次性加载，false非一次性加载
+       checkboxPara：复选框参数
+       linkPara：链接参数
+    	</pre>
+    </td>
+    <td>与异步加载最大的差异是将isOnceLoad的参数值改为true</td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=test/rad/client/tree/dynamicTree2.jsp">代码</a></td>
+  </tr>
+  <tr>
+    <td><a href="/yh/test/rad/client/tree/dynamicTree3.jsp">使用编码字段构造树，异步加载</a>
+         <pre>
+ Js文件：js/MyTree1.js
+ Prototype框架：js/prototype.js
+ 接口函数：MyTreeInit
+接口函数参数:rootNodeId,requestUrl,treeStructure,isOnceLoad,checkboxPara,linkPara
+       rootNodeId:所依附的节点
+       requestUrl:请求服务器的url地址
+       treeStructure：树的结构
+       isOnceLoad：属性为true或false，true为一次性加载，false非一次性加载
+       checkboxPara：复选框参数
+       linkPara：链接参数
+    	</pre>
+    </td>
+    <td>
+        <pre>
+因为是异步加载，故将isOnceLoad的参数值改为false
+因为使用编码字段构造树，故将isNoTree的参数值设为true
+        </pre>
+    </td>
+    <td><a href="/yh/rad/docs/codedisp.jsp?page=test/rad/client/tree/dynamicTree3.jsp">代码</a></td>
+  </tr>
+  <tr>
+    <td><a href="/yh/test/rad/client/tree/index.jsp">使用编码字段构造树，同步加载</a></td>
+    <td>&nbsp;</td>
+    <td><a href="#">代码</a></td>
+  </tr>
+  <tr>
+    <td><a href="/yh/test/rad/client/tree/index.jsp">使用树进行多选</a></td>
+    <td>&nbsp;</td>
+    <td><a href="#">代码</a></td>
+  </tr>
+  <tr>
+    <td><a href="/yh/test/rad/client/tree/index.jsp">事件响应</a></td>
+    <td>&nbsp;</td>
+    <td><a href="#">代码</a></td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+项目的托管于google code
+最新版本或动态请访问:http://code.google.com/p/xiaojw-graph-strawberry/
+(打不开多试几次,目前的版本未必是最新版本)
+
+如有问题或需要二次开发的请联系作者:QQ:64697490 
+
+文件说明
+strawberry.html 绘制主要页面.
+view.html 预览界面,不可单独打开.
+saveXml.html 保存strawberry xml文件,不可单独打开.
+flow1.xml 演示案例
+flow2.xml 演示案例
+
+如果需要更多复杂案例或特殊功能开发，可联系作者本人。
+
+v0.1.9 版本发布日期 : 2012-5-19 

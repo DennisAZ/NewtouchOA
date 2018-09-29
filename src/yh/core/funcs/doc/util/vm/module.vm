@@ -1,0 +1,62 @@
+package ${packageName};
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import yh.core.data.YHRequestDbConn;
+import yh.core.funcs.doc.util.YHIWFModulePlugin;
+import yh.core.funcs.doc.util.YHWorkFlowUtility;
+import yh.core.global.YHActionKeys;
+import yh.core.global.YHBeanKeys;
+import yh.core.global.YHConst;
+import yh.core.util.YHUtility;
+import yh.core.util.db.YHDBUtility;
+
+public class ${className} implements YHIWFModulePlugin {
+  public String edit(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    String seqId = request.getParameter("moduleId");
+    Connection conn = null;
+    try{
+      YHRequestDbConn requestDbConn = (YHRequestDbConn) request
+      .getAttribute(YHBeanKeys.REQUEST_DB_CONN_MGR);
+      conn = requestDbConn.getSysDbConn();
+      
+  	} catch (Exception ex){
+      request.setAttribute(YHActionKeys.RET_STATE, YHConst.RETURN_ERROR);
+      request.setAttribute(YHActionKeys.RET_MSRG, ex.toString());
+      throw ex;
+    }
+    return "${editPath}";
+  }
+  public String print(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    String seqId = request.getParameter("moduleId");
+    Connection conn = null;
+    try{
+      YHRequestDbConn requestDbConn = (YHRequestDbConn) request
+      .getAttribute(YHBeanKeys.REQUEST_DB_CONN_MGR);
+      conn = requestDbConn.getSysDbConn();
+      if (!YHUtility.isNullorEmpty(seqId)) {
+      	
+      } else {
+        
+      }
+    } catch (Exception ex){
+      request.setAttribute(YHActionKeys.RET_STATE, YHConst.RETURN_ERROR);
+      request.setAttribute(YHActionKeys.RET_MSRG, ex.toString());
+      throw ex;
+    }
+    return "${printPath}";
+  }
+  public String saveOrUpdate(HttpServletRequest request , Connection conn , String moduleId) throws Exception {
+    String runId = request.getParameter("runId");
+    if (YHUtility.isNullorEmpty(moduleId)) {
+    	//增加
+    } else {
+    	//修改
+    }
+    return moduleId;
+  }
+}

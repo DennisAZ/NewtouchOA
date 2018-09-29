@@ -1,0 +1,66 @@
+#layout1{
+			width:600px;
+			position:absolute;
+			top:50px;
+			left:15px;
+			}
+		.photo{
+			border:2px solid #333;
+			width:130px;
+			height:50px;
+			float:left;
+			margin:10px;
+			text-align:center;
+			margin-top:10px;
+			margin-left:40px;
+			}
+			
+		.photo1{
+			width:130px;
+			height:50px;
+			float:left;
+			margin:10px;
+			text-align:center;
+			margin-top:10px;
+			margin-left:40px;
+			}
+		.photo2{
+			border:2px solid #333;
+			width:130px;
+			height:50px;
+			margin:10px;
+			text-align:center;
+			margin-top:190px;
+			margin-left:323px;
+			}
+	
+	
+		#center{
+			height:300px;
+			width:600px;
+			position:absolute;
+			top:0px;
+			left:100px;
+			margin-top:15px;
+
+		}
+      	body{
+			width:700px;
+		}  
+	
+    input{
+		width:120px;
+		height:40px;
+		margin-top:5px;
+		margin-left:2.5px;
+
+	}  
+	#buttom{
+		margin-top:320px;
+		margin-left:100px;
+		text-align:left;
+	}
+	#lastDiv{
+		margin-left:40px;
+		margin-top:60px;
+	}

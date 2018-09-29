@@ -1,0 +1,92 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+
+<html> 
+
+<head> 
+
+<title>插入代码</title> 
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+
+<meta content="noindex, nofollow" name="robots"> 
+
+<script language="javascript"> 
+
+var oEditor = window.parent.InnerDialogLoaded() ; 
+
+var FCK = oEditor.FCK ; 
+
+var FCKLang = oEditor.FCKLang ; 
+
+var FCKIn = oEditor.FCKIn ;  
+
+window.onload = function () 
+
+{ 
+//loadSelected();
+window.parent.SetOkButton( true ) ; 
+
+} 
+
+function  loadSelected(){
+   var eSelected = oEditor.FCKSelection.GetSelectedElement() ;
+   if(eSelected != null){
+   if ( eSelected.tagName == 'INPUT' && eSelected.type == 'text') { 
+	inputid.value = eSelected.id;
+	inputname.value = eSelected.name;
+        inputvalue.value = eSelected.value;
+    } 
+   else 
+     eSelected = null;
+   }
+}
+
+//点击ok按钮发生的操作
+
+function Ok() 
+
+{ 
+
+if ( document.getElementById('code').value.length > 0 )
+FCKIn.Add(code.value) ;  
+return true ; 
+
+} 
+
+</script>  
+
+</head> 
+
+ 
+
+<body scroll="no" style="OVERFLOW: hidden"> 
+
+<table height="100%" cellSpacing="0" cellPadding="0" width="100%" border="0"> 
+
+<tr> 
+
+<td> 
+
+<table cellSpacing="0" cellPadding="0" align="center" border="0"> 
+
+<tr> 
+
+<td> 
+<textarea id="code" rows="50" cols="50">
+</textarea>
+</td> 
+
+</tr> 
+
+</table> 
+
+</td> 
+
+</tr> 
+
+</table> 
+
+</body> 
+
+</html> 
+

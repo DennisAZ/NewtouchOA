@@ -1,0 +1,22 @@
+.check0{width:16px;height:16px;padding:0px;margin:0px;overflow:hidden;background:url("img/checkbox0.gif") no-repeat;cursor:pointer;float:left;}
+.check1{width:16px;height:16px;padding:0px;margin:0px;overflow:hidden;background:url("img/checkbox1.gif") no-repeat;cursor:pointer;float:left;}
+.underline {cursor:pointer;text-decoration:underline;}
+.box_g{position:relative;float:left; border:1px #AFDE9F solid; background:#DBF1D4;margin-right:5px;}
+.g1{background:url("img/circle_green.gif") no-repeat 0px 0px;height:7px; width:7px;  left:-1px; top:-1px;}
+.g2{background:url("img/circle_green.gif") no-repeat -7px 0px;; height:7px; width:7px; top:-1px;right:-1px;}
+.g3{background:url("img/circle_green.gif") no-repeat 0px -7px;height:7px; width:7px; left:-1px; bottom:-1px;}
+.g4{background:url("img/circle_green.gif") no-repeat -7px -7px; height:7px; width:7px;bottom:-1px;right:-1px;}
+.g1,.g2,.g3,.g4{overflow:hidden;position:absolute;}
+
+.box_r{position:relative;float:left; border:1px #c3d9ff solid; background:#e0ecff;margin-right:5px;}
+.r1{background:url("img/circle_red.gif") no-repeat 0px 0px;height:7px; width:7px;  left:-1px; top:-1px;}
+.r2{background:url("img/circle_red.gif") no-repeat -7px 0px;; height:7px; width:7px; top:-1px;right:-1px;}
+.r3{background:url("img/circle_red.gif") no-repeat 0px -7px;height:7px; width:7px; left:-1px; bottom:-1px;}
+.r4{background:url("img/circle_red.gif") no-repeat -7px -7px; height:7px; width:7px;bottom:-1px;right:-1px;}
+.r1,.r2,.r3,.r4{overflow:hidden;position:absolute;}
+.content_g{ margin:0px; padding:5px; background-color:#DBF1D4;line-height:24px;white-space:nowrap}
+.content_r{ margin:0px; padding:5px; background-color:#e0ecff;line-height:24px;white-space:nowrap}
+
+#tooltip {position:absolute;border:1px solid #333;background:#f7f5d1;padding:2px 5px;color:#333;display:none;}	
+
+.PrcsName {padding:2px;}

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<input id="test" type="button" >
+
+<body>
+<script type="text/javascript">
+function a(a1){
+  alert("a : "+a1);
+}
+function b(b1){
+  alert("b : "+b1);
+}
+var lis = [{name:"onclick",fun:a},{name:"onmouseover",fun:b}]
+var bu = document.getElementById('test');
+
+for(var ins = 0;ins <lis.length;ins++){
+  var evname = lis[ins].name;
+  var fun = lis[ins].fun;
+  bu[evname]=function(ins){
+            return function(){fun("ss"+ins)};
+    }(ins)
+}
+</script>
+</body>
+</html>
+

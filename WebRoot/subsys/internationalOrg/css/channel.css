@@ -1,0 +1,320 @@
+﻿#container #council-intro {
+  width: 1000px;
+  height: 300px;
+  margin-top: 20px;
+  padding: 0;
+  text-align: left;
+
+}
+#container #council-intro #vtab {
+  display: block;
+  float: left;
+  width: 310px;
+  height: 300px;
+  overflow: hidden;
+
+}
+
+#container #council-intro #vtab #aa{
+  position:absolute;
+}/*
+#container #council-intro #vtab td {
+  vertical-align: top;
+  text-align: left;
+}
+#container #council-intro #vtab a {
+  display: block;
+  float: left;
+  cursor: pointer;
+}
+#container #council-intro #vtab img {
+  border: 0 none;
+}
+#container #council-intro #vtab a.lt {
+  width: 129px;
+  height: 129px;
+  vertical-align: top;
+  background: url(images/leftop.png) no-repeat;
+}
+#container #council-intro #vtab a.rt {
+  width: 129px;
+  height: 129px;
+  background: url(images/rightop.png) no-repeat;
+}
+#container #council-intro #vtab a.ld {
+  width: 129px;
+  height: 124px;
+  background: url(images/leftdown.png) no-repeat;
+}
+#container #council-intro #vtab a.rd {
+  width: 129px;
+  height: 124px;
+  background: url(images/rightdown.png) no-repeat 0 3px;
+}
+#container #council-intro #vtab a.left_down {
+  width: 129px;
+  height: 124px;
+  background: url(images/leftdown.png) no-repeat 0 3px;
+}
+#container #council-intro #vtab a.lt:hover, a.ltsel, a.ltsel:hover {
+  width: 129px;
+  height: 129px;
+  background: url(images/leftop-a.png) no-repeat;
+}
+#container #council-intro #vtab a.rt:hover, a.rtsel, a.rtsel:hover {
+  width: 129px;
+  height: 129px;
+  background: url(images/rightop-a.png) no-repeat;
+}
+#container #council-intro #vtab a.rd:hover, a.rdsel, a.rdsel:hover {
+  width: 129px;
+  height: 124px;
+  background: url(images/rightdown-a.png) no-repeat 0 3px;
+}
+#container #council-intro #vtab a.left_down:hover, a.rdsel, a.rdsel:hover {
+  width: 129px;
+  height: 124px;
+  background: url(images/leftdown-a.png) no-repeat 0 3px;
+}
+#container #council-intro #vtab ul {
+}
+#container #council-intro #vtab li {
+  width: 130px;
+  height: 81px;
+  overflow: hidden;
+}
+*/
+#container #council-intro #council-content {
+  display: inline;
+  float: right;
+  width: 632px;
+  text-align: left;
+  height: 265px;
+  padding-left: 50px;
+  padding-top: 15px;
+  background: url(images/jianjie-bg.png) no-repeat 0 0;
+}
+#container #council-intro #council-content div {
+  overflow-x: hidden;
+  overflow-y:auto;
+  height: 255px;
+  width: 600px;
+  padding-left: 12px;
+}
+#container #council-intro #council-content p {
+  width: 580px;
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-indent: 2em;
+  font: 14px/24px "微软雅黑","宋体";
+  color: #121212;
+ /* scrollbar-face-color: #fc0;
+  scrollbar-3dface-color: #ffcf74;
+  scrollbar-darkshadow-color: #ffe3a3;
+  scrollbar-base-color: #ffd95d; */
+}
+#container #council-title {
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-left: 10px; */
+  background: url(images/title-lead.png) no-repeat 10px center;
+}
+#container #council-title h1 {
+  font: 16px "微软雅黑","宋体";
+  color: #050505;
+  margin: 0;
+  padding-left: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: left;
+}
+#container #council-list {
+  width: 985px;
+  height: 236px;
+  /* margin-left: 10px;  */
+  background: url(images/xuanqu-bg.jpg) no-repeat;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#container #council-list #xianggd li {
+  display: inline;
+  float: left;
+}
+#container #council-list #jiulong li {
+  display: inline;
+  float: left;
+}
+.list-left {
+  width: 492px;
+  height: 240px;
+  display: block;
+  float: left;
+}
+.list-right {
+  width: 492px;
+  height: 240px;
+  display: block;
+  float: right;
+}
+.list-left #hongkong {
+  width: 490px;
+  height: 120px;
+  display: block;
+  float: left;
+  overflow: hidden;
+}
+.list-left #jiulong {
+  width: 490px;
+  height: 120px;
+  display: block;
+  float: left;
+  overflow: hidden;
+}
+.list-left ul {
+  padding-left: 20px;
+  padding-top: 30px;
+}
+.list-left li {
+  display: inline;
+  float: left;
+  width: 80px;
+  margin-left: 10px;
+  /*margin-right: 20px; */
+}
+.list-left #hongkong li {
+  display: inline;
+  float: left;
+  width: 102px;
+  margin-left: 10px;
+}
+.list-left li span {
+  font: 14px "微软雅黑","宋体";
+  color: #4a4a4a;
+}
+.list-left img {
+  border: #fff 0 none;
+}
+.list-right #xinjie {
+  width: 490px;
+  height: 240px;
+  display: block;
+  float: right;
+  overflow: hidden;
+}
+.list-right ul {
+  padding-left: 45px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+#container #council-list #xinjie li {
+  display: inline;
+  float: left;
+	height: 118px!important;
+  height: 88px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+/*
+.list-right li {
+  margin-top: 0;
+  padding-top: 0;
+  display: inline;
+  float: left;
+}*/
+.list-right li span {
+  font: 14px "微软雅黑","宋体";
+  color: #4a4a4a;
+}
+.list-right img {
+  border: #fff 0 none;
+}
+#qyhvip {
+  width: 975px;
+  /*height: 520px; */
+  height: auto;
+  padding-left: 20px;
+}
+.qyhrow {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  width: 975px;
+  border-bottom: #b0b0b0 1px solid;
+  height: auto;/*145px;*/
+}
+.qyhrow .left {
+  margin-left: 30px;
+}
+.qyhrow .right {
+  margin-left: 30px;
+}
+.qyhrow .yh-icon {
+  width: 100px;
+  float: left;
+}
+.qyhrow .yh-icon p {
+  font: 14px/28px "微软雅黑","宋体";
+  color: #4a4a4a;
+}
+.qyhrow .yh-ziqu {
+  float: left;
+  width: 300px;
+  padding-left: 14px;
+  height: auto;
+  margin-bottom: 10px;
+  vertical-align: middle;
+}
+.qyhrow .yh-ziqu ul {
+  width: 240px;
+
+}
+.qyhrow .yh-ziqu li {
+  float: left;
+  display: inline;
+  width: 120px;
+  text-align: left;
+}
+.qyhrow .yh-ziqu li a {
+  font: 16px/32px "微软雅黑","宋体";
+  color: #4a4a4a;
+}
+#other {
+  margin-left: 700px;
+  margin-top: 10px;
+}
+#qyhvip .qyhrow .underline {
+  clear: both;
+}
+.other-button {
+  width: 181px;
+  height: 41px;
+  border: #fff 0 none;
+  background: url(images/zdxq/otherxq.png);
+}
+#mm0 {
+	background: url(images/tab1-normal.jpg) no-repeat -1px 0;
+	display:none;
+}
+#mm0.selected {
+	background: url(images/tab1-active) no-repeat;
+	display:none;
+}	
+#mm1 {
+	background: url(images/tab2-normal.jpg) no-repeat -1px 0;
+	display:none;
+}
+#mm1.selected {
+	background: url(images/tab2-active) no-repeat;
+	display:none;
+}	
+#mm2 {
+	background: url(images/tab3-normal.jpg) no-repeat -1px 0;
+	display:none;
+}
+#mm2.selected {
+	background: url(images/tab3-active) no-repeat;
+	display:none;
+}	

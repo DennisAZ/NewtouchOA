@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/Javascript" src="/yh/core/js/prototype.js" ></script>
+</head>
+<input id="test" type="button"  >
+
+<body>
+<script type="text/javascript">
+ var addEvent = function(otarget, stype, fnhandler ){
+    otarget.attachEvent ? otarget.attachEvent("on"+stype, fnhandler) : otarget.addEventListener(stype,fnhandler,false);
+ };
+function a(a1){
+  alert("a : "+a1);
+}
+function b(b1){
+  alert("b : "+b1);
+}
+var lis = [{name:"click",fun:a},{name:"mouseover",fun:b}]
+var bu = document.getElementById('test');
+
+for(var ins = 0;ins <lis.length;ins++){
+  var evname = lis[ins].name;
+  var fun = lis[ins].fun;
+  bu.observe(evname, fun.bind(this, 'a'));
+}
+</script>
+</body>
+</html>

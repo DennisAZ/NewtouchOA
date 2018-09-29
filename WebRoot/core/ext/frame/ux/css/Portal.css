@@ -1,0 +1,37 @@
+/*!
+ * Ext JS Library 3.0.0
+ * Copyright(c) 2006-2009 Ext JS, LLC
+ * licensing@extjs.com
+ * http://www.extjs.com/license
+ */
+.x-portal .x-panel-dd-spacer {
+    margin-bottom:10px;
+}
+
+.x-portlet {
+    margin-bottom:10px;
+}
+
+/* Clean up the look of the portlets */
+.x-portlet{
+    padding-left:2px;
+}
+.x-portlet{
+    padding-right:2px;
+}
+.x-portlet {
+    padding-left:2px;
+}
+
+.x-portlet {
+    padding-right:2px;
+}
+.x-portlet .x-panel-body {
+    background:white;
+}
+.x-portlet {
+    padding-top:2px;
+}
+.x-portlet .x-panel-bc .x-panel-footer {
+    padding-bottom:2px;
+}
